@@ -242,16 +242,16 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 		// Token: 0x04000085 RID: 133
 		private string versionString;
 
-		// Token: 0x020000D3 RID: 211
+		// Token: 0x020000D2 RID: 210
 		public class ServerVersionComparer : IEqualityComparer<OwaServerVersion>
 		{
-			// Token: 0x060007B8 RID: 1976 RVA: 0x0002C5E2 File Offset: 0x0002A7E2
+			// Token: 0x060007B3 RID: 1971 RVA: 0x0002C7CA File Offset: 0x0002A9CA
 			public bool Equals(OwaServerVersion a, OwaServerVersion b)
 			{
 				return this.GetHashCode(a) == this.GetHashCode(b);
 			}
 
-			// Token: 0x060007B9 RID: 1977 RVA: 0x0002C5F4 File Offset: 0x0002A7F4
+			// Token: 0x060007B4 RID: 1972 RVA: 0x0002C7DC File Offset: 0x0002A9DC
 			public int GetHashCode(OwaServerVersion owaServerVersion)
 			{
 				if (owaServerVersion == null)

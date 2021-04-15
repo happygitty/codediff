@@ -223,7 +223,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 			if ((!Utilities.IsPartnerHostedOnly && !CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).NoCrossForestServerLocate.Enabled) || string.IsNullOrEmpty(resourceForest) || string.Equals(HttpProxyGlobals.LocalMachineForest.Member, resourceForest, StringComparison.OrdinalIgnoreCase))
 			{
-				ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\MailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 475);
+				ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\MailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 475);
 				Site site = null;
 				if (!currentServiceTopology.TryGetSite(server.Fqdn, out site))
 				{

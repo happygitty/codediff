@@ -18,7 +18,7 @@ namespace Microsoft.Exchange.HttpProxy
 	public class ProxyApplication : HttpApplication
 	{
 		// Token: 0x17000141 RID: 321
-		// (get) Token: 0x060005E2 RID: 1506 RVA: 0x00020DE4 File Offset: 0x0001EFE4
+		// (get) Token: 0x060005E5 RID: 1509 RVA: 0x00020F88 File Offset: 0x0001F188
 		public static string ApplicationVersion
 		{
 			get
@@ -27,7 +27,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005E3 RID: 1507 RVA: 0x00020DEB File Offset: 0x0001EFEB
+		// Token: 0x060005E6 RID: 1510 RVA: 0x00020F8F File Offset: 0x0001F18F
 		private static void ConfigureServicePointManager()
 		{
 			ServicePointManager.DefaultConnectionLimit = HttpProxySettings.ServicePointConnectionLimit.Value;
@@ -35,7 +35,7 @@ namespace Microsoft.Exchange.HttpProxy
 			ProxyApplication.ConfigureSecureProtocols();
 		}
 
-		// Token: 0x060005E4 RID: 1508 RVA: 0x00020E08 File Offset: 0x0001F008
+		// Token: 0x060005E7 RID: 1511 RVA: 0x00020FAC File Offset: 0x0001F1AC
 		private static void ConfigureSecureProtocols()
 		{
 			if (CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).EnableTls11.Enabled)
@@ -48,7 +48,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005E5 RID: 1509 RVA: 0x00020E68 File Offset: 0x0001F068
+		// Token: 0x060005E8 RID: 1512 RVA: 0x0002100C File Offset: 0x0001F20C
 		private void Application_Start(object sender, EventArgs e)
 		{
 			Diagnostics.InitializeWatsonReporting();
@@ -75,7 +75,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060005E6 RID: 1510 RVA: 0x00020EF4 File Offset: 0x0001F0F4
+		// Token: 0x060005E9 RID: 1513 RVA: 0x00021098 File Offset: 0x0001F298
 		private void Application_End(object sender, EventArgs e)
 		{
 			Diagnostics.Logger.LogEvent(FrontEndHttpProxyEventLogConstants.Tuple_ApplicationShutdown, null, new object[]
@@ -86,13 +86,13 @@ namespace Microsoft.Exchange.HttpProxy
 			ProcessAccessManager.UnregisterComponent(SettingOverrideSync.Instance);
 		}
 
-		// Token: 0x060005E7 RID: 1511 RVA: 0x00020F29 File Offset: 0x0001F129
+		// Token: 0x060005EA RID: 1514 RVA: 0x000210CD File Offset: 0x0001F2CD
 		private void Application_Error(object sender, EventArgs e)
 		{
 			Diagnostics.ReportException(((HttpApplication)sender).Server.GetLastError(), FrontEndHttpProxyEventLogConstants.Tuple_InternalServerError, null, "Exception from Application_Error event: {0}");
 		}
 
-		// Token: 0x0400039B RID: 923
+		// Token: 0x0400039F RID: 927
 		internal static readonly RemoteCertificateValidationCallback RemoteCertificateValidationCallback = (object obj, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors) => HttpProxyRegistry.OwaAllowInternalUntrustedCerts.Member || errors == SslPolicyErrors.None;
 	}
 }

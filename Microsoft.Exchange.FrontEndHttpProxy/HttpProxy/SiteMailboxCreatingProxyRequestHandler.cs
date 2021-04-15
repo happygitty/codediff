@@ -13,7 +13,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000BA RID: 186
 	internal class SiteMailboxCreatingProxyRequestHandler : EcpProxyRequestHandler
 	{
-		// Token: 0x0600073A RID: 1850 RVA: 0x0002A65C File Offset: 0x0002885C
+		// Token: 0x0600073C RID: 1852 RVA: 0x0002A8E8 File Offset: 0x00028AE8
 		internal static bool IsSiteMailboxCreatingProxyRequest(HttpRequest request)
 		{
 			if (request != null)
@@ -38,7 +38,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x0600073B RID: 1851 RVA: 0x0002A6F4 File Offset: 0x000288F4
+		// Token: 0x0600073D RID: 1853 RVA: 0x0002A980 File Offset: 0x00028B80
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))

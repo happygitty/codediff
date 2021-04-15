@@ -10,21 +10,21 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200006A RID: 106
 	internal class RpcHttpOutDataResponseStreamProxy : StreamProxy
 	{
-		// Token: 0x0600037A RID: 890 RVA: 0x00013CD8 File Offset: 0x00011ED8
+		// Token: 0x0600037A RID: 890 RVA: 0x00013D14 File Offset: 0x00011F14
 		internal RpcHttpOutDataResponseStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer, IRequestContext requestContext) : base(streamProxyType, source, target, buffer, requestContext)
 		{
 			this.connectTimeout = RpcHttpOutDataResponseStreamProxy.RpcHttpOutConnectingTimeoutInSeconds.Value;
 			this.isConnecting = (this.connectTimeout != TimeSpan.Zero);
 		}
 
-		// Token: 0x0600037B RID: 891 RVA: 0x00013D18 File Offset: 0x00011F18
+		// Token: 0x0600037B RID: 891 RVA: 0x00013D54 File Offset: 0x00011F54
 		internal RpcHttpOutDataResponseStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, BufferPoolCollection.BufferSize maxBufferSize, BufferPoolCollection.BufferSize minBufferSize, IRequestContext requestContext) : base(streamProxyType, source, target, maxBufferSize, minBufferSize, requestContext)
 		{
 			this.connectTimeout = RpcHttpOutDataResponseStreamProxy.RpcHttpOutConnectingTimeoutInSeconds.Value;
 			this.isConnecting = (this.connectTimeout != TimeSpan.Zero);
 		}
 
-		// Token: 0x0600037C RID: 892 RVA: 0x00013D68 File Offset: 0x00011F68
+		// Token: 0x0600037C RID: 892 RVA: 0x00013DA4 File Offset: 0x00011FA4
 		protected override byte[] GetUpdatedBufferToSend(ArraySegment<byte> buffer)
 		{
 			if (!this.isConnecting)
@@ -47,16 +47,16 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x04000245 RID: 581
+		// Token: 0x04000246 RID: 582
 		private static readonly TimeSpanAppSettingsEntry RpcHttpOutConnectingTimeoutInSeconds = new TimeSpanAppSettingsEntry(HttpProxySettings.Prefix("RpcHttpOutConnectingTimeoutInSeconds"), 0, TimeSpan.FromSeconds(0.0), ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000246 RID: 582
+		// Token: 0x04000247 RID: 583
 		private readonly TimeSpan connectTimeout = TimeSpan.Zero;
 
-		// Token: 0x04000247 RID: 583
+		// Token: 0x04000248 RID: 584
 		private bool isConnecting;
 
-		// Token: 0x04000248 RID: 584
+		// Token: 0x04000249 RID: 585
 		private ExDateTime? endTime;
 	}
 }

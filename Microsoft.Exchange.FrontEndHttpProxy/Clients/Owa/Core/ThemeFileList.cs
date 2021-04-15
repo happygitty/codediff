@@ -121,28 +121,28 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 		// Token: 0x040000AD RID: 173
 		private static bool isInitialized = ThemeFileList.Initialize();
 
-		// Token: 0x020000D4 RID: 212
+		// Token: 0x020000D3 RID: 211
 		private struct ThemeFile
 		{
-			// Token: 0x060007BB RID: 1979 RVA: 0x0002C647 File Offset: 0x0002A847
+			// Token: 0x060007B6 RID: 1974 RVA: 0x0002C82F File Offset: 0x0002AA2F
 			public ThemeFile(ThemeFileId id, string name)
 			{
 				this = new ThemeFileList.ThemeFile(id, name, true);
 			}
 
-			// Token: 0x060007BC RID: 1980 RVA: 0x0002C652 File Offset: 0x0002A852
+			// Token: 0x060007B7 RID: 1975 RVA: 0x0002C83A File Offset: 0x0002AA3A
 			public ThemeFile(ThemeFileId id, string name, bool useCssSprites)
 			{
 				this = new ThemeFileList.ThemeFile(id, name, useCssSprites, false);
 			}
 
-			// Token: 0x060007BD RID: 1981 RVA: 0x0002C65E File Offset: 0x0002A85E
+			// Token: 0x060007B8 RID: 1976 RVA: 0x0002C846 File Offset: 0x0002AA46
 			public ThemeFile(ThemeFileId id, string name, bool useCssSprites, bool isResource)
 			{
 				this = new ThemeFileList.ThemeFile(id, name, useCssSprites, isResource, false);
 			}
 
-			// Token: 0x060007BE RID: 1982 RVA: 0x0002C66C File Offset: 0x0002A86C
+			// Token: 0x060007B9 RID: 1977 RVA: 0x0002C854 File Offset: 0x0002AA54
 			public ThemeFile(ThemeFileId id, string name, bool useCssSprites, bool isResource, bool phaseII)
 			{
 				this.Id = id;
@@ -153,25 +153,25 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				this.PhaseII = phaseII;
 			}
 
-			// Token: 0x04000458 RID: 1112
+			// Token: 0x0400045C RID: 1116
 			public ThemeFileId Id;
 
-			// Token: 0x04000459 RID: 1113
+			// Token: 0x0400045D RID: 1117
 			public string Name;
 
-			// Token: 0x0400045A RID: 1114
+			// Token: 0x0400045E RID: 1118
 			public string ClassName;
 
-			// Token: 0x0400045B RID: 1115
+			// Token: 0x0400045F RID: 1119
 			public bool UseCssSprites;
 
-			// Token: 0x0400045C RID: 1116
+			// Token: 0x04000460 RID: 1120
 			public bool IsResource;
 
-			// Token: 0x0400045D RID: 1117
+			// Token: 0x04000461 RID: 1121
 			public bool PhaseII;
 
-			// Token: 0x0400045E RID: 1118
+			// Token: 0x04000462 RID: 1122
 			private const string SpritesClassPrefix = "sprites-";
 		}
 	}

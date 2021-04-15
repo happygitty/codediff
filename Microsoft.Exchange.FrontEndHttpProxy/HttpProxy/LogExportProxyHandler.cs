@@ -13,7 +13,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000AB RID: 171
 	internal class LogExportProxyHandler : ProxyRequestHandler
 	{
-		// Token: 0x060005DD RID: 1501 RVA: 0x00020B18 File Offset: 0x0001ED18
+		// Token: 0x060005E0 RID: 1504 RVA: 0x00020CBC File Offset: 0x0001EEBC
 		internal static bool TryGetPartitionId(string[] requestSegments, out string partitionId)
 		{
 			partitionId = string.Empty;
@@ -38,7 +38,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060005DE RID: 1502 RVA: 0x00020BB4 File Offset: 0x0001EDB4
+		// Token: 0x060005E1 RID: 1505 RVA: 0x00020D58 File Offset: 0x0001EF58
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text;
@@ -79,7 +79,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new ServerInfoAnchorMailbox(new BackEndServer(deterministicBackEndServerFromSameSite.Fqdn, Server.E15MinVersion), this);
 		}
 
-		// Token: 0x060005DF RID: 1503 RVA: 0x00020D48 File Offset: 0x0001EF48
+		// Token: 0x060005E2 RID: 1506 RVA: 0x00020EEC File Offset: 0x0001F0EC
 		private bool TryGetMiniServerFromPartitionId(string partitionId, out MiniServer server)
 		{
 			bool result;

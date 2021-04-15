@@ -19,11 +19,11 @@ namespace Microsoft.Exchange.HttpProxy
 	public class ProxyModule : IHttpModule
 	{
 		// Token: 0x17000142 RID: 322
-		// (get) Token: 0x060005E9 RID: 1513 RVA: 0x00020F62 File Offset: 0x0001F162
-		// (set) Token: 0x060005EA RID: 1514 RVA: 0x00020F6A File Offset: 0x0001F16A
+		// (get) Token: 0x060005EC RID: 1516 RVA: 0x00021106 File Offset: 0x0001F306
+		// (set) Token: 0x060005ED RID: 1517 RVA: 0x0002110E File Offset: 0x0001F30E
 		internal PfdTracer PfdTracer { get; set; }
 
-		// Token: 0x060005EB RID: 1515 RVA: 0x00020F73 File Offset: 0x0001F173
+		// Token: 0x060005EE RID: 1518 RVA: 0x00021117 File Offset: 0x0001F317
 		public void Init(HttpApplication application)
 		{
 			Diagnostics.SendWatsonReportOnUnhandledException(delegate()
@@ -56,12 +56,12 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060005EC RID: 1516 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x060005EF RID: 1519 RVA: 0x00008C7B File Offset: 0x00006E7B
 		public void Dispose()
 		{
 		}
 
-		// Token: 0x060005ED RID: 1517 RVA: 0x00020F98 File Offset: 0x0001F198
+		// Token: 0x060005F0 RID: 1520 RVA: 0x0002113C File Offset: 0x0001F33C
 		protected virtual void OnBeginRequestInternal(HttpApplication httpApplication)
 		{
 			if (HttpProxyGlobals.OnlyProxySecureConnections && !httpApplication.Request.IsSecureConnection)
@@ -70,7 +70,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005EE RID: 1518 RVA: 0x00020FB4 File Offset: 0x0001F1B4
+		// Token: 0x060005F1 RID: 1521 RVA: 0x00021158 File Offset: 0x0001F358
 		protected virtual void OnAuthenticateInternal(HttpApplication httpApplication)
 		{
 			HttpContext context = httpApplication.Context;
@@ -85,7 +85,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005EF RID: 1519 RVA: 0x00020FF0 File Offset: 0x0001F1F0
+		// Token: 0x060005F2 RID: 1522 RVA: 0x00021194 File Offset: 0x0001F394
 		protected virtual void OnPostAuthorizeInternal(HttpApplication httpApplication)
 		{
 			HttpContext context = httpApplication.Context;
@@ -126,12 +126,12 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005F0 RID: 1520 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x060005F3 RID: 1523 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void OnEndRequestInternal(HttpApplication httpApplication)
 		{
 		}
 
-		// Token: 0x060005F1 RID: 1521 RVA: 0x000210E0 File Offset: 0x0001F2E0
+		// Token: 0x060005F4 RID: 1524 RVA: 0x00021284 File Offset: 0x0001F484
 		protected virtual bool AllowAnonymousRequest(HttpRequest httpRequest)
 		{
 			if (HttpProxyGlobals.ProtocolType == 14)
@@ -152,10 +152,10 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				uriBuilder.Path = UrlUtilities.GetPathWithExplictLogonHint(httpRequest.Url, text);
 			}
-			return WopiRequestPathHandler.IsWopiRequest(httpRequest.HttpMethod, httpRequest.Url, AuthCommon.IsFrontEnd) || AnonymousCalendarProxyRequestHandler.IsAnonymousCalendarRequest(httpRequest) || OwaExtensibilityProxyRequestHandler.IsOwaExtensibilityRequest(httpRequest) || UrlUtilities.IsOwaDownloadRequest(uriBuilder.Uri) || OwaCobrandingRedirProxyRequestHandler.IsCobrandingRedirRequest(httpRequest) || E4eProxyRequestHandler.IsE4ePayloadRequest(httpRequest) || httpRequest.IsWsSecurityRequest() || PsgwProxyRequestHandler.IsPsgwRequest(httpRequest);
+			return WopiRequestPathHandler.IsWopiRequest(httpRequest.HttpMethod, httpRequest.Url, AuthCommon.IsFrontEnd) || AnonymousCalendarProxyRequestHandler.IsAnonymousCalendarRequest(httpRequest) || OwaExtensibilityProxyRequestHandler.IsOwaExtensibilityRequest(httpRequest) || UrlUtilities.IsOwaDownloadRequest(uriBuilder.Uri) || OwaCobrandingRedirProxyRequestHandler.IsCobrandingRedirRequest(httpRequest) || E4eProxyRequestHandler.IsE4ePayloadRequest(httpRequest) || httpRequest.IsWsSecurityRequest();
 		}
 
-		// Token: 0x060005F2 RID: 1522 RVA: 0x00021190 File Offset: 0x0001F390
+		// Token: 0x060005F5 RID: 1525 RVA: 0x0002132C File Offset: 0x0001F52C
 		private static void FinalizeRequestLatencies(HttpContext httpContext, RequestDetailsLogger requestDetailsLogger, IActivityScope activityScope, LatencyTracker tracker, int traceContext)
 		{
 			if (tracker == null)
@@ -215,7 +215,7 @@ namespace Microsoft.Exchange.HttpProxy
 			RequestDetailsLoggerBase<RequestDetailsLogger>.SafeSetLogger(requestDetailsLogger, 16, num);
 		}
 
-		// Token: 0x060005F3 RID: 1523 RVA: 0x00021354 File Offset: 0x0001F554
+		// Token: 0x060005F6 RID: 1526 RVA: 0x000214F0 File Offset: 0x0001F6F0
 		private static void InspectNativeProxyFatalError(HttpResponse httpResponse, RequestDetailsLogger requestLogger)
 		{
 			if (!HttpProxySettings.DiagnosticsEnabled.Value)
@@ -230,7 +230,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005F4 RID: 1524 RVA: 0x000213C0 File Offset: 0x0001F5C0
+		// Token: 0x060005F7 RID: 1527 RVA: 0x0002155C File Offset: 0x0001F75C
 		private IHttpHandler SelectHandlerForAuthenticatedRequest(HttpContext httpContext)
 		{
 			IHttpHandler result;
@@ -411,7 +411,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060005F5 RID: 1525 RVA: 0x00021738 File Offset: 0x0001F938
+		// Token: 0x060005F8 RID: 1528 RVA: 0x000218D4 File Offset: 0x0001FAD4
 		private IHttpHandler SelectHandlerForUnauthenticatedRequest(HttpContext httpContext)
 		{
 			IHttpHandler result;
@@ -506,10 +506,6 @@ namespace Microsoft.Exchange.HttpProxy
 					{
 						httpHandler = new OwaResourceProxyRequestHandler();
 					}
-					else if (HttpProxyGlobals.ProtocolType == 19)
-					{
-						httpHandler = new PsgwProxyRequestHandler();
-					}
 					else if (HttpProxyGlobals.ProtocolType == 21)
 					{
 						httpHandler = new MailboxDeliveryProxyRequestHandler();
@@ -532,7 +528,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060005F6 RID: 1526 RVA: 0x00021A0C File Offset: 0x0001FC0C
+		// Token: 0x060005F9 RID: 1529 RVA: 0x00021B94 File Offset: 0x0001FD94
 		private void OnAuthenticateRequest(object sender, EventArgs e)
 		{
 			HttpApplication httpApplication = (HttpApplication)sender;
@@ -554,7 +550,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x060005F7 RID: 1527 RVA: 0x00021A78 File Offset: 0x0001FC78
+		// Token: 0x060005FA RID: 1530 RVA: 0x00021C00 File Offset: 0x0001FE00
 		private void OnBeginRequest(object sender, EventArgs e)
 		{
 			HttpApplication httpApplication = (HttpApplication)sender;
@@ -603,7 +599,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x060005F8 RID: 1528 RVA: 0x00021AE4 File Offset: 0x0001FCE4
+		// Token: 0x060005FB RID: 1531 RVA: 0x00021C6C File Offset: 0x0001FE6C
 		private void OnPostAuthorizeRequest(object sender, EventArgs e)
 		{
 			HttpApplication httpApplication = (HttpApplication)sender;
@@ -630,7 +626,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x060005F9 RID: 1529 RVA: 0x00021B50 File Offset: 0x0001FD50
+		// Token: 0x060005FC RID: 1532 RVA: 0x00021CD8 File Offset: 0x0001FED8
 		private void SetResponseHeaders(RequestDetailsLogger logger, HttpContext httpContext)
 		{
 			if (logger != null && !logger.IsDisposed && logger.ShouldSendDebugResponseHeaders())
@@ -643,7 +639,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005FA RID: 1530 RVA: 0x00021B74 File Offset: 0x0001FD74
+		// Token: 0x060005FD RID: 1533 RVA: 0x00021CFC File Offset: 0x0001FEFC
 		private void OnPreSendRequestHeaders(object sender, EventArgs e)
 		{
 			HttpApplication httpApplication = (HttpApplication)sender;
@@ -690,7 +686,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x060005FB RID: 1531 RVA: 0x00021BD8 File Offset: 0x0001FDD8
+		// Token: 0x060005FE RID: 1534 RVA: 0x00021D60 File Offset: 0x0001FF60
 		private void OnEndRequest(object sender, EventArgs e)
 		{
 			HttpApplication httpApplication = (HttpApplication)sender;

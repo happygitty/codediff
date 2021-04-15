@@ -7,14 +7,14 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200007A RID: 122
 	internal class HttpRangeSpecifier
 	{
-		// Token: 0x0600041E RID: 1054 RVA: 0x00017B3C File Offset: 0x00015D3C
+		// Token: 0x06000422 RID: 1058 RVA: 0x00017CFC File Offset: 0x00015EFC
 		public HttpRangeSpecifier()
 		{
 			this.RangeUnitSpecifier = "bytes";
 		}
 
 		// Token: 0x170000EB RID: 235
-		// (get) Token: 0x0600041F RID: 1055 RVA: 0x00017B5A File Offset: 0x00015D5A
+		// (get) Token: 0x06000423 RID: 1059 RVA: 0x00017D1A File Offset: 0x00015F1A
 		public Collection<HttpRange> RangeCollection
 		{
 			get
@@ -24,11 +24,11 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000EC RID: 236
-		// (get) Token: 0x06000420 RID: 1056 RVA: 0x00017B62 File Offset: 0x00015D62
-		// (set) Token: 0x06000421 RID: 1057 RVA: 0x00017B6A File Offset: 0x00015D6A
+		// (get) Token: 0x06000424 RID: 1060 RVA: 0x00017D22 File Offset: 0x00015F22
+		// (set) Token: 0x06000425 RID: 1061 RVA: 0x00017D2A File Offset: 0x00015F2A
 		public string RangeUnitSpecifier { get; set; }
 
-		// Token: 0x06000422 RID: 1058 RVA: 0x00017B74 File Offset: 0x00015D74
+		// Token: 0x06000426 RID: 1062 RVA: 0x00017D34 File Offset: 0x00015F34
 		public static HttpRangeSpecifier Parse(string value)
 		{
 			if (string.IsNullOrEmpty(value))
@@ -44,7 +44,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return httpRangeSpecifier;
 		}
 
-		// Token: 0x06000423 RID: 1059 RVA: 0x00017BB0 File Offset: 0x00015DB0
+		// Token: 0x06000427 RID: 1063 RVA: 0x00017D70 File Offset: 0x00015F70
 		private static bool TryParseInternal(string value, HttpRangeSpecifier specifier, out string parseFailureReason)
 		{
 			if (specifier == null)
@@ -169,7 +169,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000424 RID: 1060 RVA: 0x00017DE8 File Offset: 0x00015FE8
+		// Token: 0x06000428 RID: 1064 RVA: 0x00017FA8 File Offset: 0x000161A8
 		private static bool ProcessRangeEnd(HttpRangeSpecifier specifier, ref string parseFailureReason, HttpRangeSpecifier.StrSegment currentSegment, long rangeStart)
 		{
 			long rangeEnd = -1L;
@@ -186,7 +186,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000425 RID: 1061 RVA: 0x00017E5C File Offset: 0x0001605C
+		// Token: 0x06000429 RID: 1065 RVA: 0x0001801C File Offset: 0x0001621C
 		private static bool AddRange(HttpRangeSpecifier specifier, long rangeStart, long rangeEnd)
 		{
 			try
@@ -200,24 +200,24 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x040002F0 RID: 752
+		// Token: 0x040002F4 RID: 756
 		private readonly Collection<HttpRange> rangeCollection = new Collection<HttpRange>();
 
-		// Token: 0x02000117 RID: 279
+		// Token: 0x02000116 RID: 278
 		private enum ParseState
 		{
-			// Token: 0x040004FC RID: 1276
+			// Token: 0x04000500 RID: 1280
 			Start,
-			// Token: 0x040004FD RID: 1277
+			// Token: 0x04000501 RID: 1281
 			RangeStart,
-			// Token: 0x040004FE RID: 1278
+			// Token: 0x04000502 RID: 1282
 			RangeEnd
 		}
 
-		// Token: 0x02000118 RID: 280
+		// Token: 0x02000117 RID: 279
 		private class StrSegment
 		{
-			// Token: 0x06000852 RID: 2130 RVA: 0x0002D555 File Offset: 0x0002B755
+			// Token: 0x0600084D RID: 2125 RVA: 0x0002D73D File Offset: 0x0002B93D
 			public StrSegment(string source)
 			{
 				if (source == null)
@@ -228,23 +228,23 @@ namespace Microsoft.Exchange.HttpProxy
 				this.Reset();
 			}
 
-			// Token: 0x170001B3 RID: 435
-			// (get) Token: 0x06000853 RID: 2131 RVA: 0x0002D578 File Offset: 0x0002B778
-			// (set) Token: 0x06000854 RID: 2132 RVA: 0x0002D580 File Offset: 0x0002B780
+			// Token: 0x170001B1 RID: 433
+			// (get) Token: 0x0600084E RID: 2126 RVA: 0x0002D760 File Offset: 0x0002B960
+			// (set) Token: 0x0600084F RID: 2127 RVA: 0x0002D768 File Offset: 0x0002B968
 			public int Start { get; set; }
 
-			// Token: 0x170001B4 RID: 436
-			// (get) Token: 0x06000855 RID: 2133 RVA: 0x0002D589 File Offset: 0x0002B789
-			// (set) Token: 0x06000856 RID: 2134 RVA: 0x0002D591 File Offset: 0x0002B791
+			// Token: 0x170001B2 RID: 434
+			// (get) Token: 0x06000850 RID: 2128 RVA: 0x0002D771 File Offset: 0x0002B971
+			// (set) Token: 0x06000851 RID: 2129 RVA: 0x0002D779 File Offset: 0x0002B979
 			public int Length { get; set; }
 
-			// Token: 0x06000857 RID: 2135 RVA: 0x0002D59A File Offset: 0x0002B79A
+			// Token: 0x06000852 RID: 2130 RVA: 0x0002D782 File Offset: 0x0002B982
 			public void SetLengthFromTerminatingIndex(int terminatingIndex)
 			{
 				this.Length = terminatingIndex - this.Start;
 			}
 
-			// Token: 0x06000858 RID: 2136 RVA: 0x0002D5AC File Offset: 0x0002B7AC
+			// Token: 0x06000853 RID: 2131 RVA: 0x0002D794 File Offset: 0x0002B994
 			public void Trim()
 			{
 				if (this.Start + this.Length > this.source.Length)
@@ -269,20 +269,20 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x06000859 RID: 2137 RVA: 0x0002D66E File Offset: 0x0002B86E
+			// Token: 0x06000854 RID: 2132 RVA: 0x0002D856 File Offset: 0x0002BA56
 			public void Reset()
 			{
 				this.Start = -1;
 				this.Length = 0;
 			}
 
-			// Token: 0x0600085A RID: 2138 RVA: 0x0002D67E File Offset: 0x0002B87E
+			// Token: 0x06000855 RID: 2133 RVA: 0x0002D866 File Offset: 0x0002BA66
 			public override string ToString()
 			{
 				return this.source.Substring(this.Start, this.Length);
 			}
 
-			// Token: 0x040004FF RID: 1279
+			// Token: 0x04000503 RID: 1283
 			private readonly string source;
 		}
 	}

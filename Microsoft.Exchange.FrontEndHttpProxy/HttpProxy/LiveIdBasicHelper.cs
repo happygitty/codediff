@@ -11,7 +11,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200007E RID: 126
 	internal static class LiveIdBasicHelper
 	{
-		// Token: 0x06000432 RID: 1074 RVA: 0x000181A8 File Offset: 0x000163A8
+		// Token: 0x06000436 RID: 1078 RVA: 0x00018368 File Offset: 0x00016568
 		public static IIdentity GetCallerIdentity(IRequestContext requestContext)
 		{
 			ADRawEntry callerAdEntry = LiveIdBasicHelper.GetCallerAdEntry(requestContext);
@@ -20,7 +20,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new GenericSidIdentity(securityIdentifier.ToString(), "LiveIdBasic", securityIdentifier, organizationId.PartitionId.ToString());
 		}
 
-		// Token: 0x06000433 RID: 1075 RVA: 0x000181F8 File Offset: 0x000163F8
+		// Token: 0x06000437 RID: 1079 RVA: 0x000183B8 File Offset: 0x000165B8
 		private static ADRawEntry GetCallerAdEntry(IRequestContext requestContext)
 		{
 			if (!requestContext.HttpContext.Items.Contains(Constants.CallerADRawEntryKeyName))
@@ -40,7 +40,7 @@ namespace Microsoft.Exchange.HttpProxy
 						ExTraceGlobals.VerboseTracer.TraceDebug<string, string>(0L, "[Extensions::GetFullCallerIdentity] Calling AD to convert PUID {0} for LiveIdMemberName {1} to SID to construct GenericSidIdentity.", accessor.Puid, accessor.LiveIdMemberName);
 					}
 					ITenantRecipientSession session = DirectoryHelper.GetTenantRecipientSessionFromSmtpOrLiveId(accessor.LiveIdMemberName, requestContext.Logger, latencyTracker, false);
-					value = DirectoryHelper.InvokeAccountForest<ADRawEntry>(latencyTracker, () => session.FindUniqueEntryByNetID(accessor.Puid, null, UserBasedAnchorMailbox.ADRawEntryPropertySet, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Misc\\LiveIdBasicHelper.cs", 92, "GetCallerAdEntry"), requestContext.Logger, session);
+					value = DirectoryHelper.InvokeAccountForest<ADRawEntry>(latencyTracker, () => session.FindUniqueEntryByNetID(accessor.Puid, null, UserBasedAnchorMailbox.ADRawEntryPropertySet, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Misc\\LiveIdBasicHelper.cs", 92, "GetCallerAdEntry"), requestContext.Logger, session);
 				}
 				requestContext.HttpContext.Items[Constants.CallerADRawEntryKeyName] = value;
 			}

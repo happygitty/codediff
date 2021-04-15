@@ -9,7 +9,7 @@ namespace Microsoft.Exchange.HttpProxy
 	public class Logon : OwaPage
 	{
 		// Token: 0x170000BF RID: 191
-		// (get) Token: 0x06000358 RID: 856 RVA: 0x000132A0 File Offset: 0x000114A0
+		// (get) Token: 0x06000358 RID: 856 RVA: 0x000132DC File Offset: 0x000114DC
 		protected static string UserNameLabel
 		{
 			get
@@ -30,7 +30,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C0 RID: 192
-		// (get) Token: 0x06000359 RID: 857 RVA: 0x00013300 File Offset: 0x00011500
+		// (get) Token: 0x06000359 RID: 857 RVA: 0x0001333C File Offset: 0x0001153C
 		protected static string UserNamePlaceholder
 		{
 			get
@@ -51,7 +51,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C1 RID: 193
-		// (get) Token: 0x0600035A RID: 858 RVA: 0x0001335F File Offset: 0x0001155F
+		// (get) Token: 0x0600035A RID: 858 RVA: 0x0001339B File Offset: 0x0001159B
 		protected bool ReplaceCurrent
 		{
 			get
@@ -61,7 +61,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C2 RID: 194
-		// (get) Token: 0x0600035B RID: 859 RVA: 0x0001338D File Offset: 0x0001158D
+		// (get) Token: 0x0600035B RID: 859 RVA: 0x000133C9 File Offset: 0x000115C9
 		protected bool ShowOwaLightOption
 		{
 			get
@@ -71,7 +71,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C3 RID: 195
-		// (get) Token: 0x0600035C RID: 860 RVA: 0x000133A8 File Offset: 0x000115A8
+		// (get) Token: 0x0600035C RID: 860 RVA: 0x000133E4 File Offset: 0x000115E4
 		protected bool ShowPublicPrivateSelection
 		{
 			get
@@ -91,7 +91,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C5 RID: 197
-		// (get) Token: 0x0600035E RID: 862 RVA: 0x000133B4 File Offset: 0x000115B4
+		// (get) Token: 0x0600035E RID: 862 RVA: 0x000133F0 File Offset: 0x000115F0
 		protected string LogoffUrl
 		{
 			get
@@ -101,7 +101,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C6 RID: 198
-		// (get) Token: 0x0600035F RID: 863 RVA: 0x000133F0 File Offset: 0x000115F0
+		// (get) Token: 0x0600035F RID: 863 RVA: 0x0001342C File Offset: 0x0001162C
 		protected Logon.LogonReason Reason
 		{
 			get
@@ -132,7 +132,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C7 RID: 199
-		// (get) Token: 0x06000360 RID: 864 RVA: 0x00013458 File Offset: 0x00011658
+		// (get) Token: 0x06000360 RID: 864 RVA: 0x00013494 File Offset: 0x00011694
 		protected string Destination
 		{
 			get
@@ -147,7 +147,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C8 RID: 200
-		// (get) Token: 0x06000361 RID: 865 RVA: 0x0001349C File Offset: 0x0001169C
+		// (get) Token: 0x06000361 RID: 865 RVA: 0x000134D8 File Offset: 0x000116D8
 		protected string CloseWindowUrl
 		{
 			get
@@ -167,7 +167,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000C9 RID: 201
-		// (get) Token: 0x06000362 RID: 866 RVA: 0x000134E7 File Offset: 0x000116E7
+		// (get) Token: 0x06000362 RID: 866 RVA: 0x00013523 File Offset: 0x00011723
 		protected string PageTitle
 		{
 			get
@@ -177,7 +177,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000CA RID: 202
-		// (get) Token: 0x06000363 RID: 867 RVA: 0x00013502 File Offset: 0x00011702
+		// (get) Token: 0x06000363 RID: 867 RVA: 0x0001353E File Offset: 0x0001173E
 		protected string SignInHeader
 		{
 			get
@@ -187,7 +187,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000CB RID: 203
-		// (get) Token: 0x06000364 RID: 868 RVA: 0x0001351D File Offset: 0x0001171D
+		// (get) Token: 0x06000364 RID: 868 RVA: 0x00013559 File Offset: 0x00011759
 		protected bool IsEcpDestination
 		{
 			get
@@ -197,7 +197,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000CC RID: 204
-		// (get) Token: 0x06000365 RID: 869 RVA: 0x0001352A File Offset: 0x0001172A
+		// (get) Token: 0x06000365 RID: 869 RVA: 0x00013566 File Offset: 0x00011766
 		protected string LoadFailedMessageValue
 		{
 			get
@@ -207,7 +207,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000CD RID: 205
-		// (get) Token: 0x06000366 RID: 870 RVA: 0x00013531 File Offset: 0x00011731
+		// (get) Token: 0x06000366 RID: 870 RVA: 0x0001356D File Offset: 0x0001176D
 		private string BaseUrl
 		{
 			get
@@ -217,7 +217,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000CE RID: 206
-		// (get) Token: 0x06000367 RID: 871 RVA: 0x0001356D File Offset: 0x0001176D
+		// (get) Token: 0x06000367 RID: 871 RVA: 0x000135A9 File Offset: 0x000117A9
 		private string Default14Url
 		{
 			get
@@ -226,7 +226,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000368 RID: 872 RVA: 0x000135A9 File Offset: 0x000117A9
+		// Token: 0x06000368 RID: 872 RVA: 0x000135E5 File Offset: 0x000117E5
 		protected void RenderLogonHref()
 		{
 			base.Response.Write("logon.aspx?replaceCurrent=1");
@@ -237,40 +237,40 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000369 RID: 873 RVA: 0x000135E9 File Offset: 0x000117E9
+		// Token: 0x06000369 RID: 873 RVA: 0x00013625 File Offset: 0x00011825
 		protected override void OnPreRender(EventArgs e)
 		{
 			base.Response.Headers.Set("X-Frame-Options", "SAMEORIGIN");
 			base.OnPreRender(e);
 		}
 
-		// Token: 0x04000228 RID: 552
+		// Token: 0x04000229 RID: 553
 		private const string Option = "<option value=\"{0}\"{1}>{2}</option>";
 
-		// Token: 0x04000229 RID: 553
+		// Token: 0x0400022A RID: 554
 		private const string DestinationParameter = "url";
 
-		// Token: 0x0400022A RID: 554
+		// Token: 0x0400022B RID: 555
 		private const string FlagsParameter = "flags";
 
-		// Token: 0x0400022B RID: 555
+		// Token: 0x0400022C RID: 556
 		private const string LiveIdAuthenticationModuleSaveUrlOnLogoffParameter = "&exsvurl=1";
 
-		// Token: 0x0400022C RID: 556
+		// Token: 0x0400022D RID: 557
 		private const string EcpCloseWindowUrl = "/closewindow.aspx";
 
-		// Token: 0x02000102 RID: 258
+		// Token: 0x02000101 RID: 257
 		protected enum LogonReason
 		{
-			// Token: 0x040004C6 RID: 1222
-			None,
-			// Token: 0x040004C7 RID: 1223
-			Logoff,
-			// Token: 0x040004C8 RID: 1224
-			InvalidCredentials,
-			// Token: 0x040004C9 RID: 1225
-			Timeout,
 			// Token: 0x040004CA RID: 1226
+			None,
+			// Token: 0x040004CB RID: 1227
+			Logoff,
+			// Token: 0x040004CC RID: 1228
+			InvalidCredentials,
+			// Token: 0x040004CD RID: 1229
+			Timeout,
+			// Token: 0x040004CE RID: 1230
 			ChangePasswordLogoff
 		}
 	}

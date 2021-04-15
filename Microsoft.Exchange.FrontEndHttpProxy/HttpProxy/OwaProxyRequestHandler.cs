@@ -26,7 +26,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class OwaProxyRequestHandler : OwaEcpProxyRequestHandler<OwaService>
 	{
 		// Token: 0x1700013C RID: 316
-		// (get) Token: 0x060005BF RID: 1471 RVA: 0x0001FC2D File Offset: 0x0001DE2D
+		// (get) Token: 0x060005C2 RID: 1474 RVA: 0x0001FDD1 File Offset: 0x0001DFD1
 		protected override string ProxyLogonUri
 		{
 			get
@@ -36,7 +36,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700013D RID: 317
-		// (get) Token: 0x060005C0 RID: 1472 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x060005C3 RID: 1475 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -46,7 +46,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700013E RID: 318
-		// (get) Token: 0x060005C1 RID: 1473 RVA: 0x00003193 File Offset: 0x00001393
+		// (get) Token: 0x060005C4 RID: 1476 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool WillAddProtocolSpecificCookiesToClientResponse
 		{
 			get
@@ -56,7 +56,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700013F RID: 319
-		// (get) Token: 0x060005C2 RID: 1474 RVA: 0x00003193 File Offset: 0x00001393
+		// (get) Token: 0x060005C5 RID: 1477 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool ShouldForceUnbufferedClientResponseOutput
 		{
 			get
@@ -65,7 +65,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005C3 RID: 1475 RVA: 0x0001FC34 File Offset: 0x0001DE34
+		// Token: 0x060005C6 RID: 1478 RVA: 0x0001FDD8 File Offset: 0x0001DFD8
 		internal static void AddProxyUriHeader(HttpRequest request, WebHeaderCollection headers)
 		{
 			headers["X-OWA-ProxyUri"] = new UriBuilder
@@ -77,14 +77,14 @@ namespace Microsoft.Exchange.HttpProxy
 			}.Uri.ToString();
 		}
 
-		// Token: 0x060005C4 RID: 1476 RVA: 0x0001FC9C File Offset: 0x0001DE9C
+		// Token: 0x060005C7 RID: 1479 RVA: 0x0001FE40 File Offset: 0x0001E040
 		internal static bool IsRoutingErrorFromOWA(ProxyRequestHandler requestHandler, HttpWebResponse response)
 		{
 			string text;
 			return requestHandler.TryGetSpecificHeaderFromResponse(response, "OwaProxyRequestHandler::IsRoutingErrorFromOWA", "X-RetriableError", "1", out text) || requestHandler.TryGetSpecificHeaderFromResponse(response, "OwaProxyRequestHandler::IsRoutingErrorFromOWA", "X-OWA-Error", Constants.IllegalCrossServerConnectionExceptionType, out text) || requestHandler.TryGetSpecificHeaderFromResponse(response, "OwaProxyRequestHandler::IsRoutingErrorFromOWA", "X-OWA-Error", UrlUtilities.RetriableErrorHeaderValue, out text) || requestHandler.TryGetSpecificHeaderFromResponse(response, "OwaProxyRequestHandler::IsRoutingErrorFromOWA", "X-OWA-Error", "Microsoft.Exchange.Data.Storage.DatabaseNotFoundException", out text);
 		}
 
-		// Token: 0x060005C5 RID: 1477 RVA: 0x0001FD1C File Offset: 0x0001DF1C
+		// Token: 0x060005C8 RID: 1480 RVA: 0x0001FEC0 File Offset: 0x0001E0C0
 		protected override void SetProtocolSpecificServerRequestParameters(HttpWebRequest serverRequest)
 		{
 			base.SetProtocolSpecificServerRequestParameters(serverRequest);
@@ -103,7 +103,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005C6 RID: 1478 RVA: 0x0001FDB4 File Offset: 0x0001DFB4
+		// Token: 0x060005C9 RID: 1481 RVA: 0x0001FF58 File Offset: 0x0001E158
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			IIdentity identity = base.HttpContext.User.Identity;
@@ -146,13 +146,13 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x060005C7 RID: 1479 RVA: 0x0001FF88 File Offset: 0x0001E188
+		// Token: 0x060005CA RID: 1482 RVA: 0x0002012C File Offset: 0x0001E32C
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !string.Equals(headerName, "X-OWA-ProxyUri", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-OWA-ProxyVersion", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-OWA-ProxySid", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-LogonType", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-OWA-ProxyWebPart", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "RPSPUID", StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
 		}
 
-		// Token: 0x060005C8 RID: 1480 RVA: 0x0001FFF2 File Offset: 0x0001E1F2
+		// Token: 0x060005CB RID: 1483 RVA: 0x00020196 File Offset: 0x0001E396
 		protected override void CopySupplementalCookiesToClientResponse()
 		{
 			if (HttpProxySettings.DFPOWAVdirProxyEnabled.Value)
@@ -162,7 +162,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.CopySupplementalCookiesToClientResponse();
 		}
 
-		// Token: 0x060005C9 RID: 1481 RVA: 0x0002000C File Offset: 0x0001E20C
+		// Token: 0x060005CC RID: 1484 RVA: 0x000201B0 File Offset: 0x0001E3B0
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			Uri targetBackEndServerUrl = base.GetTargetBackEndServerUrl();
@@ -194,7 +194,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return UrlUtilities.FixIntegratedAuthUrlForBackEnd(targetBackEndServerUrl);
 		}
 
-		// Token: 0x060005CA RID: 1482 RVA: 0x000200D0 File Offset: 0x0001E2D0
+		// Token: 0x060005CD RID: 1485 RVA: 0x00020274 File Offset: 0x0001E474
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (base.AuthBehavior.IsFullyAuthenticated())
@@ -278,7 +278,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x060005CB RID: 1483 RVA: 0x000202C4 File Offset: 0x0001E4C4
+		// Token: 0x060005CE RID: 1486 RVA: 0x00020468 File Offset: 0x0001E668
 		protected ADObjectId ResolveMailboxDatabase(ADRawEntry activeDirectoryRawEntry)
 		{
 			if (activeDirectoryRawEntry == null)
@@ -321,14 +321,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x060005CC RID: 1484 RVA: 0x00020420 File Offset: 0x0001E620
+		// Token: 0x060005CF RID: 1487 RVA: 0x000205C4 File Offset: 0x0001E7C4
 		protected override void ResetForRetryOnError()
 		{
 			this.originalAnchorMailboxFromExplicitLogon = null;
 			base.ResetForRetryOnError();
 		}
 
-		// Token: 0x060005CD RID: 1485 RVA: 0x00020430 File Offset: 0x0001E630
+		// Token: 0x060005D0 RID: 1488 RVA: 0x000205D4 File Offset: 0x0001E7D4
 		protected override void UpdateOrInvalidateAnchorMailboxCache(Guid mdbGuid, string resourceForest)
 		{
 			if (this.originalAnchorMailboxFromExplicitLogon != null && this.originalAnchorMailboxFromExplicitLogon != base.AnchoredRoutingTarget.AnchorMailbox && !string.IsNullOrEmpty(resourceForest))
@@ -347,7 +347,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.UpdateOrInvalidateAnchorMailboxCache(mdbGuid, resourceForest);
 		}
 
-		// Token: 0x060005CE RID: 1486 RVA: 0x000204DC File Offset: 0x0001E6DC
+		// Token: 0x060005D1 RID: 1489 RVA: 0x00020680 File Offset: 0x0001E880
 		protected override void HandleLogoffRequest()
 		{
 			if (base.ClientRequest != null && base.ClientResponse != null && base.ClientRequest.Url.AbsolutePath.EndsWith("/logoff.owa", StringComparison.OrdinalIgnoreCase))
@@ -360,7 +360,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005CF RID: 1487 RVA: 0x00020554 File Offset: 0x0001E754
+		// Token: 0x060005D2 RID: 1490 RVA: 0x000206F8 File Offset: 0x0001E8F8
 		protected override BackEndServer GetE12TargetServer(BackEndServer mailboxServer)
 		{
 			if (!Utilities.IsPartnerHostedOnly && !CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).NoCrossForestServerLocate.Enabled)
@@ -374,13 +374,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.GetE12TargetServer(mailboxServer);
 		}
 
-		// Token: 0x060005D0 RID: 1488 RVA: 0x00019686 File Offset: 0x00017886
+		// Token: 0x060005D3 RID: 1491 RVA: 0x00019846 File Offset: 0x00017A46
 		protected override bool IsRoutingError(HttpWebResponse response)
 		{
 			return OwaProxyRequestHandler.IsRoutingErrorFromOWA(this, response) || base.IsRoutingError(response);
 		}
 
-		// Token: 0x060005D1 RID: 1489 RVA: 0x000205A8 File Offset: 0x0001E7A8
+		// Token: 0x060005D4 RID: 1492 RVA: 0x0002074C File Offset: 0x0001E94C
 		private static bool IsOwa15Url(HttpRequest request)
 		{
 			if (string.IsNullOrEmpty(request.Url.Query))
@@ -397,7 +397,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060005D2 RID: 1490 RVA: 0x000205F8 File Offset: 0x0001E7F8
+		// Token: 0x060005D5 RID: 1493 RVA: 0x0002079C File Offset: 0x0001E99C
 		private string GetCrossPremiseRedirectUrl(string domainName, string externalDirectoryOrgId, string externalEmailAddress)
 		{
 			NameValueCollection nameValueCollection = new NameValueCollection();
@@ -412,7 +412,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return AspNetHelper.GetCafeErrorPageRedirectUrl(base.HttpContext, nameValueCollection);
 		}
 
-		// Token: 0x060005D3 RID: 1491 RVA: 0x0002067C File Offset: 0x0001E87C
+		// Token: 0x060005D6 RID: 1494 RVA: 0x00020820 File Offset: 0x0001EA20
 		private void SetDFPOwaVdirCookie()
 		{
 			if (HttpProxySettings.DFPOWAVdirProxyEnabled.Value)
@@ -438,7 +438,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005D4 RID: 1492 RVA: 0x0002073C File Offset: 0x0001E93C
+		// Token: 0x060005D7 RID: 1495 RVA: 0x000208E0 File Offset: 0x0001EAE0
 		private AnchorMailbox LegacyResolveAnchorMailbox()
 		{
 			AnchorMailbox anchorMailbox = null;
@@ -501,13 +501,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x0400038A RID: 906
+		// Token: 0x0400038E RID: 910
 		public const string XOwaErrorHeaderName = "X-OWA-Error";
 
-		// Token: 0x0400038B RID: 907
+		// Token: 0x0400038F RID: 911
 		public const string DatabaseNotFoundException = "Microsoft.Exchange.Data.Storage.DatabaseNotFoundException";
 
-		// Token: 0x0400038C RID: 908
+		// Token: 0x04000390 RID: 912
 		public static readonly string[] DFPOWAValidVdirValues = new string[]
 		{
 			"OWA",
@@ -519,40 +519,40 @@ namespace Microsoft.Exchange.HttpProxy
 			"DFPOWA5"
 		};
 
-		// Token: 0x0400038D RID: 909
+		// Token: 0x04000391 RID: 913
 		private const string OwaLogonTypeHeader = "X-LogonType";
 
-		// Token: 0x0400038E RID: 910
+		// Token: 0x04000392 RID: 914
 		private const string OwaLogonTypeHeaderPublicValue = "Public";
 
-		// Token: 0x0400038F RID: 911
+		// Token: 0x04000393 RID: 915
 		private const string OwaProxyLogonUri = "proxyLogon.owa";
 
-		// Token: 0x04000390 RID: 912
+		// Token: 0x04000394 RID: 916
 		private const string AttachmentUrl = "/owa/attachment.ashx";
 
-		// Token: 0x04000391 RID: 913
+		// Token: 0x04000395 RID: 917
 		private const string IntegratedAttachmentUrl = "/owa/integrated/attachment.ashx";
 
-		// Token: 0x04000392 RID: 914
+		// Token: 0x04000396 RID: 918
 		private const string DownlevelUserAgent = "Mozilla/5.0 (Windows NT; owaauth)";
 
-		// Token: 0x04000393 RID: 915
+		// Token: 0x04000397 RID: 919
 		private const string LiveIdPuid = "RPSPUID";
 
-		// Token: 0x04000394 RID: 916
+		// Token: 0x04000398 RID: 920
 		private const string OrgIdPuid = "RPSOrgIdPUID";
 
-		// Token: 0x04000395 RID: 917
+		// Token: 0x04000399 RID: 921
 		private const string LogonLatencyName = "logonLatency";
 
-		// Token: 0x04000396 RID: 918
+		// Token: 0x0400039A RID: 922
 		private static readonly string ManualRedirection = 1.ToString();
 
-		// Token: 0x04000397 RID: 919
+		// Token: 0x0400039B RID: 923
 		private static readonly string SilentRedirection = 0.ToString();
 
-		// Token: 0x04000398 RID: 920
+		// Token: 0x0400039C RID: 924
 		private static readonly string[] Owa15ParameterNames = new string[]
 		{
 			Constants.DFPOWAVdirParam,
@@ -569,7 +569,7 @@ namespace Microsoft.Exchange.HttpProxy
 			"wa"
 		};
 
-		// Token: 0x04000399 RID: 921
+		// Token: 0x0400039D RID: 925
 		private AnchorMailbox originalAnchorMailboxFromExplicitLogon;
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net;
 using System.Web;
 using Microsoft.Exchange.Data.ApplicationLogic.Cafe;
 using Microsoft.Exchange.Data.Storage;
@@ -13,19 +12,19 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000095 RID: 149
 	internal class EwsProxyRequestHandler : EwsAutodiscoverProxyRequestHandler
 	{
-		// Token: 0x06000526 RID: 1318 RVA: 0x0001CA8A File Offset: 0x0001AC8A
+		// Token: 0x0600052A RID: 1322 RVA: 0x0001CC4A File Offset: 0x0001AE4A
 		internal EwsProxyRequestHandler() : this(false)
 		{
 		}
 
-		// Token: 0x06000527 RID: 1319 RVA: 0x0001CA93 File Offset: 0x0001AC93
+		// Token: 0x0600052B RID: 1323 RVA: 0x0001CC53 File Offset: 0x0001AE53
 		internal EwsProxyRequestHandler(bool isOwa14EwsProxyRequest)
 		{
 			this.isOwa14EwsProxyRequest = isOwa14EwsProxyRequest;
 		}
 
 		// Token: 0x17000124 RID: 292
-		// (get) Token: 0x06000528 RID: 1320 RVA: 0x0001CAA2 File Offset: 0x0001ACA2
+		// (get) Token: 0x0600052C RID: 1324 RVA: 0x0001CC62 File Offset: 0x0001AE62
 		protected override bool WillContentBeChangedDuringStreaming
 		{
 			get
@@ -35,7 +34,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000125 RID: 293
-		// (get) Token: 0x06000529 RID: 1321 RVA: 0x0001981A File Offset: 0x00017A1A
+		// (get) Token: 0x0600052D RID: 1325 RVA: 0x000199DA File Offset: 0x00017BDA
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -44,28 +43,18 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600052A RID: 1322 RVA: 0x0001CAD6 File Offset: 0x0001ACD6
+		// Token: 0x0600052E RID: 1326 RVA: 0x0001CC96 File Offset: 0x0001AE96
 		protected override bool ShouldBlockCurrentOAuthRequest()
 		{
 			return !this.proxyForSameOrgExchangeOAuthCallToLowerVersion && base.ShouldBlockCurrentOAuthRequest();
 		}
 
-		// Token: 0x0600052B RID: 1323 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x0600052F RID: 1327 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected override void DoProtocolSpecificBeginRequestLogging()
 		{
 		}
 
-		// Token: 0x0600052C RID: 1324 RVA: 0x0001CAE8 File Offset: 0x0001ACE8
-		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
-		{
-			base.AddProtocolSpecificHeadersToServerRequest(headers);
-			if (this.proxyForSameOrgExchangeOAuthCallToLowerVersion)
-			{
-				headers.Remove("X-CommonAccessToken");
-			}
-		}
-
-		// Token: 0x0600052D RID: 1325 RVA: 0x0001CB04 File Offset: 0x0001AD04
+		// Token: 0x06000530 RID: 1328 RVA: 0x0001CCA8 File Offset: 0x0001AEA8
 		protected override StreamProxy BuildRequestStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer)
 		{
 			if (base.IsWsSecurityRequest || !base.ClientRequest.CanHaveBody())
@@ -91,7 +80,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new EwsRequestStreamProxy(streamProxyType, source, target, buffer, this, base.ProxyToDownLevel || this.proxyForSameOrgExchangeOAuthCallToLowerVersion, this.proxyForSameOrgExchangeOAuthCallToLowerVersionWithNoSidUser, requestVersionToAdd);
 		}
 
-		// Token: 0x0600052E RID: 1326 RVA: 0x0001CBB8 File Offset: 0x0001ADB8
+		// Token: 0x06000531 RID: 1329 RVA: 0x0001CD5C File Offset: 0x0001AF5C
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			Uri targetBackEndServerUrl = base.GetTargetBackEndServerUrl();
@@ -126,7 +115,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return targetBackEndServerUrl;
 		}
 
-		// Token: 0x0600052F RID: 1327 RVA: 0x0001CCEC File Offset: 0x0001AEEC
+		// Token: 0x06000532 RID: 1330 RVA: 0x0001CE90 File Offset: 0x0001B090
 		protected override void OnInitializingHandler()
 		{
 			base.OnInitializingHandler();
@@ -136,7 +125,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000530 RID: 1328 RVA: 0x0001CD1C File Offset: 0x0001AF1C
+		// Token: 0x06000533 RID: 1331 RVA: 0x0001CEC0 File Offset: 0x0001B0C0
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text;
@@ -161,7 +150,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x06000531 RID: 1329 RVA: 0x0001CDE4 File Offset: 0x0001AFE4
+		// Token: 0x06000534 RID: 1332 RVA: 0x0001CF88 File Offset: 0x0001B188
 		protected override void CopySupplementalCookiesToClientResponse()
 		{
 			if (base.AnchoredRoutingTarget != null && !string.IsNullOrEmpty(base.ServerResponse.Headers["X-FromBackend-ServerAffinity"]) && base.ClientRequest.Cookies[Constants.BackEndOverrideCookieName] == null)
@@ -174,7 +163,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.CopySupplementalCookiesToClientResponse();
 		}
 
-		// Token: 0x06000532 RID: 1330 RVA: 0x0001CE78 File Offset: 0x0001B078
+		// Token: 0x06000535 RID: 1333 RVA: 0x0001D01C File Offset: 0x0001B21C
 		protected override void ClearBackEndOverrideCookie()
 		{
 			HttpCookie httpCookie = base.ClientRequest.Cookies[Constants.BackEndOverrideCookieName];
@@ -187,31 +176,31 @@ namespace Microsoft.Exchange.HttpProxy
 			base.ClearBackEndOverrideCookie();
 		}
 
-		// Token: 0x0400035C RID: 860
+		// Token: 0x04000360 RID: 864
 		private const string Owa14EwsProxyRequestVersionHeader = "rv";
 
-		// Token: 0x0400035D RID: 861
+		// Token: 0x04000361 RID: 865
 		private const string Owa14EwsProxyE12SP1Version = "12.1";
 
-		// Token: 0x0400035E RID: 862
+		// Token: 0x04000362 RID: 866
 		private const string Exchange2007SP1Version = "Exchange2007_SP1";
 
-		// Token: 0x0400035F RID: 863
+		// Token: 0x04000363 RID: 867
 		private const string Exchange2010SP1Version = "Exchange2010_SP1";
 
-		// Token: 0x04000360 RID: 864
+		// Token: 0x04000364 RID: 868
 		private const string Nego2PathPrefix = "ews/Nego2";
 
-		// Token: 0x04000361 RID: 865
+		// Token: 0x04000365 RID: 869
 		private const string EwsPath = "/ews/exchange.asmx";
 
-		// Token: 0x04000362 RID: 866
+		// Token: 0x04000366 RID: 870
 		private readonly bool isOwa14EwsProxyRequest;
 
-		// Token: 0x04000363 RID: 867
+		// Token: 0x04000367 RID: 871
 		private bool proxyForSameOrgExchangeOAuthCallToLowerVersion;
 
-		// Token: 0x04000364 RID: 868
+		// Token: 0x04000368 RID: 872
 		private bool proxyForSameOrgExchangeOAuthCallToLowerVersionWithNoSidUser;
 	}
 }

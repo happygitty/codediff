@@ -20,26 +20,26 @@ namespace Microsoft.Exchange.HttpProxy
 	internal abstract class BEServerCookieProxyRequestHandler<ServiceType> : ProxyRequestHandler where ServiceType : HttpService
 	{
 		// Token: 0x17000112 RID: 274
-		// (get) Token: 0x060004AA RID: 1194 RVA: 0x00019F2F File Offset: 0x0001812F
-		// (set) Token: 0x060004AB RID: 1195 RVA: 0x00019F37 File Offset: 0x00018137
+		// (get) Token: 0x060004AE RID: 1198 RVA: 0x0001A0EF File Offset: 0x000182EF
+		// (set) Token: 0x060004AF RID: 1199 RVA: 0x0001A0F7 File Offset: 0x000182F7
 		internal string Domain { get; set; }
 
 		// Token: 0x17000113 RID: 275
-		// (get) Token: 0x060004AC RID: 1196 RVA: 0x00019F40 File Offset: 0x00018140
-		// (set) Token: 0x060004AD RID: 1197 RVA: 0x00019F48 File Offset: 0x00018148
+		// (get) Token: 0x060004B0 RID: 1200 RVA: 0x0001A100 File Offset: 0x00018300
+		// (set) Token: 0x060004B1 RID: 1201 RVA: 0x0001A108 File Offset: 0x00018308
 		protected bool IsWsSecurityRequest { get; set; }
 
 		// Token: 0x17000114 RID: 276
-		// (get) Token: 0x060004AE RID: 1198 RVA: 0x00019F51 File Offset: 0x00018151
-		// (set) Token: 0x060004AF RID: 1199 RVA: 0x00019F59 File Offset: 0x00018159
+		// (get) Token: 0x060004B2 RID: 1202 RVA: 0x0001A111 File Offset: 0x00018311
+		// (set) Token: 0x060004B3 RID: 1203 RVA: 0x0001A119 File Offset: 0x00018319
 		protected bool IsDomainBasedRequest { get; set; }
 
 		// Token: 0x17000115 RID: 277
-		// (get) Token: 0x060004B0 RID: 1200
+		// (get) Token: 0x060004B4 RID: 1204
 		protected abstract ClientAccessType ClientAccessType { get; }
 
 		// Token: 0x17000116 RID: 278
-		// (get) Token: 0x060004B1 RID: 1201 RVA: 0x00003193 File Offset: 0x00001393
+		// (get) Token: 0x060004B5 RID: 1205 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool WillAddProtocolSpecificCookiesToClientResponse
 		{
 			get
@@ -49,7 +49,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000117 RID: 279
-		// (get) Token: 0x060004B2 RID: 1202 RVA: 0x00019F62 File Offset: 0x00018162
+		// (get) Token: 0x060004B6 RID: 1206 RVA: 0x0001A122 File Offset: 0x00018322
 		protected virtual int MaxBackEndCookieEntries
 		{
 			get
@@ -59,7 +59,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000118 RID: 280
-		// (get) Token: 0x060004B3 RID: 1203 RVA: 0x00019F65 File Offset: 0x00018165
+		// (get) Token: 0x060004B7 RID: 1207 RVA: 0x0001A125 File Offset: 0x00018325
 		protected virtual string[] BackEndCookieNames
 		{
 			get
@@ -68,13 +68,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004B4 RID: 1204 RVA: 0x00019F6C File Offset: 0x0001816C
+		// Token: 0x060004B8 RID: 1208 RVA: 0x0001A12C File Offset: 0x0001832C
 		protected override bool ShouldBackendRequestBeAnonymous()
 		{
 			return this.IsWsSecurityRequest;
 		}
 
-		// Token: 0x060004B5 RID: 1205 RVA: 0x00019F74 File Offset: 0x00018174
+		// Token: 0x060004B9 RID: 1209 RVA: 0x0001A134 File Offset: 0x00018334
 		protected override BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer mailboxServer)
 		{
 			if (mailboxServer.Version < Server.E14MinVersion)
@@ -98,7 +98,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return downLevelClientAccessServer;
 		}
 
-		// Token: 0x060004B6 RID: 1206 RVA: 0x0001A02E File Offset: 0x0001822E
+		// Token: 0x060004BA RID: 1210 RVA: 0x0001A1EE File Offset: 0x000183EE
 		protected override void ResetForRetryOnError()
 		{
 			this.haveSetBackEndCookie = false;
@@ -106,44 +106,44 @@ namespace Microsoft.Exchange.HttpProxy
 			base.ResetForRetryOnError();
 		}
 
-		// Token: 0x060004B7 RID: 1207 RVA: 0x0001A044 File Offset: 0x00018244
+		// Token: 0x060004BB RID: 1211 RVA: 0x0001A204 File Offset: 0x00018404
 		protected virtual BackEndServer GetE12TargetServer(BackEndServer mailboxServer)
 		{
 			return MailboxServerCache.Instance.GetRandomE15Server(this);
 		}
 
-		// Token: 0x060004B8 RID: 1208 RVA: 0x0001A051 File Offset: 0x00018251
+		// Token: 0x060004BC RID: 1212 RVA: 0x0001A211 File Offset: 0x00018411
 		protected virtual Uri UpdateExternalRedirectUrl(Uri originalRedirectUrl)
 		{
 			return originalRedirectUrl;
 		}
 
-		// Token: 0x060004B9 RID: 1209 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x060004BD RID: 1213 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool ShouldExcludeFromExplicitLogonParsing()
 		{
 			return true;
 		}
 
-		// Token: 0x060004BA RID: 1210 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x060004BE RID: 1214 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool IsValidExplicitLogonNode(string node, bool nodeIsLast)
 		{
 			return true;
 		}
 
-		// Token: 0x060004BB RID: 1211 RVA: 0x0001A054 File Offset: 0x00018254
+		// Token: 0x060004BF RID: 1215 RVA: 0x0001A214 File Offset: 0x00018414
 		protected override bool ShouldCopyCookieToServerRequest(HttpCookie cookie)
 		{
 			return !FbaModule.IsCadataCookie(cookie.Name) && (base.AuthBehavior.AuthState == AuthState.BackEndFullAuth || (!string.Equals(cookie.Name, Constants.LiveIdRPSAuth, StringComparison.OrdinalIgnoreCase) && !string.Equals(cookie.Name, Constants.LiveIdRPSSecAuth, StringComparison.OrdinalIgnoreCase) && !string.Equals(cookie.Name, Constants.LiveIdRPSTAuth, StringComparison.OrdinalIgnoreCase))) && !this.BackEndCookieNames.Any((string cookieName) => string.Equals(cookie.Name, cookieName, StringComparison.OrdinalIgnoreCase)) && !string.Equals(cookie.Name, Constants.RPSBackEndServerCookieName, StringComparison.OrdinalIgnoreCase) && base.ShouldCopyCookieToServerRequest(cookie);
 		}
 
-		// Token: 0x060004BC RID: 1212 RVA: 0x0001A11B File Offset: 0x0001831B
+		// Token: 0x060004C0 RID: 1216 RVA: 0x0001A2DB File Offset: 0x000184DB
 		protected override void CopySupplementalCookiesToClientResponse()
 		{
 			this.SetBackEndCookie();
 			base.CopySupplementalCookiesToClientResponse();
 		}
 
-		// Token: 0x060004BD RID: 1213 RVA: 0x0001A12C File Offset: 0x0001832C
+		// Token: 0x060004C1 RID: 1217 RVA: 0x0001A2EC File Offset: 0x000184EC
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			AnchorMailbox anchorMailbox = null;
@@ -168,7 +168,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return AnchorMailboxFactory.CreateFromCaller(this);
 		}
 
-		// Token: 0x060004BE RID: 1214 RVA: 0x0001A170 File Offset: 0x00018370
+		// Token: 0x060004C2 RID: 1218 RVA: 0x0001A330 File Offset: 0x00018530
 		protected override AnchoredRoutingTarget TryFastTargetCalculationByAnchorMailbox(AnchorMailbox anchorMailbox)
 		{
 			if (this.backEndCookie == null || !base.IsRetryOnErrorEnabled)
@@ -197,7 +197,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.TryFastTargetCalculationByAnchorMailbox(anchorMailbox);
 		}
 
-		// Token: 0x060004BF RID: 1215 RVA: 0x0001A238 File Offset: 0x00018438
+		// Token: 0x060004C3 RID: 1219 RVA: 0x0001A3F8 File Offset: 0x000185F8
 		protected virtual string TryGetExplicitLogonNode(ExplicitLogonNode node)
 		{
 			if (this.ShouldExcludeFromExplicitLogonParsing())
@@ -218,7 +218,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x060004C0 RID: 1216 RVA: 0x0001A2AC File Offset: 0x000184AC
+		// Token: 0x060004C4 RID: 1220 RVA: 0x0001A46C File Offset: 0x0001866C
 		protected AnchorMailbox TryGetAnchorMailboxFromWsSecurityRequest()
 		{
 			if (!this.IsWsSecurityRequest)
@@ -254,7 +254,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return AnchorMailboxFactory.CreateFromSamlTokenAddress(address, this);
 		}
 
-		// Token: 0x060004C1 RID: 1217 RVA: 0x0001A398 File Offset: 0x00018598
+		// Token: 0x060004C5 RID: 1221 RVA: 0x0001A558 File Offset: 0x00018758
 		protected AnchorMailbox TryGetAnchorMailboxFromDomainBasedRequest()
 		{
 			if (!this.IsDomainBasedRequest)
@@ -274,7 +274,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new AnonymousAnchorMailbox(this);
 		}
 
-		// Token: 0x060004C2 RID: 1218 RVA: 0x0001A43C File Offset: 0x0001863C
+		// Token: 0x060004C6 RID: 1222 RVA: 0x0001A5FC File Offset: 0x000187FC
 		protected ServerVersionAnchorMailbox<ServiceType> GetServerVersionAnchorMailbox(string serverVersionString)
 		{
 			ServerVersion serverVersion = new ServerVersion(LocalServerCache.LocalServer.VersionNumber);
@@ -292,7 +292,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new ServerVersionAnchorMailbox<ServiceType>(serverVersion, this.ClientAccessType, false, this);
 		}
 
-		// Token: 0x060004C3 RID: 1219 RVA: 0x0001A4CC File Offset: 0x000186CC
+		// Token: 0x060004C7 RID: 1223 RVA: 0x0001A68C File Offset: 0x0001888C
 		protected override void UpdateOrInvalidateAnchorMailboxCache(Guid mdbGuid, string resourceForest)
 		{
 			this.removeBackEndCookieEntry = true;
@@ -300,7 +300,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.UpdateOrInvalidateAnchorMailboxCache(mdbGuid, resourceForest);
 		}
 
-		// Token: 0x060004C4 RID: 1220 RVA: 0x0001A4E4 File Offset: 0x000186E4
+		// Token: 0x060004C8 RID: 1224 RVA: 0x0001A6A4 File Offset: 0x000188A4
 		protected override void OnDatabaseNotFound(AnchorMailbox anchorMailbox)
 		{
 			foreach (string text in this.BackEndCookieNames)
@@ -311,12 +311,12 @@ namespace Microsoft.Exchange.HttpProxy
 			base.OnDatabaseNotFound(anchorMailbox);
 		}
 
-		// Token: 0x060004C5 RID: 1221 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x060004C9 RID: 1225 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void SetUseServerCookieFlag(AnchorMailbox anchorMailbox)
 		{
 		}
 
-		// Token: 0x060004C6 RID: 1222 RVA: 0x0001A540 File Offset: 0x00018740
+		// Token: 0x060004CA RID: 1226 RVA: 0x0001A700 File Offset: 0x00018900
 		private void FetchBackEndServerCookie()
 		{
 			foreach (string text in this.BackEndCookieNames)
@@ -347,7 +347,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004C7 RID: 1223 RVA: 0x0001A630 File Offset: 0x00018830
+		// Token: 0x060004CB RID: 1227 RVA: 0x0001A7F0 File Offset: 0x000189F0
 		private void SanitizeCookie(HttpCookie backEndCookie)
 		{
 			if (backEndCookie == null)
@@ -402,7 +402,7 @@ namespace Microsoft.Exchange.HttpProxy
 			backEndCookie.Expires = exDateTime.UniversalTime;
 		}
 
-		// Token: 0x060004C8 RID: 1224 RVA: 0x0001A7D4 File Offset: 0x000189D4
+		// Token: 0x060004CC RID: 1228 RVA: 0x0001A994 File Offset: 0x00018B94
 		private void SetBackEndCookie()
 		{
 			if (this.haveSetBackEndCookie)
@@ -446,7 +446,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004C9 RID: 1225 RVA: 0x0001A944 File Offset: 0x00018B44
+		// Token: 0x060004CD RID: 1229 RVA: 0x0001AB04 File Offset: 0x00018D04
 		private string GetCookiePath()
 		{
 			if (base.ClientRequest.ApplicationPath.Length < base.ClientRequest.Url.AbsolutePath.Length)
@@ -456,13 +456,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ClientRequest.Url.AbsolutePath;
 		}
 
-		// Token: 0x060004CA RID: 1226 RVA: 0x0001A9B0 File Offset: 0x00018BB0
+		// Token: 0x060004CE RID: 1230 RVA: 0x0001AB70 File Offset: 0x00018D70
 		private bool ShouldProcessBackEndCookie(string backEndCookieName)
 		{
 			return this.BackEndCookieNames.Length <= 1 || (((HttpProxySettings.SupportBackEndCookie.Value & ProxyRequestHandler.SupportBackEndCookie.V1) != (ProxyRequestHandler.SupportBackEndCookie)0 || !string.Equals(backEndCookieName, "X-BackEndCookie", StringComparison.OrdinalIgnoreCase)) && ((HttpProxySettings.SupportBackEndCookie.Value & ProxyRequestHandler.SupportBackEndCookie.V2) != (ProxyRequestHandler.SupportBackEndCookie)0 || !string.Equals(backEndCookieName, "X-BackEndCookie2", StringComparison.OrdinalIgnoreCase)));
 		}
 
-		// Token: 0x060004CB RID: 1227 RVA: 0x0001AA07 File Offset: 0x00018C07
+		// Token: 0x060004CF RID: 1231 RVA: 0x0001ABC7 File Offset: 0x00018DC7
 		private bool ShouldBackEndCookieHaveResourceForest(string backEndCookieName)
 		{
 			if ((HttpProxySettings.SupportBackEndCookie.Value & ProxyRequestHandler.SupportBackEndCookie.V2) != (ProxyRequestHandler.SupportBackEndCookie)0)
@@ -479,23 +479,23 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x04000336 RID: 822
+		// Token: 0x0400033A RID: 826
 		private const string BackEndCookie2Name = "X-BackEndCookie2";
 
-		// Token: 0x04000337 RID: 823
+		// Token: 0x0400033B RID: 827
 		private static readonly string[] ClientSupportedBackEndCookieNames = new string[]
 		{
 			"X-BackEndCookie2",
 			"X-BackEndCookie"
 		};
 
-		// Token: 0x04000338 RID: 824
+		// Token: 0x0400033C RID: 828
 		private bool haveSetBackEndCookie;
 
-		// Token: 0x04000339 RID: 825
+		// Token: 0x0400033D RID: 829
 		private bool removeBackEndCookieEntry;
 
-		// Token: 0x0400033A RID: 826
+		// Token: 0x0400033E RID: 830
 		private HttpCookie backEndCookie;
 	}
 }

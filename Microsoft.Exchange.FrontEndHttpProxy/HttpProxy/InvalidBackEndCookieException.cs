@@ -6,12 +6,12 @@ namespace Microsoft.Exchange.HttpProxy
 	[Serializable]
 	internal class InvalidBackEndCookieException : Exception
 	{
-		// Token: 0x060002DF RID: 735 RVA: 0x0000EAB1 File Offset: 0x0000CCB1
+		// Token: 0x060002DF RID: 735 RVA: 0x0000EAED File Offset: 0x0000CCED
 		public InvalidBackEndCookieException() : base(InvalidBackEndCookieException.ErrorMessage)
 		{
 		}
 
-		// Token: 0x040001BD RID: 445
+		// Token: 0x040001BE RID: 446
 		private static readonly string ErrorMessage = "Invalid back end cookie entry.";
 	}
 }

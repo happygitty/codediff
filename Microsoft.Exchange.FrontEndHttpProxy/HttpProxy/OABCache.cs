@@ -46,7 +46,7 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				return oabcacheEntry;
 			}
-			OfflineAddressBook offlineAddressBook = DirectoryHelper.GetConfigurationSessionFromExchangeGuidAndDomain(exchangeObjectId, userAcceptedDomain).FindByExchangeObjectId<OfflineAddressBook>(exchangeObjectId, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\OABCache.cs", 115, "GetOABFromCacheOrAD");
+			OfflineAddressBook offlineAddressBook = DirectoryHelper.GetConfigurationSessionFromExchangeGuidAndDomain(exchangeObjectId, userAcceptedDomain).FindByExchangeObjectId<OfflineAddressBook>(exchangeObjectId, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\OABCache.cs", 115, "GetOABFromCacheOrAD");
 			if (offlineAddressBook == null)
 			{
 				throw new ADNoSuchObjectException(new LocalizedString(exchangeObjectId.ToString()));
@@ -71,10 +71,10 @@ namespace Microsoft.Exchange.HttpProxy
 		// Token: 0x0400015A RID: 346
 		private ExactTimeoutCache<Guid, OABCache.OABCacheEntry> oabTimeoutCache = new ExactTimeoutCache<Guid, OABCache.OABCacheEntry>(null, null, null, OABCache.cacheBucketSize.Value, false);
 
-		// Token: 0x020000F5 RID: 245
+		// Token: 0x020000F4 RID: 244
 		internal sealed class OABCacheEntry
 		{
-			// Token: 0x06000809 RID: 2057 RVA: 0x0002CD64 File Offset: 0x0002AF64
+			// Token: 0x06000804 RID: 2052 RVA: 0x0002CF4C File Offset: 0x0002B14C
 			internal OABCacheEntry(OfflineAddressBook oab)
 			{
 				this.exchangeVersion = oab.ExchangeVersion;
@@ -84,8 +84,8 @@ namespace Microsoft.Exchange.HttpProxy
 				this.shadowMailboxDistributionEnabled = oab.ShadowMailboxDistributionEnabled;
 			}
 
-			// Token: 0x170001AE RID: 430
-			// (get) Token: 0x0600080A RID: 2058 RVA: 0x0002CDB3 File Offset: 0x0002AFB3
+			// Token: 0x170001AC RID: 428
+			// (get) Token: 0x06000805 RID: 2053 RVA: 0x0002CF9B File Offset: 0x0002B19B
 			internal ExchangeObjectVersion ExchangeVersion
 			{
 				get
@@ -94,8 +94,8 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x170001AF RID: 431
-			// (get) Token: 0x0600080B RID: 2059 RVA: 0x0002CDBB File Offset: 0x0002AFBB
+			// Token: 0x170001AD RID: 429
+			// (get) Token: 0x06000806 RID: 2054 RVA: 0x0002CFA3 File Offset: 0x0002B1A3
 			internal MultiValuedProperty<ADObjectId> VirtualDirectories
 			{
 				get
@@ -104,8 +104,8 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x170001B0 RID: 432
-			// (get) Token: 0x0600080C RID: 2060 RVA: 0x0002CDC3 File Offset: 0x0002AFC3
+			// Token: 0x170001AE RID: 430
+			// (get) Token: 0x06000807 RID: 2055 RVA: 0x0002CFAB File Offset: 0x0002B1AB
 			internal bool GlobalWebDistributionEnabled
 			{
 				get
@@ -114,8 +114,8 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x170001B1 RID: 433
-			// (get) Token: 0x0600080D RID: 2061 RVA: 0x0002CDCB File Offset: 0x0002AFCB
+			// Token: 0x170001AF RID: 431
+			// (get) Token: 0x06000808 RID: 2056 RVA: 0x0002CFB3 File Offset: 0x0002B1B3
 			internal bool ShadowMailboxDistributionEnabled
 			{
 				get
@@ -124,8 +124,8 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x170001B2 RID: 434
-			// (get) Token: 0x0600080E RID: 2062 RVA: 0x0002CDD3 File Offset: 0x0002AFD3
+			// Token: 0x170001B0 RID: 432
+			// (get) Token: 0x06000809 RID: 2057 RVA: 0x0002CFBB File Offset: 0x0002B1BB
 			internal ADObjectId GeneratingMailbox
 			{
 				get
@@ -134,19 +134,19 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x0400049B RID: 1179
+			// Token: 0x0400049F RID: 1183
 			private readonly ExchangeObjectVersion exchangeVersion;
 
-			// Token: 0x0400049C RID: 1180
+			// Token: 0x040004A0 RID: 1184
 			private readonly MultiValuedProperty<ADObjectId> virtualDirectories;
 
-			// Token: 0x0400049D RID: 1181
+			// Token: 0x040004A1 RID: 1185
 			private readonly bool globalWebDistributionEnabled;
 
-			// Token: 0x0400049E RID: 1182
+			// Token: 0x040004A2 RID: 1186
 			private readonly bool shadowMailboxDistributionEnabled;
 
-			// Token: 0x0400049F RID: 1183
+			// Token: 0x040004A3 RID: 1187
 			private readonly ADObjectId generatingMailbox;
 		}
 	}

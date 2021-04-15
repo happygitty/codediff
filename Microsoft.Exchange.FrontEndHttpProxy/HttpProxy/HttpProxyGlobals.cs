@@ -19,7 +19,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal static class HttpProxyGlobals
 	{
 		// Token: 0x17000082 RID: 130
-		// (get) Token: 0x0600026B RID: 619 RVA: 0x0000C5E5 File Offset: 0x0000A7E5
+		// (get) Token: 0x0600026B RID: 619 RVA: 0x0000C5FF File Offset: 0x0000A7FF
 		public static bool IsMultitenant
 		{
 			get
@@ -29,7 +29,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000083 RID: 131
-		// (get) Token: 0x0600026C RID: 620 RVA: 0x0000C5FD File Offset: 0x0000A7FD
+		// (get) Token: 0x0600026C RID: 620 RVA: 0x0000C617 File Offset: 0x0000A817
 		public static ProtocolType ProtocolType
 		{
 			get
@@ -39,7 +39,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000084 RID: 132
-		// (get) Token: 0x0600026D RID: 621 RVA: 0x0000C604 File Offset: 0x0000A804
+		// (get) Token: 0x0600026D RID: 621 RVA: 0x0000C61E File Offset: 0x0000A81E
 		public static bool OnlyProxySecureConnections
 		{
 			get
@@ -49,7 +49,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000085 RID: 133
-		// (get) Token: 0x0600026E RID: 622 RVA: 0x0000C60B File Offset: 0x0000A80B
+		// (get) Token: 0x0600026E RID: 622 RVA: 0x0000C625 File Offset: 0x0000A825
 		public static string ApplicationVersion
 		{
 			get
@@ -58,7 +58,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600026F RID: 623 RVA: 0x0000C614 File Offset: 0x0000A814
+		// Token: 0x0600026F RID: 623 RVA: 0x0000C62C File Offset: 0x0000A82C
 		private static string GetSlimApplicationVersion()
 		{
 			string result = string.Empty;
@@ -74,11 +74,11 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000270 RID: 624 RVA: 0x0000C680 File Offset: 0x0000A880
+		// Token: 0x06000270 RID: 624 RVA: 0x0000C698 File Offset: 0x0000A898
 		private static ExchangeVirtualDirectory LoadVirtualDirectoryFromAD()
 		{
-			ITopologyConfigurationSession topologyConfigurationSession = DirectorySessionFactory.Default.CreateTopologyConfigurationSession(true, 2, ADSessionSettings.FromRootOrgScopeSet(), 177, "LoadVirtualDirectoryFromAD", "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs");
-			Server server = topologyConfigurationSession.FindLocalServer("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 183, "LoadVirtualDirectoryFromAD");
+			ITopologyConfigurationSession topologyConfigurationSession = DirectorySessionFactory.Default.CreateTopologyConfigurationSession(true, 2, ADSessionSettings.FromRootOrgScopeSet(), 177, "LoadVirtualDirectoryFromAD", "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs");
+			Server server = topologyConfigurationSession.FindLocalServer("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 183, "LoadVirtualDirectoryFromAD");
 			if (server == null || server.Id == null)
 			{
 				if (ExTraceGlobals.BriefTracer.IsTraceEnabled(3))
@@ -99,61 +99,60 @@ namespace Microsoft.Exchange.HttpProxy
 			switch (HttpProxyGlobals.ProtocolType)
 			{
 			case 0:
-				array = topologyConfigurationSession.Find<ADMobileVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 246, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADMobileVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 246, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 1:
-				array = topologyConfigurationSession.Find<ADEcpVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 254, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADEcpVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 254, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 2:
-				array = topologyConfigurationSession.Find<ADWebServicesVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 262, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADWebServicesVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 262, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 3:
-				array = topologyConfigurationSession.Find<ADOabVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 286, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADOabVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 286, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 4:
 			case 5:
-				array = topologyConfigurationSession.Find<ADOwaVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 303, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADOwaVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 303, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 6:
 			case 7:
-			case 19:
-				array = topologyConfigurationSession.Find<ADPowerShellVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 321, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADPowerShellVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 320, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 8:
-				array = topologyConfigurationSession.Find<ADRpcHttpVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 329, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADRpcHttpVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 328, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 9:
-				array = topologyConfigurationSession.Find<ADAutodiscoverVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 230, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADAutodiscoverVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 230, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 11:
-				array = topologyConfigurationSession.Find<ADPswsVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 311, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADPswsVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 311, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 13:
-				array = topologyConfigurationSession.Find<ADPushNotificationsVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 337, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADPushNotificationsVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 336, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 14:
-				array = topologyConfigurationSession.Find<ADMapiVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 278, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADMapiVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 278, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 16:
-				array = topologyConfigurationSession.Find<ADOutlookServiceVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 294, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADOutlookServiceVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 294, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 17:
-				array = topologyConfigurationSession.Find<ADSnackyServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 353, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADSnackyServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 352, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 18:
-				array = topologyConfigurationSession.Find<ADMicroServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 361, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADMicroServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 360, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 20:
-				array = topologyConfigurationSession.Find<ADO365SuiteServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 345, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADO365SuiteServiceVirtualDirectory>(descendantId, 1, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 344, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 21:
-				array = topologyConfigurationSession.Find<ADMailboxDeliveryVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 270, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADMailboxDeliveryVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 270, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 22:
-				array = topologyConfigurationSession.Find<ADComplianceServiceVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 238, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADComplianceServiceVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 238, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			case 27:
-				array = topologyConfigurationSession.Find<ADRestVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 369, "LoadVirtualDirectoryFromAD");
+				array = topologyConfigurationSession.Find<ADRestVirtualDirectory>(descendantId, 2, comparisonFilter, null, 2, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Configuration\\HttpProxyGlobals.cs", 368, "LoadVirtualDirectoryFromAD");
 				goto IL_3AB;
 			}
 			array = null;
@@ -182,22 +181,22 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x04000179 RID: 377
+		// Token: 0x0400017A RID: 378
 		public static readonly LazyMember<ExchangeVirtualDirectory> VdirObject = new LazyMember<ExchangeVirtualDirectory>(() => HttpProxyGlobals.LoadVirtualDirectoryFromAD());
 
-		// Token: 0x0400017A RID: 378
+		// Token: 0x0400017B RID: 379
 		public static readonly LazyMember<string> LocalMachineFqdn = new LazyMember<string>(() => HttpProxyGlobals.LocalMachineFqdn.Member);
 
-		// Token: 0x0400017B RID: 379
+		// Token: 0x0400017C RID: 380
 		public static readonly LazyMember<string> LocalMachineForest = new LazyMember<string>(() => HttpProxyGlobals.LocalMachineForest.Member);
 
-		// Token: 0x0400017C RID: 380
+		// Token: 0x0400017D RID: 381
 		public static readonly LazyMember<string> LocalMachineRegion = new LazyMember<string>(() => HttpProxyGlobals.LocalMachineForest.Member.Substring(0, 3).ToUpper());
 
-		// Token: 0x0400017D RID: 381
+		// Token: 0x0400017E RID: 382
 		public static readonly LazyMember<Site> LocalSite = new LazyMember<Site>(() => new Site(new TopologySite(LocalSiteCache.LocalSite)));
 
-		// Token: 0x0400017E RID: 382
+		// Token: 0x0400017F RID: 383
 		public static readonly LazyMember<string> VirtualDirectoryName = new LazyMember<string>(delegate()
 		{
 			string text = HttpRuntime.AppDomainAppVirtualPath;
@@ -208,7 +207,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		});
 
-		// Token: 0x0400017F RID: 383
+		// Token: 0x04000180 RID: 384
 		private static readonly string ApplicationVersionInternal = HttpProxyGlobals.GetSlimApplicationVersion();
 	}
 }

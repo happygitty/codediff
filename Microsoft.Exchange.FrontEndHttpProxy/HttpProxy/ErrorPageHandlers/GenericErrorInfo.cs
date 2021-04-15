@@ -4,17 +4,17 @@ using System.Web.Security.AntiXss;
 
 namespace Microsoft.Exchange.HttpProxy.ErrorPageHandlers
 {
-	// Token: 0x020000C8 RID: 200
+	// Token: 0x020000C7 RID: 199
 	public sealed class GenericErrorInfo
 	{
-		// Token: 0x06000776 RID: 1910 RVA: 0x0002B6E8 File Offset: 0x000298E8
+		// Token: 0x06000771 RID: 1905 RVA: 0x0002B8D0 File Offset: 0x00029AD0
 		public GenericErrorInfo(HttpRequest request)
 		{
 			this.errorPageRequest = request;
 		}
 
-		// Token: 0x17000189 RID: 393
-		// (get) Token: 0x06000777 RID: 1911 RVA: 0x0002B6F7 File Offset: 0x000298F7
+		// Token: 0x17000187 RID: 391
+		// (get) Token: 0x06000772 RID: 1906 RVA: 0x0002B8DF File Offset: 0x00029ADF
 		public string HttpCode
 		{
 			get
@@ -23,8 +23,8 @@ namespace Microsoft.Exchange.HttpProxy.ErrorPageHandlers
 			}
 		}
 
-		// Token: 0x1700018A RID: 394
-		// (get) Token: 0x06000778 RID: 1912 RVA: 0x0002B70E File Offset: 0x0002990E
+		// Token: 0x17000188 RID: 392
+		// (get) Token: 0x06000773 RID: 1907 RVA: 0x0002B8F6 File Offset: 0x00029AF6
 		public string ReturnUri
 		{
 			get
@@ -33,22 +33,22 @@ namespace Microsoft.Exchange.HttpProxy.ErrorPageHandlers
 			}
 		}
 
-		// Token: 0x04000418 RID: 1048
+		// Token: 0x0400041C RID: 1052
 		public const string NotFoundHttpStatus = "404";
 
-		// Token: 0x04000419 RID: 1049
+		// Token: 0x0400041D RID: 1053
 		public const string ServiceUnavailableHttpStatus = "503";
 
-		// Token: 0x0400041A RID: 1050
+		// Token: 0x0400041E RID: 1054
 		public const string InternalServerErrorHttpStatus = "500";
 
-		// Token: 0x0400041B RID: 1051
+		// Token: 0x0400041F RID: 1055
 		public const string HttpStatusCodeQueryKey = "st";
 
-		// Token: 0x0400041C RID: 1052
+		// Token: 0x04000420 RID: 1056
 		private const string ReturnUriQueryParamKey = "ru";
 
-		// Token: 0x0400041D RID: 1053
+		// Token: 0x04000421 RID: 1057
 		private HttpRequest errorPageRequest;
 	}
 }

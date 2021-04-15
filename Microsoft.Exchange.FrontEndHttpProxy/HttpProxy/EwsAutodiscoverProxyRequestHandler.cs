@@ -10,8 +10,8 @@ namespace Microsoft.Exchange.HttpProxy
 	internal abstract class EwsAutodiscoverProxyRequestHandler : BEServerCookieProxyRequestHandler<WebServicesService>
 	{
 		// Token: 0x17000121 RID: 289
-		// (get) Token: 0x06000518 RID: 1304 RVA: 0x0001C7A9 File Offset: 0x0001A9A9
-		// (set) Token: 0x06000519 RID: 1305 RVA: 0x0001C7B1 File Offset: 0x0001A9B1
+		// (get) Token: 0x0600051C RID: 1308 RVA: 0x0001C969 File Offset: 0x0001AB69
+		// (set) Token: 0x0600051D RID: 1309 RVA: 0x0001C971 File Offset: 0x0001AB71
 		protected bool PreferAnchorMailboxHeader
 		{
 			get
@@ -25,8 +25,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000122 RID: 290
-		// (get) Token: 0x0600051A RID: 1306 RVA: 0x0001C7BA File Offset: 0x0001A9BA
-		// (set) Token: 0x0600051B RID: 1307 RVA: 0x0001C7C2 File Offset: 0x0001A9C2
+		// (get) Token: 0x0600051E RID: 1310 RVA: 0x0001C97A File Offset: 0x0001AB7A
+		// (set) Token: 0x0600051F RID: 1311 RVA: 0x0001C982 File Offset: 0x0001AB82
 		protected bool SkipTargetBackEndCalculation
 		{
 			get
@@ -39,7 +39,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600051C RID: 1308 RVA: 0x0001C7CC File Offset: 0x0001A9CC
+		// Token: 0x06000520 RID: 1312 RVA: 0x0001C98C File Offset: 0x0001AB8C
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (this.skipTargetBackEndCalculation)
@@ -87,13 +87,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x0600051D RID: 1309 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x06000521 RID: 1313 RVA: 0x00003165 File Offset: 0x00001365
 		protected override bool ShouldExcludeFromExplicitLogonParsing()
 		{
 			return false;
 		}
 
-		// Token: 0x0600051E RID: 1310 RVA: 0x0001C940 File Offset: 0x0001AB40
+		// Token: 0x06000522 RID: 1314 RVA: 0x0001CB00 File Offset: 0x0001AD00
 		protected override bool IsValidExplicitLogonNode(string node, bool nodeIsLast)
 		{
 			if (nodeIsLast)
@@ -107,7 +107,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0600051F RID: 1311 RVA: 0x0001C974 File Offset: 0x0001AB74
+		// Token: 0x06000523 RID: 1315 RVA: 0x0001CB34 File Offset: 0x0001AD34
 		protected override UriBuilder GetClientUrlForProxy()
 		{
 			string absoluteUri = base.ClientRequest.Url.AbsoluteUri;
@@ -119,16 +119,16 @@ namespace Microsoft.Exchange.HttpProxy
 			return new UriBuilder(uri);
 		}
 
-		// Token: 0x04000356 RID: 854
+		// Token: 0x0400035A RID: 858
 		private bool preferAnchorMailboxHeader;
 
-		// Token: 0x04000357 RID: 855
+		// Token: 0x0400035B RID: 859
 		private bool skipTargetBackEndCalculation;
 
-		// Token: 0x04000358 RID: 856
+		// Token: 0x0400035C RID: 860
 		private bool isExplicitLogonRequest;
 
-		// Token: 0x04000359 RID: 857
+		// Token: 0x0400035D RID: 861
 		private string explicitLogonAddress;
 	}
 }

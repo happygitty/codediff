@@ -14,7 +14,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000054 RID: 84
 	internal abstract class DatacenterRedirectStrategy
 	{
-		// Token: 0x060002B0 RID: 688 RVA: 0x0000D737 File Offset: 0x0000B937
+		// Token: 0x060002B0 RID: 688 RVA: 0x0000D773 File Offset: 0x0000B973
 		public DatacenterRedirectStrategy(IRequestContext requestContext)
 		{
 			if (requestContext == null)
@@ -25,12 +25,12 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000095 RID: 149
-		// (get) Token: 0x060002B1 RID: 689 RVA: 0x0000D754 File Offset: 0x0000B954
-		// (set) Token: 0x060002B2 RID: 690 RVA: 0x0000D75C File Offset: 0x0000B95C
+		// (get) Token: 0x060002B1 RID: 689 RVA: 0x0000D790 File Offset: 0x0000B990
+		// (set) Token: 0x060002B2 RID: 690 RVA: 0x0000D798 File Offset: 0x0000B998
 		public IRequestContext RequestContext { get; private set; }
 
 		// Token: 0x17000096 RID: 150
-		// (get) Token: 0x060002B3 RID: 691 RVA: 0x0000D765 File Offset: 0x0000B965
+		// (get) Token: 0x060002B3 RID: 691 RVA: 0x0000D7A1 File Offset: 0x0000B9A1
 		public int TraceContext
 		{
 			get
@@ -39,7 +39,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002B4 RID: 692 RVA: 0x0000D774 File Offset: 0x0000B974
+		// Token: 0x060002B4 RID: 692 RVA: 0x0000D7B0 File Offset: 0x0000B9B0
 		public static void CheckLiveIdBasicPartialAuthResult(HttpContext httpContext)
 		{
 			if (httpContext == null)
@@ -53,7 +53,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002B5 RID: 693 RVA: 0x0000D810 File Offset: 0x0000BA10
+		// Token: 0x060002B5 RID: 693 RVA: 0x0000D84C File Offset: 0x0000BA4C
 		public void RedirectMailbox(AnchorMailbox anchorMailbox)
 		{
 			if (anchorMailbox == null)
@@ -68,7 +68,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.RedirectAddress(userAddress);
 		}
 
-		// Token: 0x060002B6 RID: 694 RVA: 0x0000D84D File Offset: 0x0000BA4D
+		// Token: 0x060002B6 RID: 694 RVA: 0x0000D889 File Offset: 0x0000BA89
 		protected virtual Uri GetRedirectUrl(string redirectServer)
 		{
 			return new UriBuilder(this.RequestContext.HttpContext.Request.Url)
@@ -77,7 +77,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}.Uri;
 		}
 
-		// Token: 0x060002B7 RID: 695 RVA: 0x0000D878 File Offset: 0x0000BA78
+		// Token: 0x060002B7 RID: 695 RVA: 0x0000D8B4 File Offset: 0x0000BAB4
 		private void RedirectAddress(string userAddress)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -97,7 +97,7 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new HttpException(302, redirectUrl.AbsoluteUri);
 		}
 
-		// Token: 0x060002B8 RID: 696 RVA: 0x0000D928 File Offset: 0x0000BB28
+		// Token: 0x060002B8 RID: 696 RVA: 0x0000D964 File Offset: 0x0000BB64
 		private string InvokeMserv(string userAddress)
 		{
 			int currentSitePartnerId = HttpProxyGlobals.LocalSite.Member.PartnerId;
@@ -144,7 +144,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x060002B9 RID: 697 RVA: 0x0000DA80 File Offset: 0x0000BC80
+		// Token: 0x060002B9 RID: 697 RVA: 0x0000DABC File Offset: 0x0000BCBC
 		private string ResolveUserAddress(AnchorMailbox anchorMailbox)
 		{
 			SidAnchorMailbox sidAnchorMailbox = anchorMailbox as SidAnchorMailbox;
@@ -161,13 +161,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return string.Format("anyone@{0}", userBasedAnchorMailbox.GetDomainName());
 		}
 
-		// Token: 0x0400019F RID: 415
+		// Token: 0x040001A0 RID: 416
 		protected static readonly StringAppSettingsEntry PodRedirectTemplate = new StringAppSettingsEntry("PodRedirectTemplate", "pod{0}.outlook.com", ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040001A0 RID: 416
+		// Token: 0x040001A1 RID: 417
 		protected static readonly IntAppSettingsEntry PodSiteStartRange = new IntAppSettingsEntry("PodSiteStartRange", 5000, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040001A1 RID: 417
+		// Token: 0x040001A2 RID: 418
 		protected static readonly IntAppSettingsEntry PodSiteEndRange = new IntAppSettingsEntry("PodSiteEndRange", 5009, ExTraceGlobals.VerboseTracer);
 	}
 }

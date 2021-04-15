@@ -10,23 +10,23 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class OwaDownloadProxyRequestHandler : ProxyRequestHandler
 	{
 		// Token: 0x17000127 RID: 295
-		// (get) Token: 0x0600053D RID: 1341 RVA: 0x0001D136 File Offset: 0x0001B336
-		// (set) Token: 0x0600053E RID: 1342 RVA: 0x0001D13E File Offset: 0x0001B33E
+		// (get) Token: 0x06000540 RID: 1344 RVA: 0x0001D2DA File Offset: 0x0001B4DA
+		// (set) Token: 0x06000541 RID: 1345 RVA: 0x0001D2E2 File Offset: 0x0001B4E2
 		protected string ExplicitSignOnAddress { get; set; }
 
-		// Token: 0x0600053F RID: 1343 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x06000542 RID: 1346 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool ShouldBackendRequestBeAnonymous()
 		{
 			return true;
 		}
 
-		// Token: 0x06000540 RID: 1344 RVA: 0x0001D147 File Offset: 0x0001B347
+		// Token: 0x06000543 RID: 1347 RVA: 0x0001D2EB File Offset: 0x0001B4EB
 		protected override DatacenterRedirectStrategy CreateDatacenterRedirectStrategy()
 		{
 			return new OwaEcpRedirectStrategy(this);
 		}
 
-		// Token: 0x06000541 RID: 1345 RVA: 0x0001D150 File Offset: 0x0001B350
+		// Token: 0x06000544 RID: 1348 RVA: 0x0001D2F4 File Offset: 0x0001B4F4
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			this.ExplicitSignOnAddress = this.GetExplicitLogonAddress();
@@ -42,13 +42,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return new SmtpAnchorMailbox(this.ExplicitSignOnAddress, this);
 		}
 
-		// Token: 0x06000542 RID: 1346 RVA: 0x00019686 File Offset: 0x00017886
+		// Token: 0x06000545 RID: 1349 RVA: 0x00019846 File Offset: 0x00017A46
 		protected override bool IsRoutingError(HttpWebResponse response)
 		{
 			return OwaProxyRequestHandler.IsRoutingErrorFromOWA(this, response) || base.IsRoutingError(response);
 		}
 
-		// Token: 0x06000543 RID: 1347 RVA: 0x0001D1C8 File Offset: 0x0001B3C8
+		// Token: 0x06000546 RID: 1350 RVA: 0x0001D36C File Offset: 0x0001B56C
 		private string GetExplicitLogonAddress()
 		{
 			string text = null;

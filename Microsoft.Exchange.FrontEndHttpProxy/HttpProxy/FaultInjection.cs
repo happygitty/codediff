@@ -6,7 +6,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000078 RID: 120
 	internal class FaultInjection
 	{
-		// Token: 0x06000412 RID: 1042 RVA: 0x00017A09 File Offset: 0x00015C09
+		// Token: 0x06000416 RID: 1046 RVA: 0x00017BC9 File Offset: 0x00015DC9
 		public static void GenerateFault(FaultInjection.LIDs faultLid)
 		{
 			if (ExTraceGlobals.FaultInjectionTracer.IsTraceEnabled(9))
@@ -15,7 +15,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000413 RID: 1043 RVA: 0x00017A24 File Offset: 0x00015C24
+		// Token: 0x06000417 RID: 1047 RVA: 0x00017BE4 File Offset: 0x00015DE4
 		public static T TraceTest<T>(FaultInjection.LIDs faultLid)
 		{
 			T result = default(T);
@@ -26,18 +26,18 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x02000116 RID: 278
+		// Token: 0x02000115 RID: 277
 		internal enum LIDs : uint
 		{
-			// Token: 0x040004F6 RID: 1270
-			ShouldFailSmtpAnchorMailboxADLookup = 1378318050U,
-			// Token: 0x040004F7 RID: 1271
-			ProxyToLowerVersionEws = 2357603645U,
-			// Token: 0x040004F8 RID: 1272
-			ProxyToLowerVersionEwsOAuthIdentityActAsUserNullSid = 3431345469U,
-			// Token: 0x040004F9 RID: 1273
-			ExceptionDuringProxyDownLevelCheckNullSid_ChangeValue = 3548785981U,
 			// Token: 0x040004FA RID: 1274
+			ShouldFailSmtpAnchorMailboxADLookup = 1378318050U,
+			// Token: 0x040004FB RID: 1275
+			ProxyToLowerVersionEws = 2357603645U,
+			// Token: 0x040004FC RID: 1276
+			ProxyToLowerVersionEwsOAuthIdentityActAsUserNullSid = 3431345469U,
+			// Token: 0x040004FD RID: 1277
+			ExceptionDuringProxyDownLevelCheckNullSid_ChangeValue = 3548785981U,
+			// Token: 0x040004FE RID: 1278
 			AnchorMailboxDatabaseCacheEntry = 4134939965U
 		}
 	}

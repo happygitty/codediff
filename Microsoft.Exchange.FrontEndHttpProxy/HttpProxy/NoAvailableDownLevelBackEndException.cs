@@ -7,7 +7,7 @@ namespace Microsoft.Exchange.HttpProxy
 	[Serializable]
 	internal class NoAvailableDownLevelBackEndException : ServerNotFoundException
 	{
-		// Token: 0x060002E3 RID: 739 RVA: 0x0000EAE3 File Offset: 0x0000CCE3
+		// Token: 0x060002E3 RID: 739 RVA: 0x0000EB1F File Offset: 0x0000CD1F
 		public NoAvailableDownLevelBackEndException(string message) : base(message)
 		{
 		}

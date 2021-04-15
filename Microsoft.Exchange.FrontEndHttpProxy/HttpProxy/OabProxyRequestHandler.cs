@@ -20,7 +20,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal sealed class OabProxyRequestHandler : BEServerCookieProxyRequestHandler<OabService>
 	{
 		// Token: 0x17000131 RID: 305
-		// (get) Token: 0x0600057C RID: 1404 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x0600057F RID: 1407 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -29,7 +29,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600057D RID: 1405 RVA: 0x0001E8E8 File Offset: 0x0001CAE8
+		// Token: 0x06000580 RID: 1408 RVA: 0x0001EA8C File Offset: 0x0001CC8C
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			AnchorMailbox anchorMailbox = null;
@@ -96,7 +96,7 @@ namespace Microsoft.Exchange.HttpProxy
 					ADRawEntry adrawEntry3 = null;
 					if (OABVariantConfigurationSettings.IsLinkedOABGenMailboxesEnabled && !oabcacheEntry.ShadowMailboxDistributionEnabled && oabcacheEntry.GeneratingMailbox != null)
 					{
-						adrawEntry3 = DirectoryHelper.GetRecipientSessionFromOrganizationId(base.LatencyTracker, organizationId, base.Logger).Read(oabcacheEntry.GeneratingMailbox, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", 200, "ResolveAnchorMailbox");
+						adrawEntry3 = DirectoryHelper.GetRecipientSessionFromOrganizationId(base.LatencyTracker, organizationId, base.Logger).Read(oabcacheEntry.GeneratingMailbox, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", 200, "ResolveAnchorMailbox");
 					}
 					if (adrawEntry3 == null)
 					{
@@ -145,13 +145,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x0600057E RID: 1406 RVA: 0x0001EC50 File Offset: 0x0001CE50
+		// Token: 0x06000581 RID: 1409 RVA: 0x0001EDF4 File Offset: 0x0001CFF4
 		protected override BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer backEndServer)
 		{
 			return backEndServer;
 		}
 
-		// Token: 0x0600057F RID: 1407 RVA: 0x0001EC54 File Offset: 0x0001CE54
+		// Token: 0x06000582 RID: 1410 RVA: 0x0001EDF8 File Offset: 0x0001CFF8
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
@@ -169,10 +169,10 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000580 RID: 1408 RVA: 0x0001ECCC File Offset: 0x0001CECC
+		// Token: 0x06000583 RID: 1411 RVA: 0x0001EE70 File Offset: 0x0001D070
 		private AnchorMailbox GetE14CASServer(OABCache.OABCacheEntry oab)
 		{
-			ServiceTopology serviceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 319);
+			ServiceTopology serviceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 319);
 			Site currentSite = HttpProxyGlobals.LocalSite.Member;
 			List<OabService> cheapestCASServers = new List<OabService>();
 			int cheapestSiteConnectionCost = int.MaxValue;
@@ -200,7 +200,7 @@ namespace Microsoft.Exchange.HttpProxy
 					int maxValue = int.MaxValue;
 					if (currentSite != null && oabService.Site != null)
 					{
-						serviceTopology.TryGetConnectionCost(currentSite, oabService.Site, ref maxValue, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 360);
+						serviceTopology.TryGetConnectionCost(currentSite, oabService.Site, ref maxValue, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 360);
 					}
 					if (maxValue == cheapestSiteConnectionCost)
 					{
@@ -214,7 +214,7 @@ namespace Microsoft.Exchange.HttpProxy
 						cheapestSiteConnectionCost = maxValue;
 					}
 				}
-			}, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 351);
+			}, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\OabProxyRequestHandler.cs", "GetE14CASServer", 351);
 			if (cheapestCASServers.Count == 0)
 			{
 				if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(3))
@@ -235,7 +235,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new ServerInfoAnchorMailbox(new BackEndServer(oabService2.ServerFullyQualifiedDomainName, oabService2.ServerVersionNumber), this);
 		}
 
-		// Token: 0x06000581 RID: 1409 RVA: 0x0001EE74 File Offset: 0x0001D074
+		// Token: 0x06000584 RID: 1412 RVA: 0x0001F018 File Offset: 0x0001D218
 		private bool IsEligibleOabServiceBasedOnVersion(OabService oabService, OABCache.OABCacheEntry oabCacheEntry)
 		{
 			bool result = false;
@@ -246,7 +246,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000582 RID: 1410 RVA: 0x0001EEA0 File Offset: 0x0001D0A0
+		// Token: 0x06000585 RID: 1413 RVA: 0x0001F044 File Offset: 0x0001D244
 		private bool IsEligibleOabServiceBasedOnVersionAndVirtualDirectory(OabService oabService, OABCache.OABCacheEntry oabCacheEntry)
 		{
 			bool result = false;
@@ -264,11 +264,11 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x04000379 RID: 889
+		// Token: 0x0400037D RID: 893
 		private static readonly Random RandomNumberGenerator = new Random();
 
-		// Token: 0x02000126 RID: 294
-		// (Invoke) Token: 0x0600086D RID: 2157
+		// Token: 0x02000125 RID: 293
+		// (Invoke) Token: 0x06000868 RID: 2152
 		private delegate bool IsEligibleOabService(OabService oabService, OABCache.OABCacheEntry oabCacheEntry);
 	}
 }

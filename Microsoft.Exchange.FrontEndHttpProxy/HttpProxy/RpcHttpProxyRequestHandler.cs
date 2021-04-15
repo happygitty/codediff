@@ -21,13 +21,13 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000B4 RID: 180
 	internal class RpcHttpProxyRequestHandler : ProxyRequestHandler
 	{
-		// Token: 0x06000705 RID: 1797 RVA: 0x0001AA35 File Offset: 0x00018C35
+		// Token: 0x06000707 RID: 1799 RVA: 0x0001ABF5 File Offset: 0x00018DF5
 		internal RpcHttpProxyRequestHandler()
 		{
 		}
 
-		// Token: 0x1700017B RID: 379
-		// (get) Token: 0x06000706 RID: 1798 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x1700017A RID: 378
+		// (get) Token: 0x06000708 RID: 1800 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool ShouldForceUnbufferedClientResponseOutput
 		{
 			get
@@ -36,8 +36,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700017C RID: 380
-		// (get) Token: 0x06000707 RID: 1799 RVA: 0x00029490 File Offset: 0x00027690
+		// Token: 0x1700017B RID: 379
+		// (get) Token: 0x06000709 RID: 1801 RVA: 0x0002971C File Offset: 0x0002791C
 		protected override bool IsBackendServerCacheValidationEnabled
 		{
 			get
@@ -46,8 +46,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700017D RID: 381
-		// (get) Token: 0x06000708 RID: 1800 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x1700017C RID: 380
+		// (get) Token: 0x0600070A RID: 1802 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool UseSmartBufferSizing
 		{
 			get
@@ -56,7 +56,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000709 RID: 1801 RVA: 0x000294F0 File Offset: 0x000276F0
+		// Token: 0x0600070B RID: 1803 RVA: 0x0002977C File Offset: 0x0002797C
 		protected override void BeginValidateBackendServerCache()
 		{
 			Exception ex = null;
@@ -95,19 +95,19 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600070A RID: 1802 RVA: 0x00029618 File Offset: 0x00027818
+		// Token: 0x0600070C RID: 1804 RVA: 0x000298A4 File Offset: 0x00027AA4
 		protected override StreamProxy BuildResponseStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer)
 		{
 			return this.BuildResponseStream(() => new RpcHttpOutDataResponseStreamProxy(streamProxyType, source, target, buffer, this), () => this.<>n__0(streamProxyType, source, target, buffer));
 		}
 
-		// Token: 0x0600070B RID: 1803 RVA: 0x00029670 File Offset: 0x00027870
+		// Token: 0x0600070D RID: 1805 RVA: 0x000298FC File Offset: 0x00027AFC
 		protected override StreamProxy BuildResponseStreamProxySmartSizing(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target)
 		{
 			return this.BuildResponseStream(() => new RpcHttpOutDataResponseStreamProxy(streamProxyType, source, target, HttpProxySettings.ResponseBufferSize.Value, HttpProxySettings.MinimumResponseBufferSize.Value, this), () => this.<>n__1(streamProxyType, source, target));
 		}
 
-		// Token: 0x0600070C RID: 1804 RVA: 0x000296BD File Offset: 0x000278BD
+		// Token: 0x0600070E RID: 1806 RVA: 0x00029949 File Offset: 0x00027B49
 		protected override void DoProtocolSpecificBeginProcess()
 		{
 			if (base.ClientRequest.HttpMethod.Equals("RPC_IN_DATA"))
@@ -116,7 +116,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600070D RID: 1805 RVA: 0x000296EC File Offset: 0x000278EC
+		// Token: 0x0600070F RID: 1807 RVA: 0x00029978 File Offset: 0x00027B78
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			UriBuilder uriBuilder = new UriBuilder(base.ClientRequest.Url);
@@ -180,7 +180,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600070E RID: 1806 RVA: 0x000298E4 File Offset: 0x00027AE4
+		// Token: 0x06000710 RID: 1808 RVA: 0x00029B70 File Offset: 0x00027D70
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			UriBuilder uriBuilder = new UriBuilder(base.GetTargetBackEndServerUrl());
@@ -199,30 +199,30 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder.Uri;
 		}
 
-		// Token: 0x0600070F RID: 1807 RVA: 0x0002995F File Offset: 0x00027B5F
+		// Token: 0x06000711 RID: 1809 RVA: 0x00029BEB File Offset: 0x00027DEB
 		protected override void SetProtocolSpecificServerRequestParameters(HttpWebRequest serverRequest)
 		{
 			serverRequest.AllowWriteStreamBuffering = false;
 		}
 
-		// Token: 0x06000710 RID: 1808 RVA: 0x00029968 File Offset: 0x00027B68
+		// Token: 0x06000712 RID: 1810 RVA: 0x00029BF4 File Offset: 0x00027DF4
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !RpcHttpProxyRequestHandler.ProtectedHeaderNames.Contains(headerName, StringComparer.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
 		}
 
-		// Token: 0x06000711 RID: 1809 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x06000713 RID: 1811 RVA: 0x00003165 File Offset: 0x00001365
 		protected override bool ShouldLogClientDisconnectError(Exception ex)
 		{
 			return false;
 		}
 
-		// Token: 0x06000712 RID: 1810 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x06000714 RID: 1812 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected override void DoProtocolSpecificBeginRequestLogging()
 		{
 		}
 
-		// Token: 0x06000713 RID: 1811 RVA: 0x00029988 File Offset: 0x00027B88
+		// Token: 0x06000715 RID: 1813 RVA: 0x00029C14 File Offset: 0x00027E14
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			headers["X-RpcHttpProxyLogonUserName"] = EncodingUtilities.EncodeToBase64(IIdentityExtensions.GetSafeName(base.HttpContext.User.Identity, true));
@@ -243,7 +243,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x06000714 RID: 1812 RVA: 0x00029A40 File Offset: 0x00027C40
+		// Token: 0x06000716 RID: 1814 RVA: 0x00029CCC File Offset: 0x00027ECC
 		private static void ValidateBackendServerCacheCallback(IAsyncResult result)
 		{
 			RpcHttpProxyRequestHandler rpcHttpProxyRequestHandler = AsyncStateHolder.Unwrap<RpcHttpProxyRequestHandler>(result);
@@ -255,7 +255,7 @@ namespace Microsoft.Exchange.HttpProxy
 			rpcHttpProxyRequestHandler.OnValidateBackendServerCacheCompleted(result);
 		}
 
-		// Token: 0x06000715 RID: 1813 RVA: 0x00029A78 File Offset: 0x00027C78
+		// Token: 0x06000717 RID: 1815 RVA: 0x00029D04 File Offset: 0x00027F04
 		private void OnValidateBackendServerCacheCompleted(object extraData)
 		{
 			base.CallThreadEntranceMethod(delegate
@@ -320,7 +320,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x06000716 RID: 1814 RVA: 0x00029AAB File Offset: 0x00027CAB
+		// Token: 0x06000718 RID: 1816 RVA: 0x00029D37 File Offset: 0x00027F37
 		private StreamProxy BuildResponseStream(Func<StreamProxy> outDataResponseStreamFactory, Func<StreamProxy> defaultResponseStreamFactory)
 		{
 			if (base.ClientRequest.HttpMethod.Equals("RPC_OUT_DATA") && base.ClientRequest.ContentLength == 76)
@@ -330,7 +330,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return defaultResponseStreamFactory();
 		}
 
-		// Token: 0x06000717 RID: 1815 RVA: 0x00029AE0 File Offset: 0x00027CE0
+		// Token: 0x06000719 RID: 1817 RVA: 0x00029D6C File Offset: 0x00027F6C
 		private bool ShouldRecalculateBackendOnHead(WebException webException, HttpWebResponse headResponse)
 		{
 			if (webException != null && webException.Response != null)
@@ -340,14 +340,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return headResponse != null && this.RoutingErrorProcessed(headResponse);
 		}
 
-		// Token: 0x06000718 RID: 1816 RVA: 0x00029B18 File Offset: 0x00027D18
+		// Token: 0x0600071A RID: 1818 RVA: 0x00029DA4 File Offset: 0x00027FA4
 		private bool AuthenticationChallengeReturned(WebException webException)
 		{
 			bool flag;
 			return base.AuthBehavior.AuthState != AuthState.BackEndFullAuth && base.IsAuthenticationChallengeFromBackend(webException) && base.TryFindKerberosChallenge(webException.Response.Headers[Constants.AuthenticationHeader], out flag);
 		}
 
-		// Token: 0x06000719 RID: 1817 RVA: 0x00029B5C File Offset: 0x00027D5C
+		// Token: 0x0600071B RID: 1819 RVA: 0x00029DE8 File Offset: 0x00027FE8
 		private bool RoutingErrorProcessed(HttpWebResponse response)
 		{
 			bool flag = base.HandleRoutingError(response, false);
@@ -355,7 +355,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return flag || flag2;
 		}
 
-		// Token: 0x0600071A RID: 1818 RVA: 0x00029B7C File Offset: 0x00027D7C
+		// Token: 0x0600071C RID: 1820 RVA: 0x00029E08 File Offset: 0x00028008
 		private bool ParseOutAssociationGuid(Stream stream)
 		{
 			byte[] array = new byte[104];
@@ -370,7 +370,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0600071B RID: 1819 RVA: 0x00029BE0 File Offset: 0x00027DE0
+		// Token: 0x0600071D RID: 1821 RVA: 0x00029E6C File Offset: 0x0002806C
 		private int GetKeyForCasAffinity()
 		{
 			IIdentity identity = base.HttpContext.User.Identity;
@@ -381,7 +381,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return identity.Name.GetHashCode();
 		}
 
-		// Token: 0x0600071C RID: 1820 RVA: 0x00029C28 File Offset: 0x00027E28
+		// Token: 0x0600071E RID: 1822 RVA: 0x00029EB4 File Offset: 0x000280B4
 		private AnchorMailbox ResolveToDefaultAnchorMailbox(string originalRpcServerName, string reason)
 		{
 			string text;
@@ -408,13 +408,13 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new HttpProxyException(HttpStatusCode.NotFound, 3003, string.Format("RPC server name passed in by client could not be resolved: {0}", originalRpcServerName));
 		}
 
-		// Token: 0x040003EA RID: 1002
+		// Token: 0x040003EE RID: 1006
 		internal const string PreAuthRequestHeaderValue = "true";
 
-		// Token: 0x040003EB RID: 1003
+		// Token: 0x040003EF RID: 1007
 		private const int LookAheadBufferSize = 104;
 
-		// Token: 0x040003EC RID: 1004
+		// Token: 0x040003F0 RID: 1008
 		private static readonly string[] ProtectedHeaderNames = new string[]
 		{
 			"X-RpcHttpProxyServerTarget",
@@ -422,25 +422,25 @@ namespace Microsoft.Exchange.HttpProxy
 			"X-DatabaseGuid"
 		};
 
-		// Token: 0x040003ED RID: 1005
+		// Token: 0x040003F1 RID: 1009
 		private static readonly IntAppSettingsEntry RpcHttpHeadRequestTimeout = new IntAppSettingsEntry(HttpProxySettings.Prefix("RpcHttpHeadRequestTimeout"), 5000, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040003EE RID: 1006
+		// Token: 0x040003F2 RID: 1010
 		private static readonly BoolAppSettingsEntry RpcHttpHeadRequestEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("RpcHttpHeadRequestEnabled"), false, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040003EF RID: 1007
+		// Token: 0x040003F3 RID: 1011
 		private static readonly BoolAppSettingsEntry RpcOutHeadRequestEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("RpcOutHeadRequestEnabled"), false, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040003F0 RID: 1008
+		// Token: 0x040003F4 RID: 1012
 		private HttpWebRequest headRequest;
 
-		// Token: 0x040003F1 RID: 1009
+		// Token: 0x040003F5 RID: 1013
 		private string rpcServerTarget;
 
-		// Token: 0x040003F2 RID: 1010
+		// Token: 0x040003F6 RID: 1014
 		private Guid associationGuid;
 
-		// Token: 0x040003F3 RID: 1011
+		// Token: 0x040003F7 RID: 1015
 		private bool updateRpcServer;
 	}
 }

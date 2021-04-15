@@ -5,10 +5,10 @@ using Microsoft.Exchange.Data.Directory.SystemConfiguration;
 
 namespace Microsoft.Exchange.HttpProxy
 {
-	// Token: 0x020000C4 RID: 196
+	// Token: 0x020000C3 RID: 195
 	internal class ProxyDestination
 	{
-		// Token: 0x06000766 RID: 1894 RVA: 0x0002B288 File Offset: 0x00029488
+		// Token: 0x06000761 RID: 1889 RVA: 0x0002B470 File Offset: 0x00029670
 		internal ProxyDestination(int version, int portToUse, string[] allDestinations, string[] destinationsInService)
 		{
 			if (allDestinations == null)
@@ -30,7 +30,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.isFixedDestination = false;
 		}
 
-		// Token: 0x06000767 RID: 1895 RVA: 0x0002B2EB File Offset: 0x000294EB
+		// Token: 0x06000762 RID: 1890 RVA: 0x0002B4D3 File Offset: 0x000296D3
 		internal ProxyDestination(int version, int portToUse, string fqdn)
 		{
 			this.version = version;
@@ -43,8 +43,8 @@ namespace Microsoft.Exchange.HttpProxy
 			this.isFixedDestination = true;
 		}
 
-		// Token: 0x17000185 RID: 389
-		// (get) Token: 0x06000768 RID: 1896 RVA: 0x0002B31F File Offset: 0x0002951F
+		// Token: 0x17000183 RID: 387
+		// (get) Token: 0x06000763 RID: 1891 RVA: 0x0002B507 File Offset: 0x00029707
 		internal int Port
 		{
 			get
@@ -53,8 +53,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000186 RID: 390
-		// (get) Token: 0x06000769 RID: 1897 RVA: 0x0002B327 File Offset: 0x00029527
+		// Token: 0x17000184 RID: 388
+		// (get) Token: 0x06000764 RID: 1892 RVA: 0x0002B50F File Offset: 0x0002970F
 		internal int Version
 		{
 			get
@@ -63,8 +63,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000187 RID: 391
-		// (get) Token: 0x0600076A RID: 1898 RVA: 0x0002B32F File Offset: 0x0002952F
+		// Token: 0x17000185 RID: 389
+		// (get) Token: 0x06000765 RID: 1893 RVA: 0x0002B517 File Offset: 0x00029717
 		internal bool IsDynamicTarget
 		{
 			get
@@ -73,7 +73,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600076B RID: 1899 RVA: 0x0002B358 File Offset: 0x00029558
+		// Token: 0x06000766 RID: 1894 RVA: 0x0002B540 File Offset: 0x00029740
 		public override string ToString()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -109,7 +109,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x0600076C RID: 1900 RVA: 0x0002B46C File Offset: 0x0002966C
+		// Token: 0x06000767 RID: 1895 RVA: 0x0002B654 File Offset: 0x00029854
 		internal string GetHostName(int key)
 		{
 			if (this.isFixedDestination)
@@ -135,19 +135,19 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x04000404 RID: 1028
+		// Token: 0x04000408 RID: 1032
 		private readonly bool isFixedDestination;
 
-		// Token: 0x04000405 RID: 1029
+		// Token: 0x04000409 RID: 1033
 		private readonly int port;
 
-		// Token: 0x04000406 RID: 1030
+		// Token: 0x0400040A RID: 1034
 		private readonly int version;
 
-		// Token: 0x04000407 RID: 1031
+		// Token: 0x0400040B RID: 1035
 		private string[] serverFqdnList;
 
-		// Token: 0x04000408 RID: 1032
+		// Token: 0x0400040C RID: 1036
 		private string[] inServiceServerFqdnList;
 	}
 }

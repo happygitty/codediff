@@ -15,7 +15,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class MapiProxyRequestHandler : BEServerCookieProxyRequestHandler<WebServicesService>
 	{
 		// Token: 0x1700012B RID: 299
-		// (get) Token: 0x06000563 RID: 1379 RVA: 0x0001981A File Offset: 0x00017A1A
+		// (get) Token: 0x06000566 RID: 1382 RVA: 0x000199DA File Offset: 0x00017BDA
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -25,7 +25,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700012C RID: 300
-		// (get) Token: 0x06000564 RID: 1380 RVA: 0x00003193 File Offset: 0x00001393
+		// (get) Token: 0x06000567 RID: 1383 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool ShouldForceUnbufferedClientResponseOutput
 		{
 			get
@@ -35,7 +35,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700012D RID: 301
-		// (get) Token: 0x06000565 RID: 1381 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000568 RID: 1384 RVA: 0x00003165 File Offset: 0x00001365
 		protected override bool ShouldSendFullActivityScope
 		{
 			get
@@ -44,7 +44,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000566 RID: 1382 RVA: 0x0001E298 File Offset: 0x0001C498
+		// Token: 0x06000569 RID: 1385 RVA: 0x0001E43C File Offset: 0x0001C63C
 		protected override BufferPool GetResponseBufferPool()
 		{
 			if (MapiProxyRequestHandler.UseCustomNotificationWaitBuffers.Value)
@@ -58,7 +58,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.GetResponseBufferPool();
 		}
 
-		// Token: 0x06000567 RID: 1383 RVA: 0x0001E2EC File Offset: 0x0001C4EC
+		// Token: 0x0600056A RID: 1386 RVA: 0x0001E490 File Offset: 0x0001C690
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			if (MapiProxyRequestHandler.ProtectedHeaderNames.Contains(headerName, StringComparer.OrdinalIgnoreCase))
@@ -69,13 +69,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return (!flag && string.Equals(headerName, "client-request-id", StringComparison.OrdinalIgnoreCase)) || flag;
 		}
 
-		// Token: 0x06000568 RID: 1384 RVA: 0x0001E329 File Offset: 0x0001C529
+		// Token: 0x0600056B RID: 1387 RVA: 0x0001E4CD File Offset: 0x0001C6CD
 		protected override void DoProtocolSpecificBeginRequestLogging()
 		{
 			this.LogClientRequestInfo();
 		}
 
-		// Token: 0x06000569 RID: 1385 RVA: 0x0001E334 File Offset: 0x0001C534
+		// Token: 0x0600056C RID: 1388 RVA: 0x0001E4D8 File Offset: 0x0001C6D8
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			DatabaseBasedAnchorMailbox databaseBasedAnchorMailbox = base.AnchoredRoutingTarget.AnchorMailbox as DatabaseBasedAnchorMailbox;
@@ -90,7 +90,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x0600056A RID: 1386 RVA: 0x0001E388 File Offset: 0x0001C588
+		// Token: 0x0600056D RID: 1389 RVA: 0x0001E52C File Offset: 0x0001C72C
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text;
@@ -116,7 +116,7 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new HttpProxyException(HttpStatusCode.BadRequest, 3003, "No target mailbox specified.");
 		}
 
-		// Token: 0x0600056B RID: 1387 RVA: 0x0001E45C File Offset: 0x0001C65C
+		// Token: 0x0600056E RID: 1390 RVA: 0x0001E600 File Offset: 0x0001C800
 		private AnchorMailbox GetAnchorMailboxFromMailboxId(string mailboxId)
 		{
 			Guid guid = Guid.Empty;
@@ -139,7 +139,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new MailboxGuidAnchorMailbox(guid, domain, this);
 		}
 
-		// Token: 0x0600056C RID: 1388 RVA: 0x0001E4EC File Offset: 0x0001C6EC
+		// Token: 0x0600056F RID: 1391 RVA: 0x0001E690 File Offset: 0x0001C890
 		private AnchorMailbox GetAnchorMailboxFromSmtpAddress(string smtpAddress)
 		{
 			if (!SmtpAddress.IsValidSmtpAddress(smtpAddress))
@@ -149,7 +149,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new SmtpAnchorMailbox(smtpAddress, this);
 		}
 
-		// Token: 0x0600056D RID: 1389 RVA: 0x0001E514 File Offset: 0x0001C714
+		// Token: 0x06000570 RID: 1392 RVA: 0x0001E6B8 File Offset: 0x0001C8B8
 		private void LogClientRequestInfo()
 		{
 			if (string.Compare(base.ClientRequest.RequestType, "POST", true) != 0)
@@ -161,37 +161,37 @@ namespace Microsoft.Exchange.HttpProxy
 			base.Logger.Set(13, clientRequestInfo);
 		}
 
-		// Token: 0x0400036D RID: 877
+		// Token: 0x04000371 RID: 881
 		private const string HttpVerbGet = "GET";
 
-		// Token: 0x0400036E RID: 878
+		// Token: 0x04000372 RID: 882
 		private const string HttpVerbPost = "POST";
 
-		// Token: 0x0400036F RID: 879
+		// Token: 0x04000373 RID: 883
 		private const string XRequestType = "X-RequestType";
 
-		// Token: 0x04000370 RID: 880
+		// Token: 0x04000374 RID: 884
 		private const string ClientRequestInfoLogParameter = "&ClientRequestInfo=";
 
-		// Token: 0x04000371 RID: 881
+		// Token: 0x04000375 RID: 885
 		private const string RequestTypeEmsmdbNotificationWait = "NotificationWait";
 
-		// Token: 0x04000372 RID: 882
+		// Token: 0x04000376 RID: 886
 		private static readonly string[] ProtectedHeaderNames = new string[]
 		{
 			"X-DatabaseGuid"
 		};
 
-		// Token: 0x04000373 RID: 883
+		// Token: 0x04000377 RID: 887
 		private static readonly BoolAppSettingsEntry UseCustomNotificationWaitBuffers = new BoolAppSettingsEntry(HttpProxySettings.Prefix("UseCustomNotificationWaitBuffers"), true, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000374 RID: 884
+		// Token: 0x04000378 RID: 888
 		private static readonly IntAppSettingsEntry NotificationWaitBufferSize = new IntAppSettingsEntry(HttpProxySettings.Prefix("NotificationWaitBufferSize"), 256, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000375 RID: 885
+		// Token: 0x04000379 RID: 889
 		private static readonly IntAppSettingsEntry NotificationWaitBuffersPerProcessor = new IntAppSettingsEntry(HttpProxySettings.Prefix("NotificationWaitBuffersPerProcessor"), 512, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000376 RID: 886
+		// Token: 0x0400037A RID: 890
 		private static readonly BufferPool NotificationWaitBufferPool = new BufferPool(MapiProxyRequestHandler.NotificationWaitBufferSize.Value, MapiProxyRequestHandler.NotificationWaitBuffersPerProcessor.Value);
 	}
 }

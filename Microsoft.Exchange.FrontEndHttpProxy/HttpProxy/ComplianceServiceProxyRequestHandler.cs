@@ -7,7 +7,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class ComplianceServiceProxyRequestHandler : BEServerCookieProxyRequestHandler<WebServicesService>
 	{
 		// Token: 0x17000119 RID: 281
-		// (get) Token: 0x060004D5 RID: 1237 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x060004D9 RID: 1241 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get

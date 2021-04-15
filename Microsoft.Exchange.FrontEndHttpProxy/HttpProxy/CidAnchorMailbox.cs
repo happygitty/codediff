@@ -46,7 +46,7 @@ namespace Microsoft.Exchange.HttpProxy
 			if (CID.TryParse(this.Cid, ref cid))
 			{
 				IRecipientSession recipientSession = DirectoryExtensions.CreateRecipientSession(ADSessionSettings.FromConsumerOrganization(), null);
-				IAggregateSession aggregateSession = recipientSession.GetAggregateSession("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\CidAnchorMailbox.cs", 73, "LoadADRawEntry");
+				IAggregateSession aggregateSession = recipientSession.GetAggregateSession("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\CidAnchorMailbox.cs", 73, "LoadADRawEntry");
 				aggregateSession.MbxReadMode = 0;
 				ret = DirectoryHelper.InvokeAccountForest<ADRawEntry>(base.RequestContext.LatencyTracker, () => aggregateSession.FindADRawEntryByCid(cid, this.PropertySet), base.RequestContext.Logger, recipientSession);
 			}

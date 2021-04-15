@@ -155,10 +155,10 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 			"Linux"
 		};
 
-		// Token: 0x020000D2 RID: 210
+		// Token: 0x020000D1 RID: 209
 		internal struct UserAgentVersion : IComparable<UserAgentParser.UserAgentVersion>
 		{
-			// Token: 0x060007AE RID: 1966 RVA: 0x0002C39D File Offset: 0x0002A59D
+			// Token: 0x060007A9 RID: 1961 RVA: 0x0002C585 File Offset: 0x0002A785
 			public UserAgentVersion(int buildVersion, int majorVersion, int minorVersion)
 			{
 				this.build = buildVersion;
@@ -166,7 +166,7 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				this.minor = minorVersion;
 			}
 
-			// Token: 0x060007AF RID: 1967 RVA: 0x0002C3B4 File Offset: 0x0002A5B4
+			// Token: 0x060007AA RID: 1962 RVA: 0x0002C59C File Offset: 0x0002A79C
 			public UserAgentVersion(string version)
 			{
 				int[] array = new int[3];
@@ -198,9 +198,9 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				this.minor = array[2];
 			}
 
-			// Token: 0x170001AB RID: 427
-			// (get) Token: 0x060007B0 RID: 1968 RVA: 0x0002C440 File Offset: 0x0002A640
-			// (set) Token: 0x060007B1 RID: 1969 RVA: 0x0002C448 File Offset: 0x0002A648
+			// Token: 0x170001A9 RID: 425
+			// (get) Token: 0x060007AB RID: 1963 RVA: 0x0002C628 File Offset: 0x0002A828
+			// (set) Token: 0x060007AC RID: 1964 RVA: 0x0002C630 File Offset: 0x0002A830
 			public int Build
 			{
 				get
@@ -213,9 +213,9 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				}
 			}
 
-			// Token: 0x170001AC RID: 428
-			// (get) Token: 0x060007B2 RID: 1970 RVA: 0x0002C451 File Offset: 0x0002A651
-			// (set) Token: 0x060007B3 RID: 1971 RVA: 0x0002C459 File Offset: 0x0002A659
+			// Token: 0x170001AA RID: 426
+			// (get) Token: 0x060007AD RID: 1965 RVA: 0x0002C639 File Offset: 0x0002A839
+			// (set) Token: 0x060007AE RID: 1966 RVA: 0x0002C641 File Offset: 0x0002A841
 			public int Major
 			{
 				get
@@ -228,9 +228,9 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				}
 			}
 
-			// Token: 0x170001AD RID: 429
-			// (get) Token: 0x060007B4 RID: 1972 RVA: 0x0002C462 File Offset: 0x0002A662
-			// (set) Token: 0x060007B5 RID: 1973 RVA: 0x0002C46A File Offset: 0x0002A66A
+			// Token: 0x170001AB RID: 427
+			// (get) Token: 0x060007AF RID: 1967 RVA: 0x0002C64A File Offset: 0x0002A84A
+			// (set) Token: 0x060007B0 RID: 1968 RVA: 0x0002C652 File Offset: 0x0002A852
 			public int Minor
 			{
 				get
@@ -243,13 +243,13 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				}
 			}
 
-			// Token: 0x060007B6 RID: 1974 RVA: 0x0002C473 File Offset: 0x0002A673
+			// Token: 0x060007B1 RID: 1969 RVA: 0x0002C65B File Offset: 0x0002A85B
 			public override string ToString()
 			{
 				return string.Format("{0}.{1}.{2}", this.Build, this.Major, this.Minor);
 			}
 
-			// Token: 0x060007B7 RID: 1975 RVA: 0x0002C4A0 File Offset: 0x0002A6A0
+			// Token: 0x060007B2 RID: 1970 RVA: 0x0002C688 File Offset: 0x0002A888
 			public int CompareTo(UserAgentParser.UserAgentVersion userAgentVersionComparand)
 			{
 				int num = (this.Minor.ToString().Length > userAgentVersionComparand.Minor.ToString().Length) ? this.Minor.ToString().Length : userAgentVersionComparand.Minor.ToString().Length;
@@ -260,16 +260,16 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				return num3 - num4;
 			}
 
-			// Token: 0x04000454 RID: 1108
+			// Token: 0x04000458 RID: 1112
 			private const string FormatToString = "{0}.{1}.{2}";
 
-			// Token: 0x04000455 RID: 1109
+			// Token: 0x04000459 RID: 1113
 			private int build;
 
-			// Token: 0x04000456 RID: 1110
+			// Token: 0x0400045A RID: 1114
 			private int major;
 
-			// Token: 0x04000457 RID: 1111
+			// Token: 0x0400045B RID: 1115
 			private int minor;
 		}
 	}

@@ -4,11 +4,11 @@ using Microsoft.Exchange.VariantConfiguration.Cafe;
 
 namespace Microsoft.Exchange.HttpProxy
 {
-	// Token: 0x020000C6 RID: 198
+	// Token: 0x020000C5 RID: 197
 	internal static class RpcHttpProxyRules
 	{
-		// Token: 0x17000188 RID: 392
-		// (get) Token: 0x06000774 RID: 1908 RVA: 0x0002B618 File Offset: 0x00029818
+		// Token: 0x17000186 RID: 390
+		// (get) Token: 0x0600076F RID: 1903 RVA: 0x0002B800 File Offset: 0x00029A00
 		internal static IRpcHttpProxyRules Instance
 		{
 			get
@@ -44,13 +44,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0400040C RID: 1036
+		// Token: 0x04000410 RID: 1040
 		private static readonly NullRpcHttpProxyRules nullProxyRules = new NullRpcHttpProxyRules();
 
-		// Token: 0x0400040D RID: 1037
+		// Token: 0x04000411 RID: 1041
 		private static CoexistenceRpcHttpProxyRules coexistenceProxyRules = null;
 
-		// Token: 0x0400040E RID: 1038
+		// Token: 0x04000412 RID: 1042
 		private static object lockObject = new object();
 	}
 }

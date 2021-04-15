@@ -21,12 +21,12 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class EcpProxyRequestHandler : OwaEcpProxyRequestHandler<EcpService>
 	{
 		// Token: 0x1700011E RID: 286
-		// (get) Token: 0x06000501 RID: 1281 RVA: 0x0001B95C File Offset: 0x00019B5C
-		// (set) Token: 0x06000502 RID: 1282 RVA: 0x0001B964 File Offset: 0x00019B64
+		// (get) Token: 0x06000505 RID: 1285 RVA: 0x0001BB1C File Offset: 0x00019D1C
+		// (set) Token: 0x06000506 RID: 1286 RVA: 0x0001BB24 File Offset: 0x00019D24
 		internal bool IsCrossForestDelegated { get; set; }
 
 		// Token: 0x1700011F RID: 287
-		// (get) Token: 0x06000503 RID: 1283 RVA: 0x0001B970 File Offset: 0x00019B70
+		// (get) Token: 0x06000507 RID: 1287 RVA: 0x0001BB30 File Offset: 0x00019D30
 		protected override string ProxyLogonUri
 		{
 			get
@@ -41,7 +41,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000120 RID: 288
-		// (get) Token: 0x06000504 RID: 1284 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000508 RID: 1288 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -50,7 +50,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000505 RID: 1285 RVA: 0x0001B9A4 File Offset: 0x00019BA4
+		// Token: 0x06000509 RID: 1289 RVA: 0x0001BB64 File Offset: 0x00019D64
 		internal static void AddDownLevelProxyHeaders(WebHeaderCollection headers, HttpContext context)
 		{
 			if (!context.Request.IsAuthenticated)
@@ -70,7 +70,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000506 RID: 1286 RVA: 0x0001BA24 File Offset: 0x00019C24
+		// Token: 0x0600050A RID: 1290 RVA: 0x0001BBE4 File Offset: 0x00019DE4
 		internal static bool IsCrossForestDelegatedRequest(HttpRequest request)
 		{
 			if (!string.IsNullOrEmpty(request.QueryString["SecurityToken"]))
@@ -81,7 +81,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return httpCookie != null && !string.IsNullOrEmpty(httpCookie.Value);
 		}
 
-		// Token: 0x06000507 RID: 1287 RVA: 0x0001BA70 File Offset: 0x00019C70
+		// Token: 0x0600050B RID: 1291 RVA: 0x0001BC30 File Offset: 0x00019E30
 		protected override bool ShouldExcludeFromExplicitLogonParsing()
 		{
 			bool result = base.IsResourceRequest();
@@ -92,13 +92,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000508 RID: 1288 RVA: 0x0001BAAF File Offset: 0x00019CAF
+		// Token: 0x0600050C RID: 1292 RVA: 0x0001BC6F File Offset: 0x00019E6F
 		protected override UriBuilder GetClientUrlForProxy()
 		{
 			return new UriBuilder(base.ClientRequest.Url);
 		}
 
-		// Token: 0x06000509 RID: 1289 RVA: 0x0001BAC4 File Offset: 0x00019CC4
+		// Token: 0x0600050D RID: 1293 RVA: 0x0001BC84 File Offset: 0x00019E84
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			headers[Constants.LiveIdEnvironment] = (string)base.HttpContext.Items[Constants.LiveIdEnvironment];
@@ -139,7 +139,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x0600050A RID: 1290 RVA: 0x0001BC2C File Offset: 0x00019E2C
+		// Token: 0x0600050E RID: 1294 RVA: 0x0001BDEC File Offset: 0x00019FEC
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			bool flag = !string.Equals(headerName, Constants.MsExchProxyUri, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "msExchLogonAccount", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "msExchLogonMailbox", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "msExchTargetMailbox", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.LiveIdPuid, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.LiveIdMemberName, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "msExchCafeForceRouteToLogonAccount", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.LiveIdEnvironment, StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
@@ -150,7 +150,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return flag;
 		}
 
-		// Token: 0x0600050B RID: 1291 RVA: 0x0001BCEC File Offset: 0x00019EEC
+		// Token: 0x0600050F RID: 1295 RVA: 0x0001BEAC File Offset: 0x0001A0AC
 		protected override void HandleLogoffRequest()
 		{
 			if (base.ClientRequest != null && base.ClientResponse != null && base.ClientRequest.Url.AbsolutePath.EndsWith("logoff.aspx", StringComparison.OrdinalIgnoreCase))
@@ -168,7 +168,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600050C RID: 1292 RVA: 0x0001BDA0 File Offset: 0x00019FA0
+		// Token: 0x06000510 RID: 1296 RVA: 0x0001BF60 File Offset: 0x0001A160
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (base.State != ProxyRequestHandler.ProxyState.CalculateBackEndSecondRound)
@@ -288,7 +288,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x0600050D RID: 1293 RVA: 0x0001C1FF File Offset: 0x0001A3FF
+		// Token: 0x06000511 RID: 1297 RVA: 0x0001C3BF File Offset: 0x0001A5BF
 		protected override void CopySupplementalCookiesToClientResponse()
 		{
 			if (this.backendServerFromUrlCookie != null)
@@ -299,7 +299,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.CopySupplementalCookiesToClientResponse();
 		}
 
-		// Token: 0x0600050E RID: 1294 RVA: 0x0001C224 File Offset: 0x0001A424
+		// Token: 0x06000512 RID: 1298 RVA: 0x0001C3E4 File Offset: 0x0001A5E4
 		protected override bool ShouldRecalculateProxyTarget()
 		{
 			bool result = false;
@@ -328,7 +328,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600050F RID: 1295 RVA: 0x0001C350 File Offset: 0x0001A550
+		// Token: 0x06000513 RID: 1299 RVA: 0x0001C510 File Offset: 0x0001A710
 		protected override void LogWebException(WebException exception)
 		{
 			base.LogWebException(exception);
@@ -339,7 +339,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000510 RID: 1296 RVA: 0x0001C3AC File Offset: 0x0001A5AC
+		// Token: 0x06000514 RID: 1300 RVA: 0x0001C56C File Offset: 0x0001A76C
 		private string GetExplicitPath(string requestPath)
 		{
 			string result = null;
@@ -368,7 +368,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000511 RID: 1297 RVA: 0x0001C414 File Offset: 0x0001A614
+		// Token: 0x06000515 RID: 1301 RVA: 0x0001C5D4 File Offset: 0x0001A7D4
 		private string TryGetBackendParameter(string key, out bool isFromUrl)
 		{
 			string text = base.ClientRequest.QueryString[key];
@@ -391,7 +391,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x06000512 RID: 1298 RVA: 0x0001C48C File Offset: 0x0001A68C
+		// Token: 0x06000516 RID: 1302 RVA: 0x0001C64C File Offset: 0x0001A84C
 		private void CopyBEResourcePathCookie()
 		{
 			string text = base.ServerResponse.Headers[Constants.BEResourcePath];
@@ -410,43 +410,43 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x04000347 RID: 839
+		// Token: 0x0400034B RID: 843
 		public const string ClientPathHeaderKey = "msExchClientPath";
 
-		// Token: 0x04000348 RID: 840
+		// Token: 0x0400034C RID: 844
 		private const string LogonAccount = "msExchLogonAccount";
 
-		// Token: 0x04000349 RID: 841
+		// Token: 0x0400034D RID: 845
 		private const string LogonMailbox = "msExchLogonMailbox";
 
-		// Token: 0x0400034A RID: 842
+		// Token: 0x0400034E RID: 846
 		private const string TargetMailbox = "msExchTargetMailbox";
 
-		// Token: 0x0400034B RID: 843
+		// Token: 0x0400034F RID: 847
 		private const string CafeForceRouteToLogonAccountHeaderKey = "msExchCafeForceRouteToLogonAccount";
 
-		// Token: 0x0400034C RID: 844
+		// Token: 0x04000350 RID: 848
 		private const string EcpErrorHeaderName = "X-ECP-ERROR";
 
-		// Token: 0x0400034D RID: 845
+		// Token: 0x04000351 RID: 849
 		private const string EcpProxyLogonUri = "proxyLogon.ecp";
 
-		// Token: 0x0400034E RID: 846
+		// Token: 0x04000352 RID: 850
 		private const string LogoffPage = "logoff.aspx";
 
-		// Token: 0x0400034F RID: 847
+		// Token: 0x04000353 RID: 851
 		private const string SecurityTokenParamName = "SecurityToken";
 
-		// Token: 0x04000350 RID: 848
+		// Token: 0x04000354 RID: 852
 		private Cookie backendServerFromUrlCookie;
 
-		// Token: 0x04000351 RID: 849
+		// Token: 0x04000355 RID: 853
 		private bool isSyndicatedAdmin;
 
-		// Token: 0x04000352 RID: 850
+		// Token: 0x04000356 RID: 854
 		private bool isSyndicatedAdminManageDownLevelTarget;
 
-		// Token: 0x04000353 RID: 851
+		// Token: 0x04000357 RID: 855
 		private AnchoredRoutingTarget originalAnchoredRoutingTarget;
 	}
 }

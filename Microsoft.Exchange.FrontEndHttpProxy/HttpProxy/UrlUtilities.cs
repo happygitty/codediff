@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000083 RID: 131
 	internal static class UrlUtilities
 	{
-		// Token: 0x06000451 RID: 1105 RVA: 0x000184D8 File Offset: 0x000166D8
+		// Token: 0x06000455 RID: 1109 RVA: 0x00018698 File Offset: 0x00016898
 		public static bool IsEcpUrl(string urlString)
 		{
 			if (string.IsNullOrEmpty(urlString))
@@ -23,7 +23,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return Uri.TryCreate(urlString, UriKind.Absolute, out uri) && uri != null && (uri.AbsolutePath.Equals("/ecp", StringComparison.OrdinalIgnoreCase) || uri.AbsolutePath.StartsWith("/ecp/", StringComparison.OrdinalIgnoreCase));
 		}
 
-		// Token: 0x06000452 RID: 1106 RVA: 0x00018550 File Offset: 0x00016750
+		// Token: 0x06000456 RID: 1110 RVA: 0x00018710 File Offset: 0x00016910
 		public static bool IsEacUrl(string urlString)
 		{
 			if (!UrlUtilities.IsEcpUrl(urlString))
@@ -42,19 +42,19 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000453 RID: 1107 RVA: 0x000185AD File Offset: 0x000167AD
+		// Token: 0x06000457 RID: 1111 RVA: 0x0001876D File Offset: 0x0001696D
 		public static bool IsIntegratedAuthUrl(Uri url)
 		{
 			return RequestPathParser.IsIntegratedAuthUrl(url.AbsolutePath);
 		}
 
-		// Token: 0x06000454 RID: 1108 RVA: 0x000185BA File Offset: 0x000167BA
+		// Token: 0x06000458 RID: 1112 RVA: 0x0001877A File Offset: 0x0001697A
 		public static Uri FixIntegratedAuthUrlForBackEnd(Uri url)
 		{
 			return UrlHelper.FixIntegratedAuthUrlForBackEnd(url);
 		}
 
-		// Token: 0x06000455 RID: 1109 RVA: 0x000185C4 File Offset: 0x000167C4
+		// Token: 0x06000459 RID: 1113 RVA: 0x00018784 File Offset: 0x00016984
 		public static Uri FixDFPOWAVdirUrlForBackEnd(Uri url, string dfpOwaVdir)
 		{
 			if (string.IsNullOrEmpty(dfpOwaVdir))
@@ -73,7 +73,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder.Uri;
 		}
 
-		// Token: 0x06000456 RID: 1110 RVA: 0x00018648 File Offset: 0x00016848
+		// Token: 0x0600045A RID: 1114 RVA: 0x00018808 File Offset: 0x00016A08
 		internal static bool IsOwaMiniUrl(Uri url)
 		{
 			if (url == null)
@@ -83,14 +83,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return url.AbsolutePath.EndsWith(Constants.OMAPath, StringComparison.OrdinalIgnoreCase) || url.AbsolutePath.IndexOf(Constants.OMAPath + "/", StringComparison.OrdinalIgnoreCase) != -1;
 		}
 
-		// Token: 0x06000457 RID: 1111 RVA: 0x000186A0 File Offset: 0x000168A0
+		// Token: 0x0600045B RID: 1115 RVA: 0x00018860 File Offset: 0x00016A60
 		internal static bool IsCmdWebPart(HttpRequest request)
 		{
 			string text = request.QueryString["cmd"];
 			return !string.IsNullOrEmpty(text) && string.Equals(text, "contents", StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06000458 RID: 1112 RVA: 0x000186D4 File Offset: 0x000168D4
+		// Token: 0x0600045C RID: 1116 RVA: 0x00018894 File Offset: 0x00016A94
 		internal static Uri AppendSmtpAddressToUrl(Uri url, string smtpAddress)
 		{
 			UriBuilder uriBuilder = new UriBuilder(url);
@@ -104,10 +104,10 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder.Uri;
 		}
 
-		// Token: 0x04000301 RID: 769
+		// Token: 0x04000305 RID: 773
 		private const string Command = "cmd";
 
-		// Token: 0x04000302 RID: 770
+		// Token: 0x04000306 RID: 774
 		private const string CommandValue = "contents";
 	}
 }

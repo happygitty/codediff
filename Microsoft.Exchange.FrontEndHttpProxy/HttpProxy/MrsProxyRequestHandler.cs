@@ -14,7 +14,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class MrsProxyRequestHandler : BEServerCookieProxyRequestHandler<WebServicesService>
 	{
 		// Token: 0x1700012E RID: 302
-		// (get) Token: 0x06000570 RID: 1392 RVA: 0x0001981A File Offset: 0x00017A1A
+		// (get) Token: 0x06000573 RID: 1395 RVA: 0x000199DA File Offset: 0x00017BDA
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -24,7 +24,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700012F RID: 303
-		// (get) Token: 0x06000571 RID: 1393 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000574 RID: 1396 RVA: 0x00003165 File Offset: 0x00001365
 		protected override bool UseBackEndCacheForDownLevelServer
 		{
 			get
@@ -33,7 +33,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000572 RID: 1394 RVA: 0x0001E604 File Offset: 0x0001C804
+		// Token: 0x06000575 RID: 1397 RVA: 0x0001E7A8 File Offset: 0x0001C9A8
 		internal static bool IsMrsRequest(HttpRequest request)
 		{
 			string[] segments = request.Url.Segments;
@@ -55,7 +55,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000573 RID: 1395 RVA: 0x0001E664 File Offset: 0x0001C864
+		// Token: 0x06000576 RID: 1398 RVA: 0x0001E808 File Offset: 0x0001CA08
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text = base.ClientRequest.Headers[Constants.TargetDatabaseHeaderName];
@@ -92,7 +92,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000574 RID: 1396 RVA: 0x0001E780 File Offset: 0x0001C980
+		// Token: 0x06000577 RID: 1399 RVA: 0x0001E924 File Offset: 0x0001CB24
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			Uri targetBackEndServerUrl = base.GetTargetBackEndServerUrl();
@@ -105,7 +105,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder.Uri;
 		}
 
-		// Token: 0x06000575 RID: 1397 RVA: 0x0001E7C4 File Offset: 0x0001C9C4
+		// Token: 0x06000578 RID: 1400 RVA: 0x0001E968 File Offset: 0x0001CB68
 		protected override BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer mailboxServer)
 		{
 			BackEndServer deterministicBackEndServer = HttpProxyBackEndHelper.GetDeterministicBackEndServer<WebServicesService>(mailboxServer, anchorMailbox.ToCookieKey(), this.ClientAccessType);
@@ -116,7 +116,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return deterministicBackEndServer;
 		}
 
-		// Token: 0x06000576 RID: 1398 RVA: 0x0001E810 File Offset: 0x0001CA10
+		// Token: 0x06000579 RID: 1401 RVA: 0x0001E9B4 File Offset: 0x0001CBB4
 		private static bool IsMrsProxyEnabled()
 		{
 			bool? flag = null;
@@ -129,10 +129,10 @@ namespace Microsoft.Exchange.HttpProxy
 			return flag != null && flag.Value;
 		}
 
-		// Token: 0x04000377 RID: 887
+		// Token: 0x0400037B RID: 891
 		private const string BackEndMrsProxyPath = "/Microsoft.Exchange.MailboxReplicationService.ProxyService";
 
-		// Token: 0x04000378 RID: 888
+		// Token: 0x0400037C RID: 892
 		private const string FrontEndMrsProxyPath = "MRSProxy.svc";
 	}
 }

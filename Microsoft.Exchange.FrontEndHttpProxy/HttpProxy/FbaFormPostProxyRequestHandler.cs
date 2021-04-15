@@ -21,7 +21,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class FbaFormPostProxyRequestHandler : OwaProxyRequestHandler
 	{
 		// Token: 0x17000129 RID: 297
-		// (get) Token: 0x0600054B RID: 1355 RVA: 0x0001D2D0 File Offset: 0x0001B4D0
+		// (get) Token: 0x0600054E RID: 1358 RVA: 0x0001D474 File Offset: 0x0001B674
 		internal static bool DisableSSORedirects
 		{
 			get
@@ -39,7 +39,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600054C RID: 1356 RVA: 0x0001D318 File Offset: 0x0001B518
+		// Token: 0x0600054F RID: 1359 RVA: 0x0001D4BC File Offset: 0x0001B6BC
 		public static char[] EncodeForSingleQuotedAttribute(char c)
 		{
 			char[] result = null;
@@ -54,7 +54,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600054D RID: 1357 RVA: 0x0001D340 File Offset: 0x0001B540
+		// Token: 0x06000550 RID: 1360 RVA: 0x0001D4E4 File Offset: 0x0001B6E4
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text = base.HttpContext.Items["destination"] as string;
@@ -94,7 +94,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x0600054E RID: 1358 RVA: 0x0001D414 File Offset: 0x0001B614
+		// Token: 0x06000551 RID: 1361 RVA: 0x0001D5B8 File Offset: 0x0001B7B8
 		protected override BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer mailboxServer)
 		{
 			base.LogElapsedTime("E_GetDLCAS");
@@ -104,14 +104,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return downLevelClientAccessServer;
 		}
 
-		// Token: 0x0600054F RID: 1359 RVA: 0x0001D46E File Offset: 0x0001B66E
+		// Token: 0x06000552 RID: 1362 RVA: 0x0001D612 File Offset: 0x0001B812
 		protected override bool ShouldContinueProxy()
 		{
 			this.HandleFbaFormPost(base.AnchoredRoutingTarget.BackEndServer);
 			return true;
 		}
 
-		// Token: 0x06000550 RID: 1360 RVA: 0x0001D484 File Offset: 0x0001B684
+		// Token: 0x06000553 RID: 1363 RVA: 0x0001D628 File Offset: 0x0001B828
 		private static bool IsExplicitLogon(string appVdir, string requestVirtualPath, string requestRawUrl, out bool endsWithSlash, out string alternateMailboxSmtpAddress, out string updatedRequestUrl)
 		{
 			bool flag = false;
@@ -150,7 +150,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return flag;
 		}
 
-		// Token: 0x06000551 RID: 1361 RVA: 0x0001D539 File Offset: 0x0001B739
+		// Token: 0x06000554 RID: 1364 RVA: 0x0001D6DD File Offset: 0x0001B8DD
 		private static string CheckRedirectUrlForNewline(string destinationUrl)
 		{
 			if (destinationUrl.IndexOf('\n') >= 0)
@@ -160,7 +160,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return destinationUrl;
 		}
 
-		// Token: 0x06000552 RID: 1362 RVA: 0x0001D560 File Offset: 0x0001B760
+		// Token: 0x06000555 RID: 1365 RVA: 0x0001D704 File Offset: 0x0001B904
 		private static FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause NeedCrossSiteRedirect(BackEndServer backEndServer, Site mailboxSite, Site currentServerSite, OwaServerVersion mailboxVersion, bool isEcpUrl, out Uri crossSiteRedirectUrl, out bool isSameAuthMethod)
 		{
 			isSameAuthMethod = false;
@@ -182,19 +182,19 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000553 RID: 1363 RVA: 0x0001D5DC File Offset: 0x0001B7DC
+		// Token: 0x06000556 RID: 1366 RVA: 0x0001D780 File Offset: 0x0001B980
 		private static Uri FindRedirectOwaUrlCrossSite(Site targetSite, int expectedMajorVersion, AuthenticationMethod internalAutheticationMethod, AuthenticationMethod externalAuthenticationMethod, BackEndServer backEndServer, out bool isSameAuthMethod, out FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause failureCause)
 		{
 			failureCause = FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause.None;
 			isSameAuthMethod = false;
 			bool isSameAuthExternalService = false;
 			OwaService clientExternalService = null;
-			ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 391);
+			ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 391);
 			string mailboxServerFQDN = backEndServer.Fqdn;
 			new List<OwaService>();
 			currentServiceTopology.ForEach<OwaService>(delegate(OwaService owaService)
 			{
-				if (ServiceTopology.IsOnSite(owaService, targetSite, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 402) && owaService.ClientAccessType == 1 && OwaServerVersion.CreateFromVersionNumber(owaService.ServerVersionNumber).Major == expectedMajorVersion)
+				if (ServiceTopology.IsOnSite(owaService, targetSite, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 402) && owaService.ClientAccessType == 1 && OwaServerVersion.CreateFromVersionNumber(owaService.ServerVersionNumber).Major == expectedMajorVersion)
 				{
 					bool flag = false;
 					if (owaService.AuthenticationMethod == internalAutheticationMethod || ((internalAutheticationMethod & 4) != null && (owaService.AuthenticationMethod & 4) != null))
@@ -213,13 +213,13 @@ namespace Microsoft.Exchange.HttpProxy
 							clientExternalService = owaService;
 							return;
 						}
-						if (ServiceTopology.CasMbxServicesFirst(owaService, clientExternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 433) < 0)
+						if (ServiceTopology.CasMbxServicesFirst(owaService, clientExternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 433) < 0)
 						{
 							clientExternalService = owaService;
 						}
 					}
 				}
-			}, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 397);
+			}, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlCrossSite", 397);
 			if (clientExternalService != null)
 			{
 				isSameAuthMethod = isSameAuthExternalService;
@@ -229,18 +229,18 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x06000554 RID: 1364 RVA: 0x0001D684 File Offset: 0x0001B884
+		// Token: 0x06000557 RID: 1367 RVA: 0x0001D828 File Offset: 0x0001BA28
 		private static Uri FindRedirectEcpUrlCrossSite(Site targetSite, int expectedMajorVersion, out FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause failureCause)
 		{
 			failureCause = FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause.None;
 			EcpService clientExternalService = null;
-			ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 471).ForEach<EcpService>(delegate(EcpService ecpService)
+			ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 471).ForEach<EcpService>(delegate(EcpService ecpService)
 			{
-				if (ServiceTopology.IsOnSite(ecpService, targetSite, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 477) && ecpService.ClientAccessType == 1 && OwaServerVersion.CreateFromVersionNumber(ecpService.ServerVersionNumber).Major == expectedMajorVersion)
+				if (ServiceTopology.IsOnSite(ecpService, targetSite, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 477) && ecpService.ClientAccessType == 1 && OwaServerVersion.CreateFromVersionNumber(ecpService.ServerVersionNumber).Major == expectedMajorVersion)
 				{
 					clientExternalService = ecpService;
 				}
-			}, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 474);
+			}, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectEcpUrlCrossSite", 474);
 			if (clientExternalService != null)
 			{
 				return clientExternalService.Url;
@@ -249,7 +249,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x06000555 RID: 1365 RVA: 0x0001D6FC File Offset: 0x0001B8FC
+		// Token: 0x06000558 RID: 1368 RVA: 0x0001D8A0 File Offset: 0x0001BAA0
 		private static FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause NeedOnSiteLegacyRedirect(BackEndServer backEndServer, Site mailboxSite, Site currentServerSite, OwaServerVersion mailboxVersion, out Uri legacyRedirectUrl, out bool isSameAuthMethod)
 		{
 			isSameAuthMethod = false;
@@ -267,7 +267,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000556 RID: 1366 RVA: 0x0001D77C File Offset: 0x0001B97C
+		// Token: 0x06000559 RID: 1369 RVA: 0x0001D920 File Offset: 0x0001BB20
 		private static Uri FindRedirectOwaUrlOnSiteForMismatchVersion(Site targetSite, int expectedMajorVersion, AuthenticationMethod internalAutheticationMethod, AuthenticationMethod externalAuthenticationMethod, BackEndServer backEndServer, out bool isSameAuthMethod, out FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause failureCause)
 		{
 			failureCause = FbaFormPostProxyRequestHandler.LegacyRedirectFailureCause.None;
@@ -277,11 +277,11 @@ namespace Microsoft.Exchange.HttpProxy
 			OwaService clientInternalService = null;
 			OwaService clientExternalService = null;
 			string mailboxServerFQDN = backEndServer.Fqdn;
-			ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 578);
+			ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 578);
 			new List<OwaService>();
 			currentServiceTopology.ForEach<OwaService>(delegate(OwaService owaService)
 			{
-				if (ServiceTopology.IsOnSite(owaService, targetSite, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 587))
+				if (ServiceTopology.IsOnSite(owaService, targetSite, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 587))
 				{
 					if (owaService.ClientAccessType == 1)
 					{
@@ -304,7 +304,7 @@ namespace Microsoft.Exchange.HttpProxy
 									clientExternalService = owaService;
 									return;
 								}
-								if (ServiceTopology.CasMbxServicesFirst(owaService, clientExternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 618) < 0)
+								if (ServiceTopology.CasMbxServicesFirst(owaService, clientExternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 618) < 0)
 								{
 									clientExternalService = owaService;
 									return;
@@ -331,14 +331,14 @@ namespace Microsoft.Exchange.HttpProxy
 								clientInternalService = owaService;
 								return;
 							}
-							if (ServiceTopology.CasMbxServicesFirst(owaService, clientInternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 657) > 0)
+							if (ServiceTopology.CasMbxServicesFirst(owaService, clientInternalService, mailboxServerFQDN, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 657) > 0)
 							{
 								clientInternalService = owaService;
 							}
 						}
 					}
 				}
-			}, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 582);
+			}, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "FindRedirectOwaUrlOnSiteForMismatchVersion", 582);
 			if (clientExternalService != null)
 			{
 				isSameAuthMethod = isSameAuthExternalService;
@@ -353,13 +353,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x06000557 RID: 1367 RVA: 0x0001D84E File Offset: 0x0001BA4E
+		// Token: 0x0600055A RID: 1370 RVA: 0x0001D9F2 File Offset: 0x0001BBF2
 		private static bool IsOwaUrl(Uri requestUrl, OwaUrl owaUrl, bool exactMatch)
 		{
 			return FbaFormPostProxyRequestHandler.IsOwaUrl(requestUrl, owaUrl, exactMatch, true);
 		}
 
-		// Token: 0x06000558 RID: 1368 RVA: 0x0001D85C File Offset: 0x0001BA5C
+		// Token: 0x0600055B RID: 1371 RVA: 0x0001DA00 File Offset: 0x0001BC00
 		private static bool IsOwaUrl(Uri requestUrl, OwaUrl owaUrl, bool exactMatch, bool useLocal)
 		{
 			int length = owaUrl.ImplicitUrl.Length;
@@ -372,13 +372,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return flag;
 		}
 
-		// Token: 0x06000559 RID: 1369 RVA: 0x0001D8AF File Offset: 0x0001BAAF
+		// Token: 0x0600055C RID: 1372 RVA: 0x0001DA53 File Offset: 0x0001BC53
 		private static string GetNoScriptHtml()
 		{
 			return string.Format(LocalizedStrings.GetHtmlEncoded(719849305), "<a href=\"https://go.microsoft.com/fwlink/?linkid=2009667&clcid=0x409\" > ", "</a>");
 		}
 
-		// Token: 0x0600055A RID: 1370 RVA: 0x0001D8CC File Offset: 0x0001BACC
+		// Token: 0x0600055D RID: 1373 RVA: 0x0001DA70 File Offset: 0x0001BC70
 		private void HandleFbaFormPost(BackEndServer backEndServer)
 		{
 			HttpContext httpContext = base.HttpContext;
@@ -392,7 +392,7 @@ namespace Microsoft.Exchange.HttpProxy
 			int version = backEndServer.Version;
 			OwaServerVersion owaServerVersion = null;
 			bool flag4 = false;
-			Site site = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "HandleFbaFormPost", 761).GetSite(fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "HandleFbaFormPost", 762);
+			Site site = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "HandleFbaFormPost", 761).GetSite(fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\RequestHandlers\\FbaFormPostProxyRequestHandler.cs", "HandleFbaFormPost", 762);
 			if (site != null && !site.Equals(HttpProxyGlobals.LocalSite.Member))
 			{
 				flag3 = false;
@@ -557,7 +557,7 @@ namespace Microsoft.Exchange.HttpProxy
 			response.Redirect(FbaFormPostProxyRequestHandler.CheckRedirectUrlForNewline(text), false);
 		}
 
-		// Token: 0x0600055B RID: 1371 RVA: 0x0001DF20 File Offset: 0x0001C120
+		// Token: 0x0600055E RID: 1374 RVA: 0x0001E0C4 File Offset: 0x0001C2C4
 		private void RedirectUsingSSOFBA(SecureNameValueCollection collection, Uri redirectUrl, HttpResponse response, int majorCasVersion)
 		{
 			response.StatusCode = 200;
@@ -577,7 +577,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600055C RID: 1372 RVA: 0x0001DFE0 File Offset: 0x0001C1E0
+		// Token: 0x0600055F RID: 1375 RVA: 0x0001E184 File Offset: 0x0001C384
 		private void CreateHtmlForSsoFba(SecureHttpBuffer buffer, SecureNameValueCollection collection, Uri redirectUrl, int majorCasVersion)
 		{
 			string noScriptHtml = FbaFormPostProxyRequestHandler.GetNoScriptHtml();
@@ -588,7 +588,7 @@ namespace Microsoft.Exchange.HttpProxy
 			buffer.CopyAtCurrentPosition("</body></html>");
 		}
 
-		// Token: 0x0600055D RID: 1373 RVA: 0x0001E02C File Offset: 0x0001C22C
+		// Token: 0x06000560 RID: 1376 RVA: 0x0001E1D0 File Offset: 0x0001C3D0
 		private void CreateFormHtmlForSsoFba(SecureHttpBuffer buffer, SecureNameValueCollection collection, Uri redirectUrl, int majorCasVersion)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -603,7 +603,7 @@ namespace Microsoft.Exchange.HttpProxy
 			buffer.CopyAtCurrentPosition("</form>");
 		}
 
-		// Token: 0x0600055E RID: 1374 RVA: 0x0001E0B0 File Offset: 0x0001C2B0
+		// Token: 0x06000561 RID: 1377 RVA: 0x0001E254 File Offset: 0x0001C454
 		private void CreateInputHtmlCollection(SecureNameValueCollection collection, SecureHttpBuffer buffer, Uri redirectUrl, int majorCasVersion)
 		{
 			foreach (string text in collection)
@@ -661,30 +661,30 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x04000367 RID: 871
+		// Token: 0x0400036B RID: 875
 		private const string PostBackFFCookieName = "PBack";
 
-		// Token: 0x04000368 RID: 872
+		// Token: 0x0400036C RID: 876
 		private const string DisableSSORedirectsAppSetting = "DisableSSORedirects";
 
-		// Token: 0x04000369 RID: 873
+		// Token: 0x0400036D RID: 877
 		private static readonly char[] EncodedAmpersand = EncodingUtilities.HtmlEncode("&").ToCharArray();
 
-		// Token: 0x0400036A RID: 874
+		// Token: 0x0400036E RID: 878
 		private static readonly char[] EncodedApostrophe = EncodingUtilities.HtmlEncode("'").ToCharArray();
 
-		// Token: 0x0400036B RID: 875
+		// Token: 0x0400036F RID: 879
 		private static bool? disableSSORedirects = null;
 
-		// Token: 0x0400036C RID: 876
+		// Token: 0x04000370 RID: 880
 		private string explicitLogonUser;
 
-		// Token: 0x02000122 RID: 290
+		// Token: 0x02000121 RID: 289
 		private enum LegacyRedirectFailureCause
 		{
-			// Token: 0x0400054D RID: 1357
+			// Token: 0x04000551 RID: 1361
 			None,
-			// Token: 0x0400054E RID: 1358
+			// Token: 0x04000552 RID: 1362
 			NoCasFound
 		}
 	}

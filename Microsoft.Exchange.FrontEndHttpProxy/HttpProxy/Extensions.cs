@@ -5,6 +5,7 @@ using System.Web;
 using Microsoft.Exchange.Clients.Common;
 using Microsoft.Exchange.Clients.Owa.Core;
 using Microsoft.Exchange.Data.Directory;
+using Microsoft.Exchange.Data.Directory.SystemConfiguration;
 using Microsoft.Exchange.Data.Storage;
 using Microsoft.Exchange.Diagnostics;
 using Microsoft.Exchange.Diagnostics.Components.HttpProxy;
@@ -19,7 +20,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000077 RID: 119
 	internal static class Extensions
 	{
-		// Token: 0x060003FA RID: 1018 RVA: 0x000172E0 File Offset: 0x000154E0
+		// Token: 0x060003FA RID: 1018 RVA: 0x0001731C File Offset: 0x0001551C
 		public static int GetTraceContext(this HttpContext httpContext)
 		{
 			if (httpContext == null)
@@ -34,7 +35,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return httpContext.GetHashCode();
 		}
 
-		// Token: 0x060003FB RID: 1019 RVA: 0x0001731C File Offset: 0x0001551C
+		// Token: 0x060003FB RID: 1019 RVA: 0x00017358 File Offset: 0x00015558
 		public static RequestDetailsLogger GetLogger(this HttpContext httpContext)
 		{
 			if (httpContext == null)
@@ -44,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return RequestDetailsLoggerBase<RequestDetailsLogger>.GetCurrent(httpContext);
 		}
 
-		// Token: 0x060003FC RID: 1020 RVA: 0x00017330 File Offset: 0x00015530
+		// Token: 0x060003FC RID: 1020 RVA: 0x0001736C File Offset: 0x0001556C
 		public static string GetSerializedAccessTokenString(this IRequestContext requestContext)
 		{
 			if (requestContext == null)
@@ -67,7 +68,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060003FD RID: 1021 RVA: 0x000173B4 File Offset: 0x000155B4
+		// Token: 0x060003FD RID: 1021 RVA: 0x000173F0 File Offset: 0x000155F0
 		public static SerializedClientSecurityContext GetSerializedClientSecurityContext(this IRequestContext requestContext)
 		{
 			if (requestContext == null)
@@ -90,7 +91,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060003FE RID: 1022 RVA: 0x00017434 File Offset: 0x00015634
+		// Token: 0x060003FE RID: 1022 RVA: 0x00017470 File Offset: 0x00015670
 		public static byte[] CreateSerializedSecurityAccessToken(this IRequestContext requestContext)
 		{
 			if (requestContext == null)
@@ -112,7 +113,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return serializedSecurityAccessToken.GetSecurityContextBytes();
 		}
 
-		// Token: 0x060003FF RID: 1023 RVA: 0x000174AC File Offset: 0x000156AC
+		// Token: 0x060003FF RID: 1023 RVA: 0x000174E8 File Offset: 0x000156E8
 		public static IIdentity GetCallerIdentity(this IRequestContext requestContext)
 		{
 			IIdentity identity = requestContext.HttpContext.User.Identity;
@@ -123,7 +124,39 @@ namespace Microsoft.Exchange.HttpProxy
 			return identity;
 		}
 
-		// Token: 0x06000400 RID: 1024 RVA: 0x000174FC File Offset: 0x000156FC
+		// Token: 0x06000400 RID: 1024 RVA: 0x00017538 File Offset: 0x00015738
+		public static bool HasTokenSerializationRights(this WindowsIdentity identity)
+		{
+			if (identity == null)
+			{
+				throw new ArgumentNullException("identity");
+			}
+			bool result;
+			try
+			{
+				using (ClientSecurityContext clientSecurityContext = IdentityUtils.ClientSecurityContextFromIdentity(identity, true))
+				{
+					result = LocalServer.AllowsTokenSerializationBy(clientSecurityContext);
+				}
+			}
+			catch (AuthzException ex)
+			{
+				throw new HttpException(401, ex.Message);
+			}
+			return result;
+		}
+
+		// Token: 0x06000401 RID: 1025 RVA: 0x000175A0 File Offset: 0x000157A0
+		public static bool IsSystemOrTrustedMachineAccount(this WindowsIdentity identity)
+		{
+			if (identity == null)
+			{
+				throw new ArgumentNullException("identity");
+			}
+			return identity.IsSystem || (identity.Name != null && identity.Name.EndsWith("$", StringComparison.OrdinalIgnoreCase) && identity.HasTokenSerializationRights());
+		}
+
+		// Token: 0x06000402 RID: 1026 RVA: 0x000175E0 File Offset: 0x000157E0
 		public static HttpMethod GetHttpMethod(this HttpRequest request)
 		{
 			HttpMethod result = HttpMethod.Unknown;
@@ -134,7 +167,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000401 RID: 1025 RVA: 0x00017544 File Offset: 0x00015744
+		// Token: 0x06000403 RID: 1027 RVA: 0x00017628 File Offset: 0x00015828
 		public static bool IsDownLevelClient(this HttpRequest request)
 		{
 			if (request == null)
@@ -152,64 +185,64 @@ namespace Microsoft.Exchange.HttpProxy
 			return (!string.Equals(a, "rv:", StringComparison.OrdinalIgnoreCase) || userAgentVersion.Build < 11 || !string.Equals(a2, "Windows NT", StringComparison.OrdinalIgnoreCase)) && (!string.Equals(a, "MSIE", StringComparison.OrdinalIgnoreCase) || userAgentVersion.Build < UserAgent.MSIEBrowserMinPremiumVersion || (!string.Equals(a2, "Windows NT", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Windows 98; Win 9x 4.90", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Windows 2000", StringComparison.OrdinalIgnoreCase))) && (!string.Equals(a, "Safari", StringComparison.OrdinalIgnoreCase) || ((userAgentVersion.Build < 3 || !string.Equals(a2, "Macintosh", StringComparison.OrdinalIgnoreCase)) && (!string.Equals(a2, "Linux", StringComparison.OrdinalIgnoreCase) || request.UserAgent.IndexOf("QtCarBrowser", StringComparison.OrdinalIgnoreCase) == -1))) && (!string.Equals(a, "Firefox", StringComparison.OrdinalIgnoreCase) || ((userAgentVersion.Build < 3 || (!string.Equals(a2, "Windows NT", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Windows 98; Win 9x 4.90", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Windows 2000", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Macintosh", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Linux", StringComparison.OrdinalIgnoreCase))) && (userAgentVersion.Build < 41 || !string.Equals(a2, "Android", StringComparison.OrdinalIgnoreCase) || request.UserAgent.IndexOf("Mobi", StringComparison.OrdinalIgnoreCase) == -1))) && (!string.Equals(a, "Chrome", StringComparison.OrdinalIgnoreCase) || userAgentVersion.Build < 1 || (!string.Equals(a2, "Windows NT", StringComparison.OrdinalIgnoreCase) && !string.Equals(a2, "Macintosh", StringComparison.OrdinalIgnoreCase)));
 		}
 
-		// Token: 0x06000402 RID: 1026 RVA: 0x00017735 File Offset: 0x00015935
+		// Token: 0x06000404 RID: 1028 RVA: 0x00017819 File Offset: 0x00015A19
 		public static bool IsAnyWsSecurityRequest(this HttpRequest request)
 		{
 			return RequestPathParser.IsAnyWsSecurityRequest(request.Url.LocalPath);
 		}
 
-		// Token: 0x06000403 RID: 1027 RVA: 0x00017747 File Offset: 0x00015947
+		// Token: 0x06000405 RID: 1029 RVA: 0x0001782B File Offset: 0x00015A2B
 		public static bool IsWsSecurityRequest(this HttpRequest request)
 		{
 			return RequestPathParser.IsWsSecurityRequest(request.Url.LocalPath);
 		}
 
-		// Token: 0x06000404 RID: 1028 RVA: 0x00017759 File Offset: 0x00015959
+		// Token: 0x06000406 RID: 1030 RVA: 0x0001783D File Offset: 0x00015A3D
 		public static bool IsPartnerAuthRequest(this HttpRequest request)
 		{
 			return RequestPathParser.IsPartnerAuthRequest(request.Url.LocalPath);
 		}
 
-		// Token: 0x06000405 RID: 1029 RVA: 0x0001776B File Offset: 0x0001596B
+		// Token: 0x06000407 RID: 1031 RVA: 0x0001784F File Offset: 0x00015A4F
 		public static bool IsX509CertAuthRequest(this HttpRequest request)
 		{
 			return RequestPathParser.IsX509CertAuthRequest(request.Url.LocalPath);
 		}
 
-		// Token: 0x06000406 RID: 1030 RVA: 0x0001777D File Offset: 0x0001597D
+		// Token: 0x06000408 RID: 1032 RVA: 0x00017861 File Offset: 0x00015A61
 		public static bool IsChangePasswordLogoff(this HttpRequest request)
 		{
 			return request.QueryString["ChgPwd"] == "1";
 		}
 
-		// Token: 0x06000407 RID: 1031 RVA: 0x0001779C File Offset: 0x0001599C
+		// Token: 0x06000409 RID: 1033 RVA: 0x00017880 File Offset: 0x00015A80
 		public static bool CanHaveBody(this HttpRequest request)
 		{
 			HttpMethod httpMethod = request.GetHttpMethod();
 			return httpMethod != HttpMethod.Get && httpMethod != HttpMethod.Head;
 		}
 
-		// Token: 0x06000408 RID: 1032 RVA: 0x000177C0 File Offset: 0x000159C0
+		// Token: 0x0600040A RID: 1034 RVA: 0x000178A4 File Offset: 0x00015AA4
 		public static bool IsRequestChunked(this HttpRequest request)
 		{
 			string text = request.Headers["Transfer-Encoding"];
 			return text != null && text.IndexOf("chunked", StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x06000409 RID: 1033 RVA: 0x000177F8 File Offset: 0x000159F8
+		// Token: 0x0600040B RID: 1035 RVA: 0x000178DC File Offset: 0x00015ADC
 		public static bool IsChunkedResponse(this HttpWebResponse response)
 		{
 			string text = response.Headers["Transfer-Encoding"];
 			return text != null && text.IndexOf("chunked", StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x0600040A RID: 1034 RVA: 0x0001782D File Offset: 0x00015A2D
+		// Token: 0x0600040C RID: 1036 RVA: 0x00017911 File Offset: 0x00015B11
 		public static bool HasBody(this HttpRequest request)
 		{
 			return request.CanHaveBody() && (request.IsRequestChunked() || request.ContentLength > 0);
 		}
 
-		// Token: 0x0600040B RID: 1035 RVA: 0x0001784C File Offset: 0x00015A4C
+		// Token: 0x0600040D RID: 1037 RVA: 0x00017930 File Offset: 0x00015B30
 		public static string GetBaseUrl(this HttpRequest httpRequest)
 		{
 			return new UriBuilder
@@ -221,13 +254,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}.Uri.ToString();
 		}
 
-		// Token: 0x0600040C RID: 1036 RVA: 0x000178A7 File Offset: 0x00015AA7
+		// Token: 0x0600040E RID: 1038 RVA: 0x0001798B File Offset: 0x00015B8B
 		public static string GetTestBackEndUrl(this HttpRequest clientRequest)
 		{
 			return clientRequest.Headers[Constants.TestBackEndUrlRequestHeaderKey];
 		}
 
-		// Token: 0x0600040D RID: 1037 RVA: 0x000178BC File Offset: 0x00015ABC
+		// Token: 0x0600040F RID: 1039 RVA: 0x000179A0 File Offset: 0x00015BA0
 		public static void LogSharedCacheCall(this IRequestContext requestContext, SharedCacheDiagnostics diagnostics)
 		{
 			if (requestContext == null)
@@ -239,7 +272,7 @@ namespace Microsoft.Exchange.HttpProxy
 			PerfCounters.UpdateMovingAveragePerformanceCounter(PerfCounters.HttpProxyCountersInstance.MovingAverageSharedCacheLatency, diagnostics.Latency);
 		}
 
-		// Token: 0x0600040E RID: 1038 RVA: 0x00017913 File Offset: 0x00015B13
+		// Token: 0x06000410 RID: 1040 RVA: 0x000179F7 File Offset: 0x00015BF7
 		public static string GetFriendlyName(this OrganizationId organizationId)
 		{
 			if (organizationId != null && organizationId.OrganizationalUnit != null)
@@ -249,7 +282,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x0600040F RID: 1039 RVA: 0x00017934 File Offset: 0x00015B34
+		// Token: 0x06000411 RID: 1041 RVA: 0x00017A18 File Offset: 0x00015C18
 		public static bool TryGetSite(this ServiceTopology serviceTopology, string fqdn, out Site site)
 		{
 			if (serviceTopology == null)
@@ -263,7 +296,7 @@ namespace Microsoft.Exchange.HttpProxy
 			site = null;
 			try
 			{
-				site = serviceTopology.GetSite(fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Misc\\Extensions.cs", "TryGetSite", 483);
+				site = serviceTopology.GetSite(fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Misc\\Extensions.cs", "TryGetSite", 549);
 			}
 			catch (ServerNotFoundException)
 			{
@@ -276,7 +309,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000410 RID: 1040 RVA: 0x000179A8 File Offset: 0x00015BA8
+		// Token: 0x06000412 RID: 1042 RVA: 0x00017A8C File Offset: 0x00015C8C
 		internal static void SetActivityScopeOnCurrentThread(this HttpContext httpContext, RequestDetailsLogger logger)
 		{
 			if (httpContext == null)
@@ -289,7 +322,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000411 RID: 1041 RVA: 0x000179C4 File Offset: 0x00015BC4
+		// Token: 0x06000413 RID: 1043 RVA: 0x00017AA8 File Offset: 0x00015CA8
 		internal static void Shuffle<T>(this T[] array, Random random)
 		{
 			for (int i = array.Length - 1; i > 0; i--)
@@ -300,5 +333,20 @@ namespace Microsoft.Exchange.HttpProxy
 				array[num] = t;
 			}
 		}
+
+		// Token: 0x06000414 RID: 1044 RVA: 0x00017AF0 File Offset: 0x00015CF0
+		internal static bool IsSystemOrMachineAccount(this CommonAccessToken token)
+		{
+			return token.TokenType != null && token.TokenType.Equals(Extensions.windowsAccessTokenType, StringComparison.OrdinalIgnoreCase) && token.WindowsAccessToken != null && token.WindowsAccessToken.LogonName != null && (token.WindowsAccessToken.LogonName.Equals(Extensions.windowsSystemAccountLogon, StringComparison.OrdinalIgnoreCase) || token.WindowsAccessToken.LogonName.Equals(Extensions.windowsCurrentUserName, StringComparison.OrdinalIgnoreCase) || token.WindowsAccessToken.LogonName.EndsWith("$", StringComparison.OrdinalIgnoreCase));
+		}
+
+		// Token: 0x040002EF RID: 751
+		private static string windowsAccessTokenType = 0.ToString();
+
+		// Token: 0x040002F0 RID: 752
+		private static string windowsSystemAccountLogon = new SecurityIdentifier(WellKnownSidType.LocalSystemSid, null).Translate(typeof(NTAccount)).Value;
+
+		// Token: 0x040002F1 RID: 753
+		private static string windowsCurrentUserName = WindowsIdentity.GetCurrent().Name;
 	}
 }

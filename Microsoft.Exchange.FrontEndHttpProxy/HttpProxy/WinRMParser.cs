@@ -12,18 +12,18 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200006F RID: 111
 	internal class WinRMParser
 	{
-		// Token: 0x060003C4 RID: 964 RVA: 0x000153AE File Offset: 0x000135AE
+		// Token: 0x060003C4 RID: 964 RVA: 0x000153EA File Offset: 0x000135EA
 		public WinRMParser(int traceContext)
 		{
 			this.TraceContext = traceContext;
 		}
 
 		// Token: 0x170000E2 RID: 226
-		// (get) Token: 0x060003C5 RID: 965 RVA: 0x000153BD File Offset: 0x000135BD
-		// (set) Token: 0x060003C6 RID: 966 RVA: 0x000153C5 File Offset: 0x000135C5
+		// (get) Token: 0x060003C5 RID: 965 RVA: 0x000153F9 File Offset: 0x000135F9
+		// (set) Token: 0x060003C6 RID: 966 RVA: 0x00015401 File Offset: 0x00013601
 		private int TraceContext { get; set; }
 
-		// Token: 0x060003C7 RID: 967 RVA: 0x000153D0 File Offset: 0x000135D0
+		// Token: 0x060003C7 RID: 967 RVA: 0x0001540C File Offset: 0x0001360C
 		internal bool TryParseStream(Stream stream, out WinRMInfo winRMInfo, out string failureHint)
 		{
 			failureHint = null;
@@ -145,7 +145,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060003C8 RID: 968 RVA: 0x000156FC File Offset: 0x000138FC
+		// Token: 0x060003C8 RID: 968 RVA: 0x00015738 File Offset: 0x00013938
 		private string GenerateUserFriendlyAction(string rawAction, string commandId, string commandName, string signalCode)
 		{
 			string text;
@@ -172,7 +172,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x060003C9 RID: 969 RVA: 0x00015790 File Offset: 0x00013990
+		// Token: 0x060003C9 RID: 969 RVA: 0x000157CC File Offset: 0x000139CC
 		private void UpdateCommandIdToCommandNameCache(string rawAction, string commandId, string commandName, string signalCode)
 		{
 			if (string.IsNullOrEmpty(commandId))
@@ -205,7 +205,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060003CA RID: 970 RVA: 0x00015868 File Offset: 0x00013A68
+		// Token: 0x060003CA RID: 970 RVA: 0x000158A4 File Offset: 0x00013AA4
 		private bool TryMatch(string requestString, Regex regex, string groupName, ref int startAt, out string value)
 		{
 			value = null;
@@ -227,25 +227,25 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x0400026F RID: 623
+		// Token: 0x04000270 RID: 624
 		private static ConcurrentDictionary<string, string> commandIdToCommandName = new ConcurrentDictionary<string, string>();
 
-		// Token: 0x04000270 RID: 624
+		// Token: 0x04000271 RID: 625
 		private static Regex actionRegex = new Regex("<a:Action(.)*>(?<action>(.)*)</a:Action>", RegexOptions.Compiled);
 
-		// Token: 0x04000271 RID: 625
+		// Token: 0x04000272 RID: 626
 		private static Regex sessionIdRegx = new Regex("<p:SessionId(.)*>(?<sessionId>(.)*)</p:SessionId>", RegexOptions.Compiled);
 
-		// Token: 0x04000272 RID: 626
+		// Token: 0x04000273 RID: 627
 		private static Regex shellIdRegx = new Regex("<w:Selector Name=\"ShellId\"(.)*>(?<shellId>(.)*)</w:Selector>", RegexOptions.Compiled);
 
-		// Token: 0x04000273 RID: 627
+		// Token: 0x04000274 RID: 628
 		private static Regex commandIdRegx = new Regex("<(.)*CommandId=\"(?<commandId>[^\"]*)\"[^>]*>", RegexOptions.Compiled);
 
-		// Token: 0x04000274 RID: 628
+		// Token: 0x04000275 RID: 629
 		private static Regex commandNameRegx = new Regex("<rsp:Command(.)*>(?<commandName>(.)*)</rsp:Command>", RegexOptions.Compiled);
 
-		// Token: 0x04000275 RID: 629
+		// Token: 0x04000276 RID: 630
 		private static Regex signalCodeRegex = new Regex("<rsp:Code>(?<signalCode>(.)*)</rsp:Code>", RegexOptions.Compiled);
 	}
 }

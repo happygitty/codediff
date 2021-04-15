@@ -10,21 +10,21 @@ namespace Microsoft.Exchange.HttpProxy
 	[Serializable]
 	internal class HttpProxyException : Exception
 	{
-		// Token: 0x060002D9 RID: 729 RVA: 0x0000E9DD File Offset: 0x0000CBDD
+		// Token: 0x060002D9 RID: 729 RVA: 0x0000EA19 File Offset: 0x0000CC19
 		public HttpProxyException(HttpStatusCode statusCode, HttpProxySubErrorCode errorCode, string message) : base(message)
 		{
 			this.statusCode = statusCode;
 			this.errorCode = errorCode;
 		}
 
-		// Token: 0x060002DA RID: 730 RVA: 0x0000E9F4 File Offset: 0x0000CBF4
+		// Token: 0x060002DA RID: 730 RVA: 0x0000EA30 File Offset: 0x0000CC30
 		public HttpProxyException(HttpStatusCode statusCode, HttpProxySubErrorCode errorCode, string message, Exception innerException) : base(message, innerException)
 		{
 			this.statusCode = statusCode;
 			this.errorCode = errorCode;
 		}
 
-		// Token: 0x060002DB RID: 731 RVA: 0x0000EA10 File Offset: 0x0000CC10
+		// Token: 0x060002DB RID: 731 RVA: 0x0000EA4C File Offset: 0x0000CC4C
 		protected HttpProxyException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 			if (info != null)
@@ -35,7 +35,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000099 RID: 153
-		// (get) Token: 0x060002DC RID: 732 RVA: 0x0000EA68 File Offset: 0x0000CC68
+		// (get) Token: 0x060002DC RID: 732 RVA: 0x0000EAA4 File Offset: 0x0000CCA4
 		public HttpStatusCode StatusCode
 		{
 			get
@@ -45,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700009A RID: 154
-		// (get) Token: 0x060002DD RID: 733 RVA: 0x0000EA70 File Offset: 0x0000CC70
+		// (get) Token: 0x060002DD RID: 733 RVA: 0x0000EAAC File Offset: 0x0000CCAC
 		public HttpProxySubErrorCode ErrorCode
 		{
 			get
@@ -54,7 +54,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002DE RID: 734 RVA: 0x0000EA78 File Offset: 0x0000CC78
+		// Token: 0x060002DE RID: 734 RVA: 0x0000EAB4 File Offset: 0x0000CCB4
 		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
 		public override void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
@@ -66,10 +66,10 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x040001BB RID: 443
+		// Token: 0x040001BC RID: 444
 		private readonly HttpStatusCode statusCode;
 
-		// Token: 0x040001BC RID: 444
+		// Token: 0x040001BD RID: 445
 		private readonly HttpProxySubErrorCode errorCode;
 	}
 }

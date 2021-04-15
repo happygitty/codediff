@@ -10,7 +10,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200007D RID: 125
 	internal static class KerberosUtilities
 	{
-		// Token: 0x06000430 RID: 1072 RVA: 0x00017FE4 File Offset: 0x000161E4
+		// Token: 0x06000434 RID: 1076 RVA: 0x000181A4 File Offset: 0x000163A4
 		internal static string GenerateKerberosAuthHeader(string host, int traceContext, ref AuthenticationContext authenticationContext, ref string kerberosChallenge)
 		{
 			byte[] array = null;
@@ -52,7 +52,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return Constants.PrefixForKerbAuthBlob + @string;
 		}
 
-		// Token: 0x06000431 RID: 1073 RVA: 0x000180E8 File Offset: 0x000162E8
+		// Token: 0x06000435 RID: 1077 RVA: 0x000182A8 File Offset: 0x000164A8
 		internal static bool TryFindKerberosChallenge(string wwwAuthenticateHeader, int traceContext, out string kerberosChallenge, out bool foundNegotiatePackageName)
 		{
 			kerberosChallenge = null;

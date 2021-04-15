@@ -10,7 +10,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000097 RID: 151
 	internal class AuthenticatedWopiProxyRequestHandler : ProxyRequestHandler
 	{
-		// Token: 0x06000539 RID: 1337 RVA: 0x0001CFAC File Offset: 0x0001B1AC
+		// Token: 0x0600053C RID: 1340 RVA: 0x0001D150 File Offset: 0x0001B350
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			UriBuilder uriBuilder = new UriBuilder(base.ClientRequest.Url);
@@ -34,7 +34,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x0600053A RID: 1338 RVA: 0x0001D034 File Offset: 0x0001B234
+		// Token: 0x0600053D RID: 1341 RVA: 0x0001D1D8 File Offset: 0x0001B3D8
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			Uri uri = base.GetTargetBackEndServerUrl();
@@ -60,14 +60,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return uri;
 		}
 
-		// Token: 0x0600053B RID: 1339 RVA: 0x0001D121 File Offset: 0x0001B321
+		// Token: 0x0600053E RID: 1342 RVA: 0x0001D2C5 File Offset: 0x0001B4C5
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			OwaProxyRequestHandler.AddProxyUriHeader(base.ClientRequest, headers);
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x04000365 RID: 869
+		// Token: 0x04000369 RID: 873
 		private string targetMailboxId;
 	}
 }

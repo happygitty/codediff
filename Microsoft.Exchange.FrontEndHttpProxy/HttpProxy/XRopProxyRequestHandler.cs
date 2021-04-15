@@ -9,8 +9,8 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000BC RID: 188
 	internal class XRopProxyRequestHandler : BEServerCookieProxyRequestHandler<RpcHttpService>
 	{
-		// Token: 0x17000183 RID: 387
-		// (get) Token: 0x06000742 RID: 1858 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x17000182 RID: 386
+		// (get) Token: 0x06000744 RID: 1860 RVA: 0x00003193 File Offset: 0x00001393
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -19,7 +19,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000743 RID: 1859 RVA: 0x0002A9C4 File Offset: 0x00028BC4
+		// Token: 0x06000745 RID: 1861 RVA: 0x0002AC50 File Offset: 0x00028E50
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string text = base.ClientRequest.QueryString[Constants.AnchorMailboxHeaderName];

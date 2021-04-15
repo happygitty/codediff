@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	public class OutlookCN : OwaPage
 	{
 		// Token: 0x170000CF RID: 207
-		// (get) Token: 0x0600036B RID: 875 RVA: 0x0001360C File Offset: 0x0001180C
+		// (get) Token: 0x0600036B RID: 875 RVA: 0x00013648 File Offset: 0x00011848
 		protected string IcpLink
 		{
 			get
@@ -21,10 +21,10 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0400022D RID: 557
+		// Token: 0x0400022E RID: 558
 		private const string IcpLinkAppSetting = "GallatinIcpLink";
 
-		// Token: 0x0400022E RID: 558
+		// Token: 0x0400022F RID: 559
 		private static string icpLink;
 	}
 }

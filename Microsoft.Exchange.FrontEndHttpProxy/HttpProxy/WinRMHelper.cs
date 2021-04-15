@@ -15,7 +15,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal static class WinRMHelper
 	{
 		// Token: 0x170000FF RID: 255
-		// (get) Token: 0x0600046B RID: 1131 RVA: 0x00018BD9 File Offset: 0x00016DD9
+		// (get) Token: 0x0600046F RID: 1135 RVA: 0x00018D99 File Offset: 0x00016F99
 		internal static IntAppSettingsEntry MaxBytesToPeekIntoRequestStream
 		{
 			get
@@ -25,7 +25,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000100 RID: 256
-		// (get) Token: 0x0600046C RID: 1132 RVA: 0x00018BE0 File Offset: 0x00016DE0
+		// (get) Token: 0x06000470 RID: 1136 RVA: 0x00018DA0 File Offset: 0x00016FA0
 		internal static BoolAppSettingsEntry WinRMParserEnabled
 		{
 			get
@@ -35,7 +35,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000101 RID: 257
-		// (get) Token: 0x0600046D RID: 1133 RVA: 0x00018BE7 File Offset: 0x00016DE7
+		// (get) Token: 0x06000471 RID: 1137 RVA: 0x00018DA7 File Offset: 0x00016FA7
 		internal static BoolAppSettingsEntry FriendlyErrorEnabled
 		{
 			get
@@ -44,7 +44,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600046E RID: 1134 RVA: 0x00018BF0 File Offset: 0x00016DF0
+		// Token: 0x06000472 RID: 1138 RVA: 0x00018DB0 File Offset: 0x00016FB0
 		internal static string GetDiagnosticsInfo(HttpContext context)
 		{
 			RequestDetailsLogger current = RequestDetailsLoggerBase<RequestDetailsLogger>.GetCurrent(context);
@@ -83,7 +83,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x0600046F RID: 1135 RVA: 0x00018CE7 File Offset: 0x00016EE7
+		// Token: 0x06000473 RID: 1139 RVA: 0x00018EA7 File Offset: 0x000170A7
 		internal static void SetDiagnosticsInfoWrittenFlag(NameValueCollection headers)
 		{
 			if (headers == null)
@@ -93,13 +93,13 @@ namespace Microsoft.Exchange.HttpProxy
 			headers["X-Rps-DiagInfoWritten"] = "true";
 		}
 
-		// Token: 0x06000470 RID: 1136 RVA: 0x00018CFD File Offset: 0x00016EFD
+		// Token: 0x06000474 RID: 1140 RVA: 0x00018EBD File Offset: 0x000170BD
 		internal static bool DiagnosticsInfoHasBeenWritten(NameValueCollection headers)
 		{
 			return headers != null && headers["X-Rps-DiagInfoWritten"] != null;
 		}
 
-		// Token: 0x06000471 RID: 1137 RVA: 0x00018D12 File Offset: 0x00016F12
+		// Token: 0x06000475 RID: 1141 RVA: 0x00018ED2 File Offset: 0x000170D2
 		internal static bool TryConvertStatusCode(int originalStatusCode, out int newStatusCode)
 		{
 			newStatusCode = 0;
@@ -121,7 +121,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000472 RID: 1138 RVA: 0x00018D50 File Offset: 0x00016F50
+		// Token: 0x06000476 RID: 1142 RVA: 0x00018F10 File Offset: 0x00017110
 		internal static bool IsPingRequest(WebException ex)
 		{
 			if (ex.Response == null)
@@ -139,7 +139,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return "Ping".Equals(ex.Response.Headers["X-RemotePS-Ping"], StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x06000473 RID: 1139 RVA: 0x00018DCC File Offset: 0x00016FCC
+		// Token: 0x06000477 RID: 1143 RVA: 0x00018F8C File Offset: 0x0001718C
 		internal static bool CouldBePingRequest(WebException ex)
 		{
 			if (ex.Status != WebExceptionStatus.ProtocolError)
@@ -161,7 +161,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return ex.Response is HttpWebResponse && ((HttpWebResponse)ex.Response).StatusCode == HttpStatusCode.InternalServerError;
 		}
 
-		// Token: 0x06000474 RID: 1140 RVA: 0x00018E54 File Offset: 0x00017054
+		// Token: 0x06000478 RID: 1144 RVA: 0x00019014 File Offset: 0x00017214
 		internal static bool TryInsertDiagnosticsInfo(ArraySegment<byte> buffer, Func<string> getDiagnosticInfo, out byte[] updatedBuffer, out string failureHint, Action<string> logging = null)
 		{
 			failureHint = null;
@@ -279,7 +279,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000475 RID: 1141 RVA: 0x00019164 File Offset: 0x00017364
+		// Token: 0x06000479 RID: 1145 RVA: 0x00019324 File Offset: 0x00017524
 		private static string GetTagValue(string text, string tag, int offset)
 		{
 			string funcName = "GetTagValue";
@@ -310,7 +310,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return string.Empty;
 		}
 
-		// Token: 0x06000476 RID: 1142 RVA: 0x0001920C File Offset: 0x0001740C
+		// Token: 0x0600047A RID: 1146 RVA: 0x000193CC File Offset: 0x000175CC
 		private static void TraceDebugTagNotFound(string funcName, string text, string tag, int offset)
 		{
 			int num = offset + 100;
@@ -330,52 +330,52 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x04000303 RID: 771
+		// Token: 0x04000307 RID: 775
 		internal const string DiagnosticsInfoFlagKey = "X-Rps-DiagInfoWritten";
 
-		// Token: 0x04000304 RID: 772
+		// Token: 0x04000308 RID: 776
 		internal const string WSManContentType = "application/soap+xml;charset=UTF-8";
 
-		// Token: 0x04000305 RID: 773
+		// Token: 0x04000309 RID: 777
 		internal const int StreamLookAheadBufferSize = 10000;
 
-		// Token: 0x04000306 RID: 774
+		// Token: 0x0400030A RID: 778
 		private const string EnvelopStartTag = "<s:Envelope";
 
-		// Token: 0x04000307 RID: 775
+		// Token: 0x0400030B RID: 779
 		private const int EnvelopToPeekLength = 15;
 
-		// Token: 0x04000308 RID: 776
+		// Token: 0x0400030C RID: 780
 		private const string MessageTag = "<f:Message>";
 
-		// Token: 0x04000309 RID: 777
+		// Token: 0x0400030D RID: 781
 		private const string ProviderFaultStartTag = "<f:ProviderFault";
 
-		// Token: 0x0400030A RID: 778
+		// Token: 0x0400030E RID: 782
 		private const string FaultStartTag = "<s:Fault";
 
-		// Token: 0x0400030B RID: 779
+		// Token: 0x0400030F RID: 783
 		private const string CodeStartTag = "<s:Code";
 
-		// Token: 0x0400030C RID: 780
+		// Token: 0x04000310 RID: 784
 		private const string SubcodeStartTag = "<s:Subcode";
 
-		// Token: 0x0400030D RID: 781
+		// Token: 0x04000311 RID: 785
 		private const string ValueTag = "s:Value";
 
-		// Token: 0x0400030E RID: 782
+		// Token: 0x04000312 RID: 786
 		private const string FaultMessage = "f:Message";
 
-		// Token: 0x0400030F RID: 783
+		// Token: 0x04000313 RID: 787
 		private const int MaxBufferCharactersToLogInTrace = 100;
 
-		// Token: 0x04000310 RID: 784
+		// Token: 0x04000314 RID: 788
 		private static IntAppSettingsEntry maxBytesToPeekIntoRequestStream = new IntAppSettingsEntry("MaxBytesToPeekIntoRequestStream", 2000, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000311 RID: 785
+		// Token: 0x04000315 RID: 789
 		private static BoolAppSettingsEntry winRMParserEnabled = new BoolAppSettingsEntry("WinRMParserEnabled", true, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000312 RID: 786
+		// Token: 0x04000316 RID: 790
 		private static BoolAppSettingsEntry friendlyErrorEnabled = new BoolAppSettingsEntry("FriendlyErrorEnabled", true, ExTraceGlobals.VerboseTracer);
 	}
 }

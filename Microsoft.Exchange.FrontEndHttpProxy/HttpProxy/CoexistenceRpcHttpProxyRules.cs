@@ -9,22 +9,22 @@ using Microsoft.Exchange.Data.Directory.SystemConfiguration;
 
 namespace Microsoft.Exchange.HttpProxy
 {
-	// Token: 0x020000BF RID: 191
+	// Token: 0x020000BE RID: 190
 	internal class CoexistenceRpcHttpProxyRules : IRpcHttpProxyRules
 	{
-		// Token: 0x06000750 RID: 1872 RVA: 0x0002AB2A File Offset: 0x00028D2A
+		// Token: 0x0600074B RID: 1867 RVA: 0x0002AD12 File Offset: 0x00028F12
 		internal CoexistenceRpcHttpProxyRules() : this(null)
 		{
 		}
 
-		// Token: 0x06000751 RID: 1873 RVA: 0x0002AB33 File Offset: 0x00028D33
+		// Token: 0x0600074C RID: 1868 RVA: 0x0002AD1B File Offset: 0x00028F1B
 		internal CoexistenceRpcHttpProxyRules(IDirectory rule)
 		{
 			this.directory = (rule ?? new Directory());
 			this.RefreshServerList(null);
 		}
 
-		// Token: 0x06000752 RID: 1874 RVA: 0x0002AB54 File Offset: 0x00028D54
+		// Token: 0x0600074D RID: 1869 RVA: 0x0002AD3C File Offset: 0x00028F3C
 		public bool TryGetProxyDestination(string rpcServerFqdn, out ProxyDestination destination)
 		{
 			destination = null;
@@ -36,7 +36,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return destination != null;
 		}
 
-		// Token: 0x06000753 RID: 1875 RVA: 0x0002AB7C File Offset: 0x00028D7C
+		// Token: 0x0600074E RID: 1870 RVA: 0x0002AD64 File Offset: 0x00028F64
 		public string DiagnosticInfo()
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -47,13 +47,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x06000754 RID: 1876 RVA: 0x0002ABF0 File Offset: 0x00028DF0
+		// Token: 0x0600074F RID: 1871 RVA: 0x0002ADD8 File Offset: 0x00028FD8
 		public void Shutdown()
 		{
 			this.shutdown = true;
 		}
 
-		// Token: 0x06000755 RID: 1877 RVA: 0x0002ABFC File Offset: 0x00028DFC
+		// Token: 0x06000750 RID: 1872 RVA: 0x0002ADE4 File Offset: 0x00028FE4
 		private static void ApplyManualOverrides(Dictionary<string, ProxyDestination> proxyDestinations, string manualOverrides)
 		{
 			Regex regex = new Regex("^\\+(.+)=(.+):(\\d+)");
@@ -83,20 +83,20 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000756 RID: 1878 RVA: 0x0002ACE6 File Offset: 0x00028EE6
+		// Token: 0x06000751 RID: 1873 RVA: 0x0002AECE File Offset: 0x000290CE
 		private static void AddTwoMapsOfDestinations(Dictionary<string, ProxyDestination> dict, Server server, ProxyDestination destination)
 		{
 			dict[server.Fqdn] = destination;
 			dict[server.Name] = destination;
 		}
 
-		// Token: 0x06000757 RID: 1879 RVA: 0x0002AD02 File Offset: 0x00028F02
+		// Token: 0x06000752 RID: 1874 RVA: 0x0002AEEA File Offset: 0x000290EA
 		private static ProxyDestination CreateFixedDestination(int version, string serverFqdn, int port)
 		{
 			return new ProxyDestination(version, port, serverFqdn);
 		}
 
-		// Token: 0x06000758 RID: 1880 RVA: 0x0002AD0C File Offset: 0x00028F0C
+		// Token: 0x06000753 RID: 1875 RVA: 0x0002AEF4 File Offset: 0x000290F4
 		private void RefreshServerList(object stateInfo)
 		{
 			if (this.shutdown)
@@ -201,28 +201,28 @@ namespace Microsoft.Exchange.HttpProxy
 			this.refreshTimer = new Timer(new TimerCallback(this.RefreshServerList), null, (int)CoexistenceRpcHttpProxyRules.TopologyRefreshInterval.TotalMilliseconds, -1);
 		}
 
-		// Token: 0x040003FC RID: 1020
+		// Token: 0x04000400 RID: 1024
 		private const int BrickBackEndPort = 444;
 
-		// Token: 0x040003FD RID: 1021
+		// Token: 0x04000401 RID: 1025
 		private const int OriginalRpcVDirPort = 443;
 
-		// Token: 0x040003FE RID: 1022
+		// Token: 0x04000402 RID: 1026
 		private const string AppSettingsOverrideProxyingRules = "OverrideProxyingRules";
 
-		// Token: 0x040003FF RID: 1023
+		// Token: 0x04000403 RID: 1027
 		private static readonly TimeSpan TopologyRefreshInterval = TimeSpan.FromMinutes(15.0);
 
-		// Token: 0x04000400 RID: 1024
+		// Token: 0x04000404 RID: 1028
 		private IDirectory directory;
 
-		// Token: 0x04000401 RID: 1025
+		// Token: 0x04000405 RID: 1029
 		private Dictionary<string, ProxyDestination> proxyDestinations;
 
-		// Token: 0x04000402 RID: 1026
+		// Token: 0x04000406 RID: 1030
 		private Timer refreshTimer;
 
-		// Token: 0x04000403 RID: 1027
+		// Token: 0x04000407 RID: 1031
 		private bool shutdown;
 	}
 }

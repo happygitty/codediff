@@ -9,8 +9,8 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000AF RID: 175
 	internal class PswsProxyRequestHandler : RwsPswsProxyRequestHandlerBase<WebServicesService>
 	{
-		// Token: 0x17000175 RID: 373
-		// (get) Token: 0x060006E1 RID: 1761 RVA: 0x00028651 File Offset: 0x00026851
+		// Token: 0x17000174 RID: 372
+		// (get) Token: 0x060006E3 RID: 1763 RVA: 0x000288DD File Offset: 0x00026ADD
 		protected override string ServiceName
 		{
 			get
@@ -19,20 +19,20 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006E2 RID: 1762 RVA: 0x00028658 File Offset: 0x00026858
+		// Token: 0x060006E4 RID: 1764 RVA: 0x000288E4 File Offset: 0x00026AE4
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return string.Equals(headerName, "client-request-id", StringComparison.OrdinalIgnoreCase) || (!string.Equals(headerName, "proxy", StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName));
 		}
 
-		// Token: 0x060006E3 RID: 1763 RVA: 0x00028681 File Offset: 0x00026881
+		// Token: 0x060006E5 RID: 1765 RVA: 0x0002890D File Offset: 0x00026B0D
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			headers.Add("public-server-uri", base.ClientRequest.Url.GetLeftPart(UriPartial.Authority));
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x060006E4 RID: 1764 RVA: 0x000286A8 File Offset: 0x000268A8
+		// Token: 0x060006E6 RID: 1766 RVA: 0x00028934 File Offset: 0x00026B34
 		protected override void DoProtocolSpecificBeginProcess()
 		{
 			base.DoProtocolSpecificBeginProcess();
@@ -49,7 +49,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006E5 RID: 1765 RVA: 0x000286F0 File Offset: 0x000268F0
+		// Token: 0x060006E7 RID: 1767 RVA: 0x0002897C File Offset: 0x00026B7C
 		private bool AuthorizeOAuthRequest(out string errorMsg)
 		{
 			OAuthIdentity oauthIdentity = base.HttpContext.User.Identity as OAuthIdentity;
@@ -71,7 +71,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x040003E0 RID: 992
+		// Token: 0x040003E4 RID: 996
 		private const string TenantParameterName = "organization";
 	}
 }

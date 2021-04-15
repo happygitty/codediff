@@ -10,7 +10,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000BB RID: 187
 	internal class WopiProxyRequestHandler : ProxyRequestHandler
 	{
-		// Token: 0x0600073D RID: 1853 RVA: 0x0002A870 File Offset: 0x00028A70
+		// Token: 0x0600073F RID: 1855 RVA: 0x0002AAFC File Offset: 0x00028CFC
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string mailboxId = WopiRequestPathHandler.GetMailboxId(base.ClientRequest);
@@ -31,7 +31,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x0600073E RID: 1854 RVA: 0x0002A8D4 File Offset: 0x00028AD4
+		// Token: 0x06000740 RID: 1856 RVA: 0x0002AB60 File Offset: 0x00028D60
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			Uri uri = base.GetTargetBackEndServerUrl();
@@ -57,20 +57,20 @@ namespace Microsoft.Exchange.HttpProxy
 			return uri;
 		}
 
-		// Token: 0x0600073F RID: 1855 RVA: 0x0001D121 File Offset: 0x0001B321
+		// Token: 0x06000741 RID: 1857 RVA: 0x0001D2C5 File Offset: 0x0001B4C5
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			OwaProxyRequestHandler.AddProxyUriHeader(base.ClientRequest, headers);
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x06000740 RID: 1856 RVA: 0x00019686 File Offset: 0x00017886
+		// Token: 0x06000742 RID: 1858 RVA: 0x00019846 File Offset: 0x00017A46
 		protected override bool IsRoutingError(HttpWebResponse response)
 		{
 			return OwaProxyRequestHandler.IsRoutingErrorFromOWA(this, response) || base.IsRoutingError(response);
 		}
 
-		// Token: 0x040003FA RID: 1018
+		// Token: 0x040003FE RID: 1022
 		private string targetMailboxId;
 	}
 }

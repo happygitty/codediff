@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D4CAED6-4079-479A-AB89-96ABEBAD6A2A}</ProjectGuid>
+    <ProjectGuid>{943BFAC2-04D3-4705-B812-F385273A7AB4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Exchange</RootNamespace>
@@ -221,7 +221,6 @@
     <Compile Include="HttpProxy\ProxyDestination.cs" />
     <Compile Include="HttpProxy\ProxyModule.cs" />
     <Compile Include="HttpProxy\ProxyRequestHandler.cs" />
-    <Compile Include="HttpProxy\PsgwProxyRequestHandler.cs" />
     <Compile Include="HttpProxy\PstProviderAnchorMailbox.cs" />
     <Compile Include="HttpProxy\PswsProxyRequestHandler.cs" />
     <Compile Include="HttpProxy\PuidAnchorMailbox.cs" />

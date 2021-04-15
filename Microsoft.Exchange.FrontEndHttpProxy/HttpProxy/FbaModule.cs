@@ -33,26 +33,26 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000063 RID: 99
 	public class FbaModule : ProxyModule
 	{
-		// Token: 0x0600033C RID: 828 RVA: 0x000112FA File Offset: 0x0000F4FA
+		// Token: 0x0600033C RID: 828 RVA: 0x00011336 File Offset: 0x0000F536
 		internal FbaModule()
 		{
 		}
 
 		// Token: 0x170000BB RID: 187
-		// (get) Token: 0x0600033D RID: 829 RVA: 0x00011302 File Offset: 0x0000F502
-		// (set) Token: 0x0600033E RID: 830 RVA: 0x00011309 File Offset: 0x0000F509
+		// (get) Token: 0x0600033D RID: 829 RVA: 0x0001133E File Offset: 0x0000F53E
+		// (set) Token: 0x0600033E RID: 830 RVA: 0x00011345 File Offset: 0x0000F545
 		private static ExactTimeoutCache<string, byte[]> KeyCache { get; set; } = new ExactTimeoutCache<string, byte[]>(delegate(string k, byte[] v, RemoveReason r)
 		{
 			FbaModule.UpdateCacheSizeCounter();
 		}, null, null, FbaModule.FbaKeyCacheSizeLimit.Value, false);
 
-		// Token: 0x0600033F RID: 831 RVA: 0x00011314 File Offset: 0x0000F514
+		// Token: 0x0600033F RID: 831 RVA: 0x00011350 File Offset: 0x0000F550
 		internal static bool IsCadataCookie(string cookieName)
 		{
 			return string.Compare(cookieName, "cadata", StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(cookieName, "cadataKey", StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(cookieName, "cadataIV", StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(cookieName, "cadataSig", StringComparison.OrdinalIgnoreCase) == 0 || string.Compare(cookieName, "cadataTTL", StringComparison.OrdinalIgnoreCase) == 0;
 		}
 
-		// Token: 0x06000340 RID: 832 RVA: 0x0001136C File Offset: 0x0000F56C
+		// Token: 0x06000340 RID: 832 RVA: 0x000113A8 File Offset: 0x0000F5A8
 		internal static void InvalidateKeyCache(HttpRequest httpRequest)
 		{
 			if (httpRequest == null)
@@ -74,7 +74,7 @@ namespace Microsoft.Exchange.HttpProxy
 			FbaModule.UpdateCacheSizeCounter();
 		}
 
-		// Token: 0x06000341 RID: 833 RVA: 0x000113FC File Offset: 0x0000F5FC
+		// Token: 0x06000341 RID: 833 RVA: 0x00011438 File Offset: 0x0000F638
 		internal static void SetCadataCookies(HttpApplication httpApplication)
 		{
 			HttpContext context = httpApplication.Context;
@@ -118,7 +118,7 @@ namespace Microsoft.Exchange.HttpProxy
 			FbaModule.CreateAndAddCookieToResponse(request, response, "cadataSig", Convert.ToBase64String(inArray4));
 		}
 
-		// Token: 0x06000342 RID: 834 RVA: 0x000115C0 File Offset: 0x0000F7C0
+		// Token: 0x06000342 RID: 834 RVA: 0x000115FC File Offset: 0x0000F7FC
 		protected override void OnBeginRequestInternal(HttpApplication httpApplication)
 		{
 			this.basicAuthString = null;
@@ -147,7 +147,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.OnBeginRequestInternal(httpApplication);
 		}
 
-		// Token: 0x06000343 RID: 835 RVA: 0x00011688 File Offset: 0x0000F888
+		// Token: 0x06000343 RID: 835 RVA: 0x000116C4 File Offset: 0x0000F8C4
 		protected override void OnPostAuthorizeInternal(HttpApplication httpApplication)
 		{
 			if (this.basicAuthString != null)
@@ -173,7 +173,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.OnPostAuthorizeInternal(httpApplication);
 		}
 
-		// Token: 0x06000344 RID: 836 RVA: 0x000117B0 File Offset: 0x0000F9B0
+		// Token: 0x06000344 RID: 836 RVA: 0x000117EC File Offset: 0x0000F9EC
 		protected override void OnEndRequestInternal(HttpApplication httpApplication)
 		{
 			HttpRequest request = httpApplication.Context.Request;
@@ -209,7 +209,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.OnEndRequestInternal(httpApplication);
 		}
 
-		// Token: 0x06000345 RID: 837 RVA: 0x00011944 File Offset: 0x0000FB44
+		// Token: 0x06000345 RID: 837 RVA: 0x00011980 File Offset: 0x0000FB80
 		private static void DetermineKeyIntervalsIfNecessary()
 		{
 			if (FbaModule.haveDeterminedKeyIntervals)
@@ -294,7 +294,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000346 RID: 838 RVA: 0x00011BEC File Offset: 0x0000FDEC
+		// Token: 0x06000346 RID: 838 RVA: 0x00011C28 File Offset: 0x0000FE28
 		private static void SetCadataTtlCookie(AesCryptoServiceProvider aes, int flags, HttpRequest httpRequest, HttpResponse httpResponse)
 		{
 			using (ICryptoTransform cryptoTransform = aes.CreateEncryptor())
@@ -311,13 +311,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000347 RID: 839 RVA: 0x00011CA8 File Offset: 0x0000FEA8
+		// Token: 0x06000347 RID: 839 RVA: 0x00011CE4 File Offset: 0x0000FEE4
 		private static bool IsMowa(HttpRequest request, bool isTrusted)
 		{
 			return isTrusted && request.Headers["X-OWA-Protocol"] == "MOWA";
 		}
 
-		// Token: 0x06000348 RID: 840 RVA: 0x00011CCC File Offset: 0x0000FECC
+		// Token: 0x06000348 RID: 840 RVA: 0x00011D08 File Offset: 0x0000FF08
 		private static void CreateAndAddCookieToResponse(HttpRequest request, HttpResponse response, string name, string value)
 		{
 			HttpCookie httpCookie = new HttpCookie(name, value);
@@ -330,13 +330,13 @@ namespace Microsoft.Exchange.HttpProxy
 			response.Cookies.Add(httpCookie);
 		}
 
-		// Token: 0x06000349 RID: 841 RVA: 0x00011D30 File Offset: 0x0000FF30
+		// Token: 0x06000349 RID: 841 RVA: 0x00011D6C File Offset: 0x0000FF6C
 		private static void UpdateCacheSizeCounter()
 		{
 			PerfCounters.HttpProxyCacheCountersInstance.FbaModuleKeyCacheSize.RawValue = (long)FbaModule.KeyCache.Count;
 		}
 
-		// Token: 0x0600034A RID: 842 RVA: 0x00011D4C File Offset: 0x0000FF4C
+		// Token: 0x0600034A RID: 842 RVA: 0x00011D88 File Offset: 0x0000FF88
 		private static string GetExternalUrlScheme(ref int port)
 		{
 			if (port == 80)
@@ -346,7 +346,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return Uri.UriSchemeHttps;
 		}
 
-		// Token: 0x0600034B RID: 843 RVA: 0x00011D60 File Offset: 0x0000FF60
+		// Token: 0x0600034B RID: 843 RVA: 0x00011D9C File Offset: 0x0000FF9C
 		private static X509Certificate2 GetSslCertificate(HttpRequest httpRequest)
 		{
 			if (!FbaModule.loadedSslCert)
@@ -380,7 +380,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return FbaModule.sslCert;
 		}
 
-		// Token: 0x0600034C RID: 844 RVA: 0x00011E20 File Offset: 0x00010020
+		// Token: 0x0600034C RID: 844 RVA: 0x00011E5C File Offset: 0x0001005C
 		private static X509Certificate2 LoadSslCertificate(HttpRequest httpRequest)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -489,7 +489,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return x509Certificate;
 		}
 
-		// Token: 0x0600034D RID: 845 RVA: 0x000120A0 File Offset: 0x000102A0
+		// Token: 0x0600034D RID: 845 RVA: 0x000120DC File Offset: 0x000102DC
 		private static List<X509Certificate2> SafeGetCertificates()
 		{
 			List<X509Certificate2> result;
@@ -505,7 +505,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600034E RID: 846 RVA: 0x000120E8 File Offset: 0x000102E8
+		// Token: 0x0600034E RID: 846 RVA: 0x00012124 File Offset: 0x00010324
 		private bool RedirectToFbaLogon(HttpApplication httpApplication, FbaModule.LogonReason reason)
 		{
 			HttpContext context = httpApplication.Context;
@@ -616,7 +616,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0600034F RID: 847 RVA: 0x000124B4 File Offset: 0x000106B4
+		// Token: 0x0600034F RID: 847 RVA: 0x000124F0 File Offset: 0x000106F0
 		private void Send440Response(HttpApplication httpApplication, bool isPost)
 		{
 			HttpRequest request = httpApplication.Context.Request;
@@ -638,7 +638,7 @@ namespace Microsoft.Exchange.HttpProxy
 			httpApplication.CompleteRequest();
 		}
 
-		// Token: 0x06000350 RID: 848 RVA: 0x00012554 File Offset: 0x00010754
+		// Token: 0x06000350 RID: 848 RVA: 0x00012590 File Offset: 0x00010790
 		private bool HandleFbaAuthFormPost(HttpApplication httpApplication)
 		{
 			HttpContext context = httpApplication.Context;
@@ -717,7 +717,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000351 RID: 849 RVA: 0x000127F8 File Offset: 0x000109F8
+		// Token: 0x06000351 RID: 849 RVA: 0x00012834 File Offset: 0x00010A34
 		private void ParseCadataCookies(HttpApplication httpApplication)
 		{
 			HttpContext context = httpApplication.Context;
@@ -994,7 +994,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000352 RID: 850 RVA: 0x0001319C File Offset: 0x0001139C
+		// Token: 0x06000352 RID: 850 RVA: 0x000131D8 File Offset: 0x000113D8
 		private bool CheckPostDestination(string destination, HttpRequest request)
 		{
 			if (string.IsNullOrEmpty(destination))
@@ -1027,178 +1027,178 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x040001F2 RID: 498
+		// Token: 0x040001F3 RID: 499
 		internal const string LogoffPage = "/logoff.owa";
 
-		// Token: 0x040001F3 RID: 499
+		// Token: 0x040001F4 RID: 500
 		internal const string FlagsHttpContextKeyName = "Flags";
 
-		// Token: 0x040001F4 RID: 500
+		// Token: 0x040001F5 RID: 501
 		internal const byte IsDownlevelFlagValue = 1;
 
-		// Token: 0x040001F5 RID: 501
+		// Token: 0x040001F6 RID: 502
 		internal const byte IsTrustedFlagValue = 4;
 
-		// Token: 0x040001F6 RID: 502
+		// Token: 0x040001F7 RID: 503
 		internal const string PasswordFormName = "password";
 
-		// Token: 0x040001F7 RID: 503
+		// Token: 0x040001F8 RID: 504
 		internal const string DestinationFormName = "destination";
 
-		// Token: 0x040001F8 RID: 504
+		// Token: 0x040001F9 RID: 505
 		internal const string UsernameFormName = "username";
 
-		// Token: 0x040001F9 RID: 505
+		// Token: 0x040001FA RID: 506
 		internal const string FlagsFormName = "flags";
 
-		// Token: 0x040001FA RID: 506
+		// Token: 0x040001FB RID: 507
 		internal const string BasicAuthHeader = "Authorization";
 
-		// Token: 0x040001FB RID: 507
+		// Token: 0x040001FC RID: 508
 		private const string AuthPost = "auth.owa";
 
-		// Token: 0x040001FC RID: 508
+		// Token: 0x040001FD RID: 509
 		private const string LegacyAuthPost = "owaauth.dll";
 
-		// Token: 0x040001FD RID: 509
+		// Token: 0x040001FE RID: 510
 		private const string LogonPage = "/auth/logon.aspx";
 
-		// Token: 0x040001FE RID: 510
+		// Token: 0x040001FF RID: 511
 		private const string LogonPath = "/owa";
 
-		// Token: 0x040001FF RID: 511
+		// Token: 0x04000200 RID: 512
 		private const string E14OwaAuthPost = "/owa/auth.owa";
 
-		// Token: 0x04000200 RID: 512
+		// Token: 0x04000201 RID: 513
 		private const string HttpGetMethod = "GET";
 
-		// Token: 0x04000201 RID: 513
+		// Token: 0x04000202 RID: 514
 		private const string HttpPostMethod = "POST";
 
-		// Token: 0x04000202 RID: 514
+		// Token: 0x04000203 RID: 515
 		private const string OehParameter = "oeh=1&";
 
-		// Token: 0x04000203 RID: 515
+		// Token: 0x04000204 RID: 516
 		private const string CadataSig = "Fba Rocks!";
 
-		// Token: 0x04000204 RID: 516
+		// Token: 0x04000205 RID: 517
 		private const string BasicHeaderValue = "Basic ";
 
-		// Token: 0x04000205 RID: 517
+		// Token: 0x04000206 RID: 518
 		private const string ResponseBody440 = "<HTML><BODY>440 Login Timeout</BODY></HTML>";
 
-		// Token: 0x04000206 RID: 518
+		// Token: 0x04000207 RID: 519
 		private const string ResponseBody440Post = "<HTML><SCRIPT>if (parent.navbar != null) parent.location = self.location;else self.location = self.location;</SCRIPT><BODY>440 Login Timeout</BODY></HTML>";
 
-		// Token: 0x04000207 RID: 519
+		// Token: 0x04000208 RID: 520
 		private const string CommaSpace = ", ";
 
-		// Token: 0x04000208 RID: 520
+		// Token: 0x04000209 RID: 521
 		private const string FbaPrivateCookieTTLValueName = "PrivateTimeout";
 
-		// Token: 0x04000209 RID: 521
+		// Token: 0x0400020A RID: 522
 		private const string FbaPublicCookieTTLValueName = "PublicTimeout";
 
-		// Token: 0x0400020A RID: 522
+		// Token: 0x0400020B RID: 523
 		private const string FbaMowaCookieTTLValueName = "MowaTimeout";
 
-		// Token: 0x0400020B RID: 523
+		// Token: 0x0400020C RID: 524
 		private const int FbaMinimumTimeout = 1;
 
-		// Token: 0x0400020C RID: 524
+		// Token: 0x0400020D RID: 525
 		private const int FbaMaximumTimeout = 43200;
 
-		// Token: 0x0400020D RID: 525
+		// Token: 0x0400020E RID: 526
 		private static readonly int DefaultPrivateKeyTimeToLiveInMinutes = 480;
 
-		// Token: 0x0400020E RID: 526
+		// Token: 0x0400020F RID: 527
 		private static readonly int DefaultPublicKeyTimeToLiveInMinutes = 15;
 
-		// Token: 0x0400020F RID: 527
+		// Token: 0x04000210 RID: 528
 		private static readonly int MowaKeyTimeToLiveInMinutes = 960;
 
-		// Token: 0x04000210 RID: 528
+		// Token: 0x04000211 RID: 529
 		private static readonly int TtlReissueDivisor = 2;
 
-		// Token: 0x04000211 RID: 529
+		// Token: 0x04000212 RID: 530
 		private static readonly IntAppSettingsEntry FbaKeyCacheSizeLimit = new IntAppSettingsEntry(HttpProxySettings.Prefix("FbaKeyCacheSizeLimit"), 25000, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000212 RID: 530
+		// Token: 0x04000213 RID: 531
 		private static readonly string[] KeyCacheCookieKeys = new string[]
 		{
 			"cadataKey",
 			"cadataIV"
 		};
 
-		// Token: 0x04000213 RID: 531
+		// Token: 0x04000214 RID: 532
 		private static readonly object LockObject = new object();
 
-		// Token: 0x04000214 RID: 532
+		// Token: 0x04000215 RID: 533
 		private static TimeSpan fbaPrivateKeyTTL = new TimeSpan(0, (FbaModule.TtlReissueDivisor + 1) * (FbaModule.DefaultPrivateKeyTimeToLiveInMinutes / FbaModule.TtlReissueDivisor), 0);
 
-		// Token: 0x04000215 RID: 533
+		// Token: 0x04000216 RID: 534
 		private static TimeSpan fbaPrivateKeyReissueInterval = new TimeSpan(0, 0, FbaModule.DefaultPrivateKeyTimeToLiveInMinutes * 60 / FbaModule.TtlReissueDivisor);
 
-		// Token: 0x04000216 RID: 534
+		// Token: 0x04000217 RID: 535
 		private static TimeSpan fbaPublicKeyTTL = new TimeSpan(0, 0, (FbaModule.TtlReissueDivisor + 1) * (FbaModule.DefaultPublicKeyTimeToLiveInMinutes * 60 / FbaModule.TtlReissueDivisor));
 
-		// Token: 0x04000217 RID: 535
+		// Token: 0x04000218 RID: 536
 		private static TimeSpan fbaPublicKeyReissueInterval = new TimeSpan(0, 0, FbaModule.DefaultPublicKeyTimeToLiveInMinutes * 60 / FbaModule.TtlReissueDivisor);
 
-		// Token: 0x04000218 RID: 536
+		// Token: 0x04000219 RID: 537
 		private static TimeSpan fbaMowaKeyTTL = new TimeSpan(0, (FbaModule.TtlReissueDivisor + 1) * (FbaModule.MowaKeyTimeToLiveInMinutes / FbaModule.TtlReissueDivisor), 0);
 
-		// Token: 0x04000219 RID: 537
+		// Token: 0x0400021A RID: 538
 		private static TimeSpan fbaMowaKeyReissueInterval = new TimeSpan(0, 0, FbaModule.MowaKeyTimeToLiveInMinutes * 60 / FbaModule.TtlReissueDivisor);
 
-		// Token: 0x0400021A RID: 538
+		// Token: 0x0400021B RID: 539
 		private static bool haveDeterminedKeyIntervals = false;
 
-		// Token: 0x0400021B RID: 539
+		// Token: 0x0400021C RID: 540
 		private static bool loadedSslCert = false;
 
-		// Token: 0x0400021C RID: 540
+		// Token: 0x0400021D RID: 541
 		private static X509Certificate2 sslCert;
 
-		// Token: 0x0400021D RID: 541
+		// Token: 0x0400021E RID: 542
 		private string basicAuthString;
 
-		// Token: 0x0400021E RID: 542
+		// Token: 0x0400021F RID: 543
 		private string destinationUrl;
 
-		// Token: 0x0400021F RID: 543
+		// Token: 0x04000220 RID: 544
 		private string userName;
 
-		// Token: 0x04000220 RID: 544
+		// Token: 0x04000221 RID: 545
 		private SecureString password;
 
-		// Token: 0x04000221 RID: 545
+		// Token: 0x04000222 RID: 546
 		private string cadataKeyString;
 
-		// Token: 0x04000222 RID: 546
+		// Token: 0x04000223 RID: 547
 		private string cadataIVString;
 
-		// Token: 0x04000223 RID: 547
+		// Token: 0x04000224 RID: 548
 		private byte[] symKey;
 
-		// Token: 0x04000224 RID: 548
+		// Token: 0x04000225 RID: 549
 		private byte[] symIV;
 
-		// Token: 0x04000225 RID: 549
+		// Token: 0x04000226 RID: 550
 		private int flags;
 
-		// Token: 0x020000FF RID: 255
+		// Token: 0x020000FE RID: 254
 		protected enum LogonReason
 		{
-			// Token: 0x040004BB RID: 1211
-			None,
-			// Token: 0x040004BC RID: 1212
-			Logoff,
-			// Token: 0x040004BD RID: 1213
-			InvalidCredentials,
-			// Token: 0x040004BE RID: 1214
-			Timeout,
 			// Token: 0x040004BF RID: 1215
+			None,
+			// Token: 0x040004C0 RID: 1216
+			Logoff,
+			// Token: 0x040004C1 RID: 1217
+			InvalidCredentials,
+			// Token: 0x040004C2 RID: 1218
+			Timeout,
+			// Token: 0x040004C3 RID: 1219
 			ChangePasswordLogoff
 		}
 	}

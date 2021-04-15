@@ -64,7 +64,7 @@ namespace Microsoft.Exchange.HttpProxy
 		protected override ADRawEntry LoadADRawEntry()
 		{
 			IRecipientSession recipientSession = this.GetRecipientSession();
-			ADRawEntry ret = DirectoryHelper.InvokeAccountForest<ADMailboxRecipient>(base.RequestContext.LatencyTracker, () => recipientSession.FindByExternalDirectoryObjectId<ADMailboxRecipient>(this.externalDirectoryObjectId, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs", 150, "LoadADRawEntry"), base.RequestContext.Logger, recipientSession);
+			ADRawEntry ret = DirectoryHelper.InvokeAccountForest<ADMailboxRecipient>(base.RequestContext.LatencyTracker, () => recipientSession.FindByExternalDirectoryObjectId<ADMailboxRecipient>(this.externalDirectoryObjectId, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs", 150, "LoadADRawEntry"), base.RequestContext.Logger, recipientSession);
 			return base.CheckForNullAndThrowIfApplicable<ADRawEntry>(ret);
 		}
 
@@ -92,7 +92,7 @@ namespace Microsoft.Exchange.HttpProxy
 			IRecipientSession result;
 			if (!string.IsNullOrEmpty(this.tenantDomain))
 			{
-				result = DirectorySessionFactory.Default.GetTenantOrRootOrgRecipientSession(true, 2, ADSessionSettings.FromBusinessTenantAcceptedDomain(this.tenantDomain), 192, "GetRecipientSession", "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs");
+				result = DirectorySessionFactory.Default.GetTenantOrRootOrgRecipientSession(true, 2, ADSessionSettings.FromBusinessTenantAcceptedDomain(this.tenantDomain), 192, "GetRecipientSession", "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs");
 			}
 			else if (this.tenantId != Guid.Empty)
 			{
@@ -100,7 +100,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 			else
 			{
-				result = DirectorySessionFactory.Default.GetTenantOrRootOrgRecipientSession(true, 2, ADSessionSettings.FromOrganizationIdWithoutRbacScopesServiceOnly(this.organizationId), 208, "GetRecipientSession", "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs");
+				result = DirectorySessionFactory.Default.GetTenantOrRootOrgRecipientSession(true, 2, ADSessionSettings.FromOrganizationIdWithoutRbacScopesServiceOnly(this.organizationId), 208, "GetRecipientSession", "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\AnchorMailbox\\ExternalDirectoryObjectIdAnchorMailbox.cs");
 			}
 			return result;
 		}

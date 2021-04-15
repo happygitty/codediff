@@ -17,7 +17,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000058 RID: 88
 	internal class PfdTracer
 	{
-		// Token: 0x060002C4 RID: 708 RVA: 0x0000DDF4 File Offset: 0x0000BFF4
+		// Token: 0x060002C4 RID: 708 RVA: 0x0000DE30 File Offset: 0x0000C030
 		static PfdTracer()
 		{
 			PfdTracer.NotInterestedCookies.Add("ASP.NET_SessionId");
@@ -56,7 +56,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002C5 RID: 709 RVA: 0x0000E060 File Offset: 0x0000C260
+		// Token: 0x060002C5 RID: 709 RVA: 0x0000E09C File Offset: 0x0000C29C
 		public PfdTracer(int traceContext, int hashCode)
 		{
 			this.traceContext = traceContext;
@@ -77,7 +77,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000097 RID: 151
-		// (get) Token: 0x060002C6 RID: 710 RVA: 0x0000E0C6 File Offset: 0x0000C2C6
+		// (get) Token: 0x060002C6 RID: 710 RVA: 0x0000E102 File Offset: 0x0000C302
 		private static bool IsTraceDisabled
 		{
 			get
@@ -87,7 +87,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000098 RID: 152
-		// (get) Token: 0x060002C7 RID: 711 RVA: 0x0000E0F9 File Offset: 0x0000C2F9
+		// (get) Token: 0x060002C7 RID: 711 RVA: 0x0000E135 File Offset: 0x0000C335
 		private string TraceFilePath
 		{
 			get
@@ -100,7 +100,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002C8 RID: 712 RVA: 0x0000E130 File Offset: 0x0000C330
+		// Token: 0x060002C8 RID: 712 RVA: 0x0000E16C File Offset: 0x0000C36C
 		public void TraceRequest(string stage, HttpRequest request)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -117,7 +117,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002C9 RID: 713 RVA: 0x0000E188 File Offset: 0x0000C388
+		// Token: 0x060002C9 RID: 713 RVA: 0x0000E1C4 File Offset: 0x0000C3C4
 		public void TraceRequest(string stage, HttpWebRequest request)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -134,7 +134,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CA RID: 714 RVA: 0x0000E1E0 File Offset: 0x0000C3E0
+		// Token: 0x060002CA RID: 714 RVA: 0x0000E21C File Offset: 0x0000C41C
 		public void TraceResponse(string stage, HttpResponse response)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -167,7 +167,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CB RID: 715 RVA: 0x0000E2B8 File Offset: 0x0000C4B8
+		// Token: 0x060002CB RID: 715 RVA: 0x0000E2F4 File Offset: 0x0000C4F4
 		public void TraceResponse(string stage, HttpWebResponse response)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -201,7 +201,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CC RID: 716 RVA: 0x0000E390 File Offset: 0x0000C590
+		// Token: 0x060002CC RID: 716 RVA: 0x0000E3CC File Offset: 0x0000C5CC
 		public void TraceProxyTarget(AnchoredRoutingTarget anchor)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -212,7 +212,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CD RID: 717 RVA: 0x0000E3D0 File Offset: 0x0000C5D0
+		// Token: 0x060002CD RID: 717 RVA: 0x0000E40C File Offset: 0x0000C60C
 		public void TraceProxyTarget(string key, string fqdn)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -229,7 +229,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CE RID: 718 RVA: 0x0000E41C File Offset: 0x0000C61C
+		// Token: 0x060002CE RID: 718 RVA: 0x0000E458 File Offset: 0x0000C658
 		public void TraceRedirect(string stage, string url)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -240,7 +240,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(s);
 		}
 
-		// Token: 0x060002CF RID: 719 RVA: 0x0000E450 File Offset: 0x0000C650
+		// Token: 0x060002CF RID: 719 RVA: 0x0000E48C File Offset: 0x0000C68C
 		public void TraceHeaders(string stage, WebHeaderCollection originalHeaders, WebHeaderCollection newHeaders)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -257,7 +257,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(stringBuilder.ToString());
 		}
 
-		// Token: 0x060002D0 RID: 720 RVA: 0x0000E4B4 File Offset: 0x0000C6B4
+		// Token: 0x060002D0 RID: 720 RVA: 0x0000E4F0 File Offset: 0x0000C6F0
 		public void TraceHeaders(string stage, NameValueCollection originalHeaders, NameValueCollection newHeaders)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -274,7 +274,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(stringBuilder.ToString());
 		}
 
-		// Token: 0x060002D1 RID: 721 RVA: 0x0000E518 File Offset: 0x0000C718
+		// Token: 0x060002D1 RID: 721 RVA: 0x0000E554 File Offset: 0x0000C754
 		public void TraceCookies(string stage, HttpCookieCollection originalCookies, CookieContainer newCookies)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -291,7 +291,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(stringBuilder.ToString());
 		}
 
-		// Token: 0x060002D2 RID: 722 RVA: 0x0000E580 File Offset: 0x0000C780
+		// Token: 0x060002D2 RID: 722 RVA: 0x0000E5BC File Offset: 0x0000C7BC
 		public void TraceCookies(string stage, CookieCollection originalCookies, HttpCookieCollection newCookies)
 		{
 			if (PfdTracer.IsTraceDisabled)
@@ -308,7 +308,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Write(stringBuilder.ToString());
 		}
 
-		// Token: 0x060002D3 RID: 723 RVA: 0x0000E5E8 File Offset: 0x0000C7E8
+		// Token: 0x060002D3 RID: 723 RVA: 0x0000E624 File Offset: 0x0000C824
 		private static NameValueCollection CopyCookies(CookieCollection cookies)
 		{
 			NameValueCollection nameValueCollection = new NameValueCollection(cookies.Count, StringComparer.OrdinalIgnoreCase);
@@ -320,7 +320,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return nameValueCollection;
 		}
 
-		// Token: 0x060002D4 RID: 724 RVA: 0x0000E65C File Offset: 0x0000C85C
+		// Token: 0x060002D4 RID: 724 RVA: 0x0000E698 File Offset: 0x0000C898
 		private static NameValueCollection CopyCookies(CookieContainer cookies)
 		{
 			NameValueCollection nameValueCollection = new NameValueCollection(cookies.Count, StringComparer.OrdinalIgnoreCase);
@@ -345,7 +345,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return nameValueCollection;
 		}
 
-		// Token: 0x060002D5 RID: 725 RVA: 0x0000E7B4 File Offset: 0x0000C9B4
+		// Token: 0x060002D5 RID: 725 RVA: 0x0000E7F0 File Offset: 0x0000C9F0
 		private static string GetValue(object o, string key)
 		{
 			NameValueCollection nameValueCollection = o as NameValueCollection;
@@ -379,7 +379,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002D6 RID: 726 RVA: 0x0000E814 File Offset: 0x0000CA14
+		// Token: 0x060002D6 RID: 726 RVA: 0x0000E850 File Offset: 0x0000CA50
 		private static void TraceDiffs(NameObjectCollectionBase original, NameObjectCollectionBase revised, HashSet<string> notInterestingNames, StringBuilder result)
 		{
 			HashSet<string> hashSet = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
@@ -414,7 +414,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002D7 RID: 727 RVA: 0x0000E93C File Offset: 0x0000CB3C
+		// Token: 0x060002D7 RID: 727 RVA: 0x0000E978 File Offset: 0x0000CB78
 		private void Write(string s)
 		{
 			if (PfdTracer.PfdTraceToDebugger.Value)
@@ -434,58 +434,58 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x040001A9 RID: 425
+		// Token: 0x040001AA RID: 426
 		public const string ClientRequest = "ClientRequest";
 
-		// Token: 0x040001AA RID: 426
+		// Token: 0x040001AB RID: 427
 		public const string ProxyRequest = "ProxyRequest";
 
-		// Token: 0x040001AB RID: 427
+		// Token: 0x040001AC RID: 428
 		public const string ProxyLogonRequest = "ProxyLogonRequest";
 
-		// Token: 0x040001AC RID: 428
+		// Token: 0x040001AD RID: 429
 		public const string ClientResponse = "ClientResponse";
 
-		// Token: 0x040001AD RID: 429
+		// Token: 0x040001AE RID: 430
 		public const string ProxyResponse = "ProxyResponse";
 
-		// Token: 0x040001AE RID: 430
+		// Token: 0x040001AF RID: 431
 		public const string ProxyLogonResponse = "ProxyLogonResponse";
 
-		// Token: 0x040001AF RID: 431
+		// Token: 0x040001B0 RID: 432
 		public const string NeedLanguage = "EcpOwa442NeedLanguage";
 
-		// Token: 0x040001B0 RID: 432
+		// Token: 0x040001B1 RID: 433
 		public const string FbaAuth = "FbaAuth";
 
-		// Token: 0x040001B1 RID: 433
+		// Token: 0x040001B2 RID: 434
 		public static readonly BoolAppSettingsEntry PfdTraceToFile = new BoolAppSettingsEntry(HttpProxySettings.Prefix("PfdTraceToFile"), false, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040001B2 RID: 434
+		// Token: 0x040001B3 RID: 435
 		public static readonly BoolAppSettingsEntry PfdTraceToDebugger = new BoolAppSettingsEntry(HttpProxySettings.Prefix("PfdTraceToDebugger"), false, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040001B3 RID: 435
+		// Token: 0x040001B4 RID: 436
 		private static readonly HashSet<string> NotInterestedHeaders = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
 
-		// Token: 0x040001B4 RID: 436
+		// Token: 0x040001B5 RID: 437
 		private static readonly HashSet<string> NotInterestedCookies = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase);
 
-		// Token: 0x040001B5 RID: 437
+		// Token: 0x040001B6 RID: 438
 		private static bool traceToEtl = true;
 
-		// Token: 0x040001B6 RID: 438
+		// Token: 0x040001B7 RID: 439
 		private static string traceDirectory = null;
 
-		// Token: 0x040001B7 RID: 439
+		// Token: 0x040001B8 RID: 440
 		private readonly int traceContext;
 
-		// Token: 0x040001B8 RID: 440
+		// Token: 0x040001B9 RID: 441
 		private readonly int hashCode;
 
-		// Token: 0x040001B9 RID: 441
+		// Token: 0x040001BA RID: 442
 		private readonly string vdir;
 
-		// Token: 0x040001BA RID: 442
+		// Token: 0x040001BB RID: 443
 		private string traceFilePath;
 	}
 }

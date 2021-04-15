@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class EwsJsonProxyRequestHandler : OwaProxyRequestHandler
 	{
 		// Token: 0x17000123 RID: 291
-		// (get) Token: 0x06000521 RID: 1313 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000525 RID: 1317 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -17,7 +17,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000522 RID: 1314 RVA: 0x0001C9C8 File Offset: 0x0001ABC8
+		// Token: 0x06000526 RID: 1318 RVA: 0x0001CB88 File Offset: 0x0001AD88
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			headers["RPSPUID"] = (string)base.HttpContext.Items["RPSPUID"];
@@ -29,22 +29,22 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000523 RID: 1315 RVA: 0x0001CA5C File Offset: 0x0001AC5C
+		// Token: 0x06000527 RID: 1319 RVA: 0x0001CC1C File Offset: 0x0001AE1C
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !string.Equals(headerName, "X-OWA-ProxyUri", StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
 		}
 
-		// Token: 0x06000524 RID: 1316 RVA: 0x0001CA75 File Offset: 0x0001AC75
+		// Token: 0x06000528 RID: 1320 RVA: 0x0001CC35 File Offset: 0x0001AE35
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			return UrlUtilities.FixIntegratedAuthUrlForBackEnd(base.GetTargetBackEndServerUrl());
 		}
 
-		// Token: 0x0400035A RID: 858
+		// Token: 0x0400035E RID: 862
 		private const string LiveIdPuid = "RPSPUID";
 
-		// Token: 0x0400035B RID: 859
+		// Token: 0x0400035F RID: 863
 		private const string OrgIdPuid = "RPSOrgIdPUID";
 	}
 }

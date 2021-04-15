@@ -11,8 +11,8 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class SerializedClientSecurityContext : ISecurityAccessToken
 	{
 		// Token: 0x170000D2 RID: 210
-		// (get) Token: 0x06000381 RID: 897 RVA: 0x0001401D File Offset: 0x0001221D
-		// (set) Token: 0x06000382 RID: 898 RVA: 0x00014025 File Offset: 0x00012225
+		// (get) Token: 0x06000381 RID: 897 RVA: 0x00014059 File Offset: 0x00012259
+		// (set) Token: 0x06000382 RID: 898 RVA: 0x00014061 File Offset: 0x00012261
 		public string UserSid
 		{
 			get
@@ -26,8 +26,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D3 RID: 211
-		// (get) Token: 0x06000383 RID: 899 RVA: 0x0001402E File Offset: 0x0001222E
-		// (set) Token: 0x06000384 RID: 900 RVA: 0x00014036 File Offset: 0x00012236
+		// (get) Token: 0x06000383 RID: 899 RVA: 0x0001406A File Offset: 0x0001226A
+		// (set) Token: 0x06000384 RID: 900 RVA: 0x00014072 File Offset: 0x00012272
 		public SidStringAndAttributes[] GroupSids
 		{
 			get
@@ -41,8 +41,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D4 RID: 212
-		// (get) Token: 0x06000385 RID: 901 RVA: 0x0001403F File Offset: 0x0001223F
-		// (set) Token: 0x06000386 RID: 902 RVA: 0x00014047 File Offset: 0x00012247
+		// (get) Token: 0x06000385 RID: 901 RVA: 0x0001407B File Offset: 0x0001227B
+		// (set) Token: 0x06000386 RID: 902 RVA: 0x00014083 File Offset: 0x00012283
 		public SidStringAndAttributes[] RestrictedGroupSids
 		{
 			get
@@ -56,8 +56,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D5 RID: 213
-		// (get) Token: 0x06000387 RID: 903 RVA: 0x00014050 File Offset: 0x00012250
-		// (set) Token: 0x06000388 RID: 904 RVA: 0x00014058 File Offset: 0x00012258
+		// (get) Token: 0x06000387 RID: 903 RVA: 0x0001408C File Offset: 0x0001228C
+		// (set) Token: 0x06000388 RID: 904 RVA: 0x00014094 File Offset: 0x00012294
 		internal string AuthenticationType
 		{
 			get
@@ -71,8 +71,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D6 RID: 214
-		// (get) Token: 0x06000389 RID: 905 RVA: 0x00014061 File Offset: 0x00012261
-		// (set) Token: 0x0600038A RID: 906 RVA: 0x00014069 File Offset: 0x00012269
+		// (get) Token: 0x06000389 RID: 905 RVA: 0x0001409D File Offset: 0x0001229D
+		// (set) Token: 0x0600038A RID: 906 RVA: 0x000140A5 File Offset: 0x000122A5
 		internal string LogonName
 		{
 			get
@@ -85,7 +85,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600038B RID: 907 RVA: 0x00014074 File Offset: 0x00012274
+		// Token: 0x0600038B RID: 907 RVA: 0x000140B0 File Offset: 0x000122B0
 		public static SerializedClientSecurityContext CreateFromClientSecurityContext(ClientSecurityContext clientSecurityContext, string logonName, string authenticationType)
 		{
 			SerializedClientSecurityContext serializedClientSecurityContext = new SerializedClientSecurityContext();
@@ -95,7 +95,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return serializedClientSecurityContext;
 		}
 
-		// Token: 0x0600038C RID: 908 RVA: 0x000140A0 File Offset: 0x000122A0
+		// Token: 0x0600038C RID: 908 RVA: 0x000140DC File Offset: 0x000122DC
 		public void Serialize(XmlTextWriter writer)
 		{
 			writer.WriteStartElement(SerializedClientSecurityContext.RootElementName);
@@ -119,7 +119,7 @@ namespace Microsoft.Exchange.HttpProxy
 			writer.WriteEndElement();
 		}
 
-		// Token: 0x0600038D RID: 909 RVA: 0x00014168 File Offset: 0x00012368
+		// Token: 0x0600038D RID: 909 RVA: 0x000141A4 File Offset: 0x000123A4
 		internal static SerializedClientSecurityContext Deserialize(Stream input)
 		{
 			XmlTextReader xmlTextReader = null;
@@ -140,7 +140,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600038E RID: 910 RVA: 0x000141AC File Offset: 0x000123AC
+		// Token: 0x0600038E RID: 910 RVA: 0x000141E8 File Offset: 0x000123E8
 		internal static SerializedClientSecurityContext Deserialize(XmlTextReader reader)
 		{
 			SerializedClientSecurityContext serializedClientSecurityContext = new SerializedClientSecurityContext();
@@ -296,7 +296,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return serializedClientSecurityContext;
 		}
 
-		// Token: 0x0600038F RID: 911 RVA: 0x00014530 File Offset: 0x00012730
+		// Token: 0x0600038F RID: 911 RVA: 0x0001456C File Offset: 0x0001276C
 		internal string Serialize()
 		{
 			StringWriter stringWriter = new StringWriter();
@@ -323,13 +323,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000390 RID: 912 RVA: 0x0001458C File Offset: 0x0001278C
+		// Token: 0x06000390 RID: 912 RVA: 0x000145C8 File Offset: 0x000127C8
 		private static void ThrowParserException(XmlTextReader reader, string description)
 		{
 			throw new FormatException(string.Format(CultureInfo.InvariantCulture, "Invalid serialized client context. Line number: {0} Position: {1}.{2}", reader.LineNumber.ToString(CultureInfo.InvariantCulture), reader.LinePosition.ToString(CultureInfo.InvariantCulture), (description != null) ? (" " + description) : string.Empty));
 		}
 
-		// Token: 0x06000391 RID: 913 RVA: 0x000145E8 File Offset: 0x000127E8
+		// Token: 0x06000391 RID: 913 RVA: 0x00014624 File Offset: 0x00012824
 		private static void WriteSid(XmlTextWriter writer, string sid, uint attributes, SerializedClientSecurityContext.SidType sidType)
 		{
 			writer.WriteStartElement(SerializedClientSecurityContext.SidElementName);
@@ -347,50 +347,50 @@ namespace Microsoft.Exchange.HttpProxy
 			writer.WriteEndElement();
 		}
 
-		// Token: 0x04000249 RID: 585
+		// Token: 0x0400024A RID: 586
 		private static readonly int MaximumSidsPerContext = 3000;
 
-		// Token: 0x0400024A RID: 586
+		// Token: 0x0400024B RID: 587
 		private static readonly string RootElementName = "r";
 
-		// Token: 0x0400024B RID: 587
+		// Token: 0x0400024C RID: 588
 		private static readonly string AuthenticationTypeAttributeName = "at";
 
-		// Token: 0x0400024C RID: 588
+		// Token: 0x0400024D RID: 589
 		private static readonly string LogonNameAttributeName = "ln";
 
-		// Token: 0x0400024D RID: 589
+		// Token: 0x0400024E RID: 590
 		private static readonly string SidElementName = "s";
 
-		// Token: 0x0400024E RID: 590
+		// Token: 0x0400024F RID: 591
 		private static readonly string SidTypeAttributeName = "t";
 
-		// Token: 0x0400024F RID: 591
+		// Token: 0x04000250 RID: 592
 		private static readonly string SidAttributesAttributeName = "a";
 
-		// Token: 0x04000250 RID: 592
+		// Token: 0x04000251 RID: 593
 		private string userSid;
 
-		// Token: 0x04000251 RID: 593
+		// Token: 0x04000252 RID: 594
 		private SidStringAndAttributes[] groupSids;
 
-		// Token: 0x04000252 RID: 594
+		// Token: 0x04000253 RID: 595
 		private SidStringAndAttributes[] restrictedGroupSids;
 
-		// Token: 0x04000253 RID: 595
+		// Token: 0x04000254 RID: 596
 		private string authenticationType;
 
-		// Token: 0x04000254 RID: 596
+		// Token: 0x04000255 RID: 597
 		private string logonName;
 
-		// Token: 0x02000104 RID: 260
+		// Token: 0x02000103 RID: 259
 		private enum SidType
 		{
-			// Token: 0x040004CE RID: 1230
+			// Token: 0x040004D2 RID: 1234
 			User,
-			// Token: 0x040004CF RID: 1231
+			// Token: 0x040004D3 RID: 1235
 			Group,
-			// Token: 0x040004D0 RID: 1232
+			// Token: 0x040004D4 RID: 1236
 			RestrictedGroup
 		}
 	}

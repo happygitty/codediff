@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000053 RID: 83
 	public sealed class UserContextCookie
 	{
-		// Token: 0x0600029E RID: 670 RVA: 0x0000D2EA File Offset: 0x0000B4EA
+		// Token: 0x0600029E RID: 670 RVA: 0x0000D326 File Offset: 0x0000B526
 		private UserContextCookie(string cookieId, string userContextId, string mailboxUniqueKey)
 		{
 			this.cookieId = cookieId;
@@ -17,7 +17,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700008F RID: 143
-		// (get) Token: 0x0600029F RID: 671 RVA: 0x0000D307 File Offset: 0x0000B507
+		// (get) Token: 0x0600029F RID: 671 RVA: 0x0000D343 File Offset: 0x0000B543
 		internal HttpCookie HttpCookie
 		{
 			get
@@ -31,7 +31,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000090 RID: 144
-		// (get) Token: 0x060002A0 RID: 672 RVA: 0x0000D32E File Offset: 0x0000B52E
+		// (get) Token: 0x060002A0 RID: 672 RVA: 0x0000D36A File Offset: 0x0000B56A
 		internal Cookie NetCookie
 		{
 			get
@@ -45,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000091 RID: 145
-		// (get) Token: 0x060002A1 RID: 673 RVA: 0x0000D358 File Offset: 0x0000B558
+		// (get) Token: 0x060002A1 RID: 673 RVA: 0x0000D394 File Offset: 0x0000B594
 		internal string CookieName
 		{
 			get
@@ -60,7 +60,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000092 RID: 146
-		// (get) Token: 0x060002A2 RID: 674 RVA: 0x0000D386 File Offset: 0x0000B586
+		// (get) Token: 0x060002A2 RID: 674 RVA: 0x0000D3C2 File Offset: 0x0000B5C2
 		internal string UserContextId
 		{
 			get
@@ -70,7 +70,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000093 RID: 147
-		// (get) Token: 0x060002A3 RID: 675 RVA: 0x0000D38E File Offset: 0x0000B58E
+		// (get) Token: 0x060002A3 RID: 675 RVA: 0x0000D3CA File Offset: 0x0000B5CA
 		internal string MailboxUniqueKey
 		{
 			get
@@ -80,7 +80,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000094 RID: 148
-		// (get) Token: 0x060002A4 RID: 676 RVA: 0x0000D398 File Offset: 0x0000B598
+		// (get) Token: 0x060002A4 RID: 676 RVA: 0x0000D3D4 File Offset: 0x0000B5D4
 		internal string CookieValue
 		{
 			get
@@ -98,7 +98,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060002A5 RID: 677 RVA: 0x0000D3F4 File Offset: 0x0000B5F4
+		// Token: 0x060002A5 RID: 677 RVA: 0x0000D430 File Offset: 0x0000B630
 		public static string ValidTokenBase64Encode(byte[] byteArray)
 		{
 			if (byteArray == null)
@@ -127,7 +127,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new string(array, 0, array.Length - num2);
 		}
 
-		// Token: 0x060002A6 RID: 678 RVA: 0x0000D478 File Offset: 0x0000B678
+		// Token: 0x060002A6 RID: 678 RVA: 0x0000D4B4 File Offset: 0x0000B6B4
 		public static byte[] ValidTokenBase64Decode(string tokenValidBase64String)
 		{
 			if (tokenValidBase64String == null)
@@ -158,7 +158,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return Convert.FromBase64CharArray(array, 0, array.Length);
 		}
 
-		// Token: 0x060002A7 RID: 679 RVA: 0x0000D514 File Offset: 0x0000B714
+		// Token: 0x060002A7 RID: 679 RVA: 0x0000D550 File Offset: 0x0000B750
 		public static bool IsValidGuid(string guid)
 		{
 			if (guid == null || guid.Length != 32)
@@ -175,25 +175,25 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x060002A8 RID: 680 RVA: 0x0000D54E File Offset: 0x0000B74E
+		// Token: 0x060002A8 RID: 680 RVA: 0x0000D58A File Offset: 0x0000B78A
 		public static bool IsHexChar(char c)
 		{
 			return char.IsDigit(c) || (char.ToUpperInvariant(c) >= 'A' && char.ToUpperInvariant(c) <= 'F');
 		}
 
-		// Token: 0x060002A9 RID: 681 RVA: 0x0000D573 File Offset: 0x0000B773
+		// Token: 0x060002A9 RID: 681 RVA: 0x0000D5AF File Offset: 0x0000B7AF
 		public override string ToString()
 		{
 			return this.CookieName + "=" + this.CookieValue;
 		}
 
-		// Token: 0x060002AA RID: 682 RVA: 0x0000D58B File Offset: 0x0000B78B
+		// Token: 0x060002AA RID: 682 RVA: 0x0000D5C7 File Offset: 0x0000B7C7
 		internal static UserContextCookie Create(string cookieId, string userContextId, string mailboxUniqueKey)
 		{
 			return new UserContextCookie(cookieId, userContextId, mailboxUniqueKey);
 		}
 
-		// Token: 0x060002AB RID: 683 RVA: 0x0000D598 File Offset: 0x0000B798
+		// Token: 0x060002AB RID: 683 RVA: 0x0000D5D4 File Offset: 0x0000B7D4
 		internal static UserContextCookie TryCreateFromHttpCookie(HttpCookie cookie)
 		{
 			string text = null;
@@ -214,7 +214,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return UserContextCookie.Create(text3, text, text2);
 		}
 
-		// Token: 0x060002AC RID: 684 RVA: 0x0000D5E8 File Offset: 0x0000B7E8
+		// Token: 0x060002AC RID: 684 RVA: 0x0000D624 File Offset: 0x0000B824
 		internal static UserContextCookie TryCreateFromNetCookie(Cookie cookie)
 		{
 			string text = null;
@@ -235,7 +235,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return UserContextCookie.Create(text3, text, text2);
 		}
 
-		// Token: 0x060002AD RID: 685 RVA: 0x0000D638 File Offset: 0x0000B838
+		// Token: 0x060002AD RID: 685 RVA: 0x0000D674 File Offset: 0x0000B874
 		internal static bool TryParseCookieValue(string cookieValue, out string userContextId, out string mailboxUniqueKey)
 		{
 			userContextId = null;
@@ -273,7 +273,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return UserContextCookie.IsValidUserContextId(userContextId);
 		}
 
-		// Token: 0x060002AE RID: 686 RVA: 0x0000D6D8 File Offset: 0x0000B8D8
+		// Token: 0x060002AE RID: 686 RVA: 0x0000D714 File Offset: 0x0000B914
 		internal static bool TryParseCookieName(string cookieName, out string cookieId)
 		{
 			cookieId = null;
@@ -290,34 +290,34 @@ namespace Microsoft.Exchange.HttpProxy
 			return UserContextCookie.IsValidGuid(cookieId);
 		}
 
-		// Token: 0x060002AF RID: 687 RVA: 0x0000D72F File Offset: 0x0000B92F
+		// Token: 0x060002AF RID: 687 RVA: 0x0000D76B File Offset: 0x0000B96B
 		private static bool IsValidUserContextId(string userContextId)
 		{
 			return UserContextCookie.IsValidGuid(userContextId);
 		}
 
-		// Token: 0x04000197 RID: 407
+		// Token: 0x04000198 RID: 408
 		public const string UserContextCookiePrefix = "UserContext";
 
-		// Token: 0x04000198 RID: 408
+		// Token: 0x04000199 RID: 409
 		internal const int UserContextIdLength = 32;
 
-		// Token: 0x04000199 RID: 409
+		// Token: 0x0400019A RID: 410
 		private readonly string userContextId;
 
-		// Token: 0x0400019A RID: 410
+		// Token: 0x0400019B RID: 411
 		private readonly string mailboxUniqueKey;
 
-		// Token: 0x0400019B RID: 411
+		// Token: 0x0400019C RID: 412
 		private readonly string cookieId;
 
-		// Token: 0x0400019C RID: 412
+		// Token: 0x0400019D RID: 413
 		private HttpCookie httpCookie;
 
-		// Token: 0x0400019D RID: 413
+		// Token: 0x0400019E RID: 414
 		private Cookie netCookie;
 
-		// Token: 0x0400019E RID: 414
+		// Token: 0x0400019F RID: 415
 		private string cookieValue;
 	}
 }

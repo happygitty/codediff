@@ -11,12 +11,12 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200006B RID: 107
 	internal class RpsOutDataResponseStreamProxy : StreamProxy
 	{
-		// Token: 0x0600037E RID: 894 RVA: 0x00013E29 File Offset: 0x00012029
+		// Token: 0x0600037E RID: 894 RVA: 0x00013E65 File Offset: 0x00012065
 		internal RpsOutDataResponseStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer, IRequestContext requestContext) : base(streamProxyType, source, target, buffer, requestContext)
 		{
 		}
 
-		// Token: 0x0600037F RID: 895 RVA: 0x00013E38 File Offset: 0x00012038
+		// Token: 0x0600037F RID: 895 RVA: 0x00013E74 File Offset: 0x00012074
 		protected override byte[] GetUpdatedBufferToSend(ArraySegment<byte> buffer)
 		{
 			try
@@ -45,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.GetUpdatedBufferToSend(buffer);
 		}
 
-		// Token: 0x06000380 RID: 896 RVA: 0x00013F04 File Offset: 0x00012104
+		// Token: 0x06000380 RID: 896 RVA: 0x00013F40 File Offset: 0x00012140
 		private bool TryGetUpdatedBufferToSend(ArraySegment<byte> buffer, out byte[] updatedBuffer, out string failureHint)
 		{
 			HttpContext context = base.RequestContext.HttpContext;

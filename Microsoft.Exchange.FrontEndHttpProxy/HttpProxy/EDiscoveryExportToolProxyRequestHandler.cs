@@ -14,13 +14,13 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000092 RID: 146
 	internal class EDiscoveryExportToolProxyRequestHandler : ProxyRequestHandler
 	{
-		// Token: 0x06000514 RID: 1300 RVA: 0x0001C59B File Offset: 0x0001A79B
+		// Token: 0x06000518 RID: 1304 RVA: 0x0001C75B File Offset: 0x0001A95B
 		internal static bool IsEDiscoveryExportToolProxyRequest(HttpRequest request)
 		{
 			return EDiscoveryExportToolRequestPathHandler.IsEDiscoveryExportToolRequest(request);
 		}
 
-		// Token: 0x06000515 RID: 1301 RVA: 0x0001C5A4 File Offset: 0x0001A7A4
+		// Token: 0x06000519 RID: 1305 RVA: 0x0001C764 File Offset: 0x0001A964
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -68,7 +68,7 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new HttpProxyException(HttpStatusCode.NotFound, 3007, string.Format("Unable to find target server for url: {0}", base.ClientRequest.Url));
 		}
 
-		// Token: 0x06000516 RID: 1302 RVA: 0x0001C748 File Offset: 0x0001A948
+		// Token: 0x0600051A RID: 1306 RVA: 0x0001C908 File Offset: 0x0001AB08
 		protected override UriBuilder GetClientUrlForProxy()
 		{
 			UriBuilder uriBuilder = new UriBuilder(base.ClientRequest.Url);
@@ -79,7 +79,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder;
 		}
 
-		// Token: 0x04000355 RID: 853
+		// Token: 0x04000359 RID: 857
 		private string serverFqdn;
 	}
 }

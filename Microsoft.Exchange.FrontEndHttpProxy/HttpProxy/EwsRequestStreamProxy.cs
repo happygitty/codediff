@@ -9,7 +9,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000069 RID: 105
 	internal class EwsRequestStreamProxy : StreamProxy
 	{
-		// Token: 0x06000376 RID: 886 RVA: 0x00013971 File Offset: 0x00011B71
+		// Token: 0x06000376 RID: 886 RVA: 0x000139AD File Offset: 0x00011BAD
 		public EwsRequestStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer, IRequestContext requestContext, bool shouldInsertSecurityContext, bool shouldInsertFreeBusyDefaultSecurityContext, string requestVersionToAdd) : base(streamProxyType, source, target, buffer, requestContext)
 		{
 			this.shouldInsertSecurityContext = shouldInsertSecurityContext;
@@ -18,7 +18,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D1 RID: 209
-		// (get) Token: 0x06000377 RID: 887 RVA: 0x00013998 File Offset: 0x00011B98
+		// (get) Token: 0x06000377 RID: 887 RVA: 0x000139D4 File Offset: 0x00011BD4
 		public static byte[] FreeBusyPermissionDefaultSecurityAccessToken
 		{
 			get
@@ -43,7 +43,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000378 RID: 888 RVA: 0x00013A10 File Offset: 0x00011C10
+		// Token: 0x06000378 RID: 888 RVA: 0x00013A4C File Offset: 0x00011C4C
 		protected override byte[] GetUpdatedBufferToSend(ArraySegment<byte> buffer)
 		{
 			if (this.haveAddedEwsProxyHeader)
@@ -122,56 +122,56 @@ namespace Microsoft.Exchange.HttpProxy
 			return array2;
 		}
 
-		// Token: 0x06000379 RID: 889 RVA: 0x00013CC9 File Offset: 0x00011EC9
+		// Token: 0x06000379 RID: 889 RVA: 0x00013D05 File Offset: 0x00011F05
 		protected override void OnTargetStreamUpdate()
 		{
 			base.OnTargetStreamUpdate();
 			this.haveAddedEwsProxyHeader = false;
 		}
 
-		// Token: 0x04000236 RID: 566
+		// Token: 0x04000237 RID: 567
 		private const string BeginOfSoapHeaderTagNoNamespace = "<Header";
 
-		// Token: 0x04000237 RID: 567
+		// Token: 0x04000238 RID: 568
 		private const string BeginOfSoapHeaderTagWithNamespace = ":Header";
 
-		// Token: 0x04000238 RID: 568
+		// Token: 0x04000239 RID: 569
 		private const string BeginOfSoapBodyTagNoNamespace = "<Body";
 
-		// Token: 0x04000239 RID: 569
+		// Token: 0x0400023A RID: 570
 		private const string BeginOfSoapBodyTagWithNamespace = ":Body";
 
-		// Token: 0x0400023A RID: 570
+		// Token: 0x0400023B RID: 571
 		private const string SoapHeaderBegin = "<Header xmlns='http://schemas.xmlsoap.org/soap/envelope/'>";
 
-		// Token: 0x0400023B RID: 571
+		// Token: 0x0400023C RID: 572
 		private const string SoapHeaderEnd = "</Header>";
 
-		// Token: 0x0400023C RID: 572
+		// Token: 0x0400023D RID: 573
 		private const string RequestServerVersionHeaderStart = "<RequestServerVersion xmlns='http://schemas.microsoft.com/exchange/services/2006/types' Version='";
 
-		// Token: 0x0400023D RID: 573
+		// Token: 0x0400023E RID: 574
 		private const string RequestServerVersionHeaderEnd = "' />";
 
-		// Token: 0x0400023E RID: 574
+		// Token: 0x0400023F RID: 575
 		private const string ProxySecurityContextHeaderStart = "<ProxySecurityContext xmlns='http://schemas.microsoft.com/exchange/services/2006/types'>";
 
-		// Token: 0x0400023F RID: 575
+		// Token: 0x04000240 RID: 576
 		private const string ProxySecurityContextHeaderEnd = "</ProxySecurityContext>";
 
-		// Token: 0x04000240 RID: 576
+		// Token: 0x04000241 RID: 577
 		private static byte[] freeBusyPermissionDefaultSecurityContextBytes;
 
-		// Token: 0x04000241 RID: 577
+		// Token: 0x04000242 RID: 578
 		private readonly bool shouldInsertSecurityContext;
 
-		// Token: 0x04000242 RID: 578
+		// Token: 0x04000243 RID: 579
 		private readonly bool shouldInsertFreeBusyDefaultSecurityContext;
 
-		// Token: 0x04000243 RID: 579
+		// Token: 0x04000244 RID: 580
 		private readonly string requestVersionToAdd;
 
-		// Token: 0x04000244 RID: 580
+		// Token: 0x04000245 RID: 581
 		private bool haveAddedEwsProxyHeader;
 	}
 }

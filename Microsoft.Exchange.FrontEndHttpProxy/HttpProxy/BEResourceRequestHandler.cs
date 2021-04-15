@@ -12,25 +12,25 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200008D RID: 141
 	internal class BEResourceRequestHandler : ProxyRequestHandler
 	{
-		// Token: 0x060004CE RID: 1230 RVA: 0x0001AA5A File Offset: 0x00018C5A
+		// Token: 0x060004D2 RID: 1234 RVA: 0x0001AC1A File Offset: 0x00018E1A
 		internal static bool CanHandle(HttpRequest httpRequest)
 		{
 			return !string.IsNullOrEmpty(BEResourceRequestHandler.GetBEResouceCookie(httpRequest)) && BEResourceRequestHandler.IsResourceRequest(httpRequest.Url.LocalPath);
 		}
 
-		// Token: 0x060004CF RID: 1231 RVA: 0x0001AA7B File Offset: 0x00018C7B
+		// Token: 0x060004D3 RID: 1235 RVA: 0x0001AC3B File Offset: 0x00018E3B
 		internal static bool IsResourceRequest(string localPath)
 		{
 			return RequestPathParser.IsResourceRequest(localPath);
 		}
 
-		// Token: 0x060004D0 RID: 1232 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x060004D4 RID: 1236 RVA: 0x00003193 File Offset: 0x00001393
 		protected override bool ShouldBackendRequestBeAnonymous()
 		{
 			return true;
 		}
 
-		// Token: 0x060004D1 RID: 1233 RVA: 0x0001AA84 File Offset: 0x00018C84
+		// Token: 0x060004D5 RID: 1237 RVA: 0x0001AC44 File Offset: 0x00018E44
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string beresouceCookie = BEResourceRequestHandler.GetBEResouceCookie(base.ClientRequest);
@@ -46,7 +46,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x060004D2 RID: 1234 RVA: 0x0001AB04 File Offset: 0x00018D04
+		// Token: 0x060004D6 RID: 1238 RVA: 0x0001ACC4 File Offset: 0x00018EC4
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
@@ -56,7 +56,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004D3 RID: 1235 RVA: 0x0001AB54 File Offset: 0x00018D54
+		// Token: 0x060004D7 RID: 1239 RVA: 0x0001AD14 File Offset: 0x00018F14
 		private static string GetBEResouceCookie(HttpRequest httpRequest)
 		{
 			string result = null;

@@ -9,7 +9,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200007B RID: 123
 	internal static class HttpWebHelper
 	{
-		// Token: 0x06000426 RID: 1062 RVA: 0x00017E98 File Offset: 0x00016098
+		// Token: 0x0600042A RID: 1066 RVA: 0x00018058 File Offset: 0x00016258
 		public static void SetRange(HttpWebRequest destination, string value)
 		{
 			HttpRangeSpecifier httpRangeSpecifier = HttpRangeSpecifier.Parse(value);
@@ -30,7 +30,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000427 RID: 1063 RVA: 0x00017F48 File Offset: 0x00016148
+		// Token: 0x0600042B RID: 1067 RVA: 0x00018108 File Offset: 0x00016308
 		public static void SetIfModifiedSince(HttpWebRequest destination, string value)
 		{
 			DateTime ifModifiedSince;
@@ -45,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000428 RID: 1064 RVA: 0x00017F86 File Offset: 0x00016186
+		// Token: 0x0600042C RID: 1068 RVA: 0x00018146 File Offset: 0x00016346
 		public static void SetConnectionHeader(HttpWebRequest destination, string source)
 		{
 			if (HttpProxySettings.KeepAliveOutboundConnectionsEnabled.Value || source.IndexOf("keep-alive", StringComparison.OrdinalIgnoreCase) >= 0)
@@ -59,7 +59,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000429 RID: 1065 RVA: 0x00017FC1 File Offset: 0x000161C1
+		// Token: 0x0600042D RID: 1069 RVA: 0x00018181 File Offset: 0x00016381
 		public static HttpWebHelper.ConnectivityError CheckConnectivityError(WebException e)
 		{
 			if (ConnectivityErrorHelper.IsConnectivityErrorWebExceptionStatus(e.Status))
@@ -73,14 +73,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return HttpWebHelper.ConnectivityError.None;
 		}
 
-		// Token: 0x02000119 RID: 281
+		// Token: 0x02000118 RID: 280
 		public enum ConnectivityError
 		{
-			// Token: 0x04000503 RID: 1283
+			// Token: 0x04000507 RID: 1287
 			None,
-			// Token: 0x04000504 RID: 1284
+			// Token: 0x04000508 RID: 1288
 			Retryable,
-			// Token: 0x04000505 RID: 1285
+			// Token: 0x04000509 RID: 1289
 			NonRetryable
 		}
 	}

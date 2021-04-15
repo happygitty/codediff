@@ -7,7 +7,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class OwaOeh2ProxyRequestHandler : OwaProxyRequestHandler
 	{
 		// Token: 0x1700013B RID: 315
-		// (get) Token: 0x060005BC RID: 1468 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x060005BF RID: 1471 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -16,7 +16,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060005BD RID: 1469 RVA: 0x0001CA75 File Offset: 0x0001AC75
+		// Token: 0x060005C0 RID: 1472 RVA: 0x0001CC35 File Offset: 0x0001AE35
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			return UrlUtilities.FixIntegratedAuthUrlForBackEnd(base.GetTargetBackEndServerUrl());

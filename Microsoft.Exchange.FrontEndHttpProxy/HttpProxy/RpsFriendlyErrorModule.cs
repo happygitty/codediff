@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000B6 RID: 182
 	public class RpsFriendlyErrorModule : IHttpModule
 	{
-		// Token: 0x06000729 RID: 1833 RVA: 0x00029FF0 File Offset: 0x000281F0
+		// Token: 0x0600072B RID: 1835 RVA: 0x0002A27C File Offset: 0x0002847C
 		void IHttpModule.Init(HttpApplication context)
 		{
 			if (WinRMHelper.FriendlyErrorEnabled.Value)
@@ -18,18 +18,18 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600072A RID: 1834 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x0600072C RID: 1836 RVA: 0x00008C7B File Offset: 0x00006E7B
 		void IHttpModule.Dispose()
 		{
 		}
 
-		// Token: 0x0600072B RID: 1835 RVA: 0x0002A022 File Offset: 0x00028222
+		// Token: 0x0600072D RID: 1837 RVA: 0x0002A2AE File Offset: 0x000284AE
 		private void OnPreSendRequestHeaders(object sender, EventArgs e)
 		{
 			HttpContext.Current.Items["X-HeaderPreSent"] = true;
 		}
 
-		// Token: 0x0600072C RID: 1836 RVA: 0x0002A040 File Offset: 0x00028240
+		// Token: 0x0600072E RID: 1838 RVA: 0x0002A2CC File Offset: 0x000284CC
 		private void OnEndRequest(object sender, EventArgs e)
 		{
 			HttpContext httpContext = HttpContext.Current;
@@ -94,10 +94,10 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x040003F8 RID: 1016
+		// Token: 0x040003FC RID: 1020
 		private const string HeaderPreSentItemKey = "X-HeaderPreSent";
 
-		// Token: 0x040003F9 RID: 1017
+		// Token: 0x040003FD RID: 1021
 		private const string AccessDeniedHttpStatusText = "Access Denied";
 	}
 }

@@ -50,7 +50,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000AE RID: 174
 	internal abstract class ProxyRequestHandler : IHttpAsyncHandler, IHttpHandler, IAsyncResult, IDisposeTrackable, IDisposable, IRequestContext
 	{
-		// Token: 0x060005FD RID: 1533 RVA: 0x00021C44 File Offset: 0x0001FE44
+		// Token: 0x06000600 RID: 1536 RVA: 0x00021DCC File Offset: 0x0001FFCC
 		internal ProxyRequestHandler()
 		{
 			this.disposeTracker = this.GetDisposeTracker();
@@ -62,7 +62,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000143 RID: 323
-		// (get) Token: 0x060005FE RID: 1534 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000601 RID: 1537 RVA: 0x00003165 File Offset: 0x00001365
 		public bool IsReusable
 		{
 			get
@@ -72,7 +72,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000144 RID: 324
-		// (get) Token: 0x060005FF RID: 1535 RVA: 0x00021C98 File Offset: 0x0001FE98
+		// (get) Token: 0x06000602 RID: 1538 RVA: 0x00021E20 File Offset: 0x00020020
 		public object AsyncState
 		{
 			get
@@ -88,7 +88,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000145 RID: 325
-		// (get) Token: 0x06000600 RID: 1536 RVA: 0x00021CDC File Offset: 0x0001FEDC
+		// (get) Token: 0x06000603 RID: 1539 RVA: 0x00021E64 File Offset: 0x00020064
 		public bool IsCompleted
 		{
 			get
@@ -104,7 +104,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000146 RID: 326
-		// (get) Token: 0x06000601 RID: 1537 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000604 RID: 1540 RVA: 0x00003165 File Offset: 0x00001365
 		public bool CompletedSynchronously
 		{
 			get
@@ -114,7 +114,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000147 RID: 327
-		// (get) Token: 0x06000602 RID: 1538 RVA: 0x00021D30 File Offset: 0x0001FF30
+		// (get) Token: 0x06000605 RID: 1541 RVA: 0x00021EB8 File Offset: 0x000200B8
 		public WaitHandle AsyncWaitHandle
 		{
 			get
@@ -146,22 +146,22 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000148 RID: 328
-		// (get) Token: 0x06000603 RID: 1539 RVA: 0x00021DF8 File Offset: 0x0001FFF8
-		// (set) Token: 0x06000604 RID: 1540 RVA: 0x00021E00 File Offset: 0x00020000
+		// (get) Token: 0x06000606 RID: 1542 RVA: 0x00021F80 File Offset: 0x00020180
+		// (set) Token: 0x06000607 RID: 1543 RVA: 0x00021F88 File Offset: 0x00020188
 		public IAuthBehavior AuthBehavior { get; private set; }
 
 		// Token: 0x17000149 RID: 329
-		// (get) Token: 0x06000605 RID: 1541 RVA: 0x00021E09 File Offset: 0x00020009
-		// (set) Token: 0x06000606 RID: 1542 RVA: 0x00021E11 File Offset: 0x00020011
+		// (get) Token: 0x06000608 RID: 1544 RVA: 0x00021F91 File Offset: 0x00020191
+		// (set) Token: 0x06000609 RID: 1545 RVA: 0x00021F99 File Offset: 0x00020199
 		public HttpContext HttpContext { get; private set; }
 
 		// Token: 0x1700014A RID: 330
-		// (get) Token: 0x06000607 RID: 1543 RVA: 0x00021E1A File Offset: 0x0002001A
-		// (set) Token: 0x06000608 RID: 1544 RVA: 0x00021E22 File Offset: 0x00020022
+		// (get) Token: 0x0600060A RID: 1546 RVA: 0x00021FA2 File Offset: 0x000201A2
+		// (set) Token: 0x0600060B RID: 1547 RVA: 0x00021FAA File Offset: 0x000201AA
 		public LatencyTracker LatencyTracker { get; private set; }
 
 		// Token: 0x1700014B RID: 331
-		// (get) Token: 0x06000609 RID: 1545 RVA: 0x00021E2B File Offset: 0x0002002B
+		// (get) Token: 0x0600060C RID: 1548 RVA: 0x00021FB3 File Offset: 0x000201B3
 		public Guid ActivityId
 		{
 			get
@@ -175,17 +175,17 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700014C RID: 332
-		// (get) Token: 0x0600060A RID: 1546 RVA: 0x00021E46 File Offset: 0x00020046
-		// (set) Token: 0x0600060B RID: 1547 RVA: 0x00021E4E File Offset: 0x0002004E
+		// (get) Token: 0x0600060D RID: 1549 RVA: 0x00021FCE File Offset: 0x000201CE
+		// (set) Token: 0x0600060E RID: 1550 RVA: 0x00021FD6 File Offset: 0x000201D6
 		public int TraceContext { get; private set; }
 
 		// Token: 0x1700014D RID: 333
-		// (get) Token: 0x0600060C RID: 1548 RVA: 0x00021E57 File Offset: 0x00020057
-		// (set) Token: 0x0600060D RID: 1549 RVA: 0x00021E5F File Offset: 0x0002005F
+		// (get) Token: 0x0600060F RID: 1551 RVA: 0x00021FDF File Offset: 0x000201DF
+		// (set) Token: 0x06000610 RID: 1552 RVA: 0x00021FE7 File Offset: 0x000201E7
 		public RequestDetailsLogger Logger { get; private set; }
 
 		// Token: 0x1700014E RID: 334
-		// (get) Token: 0x0600060E RID: 1550 RVA: 0x00021E68 File Offset: 0x00020068
+		// (get) Token: 0x06000611 RID: 1553 RVA: 0x00021FF0 File Offset: 0x000201F0
 		public bool IsDisposed
 		{
 			get
@@ -195,52 +195,52 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700014F RID: 335
-		// (get) Token: 0x0600060F RID: 1551 RVA: 0x00021E70 File Offset: 0x00020070
-		// (set) Token: 0x06000610 RID: 1552 RVA: 0x00021E78 File Offset: 0x00020078
+		// (get) Token: 0x06000612 RID: 1554 RVA: 0x00021FF8 File Offset: 0x000201F8
+		// (set) Token: 0x06000613 RID: 1555 RVA: 0x00022000 File Offset: 0x00020200
 		internal HttpApplication HttpApplication { get; private set; }
 
 		// Token: 0x17000150 RID: 336
-		// (get) Token: 0x06000611 RID: 1553 RVA: 0x00021E81 File Offset: 0x00020081
-		// (set) Token: 0x06000612 RID: 1554 RVA: 0x00021E89 File Offset: 0x00020089
+		// (get) Token: 0x06000614 RID: 1556 RVA: 0x00022009 File Offset: 0x00020209
+		// (set) Token: 0x06000615 RID: 1557 RVA: 0x00022011 File Offset: 0x00020211
 		internal HttpRequest ClientRequest { get; private set; }
 
 		// Token: 0x17000151 RID: 337
-		// (get) Token: 0x06000613 RID: 1555 RVA: 0x00021E92 File Offset: 0x00020092
-		// (set) Token: 0x06000614 RID: 1556 RVA: 0x00021E9A File Offset: 0x0002009A
+		// (get) Token: 0x06000616 RID: 1558 RVA: 0x0002201A File Offset: 0x0002021A
+		// (set) Token: 0x06000617 RID: 1559 RVA: 0x00022022 File Offset: 0x00020222
 		internal Stream ClientRequestStream { get; set; }
 
 		// Token: 0x17000152 RID: 338
-		// (get) Token: 0x06000615 RID: 1557 RVA: 0x00021EA3 File Offset: 0x000200A3
-		// (set) Token: 0x06000616 RID: 1558 RVA: 0x00021EAB File Offset: 0x000200AB
+		// (get) Token: 0x06000618 RID: 1560 RVA: 0x0002202B File Offset: 0x0002022B
+		// (set) Token: 0x06000619 RID: 1561 RVA: 0x00022033 File Offset: 0x00020233
 		internal HttpResponse ClientResponse { get; private set; }
 
 		// Token: 0x17000153 RID: 339
-		// (get) Token: 0x06000617 RID: 1559 RVA: 0x00021EB4 File Offset: 0x000200B4
-		// (set) Token: 0x06000618 RID: 1560 RVA: 0x00021EBC File Offset: 0x000200BC
+		// (get) Token: 0x0600061A RID: 1562 RVA: 0x0002203C File Offset: 0x0002023C
+		// (set) Token: 0x0600061B RID: 1563 RVA: 0x00022044 File Offset: 0x00020244
 		internal HttpWebRequest ServerRequest { get; private set; }
 
 		// Token: 0x17000154 RID: 340
-		// (get) Token: 0x06000619 RID: 1561 RVA: 0x00021EC5 File Offset: 0x000200C5
-		// (set) Token: 0x0600061A RID: 1562 RVA: 0x00021ECD File Offset: 0x000200CD
+		// (get) Token: 0x0600061C RID: 1564 RVA: 0x0002204D File Offset: 0x0002024D
+		// (set) Token: 0x0600061D RID: 1565 RVA: 0x00022055 File Offset: 0x00020255
 		internal Stream ServerRequestStream { get; private set; }
 
 		// Token: 0x17000155 RID: 341
-		// (get) Token: 0x0600061B RID: 1563 RVA: 0x00021ED6 File Offset: 0x000200D6
-		// (set) Token: 0x0600061C RID: 1564 RVA: 0x00021EDE File Offset: 0x000200DE
+		// (get) Token: 0x0600061E RID: 1566 RVA: 0x0002205E File Offset: 0x0002025E
+		// (set) Token: 0x0600061F RID: 1567 RVA: 0x00022066 File Offset: 0x00020266
 		internal HttpWebResponse ServerResponse { get; private set; }
 
 		// Token: 0x17000156 RID: 342
-		// (get) Token: 0x0600061D RID: 1565 RVA: 0x00021EE7 File Offset: 0x000200E7
-		// (set) Token: 0x0600061E RID: 1566 RVA: 0x00021EEF File Offset: 0x000200EF
+		// (get) Token: 0x06000620 RID: 1568 RVA: 0x0002206F File Offset: 0x0002026F
+		// (set) Token: 0x06000621 RID: 1569 RVA: 0x00022077 File Offset: 0x00020277
 		internal Stream ServerResponseStream { get; private set; }
 
 		// Token: 0x17000157 RID: 343
-		// (get) Token: 0x0600061F RID: 1567 RVA: 0x00021EF8 File Offset: 0x000200F8
-		// (set) Token: 0x06000620 RID: 1568 RVA: 0x00021F00 File Offset: 0x00020100
+		// (get) Token: 0x06000622 RID: 1570 RVA: 0x00022080 File Offset: 0x00020280
+		// (set) Token: 0x06000623 RID: 1571 RVA: 0x00022088 File Offset: 0x00020288
 		internal AsyncStateHolder ServerAsyncState { get; private set; }
 
 		// Token: 0x17000158 RID: 344
-		// (get) Token: 0x06000621 RID: 1569 RVA: 0x00021F09 File Offset: 0x00020109
+		// (get) Token: 0x06000624 RID: 1572 RVA: 0x00022091 File Offset: 0x00020291
 		internal object LockObject
 		{
 			get
@@ -250,12 +250,12 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000159 RID: 345
-		// (get) Token: 0x06000622 RID: 1570 RVA: 0x00021F11 File Offset: 0x00020111
-		// (set) Token: 0x06000623 RID: 1571 RVA: 0x00021F19 File Offset: 0x00020119
+		// (get) Token: 0x06000625 RID: 1573 RVA: 0x00022099 File Offset: 0x00020299
+		// (set) Token: 0x06000626 RID: 1574 RVA: 0x000220A1 File Offset: 0x000202A1
 		internal bool ResponseHeadersSent { get; set; }
 
 		// Token: 0x1700015A RID: 346
-		// (get) Token: 0x06000624 RID: 1572 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000627 RID: 1575 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ImplementsOutOfBandProxyLogon
 		{
 			get
@@ -265,7 +265,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700015B RID: 347
-		// (get) Token: 0x06000625 RID: 1573 RVA: 0x00021F22 File Offset: 0x00020122
+		// (get) Token: 0x06000628 RID: 1576 RVA: 0x000220AA File Offset: 0x000202AA
 		protected virtual HttpStatusCode StatusCodeSignifyingOutOfBandProxyLogonNeeded
 		{
 			get
@@ -275,7 +275,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700015C RID: 348
-		// (get) Token: 0x06000626 RID: 1574 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000629 RID: 1577 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool WillContentBeChangedDuringStreaming
 		{
 			get
@@ -285,7 +285,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700015D RID: 349
-		// (get) Token: 0x06000627 RID: 1575 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x0600062A RID: 1578 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool WillAddProtocolSpecificCookiesToServerRequest
 		{
 			get
@@ -295,7 +295,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700015E RID: 350
-		// (get) Token: 0x06000628 RID: 1576 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x0600062B RID: 1579 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool WillAddProtocolSpecificCookiesToClientResponse
 		{
 			get
@@ -305,7 +305,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700015F RID: 351
-		// (get) Token: 0x06000629 RID: 1577 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x0600062C RID: 1580 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ShouldForceUnbufferedClientResponseOutput
 		{
 			get
@@ -315,17 +315,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x17000160 RID: 352
-		// (get) Token: 0x0600062A RID: 1578 RVA: 0x00003165 File Offset: 0x00001365
-		protected virtual bool ProxyKerberosAuthentication
-		{
-			get
-			{
-				return false;
-			}
-		}
-
-		// Token: 0x17000161 RID: 353
-		// (get) Token: 0x0600062B RID: 1579 RVA: 0x00003193 File Offset: 0x00001393
+		// (get) Token: 0x0600062D RID: 1581 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool ShouldSendFullActivityScope
 		{
 			get
@@ -334,33 +324,33 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000162 RID: 354
-		// (get) Token: 0x0600062C RID: 1580 RVA: 0x00021F2E File Offset: 0x0002012E
-		// (set) Token: 0x0600062D RID: 1581 RVA: 0x00021F36 File Offset: 0x00020136
+		// Token: 0x17000161 RID: 353
+		// (get) Token: 0x0600062E RID: 1582 RVA: 0x000220B6 File Offset: 0x000202B6
+		// (set) Token: 0x0600062F RID: 1583 RVA: 0x000220BE File Offset: 0x000202BE
 		protected ProxyRequestHandler.ProxyState State { get; set; }
 
-		// Token: 0x17000163 RID: 355
-		// (get) Token: 0x0600062E RID: 1582 RVA: 0x00021F3F File Offset: 0x0002013F
-		// (set) Token: 0x0600062F RID: 1583 RVA: 0x00021F47 File Offset: 0x00020147
+		// Token: 0x17000162 RID: 354
+		// (get) Token: 0x06000630 RID: 1584 RVA: 0x000220C7 File Offset: 0x000202C7
+		// (set) Token: 0x06000631 RID: 1585 RVA: 0x000220CF File Offset: 0x000202CF
 		protected PfdTracer PfdTracer { get; set; }
 
-		// Token: 0x17000164 RID: 356
-		// (get) Token: 0x06000630 RID: 1584 RVA: 0x00021F50 File Offset: 0x00020150
-		// (set) Token: 0x06000631 RID: 1585 RVA: 0x00021F58 File Offset: 0x00020158
+		// Token: 0x17000163 RID: 355
+		// (get) Token: 0x06000632 RID: 1586 RVA: 0x000220D8 File Offset: 0x000202D8
+		// (set) Token: 0x06000633 RID: 1587 RVA: 0x000220E0 File Offset: 0x000202E0
 		private protected bool UseRoutingHintForAnchorMailbox { protected get; private set; }
 
-		// Token: 0x17000165 RID: 357
-		// (get) Token: 0x06000632 RID: 1586 RVA: 0x00021F61 File Offset: 0x00020161
-		// (set) Token: 0x06000633 RID: 1587 RVA: 0x00021F69 File Offset: 0x00020169
+		// Token: 0x17000164 RID: 356
+		// (get) Token: 0x06000634 RID: 1588 RVA: 0x000220E9 File Offset: 0x000202E9
+		// (set) Token: 0x06000635 RID: 1589 RVA: 0x000220F1 File Offset: 0x000202F1
 		protected bool HasPreemptivelyCheckedForRoutingHint { get; set; }
 
-		// Token: 0x17000166 RID: 358
-		// (get) Token: 0x06000634 RID: 1588 RVA: 0x00021F72 File Offset: 0x00020172
-		// (set) Token: 0x06000635 RID: 1589 RVA: 0x00021F7A File Offset: 0x0002017A
+		// Token: 0x17000165 RID: 357
+		// (get) Token: 0x06000636 RID: 1590 RVA: 0x000220FA File Offset: 0x000202FA
+		// (set) Token: 0x06000637 RID: 1591 RVA: 0x00022102 File Offset: 0x00020302
 		protected bool IsAnchorMailboxFromRoutingHint { get; set; }
 
-		// Token: 0x17000167 RID: 359
-		// (get) Token: 0x06000636 RID: 1590 RVA: 0x00021F83 File Offset: 0x00020183
+		// Token: 0x17000166 RID: 358
+		// (get) Token: 0x06000638 RID: 1592 RVA: 0x0002210B File Offset: 0x0002030B
 		protected bool IsRetryOnErrorEnabled
 		{
 			get
@@ -369,8 +359,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000168 RID: 360
-		// (get) Token: 0x06000637 RID: 1591 RVA: 0x00021F92 File Offset: 0x00020192
+		// Token: 0x17000167 RID: 359
+		// (get) Token: 0x06000639 RID: 1593 RVA: 0x0002211A File Offset: 0x0002031A
 		protected bool IsRetryOnConnectivityErrorEnabled
 		{
 			get
@@ -379,8 +369,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000169 RID: 361
-		// (get) Token: 0x06000638 RID: 1592 RVA: 0x00021FA8 File Offset: 0x000201A8
+		// Token: 0x17000168 RID: 360
+		// (get) Token: 0x0600063A RID: 1594 RVA: 0x00022130 File Offset: 0x00020330
 		protected bool IsRetryingOnError
 		{
 			get
@@ -389,8 +379,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700016A RID: 362
-		// (get) Token: 0x06000639 RID: 1593 RVA: 0x00021FB3 File Offset: 0x000201B3
+		// Token: 0x17000169 RID: 361
+		// (get) Token: 0x0600063B RID: 1595 RVA: 0x0002213B File Offset: 0x0002033B
 		protected bool ShouldRetryOnError
 		{
 			get
@@ -399,8 +389,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700016B RID: 363
-		// (get) Token: 0x0600063A RID: 1594 RVA: 0x00021FC8 File Offset: 0x000201C8
+		// Token: 0x1700016A RID: 362
+		// (get) Token: 0x0600063C RID: 1596 RVA: 0x00022150 File Offset: 0x00020350
 		private bool IsInRoutingState
 		{
 			get
@@ -415,8 +405,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700016C RID: 364
-		// (get) Token: 0x0600063B RID: 1595 RVA: 0x0002205C File Offset: 0x0002025C
+		// Token: 0x1700016B RID: 363
+		// (get) Token: 0x0600063D RID: 1597 RVA: 0x000221E4 File Offset: 0x000203E4
 		private bool IsInRetryableState
 		{
 			get
@@ -431,8 +421,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700016D RID: 365
-		// (get) Token: 0x0600063C RID: 1596 RVA: 0x000220DC File Offset: 0x000202DC
+		// Token: 0x1700016C RID: 364
+		// (get) Token: 0x0600063E RID: 1598 RVA: 0x00022264 File Offset: 0x00020464
 		private bool IsInPostRoutingState
 		{
 			get
@@ -447,7 +437,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600063D RID: 1597 RVA: 0x00022138 File Offset: 0x00020338
+		// Token: 0x0600063F RID: 1599 RVA: 0x000222C0 File Offset: 0x000204C0
 		public IAsyncResult BeginProcessRequest(HttpContext context, AsyncCallback cb, object extraData)
 		{
 			RequestDetailsLoggerBase<RequestDetailsLogger>.SafeSetLogger(this.Logger, 9, this.LatencyTracker.GetCurrentLatency(LatencyTrackerKey.ModuleToHandlerSwitchingLatency));
@@ -473,7 +463,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return this;
 		}
 
-		// Token: 0x0600063E RID: 1598 RVA: 0x00022264 File Offset: 0x00020464
+		// Token: 0x06000640 RID: 1600 RVA: 0x000223EC File Offset: 0x000205EC
 		public void EndProcessRequest(IAsyncResult result)
 		{
 			try
@@ -524,7 +514,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600063F RID: 1599 RVA: 0x000223D0 File Offset: 0x000205D0
+		// Token: 0x06000641 RID: 1601 RVA: 0x00022558 File Offset: 0x00020758
 		public void ProcessRequest(HttpContext context)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(3))
@@ -534,13 +524,13 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new NotSupportedException();
 		}
 
-		// Token: 0x06000640 RID: 1600 RVA: 0x000223FA File Offset: 0x000205FA
+		// Token: 0x06000642 RID: 1602 RVA: 0x00022582 File Offset: 0x00020782
 		public DisposeTracker GetDisposeTracker()
 		{
 			return DisposeTracker.Get<ProxyRequestHandler>(this);
 		}
 
-		// Token: 0x06000641 RID: 1601 RVA: 0x00022402 File Offset: 0x00020602
+		// Token: 0x06000643 RID: 1603 RVA: 0x0002258A File Offset: 0x0002078A
 		public void SuppressDisposeTracker()
 		{
 			if (this.disposeTracker != null)
@@ -550,7 +540,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000642 RID: 1602 RVA: 0x0002241E File Offset: 0x0002061E
+		// Token: 0x06000644 RID: 1604 RVA: 0x000225A6 File Offset: 0x000207A6
 		public void Dispose()
 		{
 			Diagnostics.SendWatsonReportOnUnhandledException(delegate()
@@ -576,7 +566,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x06000643 RID: 1603 RVA: 0x0002243D File Offset: 0x0002063D
+		// Token: 0x06000645 RID: 1605 RVA: 0x000225C5 File Offset: 0x000207C5
 		internal void Run(HttpContext context)
 		{
 			Diagnostics.SendWatsonReportOnUnhandledException(delegate()
@@ -639,7 +629,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}, new Diagnostics.LastChanceExceptionHandler(RequestDetailsLogger.LastChanceExceptionHandler));
 		}
 
-		// Token: 0x06000644 RID: 1604 RVA: 0x00022470 File Offset: 0x00020670
+		// Token: 0x06000646 RID: 1606 RVA: 0x000225F8 File Offset: 0x000207F8
 		internal void CallThreadEntranceMethod(Action method)
 		{
 			try
@@ -660,7 +650,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000645 RID: 1605 RVA: 0x000224F4 File Offset: 0x000206F4
+		// Token: 0x06000647 RID: 1607 RVA: 0x0002267C File Offset: 0x0002087C
 		protected void CompleteForRedirect(string redirectUrl)
 		{
 			this.LogElapsedTime("E_CompRedir");
@@ -673,7 +663,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CompRedir");
 		}
 
-		// Token: 0x06000646 RID: 1606 RVA: 0x00022558 File Offset: 0x00020758
+		// Token: 0x06000648 RID: 1608 RVA: 0x000226E0 File Offset: 0x000208E0
 		protected virtual void Cleanup()
 		{
 			this.LogElapsedTime("E_Cleanup");
@@ -721,7 +711,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_Cleanup");
 		}
 
-		// Token: 0x06000647 RID: 1607 RVA: 0x000226A8 File Offset: 0x000208A8
+		// Token: 0x06000649 RID: 1609 RVA: 0x00022830 File Offset: 0x00020A30
 		protected virtual void OnInitializingHandler()
 		{
 			if (!LiveIdBasicAuthModule.SyncADBackendOnly && this.AuthBehavior.AuthState == AuthState.FrontEndFullAuth)
@@ -730,7 +720,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000648 RID: 1608 RVA: 0x000226CC File Offset: 0x000208CC
+		// Token: 0x0600064A RID: 1610 RVA: 0x00022854 File Offset: 0x00020A54
 		protected virtual void DoProtocolSpecificBeginRequestLogging()
 		{
 			if ((this.ClientRequest.Url.LocalPath.IndexOf("owa/service.svc") > 0 || this.ClientRequest.Url.LocalPath.IndexOf("owa/integrated/service.svc") > 0) && this.ClientRequest.QueryString["Action"] != null)
@@ -739,29 +729,29 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000649 RID: 1609 RVA: 0x00022751 File Offset: 0x00020951
+		// Token: 0x0600064B RID: 1611 RVA: 0x000228D9 File Offset: 0x00020AD9
 		protected virtual void StartOutOfBandProxyLogon(object extraData)
 		{
 			throw new NotImplementedException("Should never start an out-of-band proxy logon - not supported!");
 		}
 
-		// Token: 0x0600064A RID: 1610 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x0600064C RID: 1612 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool ShouldCopyCookieToClientResponse(Cookie cookie)
 		{
 			return true;
 		}
 
-		// Token: 0x0600064B RID: 1611 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x0600064D RID: 1613 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void CopySupplementalCookiesToClientResponse()
 		{
 		}
 
-		// Token: 0x0600064C RID: 1612 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x0600064E RID: 1614 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void ClearBackEndOverrideCookie()
 		{
 		}
 
-		// Token: 0x0600064D RID: 1613 RVA: 0x00022760 File Offset: 0x00020960
+		// Token: 0x0600064F RID: 1615 RVA: 0x000228E8 File Offset: 0x00020AE8
 		protected void CopyServerCookieToClientResponse(Cookie serverCookie)
 		{
 			HttpCookie httpCookie = new HttpCookie(serverCookie.Name, serverCookie.Value);
@@ -781,12 +771,12 @@ namespace Microsoft.Exchange.HttpProxy
 			this.ClientResponse.Cookies.Add(httpCookie);
 		}
 
-		// Token: 0x0600064E RID: 1614 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x06000650 RID: 1616 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void SetProtocolSpecificServerRequestParameters(HttpWebRequest serverRequest)
 		{
 		}
 
-		// Token: 0x0600064F RID: 1615 RVA: 0x00022844 File Offset: 0x00020A44
+		// Token: 0x06000651 RID: 1617 RVA: 0x000229CC File Offset: 0x00020BCC
 		protected virtual void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			this.LogElapsedTime("E_AddHeaders");
@@ -799,24 +789,65 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				headers[Constants.MsExchProxyUri] = Uri.EscapeUriString(fullRawUrl);
 			}
+			if ((HttpProxySettings.SerializeClientAccessContext.Value & 1) == 1 && !string.IsNullOrWhiteSpace(this.ClientRequest.Headers[Constants.XIsFromCafe]))
+			{
+				throw new HttpException(400, "Invalid headers(1)");
+			}
 			headers[Constants.XIsFromCafe] = Constants.IsFromCafeHeaderValue;
 			headers[Constants.XSourceCafeServer] = HttpProxyGlobals.LocalMachineFqdn.Member;
+			if ((HttpProxySettings.SerializeClientAccessContext.Value & 2) == 2 && !string.IsNullOrWhiteSpace(this.ClientRequest.Headers["X-CommonAccessToken"]))
+			{
+				throw new HttpException(400, "Invalid headers(2)");
+			}
 			if (this.AuthBehavior.AuthState != AuthState.BackEndFullAuth)
 			{
 				if (this.ClientRequest.IsAuthenticated)
 				{
-					CommonAccessToken commonAccessToken = AspNetHelper.FixupCommonAccessToken(this.HttpContext, this.AnchoredRoutingTarget.BackEndServer.Version);
-					if (commonAccessToken == null)
+					string text = this.ClientRequest.Headers["X-CommonAccessToken"];
+					if (!string.IsNullOrWhiteSpace(text))
 					{
-						commonAccessToken = (this.HttpContext.Items["Item-CommonAccessToken"] as CommonAccessToken);
+						if (CommonAccessToken.Deserialize(text).IsSystemOrMachineAccount())
+						{
+							throw new HttpException(400, "Bad context");
+						}
+						WindowsIdentity windowsIdentity = null;
+						if (this.HttpContext != null && this.HttpContext.User != null)
+						{
+							windowsIdentity = (this.HttpContext.User.Identity as WindowsIdentity);
+						}
+						if (windowsIdentity == null || !windowsIdentity.IsSystemOrTrustedMachineAccount())
+						{
+							throw new HttpException(400, "Unauthorized to send context");
+						}
+						RequestDetailsLoggerBase<RequestDetailsLogger>.SafeAppendGenericInfo(this.Logger, "CT", "TMA");
+						headers["X-CommonAccessToken"] = text;
 					}
-					if (commonAccessToken != null)
+					else
 					{
+						CommonAccessToken commonAccessToken = AspNetHelper.FixupCommonAccessToken(this.HttpContext, this.AnchoredRoutingTarget.BackEndServer.Version);
+						if (commonAccessToken == null)
+						{
+							commonAccessToken = (this.HttpContext.Items["Item-CommonAccessToken"] as CommonAccessToken);
+						}
+						if (commonAccessToken == null)
+						{
+							throw new HttpException(400, "No context to send");
+						}
+						if (commonAccessToken.IsSystemOrMachineAccount())
+						{
+							throw new HttpException(400, "Cannot serialize context");
+						}
 						headers["X-CommonAccessToken"] = commonAccessToken.Serialize(new int?(HttpProxySettings.CompressTokenMinimumSize.Value));
 					}
 				}
 				else if (this.ShouldBackendRequestBeAnonymous())
 				{
+					RequestDetailsLoggerBase<RequestDetailsLogger>.SafeAppendGenericInfo(this.Logger, "CT", "BEAn");
+					headers["X-CommonAccessToken"] = new CommonAccessToken(9).Serialize();
+				}
+				else
+				{
+					RequestDetailsLoggerBase<RequestDetailsLogger>.SafeAppendGenericInfo(this.Logger, "CT", "An");
 					headers["X-CommonAccessToken"] = new CommonAccessToken(9).Serialize();
 				}
 			}
@@ -848,24 +879,24 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_AddHeaders");
 		}
 
-		// Token: 0x06000650 RID: 1616 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x06000652 RID: 1618 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void DoProtocolSpecificBeginProcess()
 		{
 		}
 
-		// Token: 0x06000651 RID: 1617 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x06000653 RID: 1619 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ShouldBackendRequestBeAnonymous()
 		{
 			return false;
 		}
 
-		// Token: 0x06000652 RID: 1618 RVA: 0x00022A64 File Offset: 0x00020C64
+		// Token: 0x06000654 RID: 1620 RVA: 0x00022D84 File Offset: 0x00020F84
 		protected virtual bool ShouldBlockCurrentOAuthRequest()
 		{
 			return this.ProxyToDownLevel;
 		}
 
-		// Token: 0x06000653 RID: 1619 RVA: 0x00022A6C File Offset: 0x00020C6C
+		// Token: 0x06000655 RID: 1621 RVA: 0x00022D8C File Offset: 0x00020F8C
 		protected void PrepareServerRequest(HttpWebRequest serverRequest)
 		{
 			this.LogElapsedTime("E_PrepSvrReq");
@@ -886,13 +917,10 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 			serverRequest.ServicePoint.Expect100Continue = false;
 			serverRequest.ServicePoint.BindIPEndPointDelegate = new BindIPEndPoint(this.BindIPEndPointCallback);
-			if (this.ProxyKerberosAuthentication)
-			{
-				serverRequest.ConnectionGroupName = this.ClientRequest.UserHostAddress + ":" + GccUtils.GetClientPort(SharedHttpContextWrapper.GetWrapper(this.HttpContext));
-			}
-			else if (this.AuthBehavior.AuthState == AuthState.BackEndFullAuth || this.ShouldBackendRequestBeAnonymous() || (HttpProxySettings.TestBackEndSupportEnabled.Value && !string.IsNullOrEmpty(this.ClientRequest.Headers[Constants.TestBackEndUrlRequestHeaderKey])))
+			if (this.AuthBehavior.AuthState == AuthState.BackEndFullAuth || this.ShouldBackendRequestBeAnonymous() || !this.ClientRequest.IsAuthenticated || (HttpProxySettings.TestBackEndSupportEnabled.Value && !string.IsNullOrEmpty(this.ClientRequest.Headers[Constants.TestBackEndUrlRequestHeaderKey])))
 			{
 				serverRequest.ConnectionGroupName = "Unauthenticated";
+				RequestDetailsLoggerBase<RequestDetailsLogger>.SafeAppendGenericInfo(this.Logger, "Krb", "UA");
 			}
 			else
 			{
@@ -941,19 +969,19 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_PrepSvrReq");
 		}
 
-		// Token: 0x06000654 RID: 1620 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x06000656 RID: 1622 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool TryHandleProtocolSpecificResponseErrors(WebException e)
 		{
 			return false;
 		}
 
-		// Token: 0x06000655 RID: 1621 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x06000657 RID: 1623 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool TryHandleProtocolSpecificRequestErrors(Exception e)
 		{
 			return false;
 		}
 
-		// Token: 0x06000656 RID: 1622 RVA: 0x00022D3A File Offset: 0x00020F3A
+		// Token: 0x06000658 RID: 1624 RVA: 0x0002303F File Offset: 0x0002123F
 		protected void BeginProxyRequest(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -973,7 +1001,7 @@ namespace Microsoft.Exchange.HttpProxy
 								throw new HttpException(503, string.Format("Cross forest proxy to {0} is blocked.", this.AnchoredRoutingTarget.BackEndServer.Fqdn));
 							}
 							Uri uri = this.GetTargetBackEndServerUrl();
-							if (!this.ProxyKerberosAuthentication && !string.Equals(uri.Host, this.AnchoredRoutingTarget.BackEndServer.Fqdn, StringComparison.OrdinalIgnoreCase))
+							if (!string.Equals(uri.Host, this.AnchoredRoutingTarget.BackEndServer.Fqdn, StringComparison.OrdinalIgnoreCase))
 							{
 								throw new HttpException(503, "Service Unavailable");
 							}
@@ -1093,7 +1121,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x06000657 RID: 1623 RVA: 0x00022D50 File Offset: 0x00020F50
+		// Token: 0x06000659 RID: 1625 RVA: 0x00023054 File Offset: 0x00021254
 		protected HttpWebRequest CreateServerRequest(Uri targetUrl)
 		{
 			HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(targetUrl);
@@ -1108,6 +1136,10 @@ namespace Microsoft.Exchange.HttpProxy
 			httpWebRequest.Headers["X-Forwarded-Port"] = ClientEndpointResolver.GetClientPort(SharedHttpContextWrapper.GetWrapper(this.HttpContext));
 			httpWebRequest.Headers["X-MS-EdgeIP"] = Utilities.GetEdgeServerIpAsProxyHeader(SharedHttpContextWrapper.GetWrapper(this.HttpContext).Request);
 			this.PrepareServerRequest(httpWebRequest);
+			if (string.IsNullOrWhiteSpace(httpWebRequest.Headers["X-CommonAccessToken"]))
+			{
+				throw new HttpException(400, "Missing context");
+			}
 			this.PfdTracer.TraceRequest("ProxyRequest", httpWebRequest);
 			this.PfdTracer.TraceHeaders("ProxyRequest", this.ClientRequest.Headers, httpWebRequest.Headers);
 			this.PfdTracer.TraceCookies("ProxyRequest", this.ClientRequest.Cookies, httpWebRequest.CookieContainer);
@@ -1118,30 +1150,30 @@ namespace Microsoft.Exchange.HttpProxy
 			return httpWebRequest;
 		}
 
-		// Token: 0x06000658 RID: 1624 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x0600065A RID: 1626 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool ShouldCopyCookieToServerRequest(HttpCookie cookie)
 		{
 			return true;
 		}
 
-		// Token: 0x06000659 RID: 1625 RVA: 0x00022EB8 File Offset: 0x000210B8
+		// Token: 0x0600065B RID: 1627 RVA: 0x000231E0 File Offset: 0x000213E0
 		protected virtual bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !string.Equals(headerName, "X-CommonAccessToken", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.XIsFromCafe, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.XSourceCafeServer, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, Constants.MsExchProxyUri, StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-MSExchangeActivityCtx", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "return-client-request-id", StringComparison.OrdinalIgnoreCase) && !string.Equals(headerName, "X-Forwarded-For", StringComparison.OrdinalIgnoreCase) && (!headerName.StartsWith(Constants.XBackendHeaderPrefix, StringComparison.OrdinalIgnoreCase) || Extensions.IsProbeRequest(Extensions.GetHttpRequestBase(this.ClientRequest)));
 		}
 
-		// Token: 0x0600065A RID: 1626 RVA: 0x00022F4A File Offset: 0x0002114A
+		// Token: 0x0600065C RID: 1628 RVA: 0x00023272 File Offset: 0x00021472
 		protected virtual void AddProtocolSpecificCookiesToServerRequest(CookieContainer cookieContainer)
 		{
 			throw new InvalidOperationException();
 		}
 
-		// Token: 0x0600065B RID: 1627 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x0600065D RID: 1629 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void HandleLogoffRequest()
 		{
 		}
 
-		// Token: 0x0600065C RID: 1628 RVA: 0x00022F51 File Offset: 0x00021151
+		// Token: 0x0600065E RID: 1630 RVA: 0x00023279 File Offset: 0x00021479
 		protected virtual void ResetForRetryOnError()
 		{
 			this.haveStartedOutOfBandProxyLogon = false;
@@ -1152,7 +1184,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.AuthBehavior.ResetState();
 		}
 
-		// Token: 0x0600065D RID: 1629 RVA: 0x00022F84 File Offset: 0x00021184
+		// Token: 0x0600065F RID: 1631 RVA: 0x000232AC File Offset: 0x000214AC
 		protected TResult ParseClientRequest<TResult>(Func<Stream, TResult> parseMethod, int bufferSize)
 		{
 			this.LogElapsedTime("E_ParseReq");
@@ -1222,7 +1254,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600065E RID: 1630 RVA: 0x000231F8 File Offset: 0x000213F8
+		// Token: 0x06000660 RID: 1632 RVA: 0x00023520 File Offset: 0x00021720
 		protected void Complete()
 		{
 			this.LogElapsedTime("E_Complete");
@@ -1246,13 +1278,13 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_Complete");
 		}
 
-		// Token: 0x0600065F RID: 1631 RVA: 0x000232BC File Offset: 0x000214BC
+		// Token: 0x06000661 RID: 1633 RVA: 0x000235E4 File Offset: 0x000217E4
 		protected bool IsAuthenticationChallengeFromBackend(WebException exception)
 		{
 			return exception.Status == WebExceptionStatus.ProtocolError && exception.Response != null && ((HttpWebResponse)exception.Response).StatusCode == HttpStatusCode.Unauthorized && !this.ShouldBackendRequestBeAnonymous() && !this.haveReceivedAuthChallenge;
 		}
 
-		// Token: 0x06000660 RID: 1632 RVA: 0x000232F9 File Offset: 0x000214F9
+		// Token: 0x06000662 RID: 1634 RVA: 0x00023621 File Offset: 0x00021821
 		protected bool TryFindKerberosChallenge(string authenticationHeader, out bool foundNegotiatePackageName)
 		{
 			if (KerberosUtilities.TryFindKerberosChallenge(authenticationHeader, this.TraceContext, out this.kerberosChallenge, out foundNegotiatePackageName))
@@ -1263,7 +1295,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x06000661 RID: 1633 RVA: 0x0002331A File Offset: 0x0002151A
+		// Token: 0x06000663 RID: 1635 RVA: 0x00023642 File Offset: 0x00021842
 		protected void LogElapsedTime(string latencyName)
 		{
 			if (HttpProxySettings.DetailedLatencyTracingEnabled.Value && this.LatencyTracker != null)
@@ -1272,7 +1304,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000662 RID: 1634 RVA: 0x00023342 File Offset: 0x00021542
+		// Token: 0x06000664 RID: 1636 RVA: 0x0002366A File Offset: 0x0002186A
 		protected AnchorMailbox CreateAnchorMailboxFromRoutingHint()
 		{
 			if (!this.UseRoutingHintForAnchorMailbox)
@@ -1287,7 +1319,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x06000663 RID: 1635 RVA: 0x00023368 File Offset: 0x00021568
+		// Token: 0x06000665 RID: 1637 RVA: 0x00023690 File Offset: 0x00021890
 		protected void ThrowWebExceptionForRetryOnErrorTest(WebResponse webResponse, params int[] checkShouldInvalidateVal)
 		{
 			if (this.ShouldRetryOnError)
@@ -1342,7 +1374,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000664 RID: 1636 RVA: 0x00023514 File Offset: 0x00021714
+		// Token: 0x06000666 RID: 1638 RVA: 0x0002383C File Offset: 0x00021A3C
 		private static void ResponseReadyCallback(IAsyncResult result)
 		{
 			ProxyRequestHandler proxyRequestHandler = AsyncStateHolder.Unwrap<ProxyRequestHandler>(result);
@@ -1354,7 +1386,7 @@ namespace Microsoft.Exchange.HttpProxy
 			proxyRequestHandler.OnResponseReady(result);
 		}
 
-		// Token: 0x06000665 RID: 1637 RVA: 0x0002354C File Offset: 0x0002174C
+		// Token: 0x06000667 RID: 1639 RVA: 0x00023874 File Offset: 0x00021A74
 		private static void RequestStreamReadyCallback(IAsyncResult result)
 		{
 			ProxyRequestHandler proxyRequestHandler = AsyncStateHolder.Unwrap<ProxyRequestHandler>(result);
@@ -1370,7 +1402,7 @@ namespace Microsoft.Exchange.HttpProxy
 			proxyRequestHandler.OnRequestStreamReady(result);
 		}
 
-		// Token: 0x06000666 RID: 1638 RVA: 0x000235AC File Offset: 0x000217AC
+		// Token: 0x06000668 RID: 1640 RVA: 0x000238D4 File Offset: 0x00021AD4
 		private static void DisposeIfNotNullAndCatchExceptions(IDisposable objectToDispose)
 		{
 			if (objectToDispose == null)
@@ -1386,7 +1418,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000667 RID: 1639 RVA: 0x000235DC File Offset: 0x000217DC
+		// Token: 0x06000669 RID: 1641 RVA: 0x00023904 File Offset: 0x00021B04
 		private IPEndPoint BindIPEndPointCallback(ServicePoint servicePoint, IPEndPoint remoteEndPoint, int retryCount)
 		{
 			this.Logger.AppendGenericInfo(Constants.NewTcpConnectionLogKey, remoteEndPoint.Address + '&' + retryCount);
@@ -1399,7 +1431,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new IPEndPoint((remoteEndPoint.AddressFamily == AddressFamily.InterNetworkV6) ? IPAddress.IPv6Any : IPAddress.Any, 0);
 		}
 
-		// Token: 0x06000668 RID: 1640 RVA: 0x00023660 File Offset: 0x00021860
+		// Token: 0x0600066A RID: 1642 RVA: 0x00023988 File Offset: 0x00021B88
 		private BufferPool GetBufferPool(int bufferSize)
 		{
 			BufferPoolCollection.BufferSize bufferSize2;
@@ -1410,7 +1442,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return BufferPoolCollection.AutoCleanupCollection.Acquire(bufferSize2);
 		}
 
-		// Token: 0x06000669 RID: 1641 RVA: 0x00023694 File Offset: 0x00021894
+		// Token: 0x0600066B RID: 1643 RVA: 0x000239BC File Offset: 0x00021BBC
 		private void FinalizeRequestHandlerLatencies()
 		{
 			this.UpdateRoutingFailurePerfCounter(false);
@@ -1443,7 +1475,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600066A RID: 1642 RVA: 0x00023880 File Offset: 0x00021A80
+		// Token: 0x0600066C RID: 1644 RVA: 0x00023BA8 File Offset: 0x00021DA8
 		private bool ShouldSetRequestTimeout(out TimeSpan timeout)
 		{
 			timeout = TimeSpan.Zero;
@@ -1477,13 +1509,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0600066B RID: 1643 RVA: 0x00023980 File Offset: 0x00021B80
+		// Token: 0x0600066D RID: 1645 RVA: 0x00023CA8 File Offset: 0x00021EA8
 		private void SetupRequestTimeout(HttpWebRequest serverRequest, TimeSpan timeout)
 		{
 			this.requestState = new RequestState(new TimerCallback(this.RequestTimeoutCallback), serverRequest, (int)timeout.TotalMilliseconds);
 		}
 
-		// Token: 0x0600066C RID: 1644 RVA: 0x000239A4 File Offset: 0x00021BA4
+		// Token: 0x0600066E RID: 1646 RVA: 0x00023CCC File Offset: 0x00021ECC
 		private void RequestTimeoutCallback(object asyncObj)
 		{
 			HttpWebRequest httpWebRequest = asyncObj as HttpWebRequest;
@@ -1501,13 +1533,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600066D RID: 1645 RVA: 0x00023A28 File Offset: 0x00021C28
+		// Token: 0x0600066F RID: 1647 RVA: 0x00023D50 File Offset: 0x00021F50
 		private bool ShouldCopyProxyResponseHeader(string headerName)
 		{
 			return !WebHeaderCollection.IsRestricted(headerName) && !ProxyRequestHandler.RestrictedHeaders.Contains(headerName);
 		}
 
-		// Token: 0x0600066E RID: 1646 RVA: 0x00023A44 File Offset: 0x00021C44
+		// Token: 0x06000670 RID: 1648 RVA: 0x00023D6C File Offset: 0x00021F6C
 		private void CopyOrCreateNewXGccProxyInfoHeader(HttpWebRequest toRequest)
 		{
 			this.LogElapsedTime("E_XGcc");
@@ -1525,7 +1557,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600066F RID: 1647 RVA: 0x00023ABC File Offset: 0x00021CBC
+		// Token: 0x06000671 RID: 1649 RVA: 0x00023DE4 File Offset: 0x00021FE4
 		private void SetException(Exception e)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -1538,13 +1570,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000670 RID: 1648 RVA: 0x00023AF7 File Offset: 0x00021CF7
+		// Token: 0x06000672 RID: 1650 RVA: 0x00023E1F File Offset: 0x0002201F
 		private void MakeCallback(object extraData)
 		{
 			this.asyncCallback(this);
 		}
 
-		// Token: 0x06000671 RID: 1649 RVA: 0x00023B08 File Offset: 0x00021D08
+		// Token: 0x06000673 RID: 1651 RVA: 0x00023E30 File Offset: 0x00022030
 		private void OnResponseReady(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -1647,7 +1679,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x06000672 RID: 1650 RVA: 0x00023B3C File Offset: 0x00021D3C
+		// Token: 0x06000674 RID: 1652 RVA: 0x00023E64 File Offset: 0x00022064
 		private void OnRequestStreamReady(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -1708,7 +1740,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x06000673 RID: 1651 RVA: 0x00023B70 File Offset: 0x00021D70
+		// Token: 0x06000675 RID: 1653 RVA: 0x00023E98 File Offset: 0x00022098
 		private void BeginGetServerResponse()
 		{
 			this.LogElapsedTime("E_BegGetSvrResp");
@@ -1733,7 +1765,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000674 RID: 1652 RVA: 0x00023C5C File Offset: 0x00021E5C
+		// Token: 0x06000676 RID: 1654 RVA: 0x00023F84 File Offset: 0x00022184
 		private void CopyHeadersToServerRequest(HttpWebRequest destination)
 		{
 			this.LogElapsedTime("E_CopyHeadersSvrReq");
@@ -1889,7 +1921,7 @@ namespace Microsoft.Exchange.HttpProxy
 							{
 								if (text2 == "AUTHORIZATION")
 								{
-									if (this.AuthBehavior.AuthState == AuthState.BackEndFullAuth || this.ProxyKerberosAuthentication)
+									if (this.AuthBehavior.AuthState == AuthState.BackEndFullAuth)
 									{
 										destination.Headers.Add(text, headers[text]);
 										continue;
@@ -1934,7 +1966,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CopyHeadersSvrReq");
 		}
 
-		// Token: 0x06000675 RID: 1653 RVA: 0x00024130 File Offset: 0x00022330
+		// Token: 0x06000677 RID: 1655 RVA: 0x0002444C File Offset: 0x0002264C
 		private void CopyCookiesToClientResponse()
 		{
 			this.LogElapsedTime("E_CopyCookiesClientResp");
@@ -1957,7 +1989,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CopyCookiesClientResp");
 		}
 
-		// Token: 0x06000676 RID: 1654 RVA: 0x000241E4 File Offset: 0x000223E4
+		// Token: 0x06000678 RID: 1656 RVA: 0x00024500 File Offset: 0x00022700
 		private void SetResponseStatusIfHeadersUnsent(HttpResponse response, int status)
 		{
 			if (!this.ResponseHeadersSent)
@@ -1966,7 +1998,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000677 RID: 1655 RVA: 0x000241F5 File Offset: 0x000223F5
+		// Token: 0x06000679 RID: 1657 RVA: 0x00024511 File Offset: 0x00022711
 		private void SetResponseStatusIfHeadersUnsent(HttpResponse response, int status, string description)
 		{
 			if (!this.ResponseHeadersSent)
@@ -1976,7 +2008,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000678 RID: 1656 RVA: 0x0002420D File Offset: 0x0002240D
+		// Token: 0x0600067A RID: 1658 RVA: 0x00024529 File Offset: 0x00022729
 		private void SetResponseHeaderIfHeadersUnsent(HttpResponse response, string name, string value)
 		{
 			if (!this.ResponseHeadersSent)
@@ -1985,7 +2017,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000679 RID: 1657 RVA: 0x00024224 File Offset: 0x00022424
+		// Token: 0x0600067B RID: 1659 RVA: 0x00024540 File Offset: 0x00022740
 		private void CopyHeadersToClientResponse()
 		{
 			this.LogElapsedTime("E_CopyHeadersClientResp");
@@ -2008,20 +2040,6 @@ namespace Microsoft.Exchange.HttpProxy
 										if (this.ShouldCopyProxyResponseHeader(text))
 										{
 											this.ClientResponse.Headers.Add(text, this.ServerResponse.Headers[text]);
-										}
-									}
-									else if (this.ProxyKerberosAuthentication)
-									{
-										foreach (string text2 in this.ServerResponse.Headers[text].Split(new char[]
-										{
-											','
-										}))
-										{
-											if (text2.TrimStart(Array.Empty<char>()).StartsWith(Constants.KerberosPackageValue, StringComparison.OrdinalIgnoreCase))
-											{
-												this.ClientResponse.Headers.Add(text, text2.Trim());
-												break;
-											}
 										}
 									}
 									else if (this.AuthBehavior.ShouldCopyAuthenticationHeaderToClientResponse)
@@ -2058,7 +2076,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CopyHeadersClientResp");
 		}
 
-		// Token: 0x0600067A RID: 1658 RVA: 0x000244B0 File Offset: 0x000226B0
+		// Token: 0x0600067C RID: 1660 RVA: 0x0002474C File Offset: 0x0002294C
 		private void CopyCookiesToServerRequest(HttpWebRequest serverRequest)
 		{
 			this.LogElapsedTime("E_CopyCookiesSvrReq");
@@ -2103,7 +2121,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CopyCookiesSvrReq");
 		}
 
-		// Token: 0x0600067B RID: 1659 RVA: 0x000245FC File Offset: 0x000227FC
+		// Token: 0x0600067D RID: 1661 RVA: 0x00024898 File Offset: 0x00022A98
 		private void ProcessResponse(WebException exception)
 		{
 			this.LogElapsedTime("E_ProcResp");
@@ -2169,7 +2187,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600067C RID: 1660 RVA: 0x00024844 File Offset: 0x00022A44
+		// Token: 0x0600067E RID: 1662 RVA: 0x00024AE0 File Offset: 0x00022CE0
 		private void LogForRetry(string key, bool logLatency, params HttpProxyMetadata[] preservedMetadataEntries)
 		{
 			StringBuilder stringBuilder = new StringBuilder();
@@ -2188,7 +2206,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Logger.AppendGenericError(key, stringBuilder.ToString());
 		}
 
-		// Token: 0x0600067D RID: 1661 RVA: 0x00024918 File Offset: 0x00022B18
+		// Token: 0x0600067F RID: 1663 RVA: 0x00024BB4 File Offset: 0x00022DB4
 		private void RemoveNotNeededHttpContextContent()
 		{
 			if (this.ClientRequest.IsAuthenticated)
@@ -2207,7 +2225,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600067E RID: 1662 RVA: 0x00024994 File Offset: 0x00022B94
+		// Token: 0x06000680 RID: 1664 RVA: 0x00024C30 File Offset: 0x00022E30
 		private void HandleMSDiagnosticsHeader(string diagnostics)
 		{
 			if (string.IsNullOrEmpty(diagnostics))
@@ -2236,7 +2254,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600067F RID: 1663 RVA: 0x00024A90 File Offset: 0x00022C90
+		// Token: 0x06000681 RID: 1665 RVA: 0x00024D2C File Offset: 0x00022F2C
 		private void AlterAuthBehaviorStateForBEAuthTest()
 		{
 			string empty = string.Empty;
@@ -2279,7 +2297,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000680 RID: 1664 RVA: 0x00024BAC File Offset: 0x00022DAC
+		// Token: 0x06000682 RID: 1666 RVA: 0x00024E48 File Offset: 0x00023048
 		private void AddRoutingEntryHeaderToRequest(HttpWebRequest serverRequest)
 		{
 			string text = string.Empty;
@@ -2303,18 +2321,18 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000681 RID: 1665 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x06000683 RID: 1667 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void ExposeExceptionToClientResponse(Exception ex)
 		{
 		}
 
-		// Token: 0x06000682 RID: 1666 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x06000684 RID: 1668 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool ShouldLogClientDisconnectError(Exception ex)
 		{
 			return true;
 		}
 
-		// Token: 0x06000683 RID: 1667 RVA: 0x00024C38 File Offset: 0x00022E38
+		// Token: 0x06000685 RID: 1669 RVA: 0x00024ED4 File Offset: 0x000230D4
 		protected void CompleteWithError(Exception ex, string label)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(3))
@@ -2363,7 +2381,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Complete();
 		}
 
-		// Token: 0x06000684 RID: 1668 RVA: 0x00024D70 File Offset: 0x00022F70
+		// Token: 0x06000686 RID: 1670 RVA: 0x0002500C File Offset: 0x0002320C
 		protected virtual void LogWebException(WebException exception)
 		{
 			this.Logger.AppendGenericError("WebExceptionStatus", exception.Status.ToString());
@@ -2380,7 +2398,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000685 RID: 1669 RVA: 0x00024DF0 File Offset: 0x00022FF0
+		// Token: 0x06000687 RID: 1671 RVA: 0x0002508C File Offset: 0x0002328C
 		protected bool HandleWebExceptionConnectivityError(WebException exception)
 		{
 			HttpWebHelper.ConnectivityError connectivityError = HttpWebHelper.CheckConnectivityError(exception);
@@ -2408,13 +2426,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x06000686 RID: 1670 RVA: 0x00024E96 File Offset: 0x00023096
+		// Token: 0x06000688 RID: 1672 RVA: 0x00025132 File Offset: 0x00023332
 		private void LogErrorCode(string errorCode)
 		{
 			RequestDetailsLoggerBase<RequestDetailsLogger>.SafeSetLogger(this.Logger, 9, errorCode);
 		}
 
-		// Token: 0x06000687 RID: 1671 RVA: 0x00024EAC File Offset: 0x000230AC
+		// Token: 0x06000689 RID: 1673 RVA: 0x00025148 File Offset: 0x00023348
 		private bool HandleWebException(WebException exception)
 		{
 			this.LogWebException(exception);
@@ -2427,7 +2445,7 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				HttpWebResponse httpWebResponse = (HttpWebResponse)exception.Response;
 				int statusCode = (int)httpWebResponse.StatusCode;
-				if (statusCode != 401 || this.ProxyKerberosAuthentication || this.AuthBehavior.ShouldCopyAuthenticationHeaderToClientResponse)
+				if (statusCode != 401 || this.AuthBehavior.ShouldCopyAuthenticationHeaderToClientResponse)
 				{
 					this.HttpContext.Server.ClearError();
 					ProxyRequestHandler.DisposeIfNotNullAndCatchExceptions(this.ServerResponse);
@@ -2471,7 +2489,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000688 RID: 1672 RVA: 0x00025130 File Offset: 0x00023330
+		// Token: 0x0600068A RID: 1674 RVA: 0x000253C4 File Offset: 0x000235C4
 		private bool HandleHttpProxyException(HttpProxyException exception)
 		{
 			this.HttpContext.Server.ClearError();
@@ -2491,7 +2509,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000689 RID: 1673 RVA: 0x00025210 File Offset: 0x00023410
+		// Token: 0x0600068B RID: 1675 RVA: 0x000254A4 File Offset: 0x000236A4
 		private bool HandleHttpException(HttpException exception)
 		{
 			string errorCode = string.Empty;
@@ -2541,7 +2559,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0600068A RID: 1674 RVA: 0x0002536C File Offset: 0x0002356C
+		// Token: 0x0600068C RID: 1676 RVA: 0x00025600 File Offset: 0x00023800
 		private void HandleOAuthException(InvalidOAuthTokenException exception)
 		{
 			MSDiagnosticsHeader.AppendChallengeAndDiagnosticsHeadersToResponse(this.ClientResponse, exception.ErrorCategory, exception.Message);
@@ -2551,13 +2569,13 @@ namespace Microsoft.Exchange.HttpProxy
 			this.HttpContext.Items["OAuthExtraInfo"] = str + string.Format("ErrorCode:{0}", exception.ErrorCode);
 		}
 
-		// Token: 0x0600068B RID: 1675 RVA: 0x0002541F File Offset: 0x0002361F
+		// Token: 0x0600068D RID: 1677 RVA: 0x000256B3 File Offset: 0x000238B3
 		private bool IsPossibleException(Exception exception)
 		{
 			return exception is SocketException || exception is IOException || exception is ProtocolViolationException;
 		}
 
-		// Token: 0x0600068C RID: 1676 RVA: 0x0002543C File Offset: 0x0002363C
+		// Token: 0x0600068E RID: 1678 RVA: 0x000256D0 File Offset: 0x000238D0
 		private void UpdateRoutingFailurePerfCounter(bool wasFailure)
 		{
 			string empty = string.Empty;
@@ -2589,14 +2607,14 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600068D RID: 1677 RVA: 0x00025500 File Offset: 0x00023700
+		// Token: 0x0600068F RID: 1679 RVA: 0x00025794 File Offset: 0x00023994
 		private void SetRequestFailureContext(RequestFailureContext.RequestFailurePoint failurePoint, int statusCode, string error, string details, HttpProxySubErrorCode? httpProxySubErrorCode = null, WebExceptionStatus? webExceptionStatus = null)
 		{
 			RequestFailureContext value = new RequestFailureContext(failurePoint, statusCode, error, details, httpProxySubErrorCode, webExceptionStatus, null);
 			this.HttpContext.Items[RequestFailureContext.HttpContextKeyName] = value;
 		}
 
-		// Token: 0x0600068E RID: 1678 RVA: 0x0002553C File Offset: 0x0002373C
+		// Token: 0x06000690 RID: 1680 RVA: 0x000257D0 File Offset: 0x000239D0
 		private void InspectDisconnectException(Exception exception)
 		{
 			HttpException ex = exception as HttpException;
@@ -2613,8 +2631,8 @@ namespace Microsoft.Exchange.HttpProxy
 			throw exception;
 		}
 
-		// Token: 0x1700016E RID: 366
-		// (get) Token: 0x0600068F RID: 1679 RVA: 0x00003193 File Offset: 0x00001393
+		// Token: 0x1700016D RID: 365
+		// (get) Token: 0x06000691 RID: 1681 RVA: 0x00003193 File Offset: 0x00001393
 		protected virtual bool UseBackEndCacheForDownLevelServer
 		{
 			get
@@ -2623,8 +2641,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x1700016F RID: 367
-		// (get) Token: 0x06000690 RID: 1680 RVA: 0x000255A6 File Offset: 0x000237A6
+		// Token: 0x1700016E RID: 366
+		// (get) Token: 0x06000692 RID: 1682 RVA: 0x0002583A File Offset: 0x00023A3A
 		protected DatacenterRedirectStrategy DatacenterRedirectStrategy
 		{
 			get
@@ -2637,8 +2655,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000170 RID: 368
-		// (get) Token: 0x06000691 RID: 1681 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x1700016F RID: 367
+		// (get) Token: 0x06000693 RID: 1683 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool IsBackendServerCacheValidationEnabled
 		{
 			get
@@ -2647,17 +2665,17 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000171 RID: 369
-		// (get) Token: 0x06000692 RID: 1682 RVA: 0x000255C2 File Offset: 0x000237C2
-		// (set) Token: 0x06000693 RID: 1683 RVA: 0x000255CA File Offset: 0x000237CA
+		// Token: 0x17000170 RID: 368
+		// (get) Token: 0x06000694 RID: 1684 RVA: 0x00025856 File Offset: 0x00023A56
+		// (set) Token: 0x06000695 RID: 1685 RVA: 0x0002585E File Offset: 0x00023A5E
 		protected AnchoredRoutingTarget AnchoredRoutingTarget { get; set; }
 
-		// Token: 0x17000172 RID: 370
-		// (get) Token: 0x06000694 RID: 1684 RVA: 0x000255D3 File Offset: 0x000237D3
-		// (set) Token: 0x06000695 RID: 1685 RVA: 0x000255DB File Offset: 0x000237DB
+		// Token: 0x17000171 RID: 369
+		// (get) Token: 0x06000696 RID: 1686 RVA: 0x00025867 File Offset: 0x00023A67
+		// (set) Token: 0x06000697 RID: 1687 RVA: 0x0002586F File Offset: 0x00023A6F
 		protected bool ProxyToDownLevel { get; set; }
 
-		// Token: 0x06000696 RID: 1686 RVA: 0x000255E4 File Offset: 0x000237E4
+		// Token: 0x06000698 RID: 1688 RVA: 0x00025878 File Offset: 0x00023A78
 		internal bool TryGetSpecificHeaderFromResponse(HttpWebResponse response, string functionName, string headerName, string expectedHeaderValue, out string headerValue)
 		{
 			headerValue = null;
@@ -2683,13 +2701,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x06000697 RID: 1687 RVA: 0x0001B794 File Offset: 0x00019994
+		// Token: 0x06000699 RID: 1689 RVA: 0x0001B954 File Offset: 0x00019B54
 		protected virtual DatacenterRedirectStrategy CreateDatacenterRedirectStrategy()
 		{
 			return new DefaultRedirectStrategy(this);
 		}
 
-		// Token: 0x06000698 RID: 1688 RVA: 0x00025690 File Offset: 0x00023890
+		// Token: 0x0600069A RID: 1690 RVA: 0x00025924 File Offset: 0x00023B24
 		protected virtual AnchorMailbox ResolveAnchorMailbox()
 		{
 			this.LogElapsedTime("E_BaseResAnchMbx");
@@ -2706,13 +2724,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return anchorMailbox;
 		}
 
-		// Token: 0x06000699 RID: 1689 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x0600069B RID: 1691 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ShouldRecalculateProxyTarget()
 		{
 			return false;
 		}
 
-		// Token: 0x0600069A RID: 1690 RVA: 0x000256D0 File Offset: 0x000238D0
+		// Token: 0x0600069C RID: 1692 RVA: 0x00025964 File Offset: 0x00023B64
 		protected virtual AnchoredRoutingTarget TryFastTargetCalculationByAnchorMailbox(AnchorMailbox anchorMailbox)
 		{
 			this.LogElapsedTime("E_TryFastTargetCalc");
@@ -2729,7 +2747,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x0600069B RID: 1691 RVA: 0x00025730 File Offset: 0x00023930
+		// Token: 0x0600069D RID: 1693 RVA: 0x000259C4 File Offset: 0x00023BC4
 		protected virtual BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer mailboxServer)
 		{
 			this.LogElapsedTime("E_GetDLCAS");
@@ -2739,13 +2757,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return downLevelClientAccessServer;
 		}
 
-		// Token: 0x0600069C RID: 1692 RVA: 0x0000500A File Offset: 0x0000320A
+		// Token: 0x0600069E RID: 1694 RVA: 0x0000500A File Offset: 0x0000320A
 		protected virtual AnchoredRoutingTarget TryDirectTargetCalculation()
 		{
 			return null;
 		}
 
-		// Token: 0x0600069D RID: 1693 RVA: 0x0002576C File Offset: 0x0002396C
+		// Token: 0x0600069F RID: 1695 RVA: 0x00025A00 File Offset: 0x00023C00
 		protected virtual bool HandleBackEndCalculationException(Exception exception, AnchorMailbox anchorMailbox, string label)
 		{
 			this.LogElapsedTime("E_HandleBECalcEx");
@@ -2874,12 +2892,12 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600069E RID: 1694 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x060006A0 RID: 1696 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected virtual void RedirectIfNeeded(BackEndServer mailbox)
 		{
 		}
 
-		// Token: 0x0600069F RID: 1695 RVA: 0x00025B14 File Offset: 0x00023D14
+		// Token: 0x060006A1 RID: 1697 RVA: 0x00025DA8 File Offset: 0x00023FA8
 		protected virtual void OnDatabaseNotFound(AnchorMailbox anchorMailbox)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -2910,26 +2928,26 @@ namespace Microsoft.Exchange.HttpProxy
 			anchorMailbox.InvalidateCache();
 		}
 
-		// Token: 0x060006A0 RID: 1696 RVA: 0x00025BAC File Offset: 0x00023DAC
+		// Token: 0x060006A2 RID: 1698 RVA: 0x00025E40 File Offset: 0x00024040
 		protected virtual void UpdateOrInvalidateAnchorMailboxCache(Guid mdbGuid, string resourceForest)
 		{
 			this.InvalidateAnchorMailboxCache(mdbGuid, resourceForest);
 		}
 
-		// Token: 0x060006A1 RID: 1697 RVA: 0x00025BB6 File Offset: 0x00023DB6
+		// Token: 0x060006A3 RID: 1699 RVA: 0x00025E4A File Offset: 0x0002404A
 		protected void InvalidateAnchorMailboxCache(Guid mdbGuid, string resourceForest)
 		{
 			this.AnchoredRoutingTarget.AnchorMailbox.InvalidateCache();
 		}
 
-		// Token: 0x060006A2 RID: 1698 RVA: 0x00025BC8 File Offset: 0x00023DC8
+		// Token: 0x060006A4 RID: 1700 RVA: 0x00025E5C File Offset: 0x0002405C
 		protected virtual bool IsRoutingError(HttpWebResponse response)
 		{
 			string text;
 			return this.TryGetSpecificHeaderFromResponse(response, "ProxyRequestHandler::IsRoutingError", Constants.BEServerExceptionHeaderName, Constants.IllegalCrossServerConnectionExceptionType, out text) || this.TryGetSpecificHeaderFromResponse(response, "ProxyRequestHandler::IsRoutingError", Constants.BEServerRoutingErrorHeaderName, null, out text) || (this.IsRumRoutingError(response) && response.StatusCode == HttpStatusCode.ServiceUnavailable);
 		}
 
-		// Token: 0x060006A3 RID: 1699 RVA: 0x00025C21 File Offset: 0x00023E21
+		// Token: 0x060006A5 RID: 1701 RVA: 0x00025EB5 File Offset: 0x000240B5
 		protected virtual AnchoredRoutingTarget DoProtocolSpecificRoutingTargetOverride(AnchoredRoutingTarget routingTarget)
 		{
 			if (routingTarget == null)
@@ -2940,13 +2958,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x060006A4 RID: 1700 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x060006A6 RID: 1702 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ShouldContinueProxy()
 		{
 			return false;
 		}
 
-		// Token: 0x060006A5 RID: 1701 RVA: 0x00025C40 File Offset: 0x00023E40
+		// Token: 0x060006A7 RID: 1703 RVA: 0x00025ED4 File Offset: 0x000240D4
 		protected virtual Uri GetTargetBackEndServerUrl()
 		{
 			this.LogElapsedTime("E_TargetBEUrl");
@@ -2980,25 +2998,25 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060006A6 RID: 1702 RVA: 0x0001BAAF File Offset: 0x00019CAF
+		// Token: 0x060006A8 RID: 1704 RVA: 0x0001BC6F File Offset: 0x00019E6F
 		protected virtual UriBuilder GetClientUrlForProxy()
 		{
 			return new UriBuilder(this.ClientRequest.Url);
 		}
 
-		// Token: 0x060006A7 RID: 1703 RVA: 0x00025D10 File Offset: 0x00023F10
+		// Token: 0x060006A9 RID: 1705 RVA: 0x00025FA4 File Offset: 0x000241A4
 		protected virtual MailboxServerLocator CreateMailboxServerLocator(Guid databaseGuid, string domainName, string resourceForest)
 		{
 			return MailboxServerLocator.Create(databaseGuid, domainName, resourceForest, !this.IsRetryingOnError, GuardedSlsExecution.MailboxServerLocatorCallbacks, Extensions.GetGenericInfoLogDelegate(this.Logger));
 		}
 
-		// Token: 0x060006A8 RID: 1704 RVA: 0x00025D33 File Offset: 0x00023F33
+		// Token: 0x060006AA RID: 1706 RVA: 0x00025FC7 File Offset: 0x000241C7
 		protected virtual void BeginValidateBackendServerCache()
 		{
 			throw new NotImplementedException("Backend server cache validation not implemented for this handler");
 		}
 
-		// Token: 0x060006A9 RID: 1705 RVA: 0x00025D40 File Offset: 0x00023F40
+		// Token: 0x060006AB RID: 1707 RVA: 0x00025FD4 File Offset: 0x000241D4
 		protected void BeginProxyRequestOrRecalculate()
 		{
 			object obj = this.LockObject;
@@ -3033,7 +3051,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006AA RID: 1706 RVA: 0x00025E54 File Offset: 0x00024054
+		// Token: 0x060006AC RID: 1708 RVA: 0x000260E8 File Offset: 0x000242E8
 		protected bool HandleRoutingError(HttpWebResponse response, bool invalidateAnchorMailboxCache)
 		{
 			if (this.IsRoutingError(response))
@@ -3048,7 +3066,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060006AB RID: 1707 RVA: 0x00025E80 File Offset: 0x00024080
+		// Token: 0x060006AD RID: 1709 RVA: 0x00026114 File Offset: 0x00024314
 		protected bool ProcessRoutingUpdateModuleResponse(HttpWebResponse response)
 		{
 			try
@@ -3076,7 +3094,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060006AC RID: 1708 RVA: 0x00025F54 File Offset: 0x00024154
+		// Token: 0x060006AE RID: 1710 RVA: 0x000261E8 File Offset: 0x000243E8
 		protected bool RecalculateTargetBackend()
 		{
 			if (this.ShouldRetryOnError)
@@ -3102,7 +3120,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060006AD RID: 1709 RVA: 0x00026024 File Offset: 0x00024224
+		// Token: 0x060006AF RID: 1711 RVA: 0x000262B8 File Offset: 0x000244B8
 		protected void BeginContinueOnAuthenticate(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -3127,7 +3145,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006AE RID: 1710 RVA: 0x00026038 File Offset: 0x00024238
+		// Token: 0x060006B0 RID: 1712 RVA: 0x000262CC File Offset: 0x000244CC
 		private static void MailboxServerLocatorCompletedCallback(IAsyncResult result)
 		{
 			MailboxServerLocatorAsyncState mailboxServerLocatorAsyncState = (MailboxServerLocatorAsyncState)result.AsyncState;
@@ -3143,14 +3161,14 @@ namespace Microsoft.Exchange.HttpProxy
 			mailboxServerLocatorAsyncState.ProxyRequestHandler.OnCalculateTargetBackEndCompleted(new TargetCalculationCallbackBeacon(mailboxServerLocatorAsyncState, result));
 		}
 
-		// Token: 0x060006AF RID: 1711 RVA: 0x000260C0 File Offset: 0x000242C0
+		// Token: 0x060006B1 RID: 1713 RVA: 0x00026354 File Offset: 0x00024554
 		private bool IsRumRoutingError(HttpWebResponse response)
 		{
 			string text;
 			return this.TryGetSpecificHeaderFromResponse(response, "ProxyRequestHandler::IsRumRoutingError", "X-RoutingEntryUpdate", null, out text) && (!string.IsNullOrEmpty(text) && text.Contains("DatabaseGuid")) && text.Contains(Constants.RumCouldNotFindDatabaseSerializedString);
 		}
 
-		// Token: 0x060006B0 RID: 1712 RVA: 0x00026108 File Offset: 0x00024308
+		// Token: 0x060006B2 RID: 1714 RVA: 0x0002639C File Offset: 0x0002459C
 		private bool ShouldUpdateAnchorMailboxCache(HttpWebResponse response, out string routingUpdateHeaderValue, out DatabaseGuidRoutingDestination updatedRoutingDestination)
 		{
 			updatedRoutingDestination = null;
@@ -3165,7 +3183,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x060006B1 RID: 1713 RVA: 0x00026158 File Offset: 0x00024358
+		// Token: 0x060006B3 RID: 1715 RVA: 0x000263EC File Offset: 0x000245EC
 		private bool InvalidateBackEndServerCache(HttpWebResponse response, bool invalidateAnchorMailboxCache)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -3219,7 +3237,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x060006B2 RID: 1714 RVA: 0x000262EC File Offset: 0x000244EC
+		// Token: 0x060006B4 RID: 1716 RVA: 0x00026580 File Offset: 0x00024780
 		private void InvalidateBackEndServerCacheSetDelay(HttpWebResponse response, bool alwaysDelay, bool invalidateAnchorMailboxCache = true)
 		{
 			bool flag = this.InvalidateBackEndServerCache(response, invalidateAnchorMailboxCache);
@@ -3234,7 +3252,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006B3 RID: 1715 RVA: 0x00026346 File Offset: 0x00024546
+		// Token: 0x060006B5 RID: 1717 RVA: 0x000265DA File Offset: 0x000247DA
 		private void BeginCalculateTargetBackEnd(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -3274,7 +3292,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006B4 RID: 1716 RVA: 0x0002635C File Offset: 0x0002455C
+		// Token: 0x060006B6 RID: 1718 RVA: 0x000265F0 File Offset: 0x000247F0
 		private void InternalBeginCalculateTargetBackEnd(out AnchorMailbox anchorMailbox)
 		{
 			this.LogElapsedTime("E_IntBeginCalcTargetBE");
@@ -3502,7 +3520,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006B5 RID: 1717 RVA: 0x00026A9C File Offset: 0x00024C9C
+		// Token: 0x060006B7 RID: 1719 RVA: 0x00026D30 File Offset: 0x00024F30
 		private void OnCalculateTargetBackEndCompleted(object extraData)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -3548,7 +3566,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006B6 RID: 1718 RVA: 0x00026AD0 File Offset: 0x00024CD0
+		// Token: 0x060006B8 RID: 1720 RVA: 0x00026D64 File Offset: 0x00024F64
 		private void InternalOnCalculateTargetBackEndCompleted(TargetCalculationCallbackBeacon beacon)
 		{
 			this.LogElapsedTime("E_IntOnCalcTargetBEComp");
@@ -3628,7 +3646,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_IntOnCalcTargetBEComp");
 		}
 
-		// Token: 0x060006B7 RID: 1719 RVA: 0x00026E0B File Offset: 0x0002500B
+		// Token: 0x060006B9 RID: 1721 RVA: 0x0002709F File Offset: 0x0002529F
 		private void BeginValidateBackendServerCacheOrProxyOrRecalculate()
 		{
 			if (this.IsBackendServerCacheValidationEnabled)
@@ -3639,7 +3657,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.BeginProxyRequestOrRecalculate();
 		}
 
-		// Token: 0x060006B8 RID: 1720 RVA: 0x00026E24 File Offset: 0x00025024
+		// Token: 0x060006BA RID: 1722 RVA: 0x000270B8 File Offset: 0x000252B8
 		private void ContinueOnAuthenticateCallBack(object extraData)
 		{
 			if (!this.AuthBehavior.IsFullyAuthenticated())
@@ -3657,7 +3675,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.BeginValidateBackendServerCacheOrProxyOrRecalculate();
 		}
 
-		// Token: 0x060006B9 RID: 1721 RVA: 0x00026E94 File Offset: 0x00025094
+		// Token: 0x060006BB RID: 1723 RVA: 0x00027128 File Offset: 0x00025328
 		private BackEndServer ProcessMailboxServerLocatorCallBack(IAsyncResult asyncResult, MailboxServerLocatorAsyncState asyncState)
 		{
 			this.LogElapsedTime("E_ProcSvrLocCB");
@@ -3699,7 +3717,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return backEndServer;
 		}
 
-		// Token: 0x060006BA RID: 1722 RVA: 0x00027064 File Offset: 0x00025264
+		// Token: 0x060006BC RID: 1724 RVA: 0x000272F8 File Offset: 0x000254F8
 		private void SetDatabaseToServerRoutingEntry(Guid databaseGuid, string resourceForest, BackEndServer server, long failoverSequenceNumber)
 		{
 			if (server != null && !string.IsNullOrEmpty(resourceForest))
@@ -3710,8 +3728,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000173 RID: 371
-		// (get) Token: 0x060006BB RID: 1723 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x17000172 RID: 370
+		// (get) Token: 0x060006BD RID: 1725 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool UseSmartBufferSizing
 		{
 			get
@@ -3720,8 +3738,8 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x17000174 RID: 372
-		// (get) Token: 0x060006BC RID: 1724 RVA: 0x000270AB File Offset: 0x000252AB
+		// Token: 0x17000173 RID: 371
+		// (get) Token: 0x060006BE RID: 1726 RVA: 0x0002733F File Offset: 0x0002553F
 		private bool IsSmartBufferSizingEnabled
 		{
 			get
@@ -3730,43 +3748,43 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006BD RID: 1725 RVA: 0x000270C1 File Offset: 0x000252C1
+		// Token: 0x060006BF RID: 1727 RVA: 0x00027355 File Offset: 0x00025555
 		protected virtual StreamProxy BuildRequestStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer)
 		{
 			return new StreamProxy(streamProxyType, source, target, buffer, this);
 		}
 
-		// Token: 0x060006BE RID: 1726 RVA: 0x000270CE File Offset: 0x000252CE
+		// Token: 0x060006C0 RID: 1728 RVA: 0x00027362 File Offset: 0x00025562
 		protected virtual StreamProxy BuildRequestStreamProxySmartSizing(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target)
 		{
 			return new StreamProxy(streamProxyType, source, target, HttpProxySettings.RequestBufferSize.Value, HttpProxySettings.MinimumRequestBufferSize.Value, this);
 		}
 
-		// Token: 0x060006BF RID: 1727 RVA: 0x000270C1 File Offset: 0x000252C1
+		// Token: 0x060006C1 RID: 1729 RVA: 0x00027355 File Offset: 0x00025555
 		protected virtual StreamProxy BuildResponseStreamProxy(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target, byte[] buffer)
 		{
 			return new StreamProxy(streamProxyType, source, target, buffer, this);
 		}
 
-		// Token: 0x060006C0 RID: 1728 RVA: 0x000270ED File Offset: 0x000252ED
+		// Token: 0x060006C2 RID: 1730 RVA: 0x00027381 File Offset: 0x00025581
 		protected virtual StreamProxy BuildResponseStreamProxySmartSizing(StreamProxy.StreamProxyType streamProxyType, Stream source, Stream target)
 		{
 			return new StreamProxy(streamProxyType, source, target, HttpProxySettings.ResponseBufferSize.Value, HttpProxySettings.MinimumResponseBufferSize.Value, this);
 		}
 
-		// Token: 0x060006C1 RID: 1729 RVA: 0x0002710C File Offset: 0x0002530C
+		// Token: 0x060006C3 RID: 1731 RVA: 0x000273A0 File Offset: 0x000255A0
 		protected virtual BufferPool GetRequestBufferPool()
 		{
 			return BufferPoolCollection.AutoCleanupCollection.Acquire(HttpProxySettings.RequestBufferSize.Value);
 		}
 
-		// Token: 0x060006C2 RID: 1730 RVA: 0x00027122 File Offset: 0x00025322
+		// Token: 0x060006C4 RID: 1732 RVA: 0x000273B6 File Offset: 0x000255B6
 		protected virtual BufferPool GetResponseBufferPool()
 		{
 			return BufferPoolCollection.AutoCleanupCollection.Acquire(HttpProxySettings.ResponseBufferSize.Value);
 		}
 
-		// Token: 0x060006C3 RID: 1731 RVA: 0x00027138 File Offset: 0x00025338
+		// Token: 0x060006C5 RID: 1733 RVA: 0x000273CC File Offset: 0x000255CC
 		private void BeginRequestStreaming()
 		{
 			this.LogElapsedTime("E_BegReqStrm");
@@ -3812,7 +3830,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006C4 RID: 1732 RVA: 0x000272BC File Offset: 0x000254BC
+		// Token: 0x060006C6 RID: 1734 RVA: 0x00027550 File Offset: 0x00025750
 		private void BeginResponseStreaming()
 		{
 			this.LogElapsedTime("E_BegRespStrm");
@@ -3848,7 +3866,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006C5 RID: 1733 RVA: 0x000273D0 File Offset: 0x000255D0
+		// Token: 0x060006C7 RID: 1735 RVA: 0x00027664 File Offset: 0x00025864
 		private void InitializeRequestBufferPool()
 		{
 			this.LogElapsedTime("E_InitReqBufPool");
@@ -3881,7 +3899,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006C6 RID: 1734 RVA: 0x0002748C File Offset: 0x0002568C
+		// Token: 0x060006C8 RID: 1736 RVA: 0x00027720 File Offset: 0x00025920
 		private void InitializeResponseBufferPool()
 		{
 			this.LogElapsedTime("E_InitRespBufPool");
@@ -3924,7 +3942,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006C7 RID: 1735 RVA: 0x00027578 File Offset: 0x00025778
+		// Token: 0x060006C9 RID: 1737 RVA: 0x0002780C File Offset: 0x00025A0C
 		[Conditional("DEBUG")]
 		private void InitializeCaptureResponseStream()
 		{
@@ -3958,7 +3976,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006C8 RID: 1736 RVA: 0x000276E4 File Offset: 0x000258E4
+		// Token: 0x060006CA RID: 1738 RVA: 0x00027978 File Offset: 0x00025B78
 		private void RequestStreamProxyCompleted(IAsyncResult result)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -4027,7 +4045,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006C9 RID: 1737 RVA: 0x00027718 File Offset: 0x00025918
+		// Token: 0x060006CB RID: 1739 RVA: 0x000279AC File Offset: 0x00025BAC
 		private void ResponseStreamProxyCompleted(IAsyncResult result)
 		{
 			this.CallThreadEntranceMethod(delegate
@@ -4068,7 +4086,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006CA RID: 1738 RVA: 0x0002774C File Offset: 0x0002594C
+		// Token: 0x060006CC RID: 1740 RVA: 0x000279E0 File Offset: 0x00025BE0
 		private bool HandleStreamProxyError(StreamProxyException exception, StreamProxy streamProxy)
 		{
 			this.LogElapsedTime("E_HandleSPErr");
@@ -4099,7 +4117,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x060006CB RID: 1739 RVA: 0x0002780C File Offset: 0x00025A0C
+		// Token: 0x060006CD RID: 1741 RVA: 0x00027AA0 File Offset: 0x00025CA0
 		private void CleanUpRequestStreamsAndBuffer()
 		{
 			this.LogElapsedTime("E_CleanUpReqBuf");
@@ -4117,7 +4135,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CleanUpReqBuf");
 		}
 
-		// Token: 0x060006CC RID: 1740 RVA: 0x00027880 File Offset: 0x00025A80
+		// Token: 0x060006CE RID: 1742 RVA: 0x00027B14 File Offset: 0x00025D14
 		private void CleanUpResponseStreamsAndBuffer()
 		{
 			this.LogElapsedTime("E_CleanUpRespBuf");
@@ -4133,7 +4151,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.LogElapsedTime("L_CleanUpRespBuf");
 		}
 
-		// Token: 0x060006CD RID: 1741 RVA: 0x000278E4 File Offset: 0x00025AE4
+		// Token: 0x060006CF RID: 1743 RVA: 0x00027B78 File Offset: 0x00025D78
 		internal void CompleteForLocalProbe()
 		{
 			int value = HttpProxySettings.DelayProbeResponseSeconds.Value;
@@ -4145,13 +4163,13 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Complete();
 		}
 
-		// Token: 0x060006CE RID: 1742 RVA: 0x00003165 File Offset: 0x00001365
+		// Token: 0x060006D0 RID: 1744 RVA: 0x00003165 File Offset: 0x00001365
 		protected virtual bool ProtocolSupportsWebSocket()
 		{
 			return false;
 		}
 
-		// Token: 0x060006CF RID: 1743 RVA: 0x00027923 File Offset: 0x00025B23
+		// Token: 0x060006D1 RID: 1745 RVA: 0x00027BB7 File Offset: 0x00025DB7
 		private void ProcessWebSocketRequest(HttpContext context)
 		{
 			this.serverRequestHeaders = this.ServerRequest.Headers;
@@ -4159,7 +4177,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.Complete();
 		}
 
-		// Token: 0x060006D0 RID: 1744 RVA: 0x00027950 File Offset: 0x00025B50
+		// Token: 0x060006D2 RID: 1746 RVA: 0x00027BE4 File Offset: 0x00025DE4
 		private async Task ConnectToBackend(Uri uri, CancellationToken cancellationToken)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -4216,7 +4234,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006D1 RID: 1745 RVA: 0x000279A8 File Offset: 0x00025BA8
+		// Token: 0x060006D3 RID: 1747 RVA: 0x00027C3C File Offset: 0x00025E3C
 		private async Task HandleWebSocket(WebSocketContext webSocketContext)
 		{
 			try
@@ -4245,7 +4263,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006D2 RID: 1746 RVA: 0x000279F8 File Offset: 0x00025BF8
+		// Token: 0x060006D4 RID: 1748 RVA: 0x00027C8C File Offset: 0x00025E8C
 		private async Task HandleWebSocketInternal(AspNetWebSocketContext webSocketContext)
 		{
 			this.clientSocket = webSocketContext.WebSocket;
@@ -4278,16 +4296,16 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006D3 RID: 1747 RVA: 0x00027A48 File Offset: 0x00025C48
+		// Token: 0x060006D5 RID: 1749 RVA: 0x00027CDC File Offset: 0x00025EDC
 		private async Task ProxyWebSocketData(WebSocket receiveSocket, WebSocket sendSocket, byte[] receiveBuffer, bool fromClientToBackend, CancellationToken cancellationToken)
 		{
-			ProxyRequestHandler.<>c__DisplayClass334_0 CS$<>8__locals1 = new ProxyRequestHandler.<>c__DisplayClass334_0();
+			ProxyRequestHandler.<>c__DisplayClass332_0 CS$<>8__locals1 = new ProxyRequestHandler.<>c__DisplayClass332_0();
 			CS$<>8__locals1.receiveSocket = receiveSocket;
 			CS$<>8__locals1.receiveBuffer = receiveBuffer;
 			CS$<>8__locals1.cancellationToken = cancellationToken;
 			while (CS$<>8__locals1.receiveSocket.State == WebSocketState.Open && sendSocket.State == WebSocketState.Open)
 			{
-				ProxyRequestHandler.<>c__DisplayClass334_1 CS$<>8__locals2 = new ProxyRequestHandler.<>c__DisplayClass334_1();
+				ProxyRequestHandler.<>c__DisplayClass332_1 CS$<>8__locals2 = new ProxyRequestHandler.<>c__DisplayClass332_1();
 				CS$<>8__locals2.CS$<>8__locals1 = CS$<>8__locals1;
 				if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
 				{
@@ -4296,7 +4314,7 @@ namespace Microsoft.Exchange.HttpProxy
 				Func<Task<WebSocketReceiveResult>> func;
 				if ((func = CS$<>8__locals2.CS$<>8__locals1.<>9__0) == null)
 				{
-					ProxyRequestHandler.<>c__DisplayClass334_0 CS$<>8__locals3 = CS$<>8__locals2.CS$<>8__locals1;
+					ProxyRequestHandler.<>c__DisplayClass332_0 CS$<>8__locals3 = CS$<>8__locals2.CS$<>8__locals1;
 					Func<Task<WebSocketReceiveResult>> func2 = async () => await CS$<>8__locals2.CS$<>8__locals1.receiveSocket.ReceiveAsync(new ArraySegment<byte>(CS$<>8__locals2.CS$<>8__locals1.receiveBuffer), CS$<>8__locals2.CS$<>8__locals1.cancellationToken);
 					CS$<>8__locals3.<>9__0 = func2;
 					func = func2;
@@ -4354,7 +4372,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006D4 RID: 1748 RVA: 0x00027AB8 File Offset: 0x00025CB8
+		// Token: 0x060006D6 RID: 1750 RVA: 0x00027D4C File Offset: 0x00025F4C
 		private async Task SendWebSocketMessage(byte[] receiveBuffer, int bytesCount, WebSocket sendSocket, WebSocketMessageType webSocketMessageType, CancellationToken cancellationToken)
 		{
 			ArraySegment<byte> outputBuffer = new ArraySegment<byte>(receiveBuffer, 0, bytesCount);
@@ -4364,7 +4382,7 @@ namespace Microsoft.Exchange.HttpProxy
 			});
 		}
 
-		// Token: 0x060006D5 RID: 1749 RVA: 0x00027B28 File Offset: 0x00025D28
+		// Token: 0x060006D7 RID: 1751 RVA: 0x00027DBC File Offset: 0x00025FBC
 		private async Task<WebSocketReceiveResult> ReceiveAsyncWithTryCatch(Func<Task<WebSocketReceiveResult>> func)
 		{
 			try
@@ -4411,7 +4429,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x060006D6 RID: 1750 RVA: 0x00027B78 File Offset: 0x00025D78
+		// Token: 0x060006D8 RID: 1752 RVA: 0x00027E0C File Offset: 0x0002600C
 		private async Task SendAsyncWithTryCatch(Func<Task> func)
 		{
 			try
@@ -4450,7 +4468,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006D7 RID: 1751 RVA: 0x00027BC8 File Offset: 0x00025DC8
+		// Token: 0x060006D9 RID: 1753 RVA: 0x00027E5C File Offset: 0x0002605C
 		private void CleanupWebSocket(bool timedOut)
 		{
 			try
@@ -4492,13 +4510,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0400039D RID: 925
+		// Token: 0x040003A1 RID: 929
 		public const string CanaryKey = "msExchEcpCanary";
 
-		// Token: 0x0400039E RID: 926
+		// Token: 0x040003A2 RID: 930
 		private static readonly object MultiRequestLockObject = new object();
 
-		// Token: 0x0400039F RID: 927
+		// Token: 0x040003A3 RID: 931
 		private static readonly HashSet<string> RestrictedHeaders = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 		{
 			"set-cookie",
@@ -4518,97 +4536,97 @@ namespace Microsoft.Exchange.HttpProxy
 			"X-RoutingEntryUpdate"
 		};
 
-		// Token: 0x040003A0 RID: 928
+		// Token: 0x040003A4 RID: 932
 		private readonly object lockObject = new object();
 
-		// Token: 0x040003A1 RID: 929
+		// Token: 0x040003A5 RID: 933
 		private AsyncCallback asyncCallback;
 
-		// Token: 0x040003A2 RID: 930
+		// Token: 0x040003A6 RID: 934
 		private object asyncState;
 
-		// Token: 0x040003A3 RID: 931
+		// Token: 0x040003A7 RID: 935
 		private ManualResetEvent completedWaitHandle;
 
-		// Token: 0x040003A4 RID: 932
+		// Token: 0x040003A8 RID: 936
 		private Exception asyncException;
 
-		// Token: 0x040003A5 RID: 933
+		// Token: 0x040003A9 RID: 937
 		private DisposeTracker disposeTracker;
 
-		// Token: 0x040003A6 RID: 934
+		// Token: 0x040003AA RID: 938
 		private bool haveStartedOutOfBandProxyLogon;
 
-		// Token: 0x040003A7 RID: 935
+		// Token: 0x040003AB RID: 939
 		private bool haveReceivedAuthChallenge;
 
-		// Token: 0x040003A8 RID: 936
+		// Token: 0x040003AC RID: 940
 		private int retryOnErrorCounter;
 
-		// Token: 0x040003A9 RID: 937
+		// Token: 0x040003AD RID: 941
 		private BufferedRegionStream bufferedRegionStream;
 
-		// Token: 0x040003AA RID: 938
+		// Token: 0x040003AE RID: 942
 		private AuthenticationContext authenticationContext;
 
-		// Token: 0x040003AB RID: 939
+		// Token: 0x040003AF RID: 943
 		private string kerberosChallenge;
 
-		// Token: 0x040003AC RID: 940
+		// Token: 0x040003B0 RID: 944
 		private int delayOnRetryOnError;
 
-		// Token: 0x040003AD RID: 941
+		// Token: 0x040003B1 RID: 945
 		private RequestState requestState;
 
-		// Token: 0x040003AE RID: 942
+		// Token: 0x040003B2 RID: 946
 		private bool disposed;
 
-		// Token: 0x040003C3 RID: 963
+		// Token: 0x040003C7 RID: 967
 		private const int MaxStatusDescriptionLength = 512;
 
-		// Token: 0x040003C4 RID: 964
+		// Token: 0x040003C8 RID: 968
 		protected const int E12E14TargetPort = 443;
 
-		// Token: 0x040003C5 RID: 965
+		// Token: 0x040003C9 RID: 969
 		protected const int TargetPort = 444;
 
-		// Token: 0x040003C6 RID: 966
+		// Token: 0x040003CA RID: 970
 		private const string RoutingErrorLogString = "RoutingError";
 
-		// Token: 0x040003C7 RID: 967
+		// Token: 0x040003CB RID: 971
 		private MailboxServerLocator mailboxServerLocator;
 
-		// Token: 0x040003C8 RID: 968
+		// Token: 0x040003CC RID: 972
 		private DatacenterRedirectStrategy datacenterRedirectStrategy;
 
-		// Token: 0x040003C9 RID: 969
+		// Token: 0x040003CD RID: 973
 		private DatabaseBasedAnchorMailbox fallbackAnchorMailbox;
 
-		// Token: 0x040003CA RID: 970
+		// Token: 0x040003CE RID: 974
 		private SuccessfulDatabaseGuidRoutingEntry databaseToServerRoutingEntry;
 
-		// Token: 0x040003CD RID: 973
+		// Token: 0x040003D1 RID: 977
 		private StreamProxy requestStreamProxy;
 
-		// Token: 0x040003CE RID: 974
+		// Token: 0x040003D2 RID: 978
 		private ProxyRequestHandler.BufferPoolWithBuffer requestStreamBufferPool;
 
-		// Token: 0x040003CF RID: 975
+		// Token: 0x040003D3 RID: 979
 		private bool requestBufferInitialized;
 
-		// Token: 0x040003D0 RID: 976
+		// Token: 0x040003D4 RID: 980
 		private StreamProxy responseStreamProxy;
 
-		// Token: 0x040003D1 RID: 977
+		// Token: 0x040003D5 RID: 981
 		private ProxyRequestHandler.BufferPoolWithBuffer responseStreamBufferPool;
 
-		// Token: 0x040003D2 RID: 978
+		// Token: 0x040003D6 RID: 982
 		private bool responseBufferInitialized;
 
-		// Token: 0x040003D3 RID: 979
+		// Token: 0x040003D7 RID: 983
 		private FileStream captureResponseStream;
 
-		// Token: 0x040003D4 RID: 980
+		// Token: 0x040003D8 RID: 984
 		private static readonly HashSet<string> FrontEndHeaders = new HashSet<string>
 		{
 			"Connection",
@@ -4617,97 +4635,97 @@ namespace Microsoft.Exchange.HttpProxy
 			"Sec-WebSocket-Version"
 		};
 
-		// Token: 0x040003D5 RID: 981
+		// Token: 0x040003D9 RID: 985
 		private static readonly TimeSpan Timeout = TimeSpan.FromSeconds((double)new IntAppSettingsEntry("HttpProxy.WebSocketTimeout", 60, ExTraceGlobals.VerboseTracer).Value);
 
-		// Token: 0x040003D6 RID: 982
+		// Token: 0x040003DA RID: 986
 		private static readonly IntAppSettingsEntry MaxMessageSize = new IntAppSettingsEntry("HttpProxy.MaxWebSocketMessageSize", 16384, ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x040003D7 RID: 983
+		// Token: 0x040003DB RID: 987
 		private WebSocket clientSocket;
 
-		// Token: 0x040003D8 RID: 984
+		// Token: 0x040003DC RID: 988
 		private ClientWebSocket backendSocket;
 
-		// Token: 0x040003D9 RID: 985
+		// Token: 0x040003DD RID: 989
 		private BufferPool bufferPool;
 
-		// Token: 0x040003DA RID: 986
+		// Token: 0x040003DE RID: 990
 		private byte[] clientBuffer;
 
-		// Token: 0x040003DB RID: 987
+		// Token: 0x040003DF RID: 991
 		private byte[] backendBuffer;
 
-		// Token: 0x040003DC RID: 988
+		// Token: 0x040003E0 RID: 992
 		private CancellationTokenSource timeoutCancellationTokenSource;
 
-		// Token: 0x040003DD RID: 989
+		// Token: 0x040003E1 RID: 993
 		private CancellationTokenSource disposeCancellationTokenSource;
 
-		// Token: 0x040003DE RID: 990
+		// Token: 0x040003E2 RID: 994
 		private CancellationTokenSource cancellationTokenSource;
 
-		// Token: 0x040003DF RID: 991
+		// Token: 0x040003E3 RID: 995
 		private WebHeaderCollection serverRequestHeaders;
 
-		// Token: 0x02000135 RID: 309
+		// Token: 0x02000134 RID: 308
 		public enum SupportBackEndCookie
 		{
-			// Token: 0x04000584 RID: 1412
+			// Token: 0x04000588 RID: 1416
 			V1 = 1,
-			// Token: 0x04000585 RID: 1413
+			// Token: 0x04000589 RID: 1417
 			V2,
-			// Token: 0x04000586 RID: 1414
+			// Token: 0x0400058A RID: 1418
 			All
 		}
 
-		// Token: 0x02000136 RID: 310
+		// Token: 0x02000135 RID: 309
 		protected enum ProxyState
 		{
-			// Token: 0x04000588 RID: 1416
-			None,
-			// Token: 0x04000589 RID: 1417
-			Initializing,
-			// Token: 0x0400058A RID: 1418
-			CalculateBackEnd,
-			// Token: 0x0400058B RID: 1419
-			CalculateBackEndSecondRound,
 			// Token: 0x0400058C RID: 1420
-			PrepareServerRequest,
+			None,
 			// Token: 0x0400058D RID: 1421
-			ProxyRequestData,
+			Initializing,
 			// Token: 0x0400058E RID: 1422
-			WaitForServerResponse,
+			CalculateBackEnd,
 			// Token: 0x0400058F RID: 1423
-			ProxyResponseData,
+			CalculateBackEndSecondRound,
 			// Token: 0x04000590 RID: 1424
-			Completed,
+			PrepareServerRequest,
 			// Token: 0x04000591 RID: 1425
-			CleanedUp,
+			ProxyRequestData,
 			// Token: 0x04000592 RID: 1426
-			WaitForProxyLogonRequestStream,
+			WaitForServerResponse,
 			// Token: 0x04000593 RID: 1427
-			WaitForProxyLogonResponse,
+			ProxyResponseData,
 			// Token: 0x04000594 RID: 1428
+			Completed,
+			// Token: 0x04000595 RID: 1429
+			CleanedUp,
+			// Token: 0x04000596 RID: 1430
+			WaitForProxyLogonRequestStream,
+			// Token: 0x04000597 RID: 1431
+			WaitForProxyLogonResponse,
+			// Token: 0x04000598 RID: 1432
 			ProxyWebSocketData
 		}
 
-		// Token: 0x02000137 RID: 311
+		// Token: 0x02000136 RID: 310
 		public class BufferPoolWithBuffer
 		{
-			// Token: 0x06000890 RID: 2192 RVA: 0x0002EACC File Offset: 0x0002CCCC
+			// Token: 0x0600088B RID: 2187 RVA: 0x0002ECB4 File Offset: 0x0002CEB4
 			public BufferPoolWithBuffer(BufferPoolCollection.BufferSize bufferSize)
 			{
 				this.bufferPool = BufferPoolCollection.AutoCleanupCollection.Acquire(bufferSize);
 			}
 
-			// Token: 0x06000891 RID: 2193 RVA: 0x0002EAE5 File Offset: 0x0002CCE5
+			// Token: 0x0600088C RID: 2188 RVA: 0x0002ECCD File Offset: 0x0002CECD
 			public BufferPoolWithBuffer(BufferPool bufferPool)
 			{
 				this.bufferPool = bufferPool;
 			}
 
-			// Token: 0x06000892 RID: 2194 RVA: 0x0002EAF4 File Offset: 0x0002CCF4
+			// Token: 0x0600088D RID: 2189 RVA: 0x0002ECDC File Offset: 0x0002CEDC
 			public byte[] AcquireBuffer()
 			{
 				if (this.buffer == null)
@@ -4717,7 +4735,7 @@ namespace Microsoft.Exchange.HttpProxy
 				return this.buffer;
 			}
 
-			// Token: 0x06000893 RID: 2195 RVA: 0x0002EB18 File Offset: 0x0002CD18
+			// Token: 0x0600088E RID: 2190 RVA: 0x0002ED00 File Offset: 0x0002CF00
 			public void Release()
 			{
 				if (this.buffer == null)
@@ -4735,10 +4753,10 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 			}
 
-			// Token: 0x04000595 RID: 1429
+			// Token: 0x04000599 RID: 1433
 			private BufferPool bufferPool;
 
-			// Token: 0x04000596 RID: 1430
+			// Token: 0x0400059A RID: 1434
 			private byte[] buffer;
 		}
 	}

@@ -6,12 +6,12 @@ namespace Microsoft.Exchange.HttpProxy
 	[Serializable]
 	internal class MissingSslCertificateException : Exception
 	{
-		// Token: 0x060002E1 RID: 737 RVA: 0x0000EACA File Offset: 0x0000CCCA
+		// Token: 0x060002E1 RID: 737 RVA: 0x0000EB06 File Offset: 0x0000CD06
 		public MissingSslCertificateException() : base(MissingSslCertificateException.ErrorMessage)
 		{
 		}
 
-		// Token: 0x040001BE RID: 446
+		// Token: 0x040001BF RID: 447
 		private static readonly string ErrorMessage = "Failed to load SSL certificate.";
 	}
 }

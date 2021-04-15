@@ -11,7 +11,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal sealed class OWAUserPhotoProxyRequestHandler : OwaProxyRequestHandler
 	{
 		// Token: 0x17000128 RID: 296
-		// (get) Token: 0x06000545 RID: 1349 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x06000548 RID: 1352 RVA: 0x00003165 File Offset: 0x00001365
 		protected override bool UseBackEndCacheForDownLevelServer
 		{
 			get
@@ -20,13 +20,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000546 RID: 1350 RVA: 0x0001D211 File Offset: 0x0001B411
+		// Token: 0x06000549 RID: 1353 RVA: 0x0001D3B5 File Offset: 0x0001B5B5
 		internal static bool IsUserPhotoRequest(HttpRequest request)
 		{
 			return RequestPathParser.IsOwaGetUserPhotoRequest(request.Path);
 		}
 
-		// Token: 0x06000547 RID: 1351 RVA: 0x0001D220 File Offset: 0x0001B420
+		// Token: 0x0600054A RID: 1354 RVA: 0x0001D3C4 File Offset: 0x0001B5C4
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			string smtp;
@@ -42,13 +42,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x06000548 RID: 1352 RVA: 0x0001CF41 File Offset: 0x0001B141
+		// Token: 0x0600054B RID: 1355 RVA: 0x0001D0E5 File Offset: 0x0001B2E5
 		protected override string TryGetExplicitLogonNode(ExplicitLogonNode node)
 		{
 			return base.ClientRequest.QueryString["email"];
 		}
 
-		// Token: 0x06000549 RID: 1353 RVA: 0x0001D284 File Offset: 0x0001B484
+		// Token: 0x0600054C RID: 1356 RVA: 0x0001D428 File Offset: 0x0001B628
 		protected override BackEndServer GetDownLevelClientAccessServer(AnchorMailbox anchorMailbox, BackEndServer mailboxServer)
 		{
 			BackEndServer deterministicBackEndServer = HttpProxyBackEndHelper.GetDeterministicBackEndServer<WebServicesService>(mailboxServer, anchorMailbox.ToCookieKey(), this.ClientAccessType);

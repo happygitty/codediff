@@ -9,7 +9,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000A1 RID: 161
 	internal sealed class RestProxyRequestHandler : EwsProxyRequestHandler
 	{
-		// Token: 0x06000587 RID: 1415 RVA: 0x0001EF50 File Offset: 0x0001D150
+		// Token: 0x0600058A RID: 1418 RVA: 0x0001F0F4 File Offset: 0x0001D2F4
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			IIdentity identity = base.HttpContext.User.Identity;

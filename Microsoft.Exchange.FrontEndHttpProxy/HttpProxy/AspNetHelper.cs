@@ -20,7 +20,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000072 RID: 114
 	internal static class AspNetHelper
 	{
-		// Token: 0x060003D3 RID: 979 RVA: 0x00016044 File Offset: 0x00014244
+		// Token: 0x060003D3 RID: 979 RVA: 0x00016080 File Offset: 0x00014280
 		public static void EndResponse(HttpContext httpContext, HttpStatusCode statusCode)
 		{
 			if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -47,7 +47,7 @@ namespace Microsoft.Exchange.HttpProxy
 			httpContext.Response.End();
 		}
 
-		// Token: 0x060003D4 RID: 980 RVA: 0x000160E0 File Offset: 0x000142E0
+		// Token: 0x060003D4 RID: 980 RVA: 0x0001611C File Offset: 0x0001431C
 		public static CommonAccessToken FixupCommonAccessToken(HttpContext httpContext, int targetVersion)
 		{
 			if (!httpContext.Request.IsAuthenticated)
@@ -101,7 +101,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return commonAccessToken;
 		}
 
-		// Token: 0x060003D5 RID: 981 RVA: 0x00016270 File Offset: 0x00014470
+		// Token: 0x060003D5 RID: 981 RVA: 0x000162AC File Offset: 0x000144AC
 		public static bool IsExceptionExpectedWhenDisconnected(Exception e)
 		{
 			if (e is IOException)
@@ -122,7 +122,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return errorCode == -2147023667 || num == -2147023667 || errorCode == -2147023901 || num == -2147023901 || errorCode == -2147024832 || num == -2147024832 || errorCode == -2147024890 || num == -2147024890 || errorCode == -2147024809 || num == -2147024809 || errorCode == -2147024874 || num == -2147024874 || errorCode == -2147024895 || num == -2147024895;
 		}
 
-		// Token: 0x060003D6 RID: 982 RVA: 0x00016334 File Offset: 0x00014534
+		// Token: 0x060003D6 RID: 982 RVA: 0x00016370 File Offset: 0x00014570
 		public static string GetCafeErrorPageRedirectUrl(HttpContext httpContext, NameValueCollection queryParams)
 		{
 			if (httpContext == null)
@@ -147,14 +147,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return uriBuilder.Uri.AbsoluteUri;
 		}
 
-		// Token: 0x060003D7 RID: 983 RVA: 0x00016440 File Offset: 0x00014640
+		// Token: 0x060003D7 RID: 983 RVA: 0x0001647C File Offset: 0x0001467C
 		public static void MakePageNoCacheNoStore(HttpResponse response)
 		{
 			response.Cache.SetCacheability(HttpCacheability.NoCache);
 			response.Cache.SetNoStore();
 		}
 
-		// Token: 0x060003D8 RID: 984 RVA: 0x0001645C File Offset: 0x0001465C
+		// Token: 0x060003D8 RID: 984 RVA: 0x00016498 File Offset: 0x00014698
 		public static void SetCacheability(HttpResponse response, string cacheControlHeaderValue)
 		{
 			string[] separator = new string[]
@@ -201,7 +201,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060003D9 RID: 985 RVA: 0x000165C0 File Offset: 0x000147C0
+		// Token: 0x060003D9 RID: 985 RVA: 0x000165FC File Offset: 0x000147FC
 		public static void AddTimestampHeaderIfNecessary(NameValueCollection headers, string headerName)
 		{
 			try
@@ -216,7 +216,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060003DA RID: 986 RVA: 0x00016608 File Offset: 0x00014808
+		// Token: 0x060003DA RID: 986 RVA: 0x00016644 File Offset: 0x00014844
 		public static string GetRequestCorrelationId(HttpContext httpContext)
 		{
 			ExAssert.RetailAssert(httpContext != null, "httpContext is null");
@@ -228,7 +228,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return text;
 		}
 
-		// Token: 0x060003DB RID: 987 RVA: 0x00016648 File Offset: 0x00014848
+		// Token: 0x060003DB RID: 987 RVA: 0x00016684 File Offset: 0x00014884
 		public static void TerminateRequestWithSslRequiredResponse(HttpApplication httpApplication)
 		{
 			HttpResponse response = httpApplication.Context.Response;

@@ -140,11 +140,11 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 			if ((!Utilities.IsPartnerHostedOnly && !CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).NoCrossForestServerLocate.Enabled) || string.IsNullOrEmpty(resourceForest) || string.Equals(HttpProxyGlobals.LocalMachineForest.Member, resourceForest, StringComparison.OrdinalIgnoreCase))
 			{
-				ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\LocalSiteMailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 238);
+				ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\LocalSiteMailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 238);
 				Site site = null;
 				try
 				{
-					site = currentServiceTopology.GetSite(server.Fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\LocalSiteMailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 243);
+					site = currentServiceTopology.GetSite(server.Fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\Cache\\LocalSiteMailboxServerCache.cs", "IsLocalSiteE15MailboxServer", 243);
 				}
 				catch (ServerNotFoundException)
 				{

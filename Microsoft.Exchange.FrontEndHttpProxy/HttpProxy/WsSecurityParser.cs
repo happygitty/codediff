@@ -18,39 +18,39 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000071 RID: 113
 	internal class WsSecurityParser
 	{
-		// Token: 0x060003CC RID: 972 RVA: 0x00015953 File Offset: 0x00013B53
+		// Token: 0x060003CC RID: 972 RVA: 0x0001598F File Offset: 0x00013B8F
 		public WsSecurityParser(int traceContext)
 		{
 			this.TraceContext = traceContext;
 		}
 
 		// Token: 0x170000E3 RID: 227
-		// (get) Token: 0x060003CD RID: 973 RVA: 0x00015962 File Offset: 0x00013B62
-		// (set) Token: 0x060003CE RID: 974 RVA: 0x0001596A File Offset: 0x00013B6A
+		// (get) Token: 0x060003CD RID: 973 RVA: 0x0001599E File Offset: 0x00013B9E
+		// (set) Token: 0x060003CE RID: 974 RVA: 0x000159A6 File Offset: 0x00013BA6
 		private int TraceContext { get; set; }
 
-		// Token: 0x060003CF RID: 975 RVA: 0x00015974 File Offset: 0x00013B74
+		// Token: 0x060003CF RID: 975 RVA: 0x000159B0 File Offset: 0x00013BB0
 		internal KeyValuePair<string, bool> FindAddressFromWsSecurityRequest(Stream stream)
 		{
 			bool value = false;
 			return new KeyValuePair<string, bool>(this.FindAddressFromWsSecurity(stream, WsSecurityHeaderType.WSSecurityAuth, out value), value);
 		}
 
-		// Token: 0x060003D0 RID: 976 RVA: 0x00015994 File Offset: 0x00013B94
+		// Token: 0x060003D0 RID: 976 RVA: 0x000159D0 File Offset: 0x00013BD0
 		internal string FindAddressFromPartnerAuthRequest(Stream stream)
 		{
 			bool flag;
 			return this.FindAddressFromWsSecurity(stream, WsSecurityHeaderType.PartnerAuth, out flag);
 		}
 
-		// Token: 0x060003D1 RID: 977 RVA: 0x000159AC File Offset: 0x00013BAC
+		// Token: 0x060003D1 RID: 977 RVA: 0x000159E8 File Offset: 0x00013BE8
 		internal string FindAddressFromX509CertAuthRequest(Stream stream)
 		{
 			bool flag;
 			return this.FindAddressFromWsSecurity(stream, WsSecurityHeaderType.X509CertAuth, out flag);
 		}
 
-		// Token: 0x060003D2 RID: 978 RVA: 0x000159C4 File Offset: 0x00013BC4
+		// Token: 0x060003D2 RID: 978 RVA: 0x00015A00 File Offset: 0x00013C00
 		internal string FindAddressFromWsSecurity(Stream stream, WsSecurityHeaderType headerType, out bool isDelegationToken)
 		{
 			isDelegationToken = false;
@@ -245,88 +245,88 @@ namespace Microsoft.Exchange.HttpProxy
 			return null;
 		}
 
-		// Token: 0x0400027B RID: 635
+		// Token: 0x0400027C RID: 636
 		internal const string SoapHeaderElementName = "Header";
 
-		// Token: 0x0400027C RID: 636
+		// Token: 0x0400027D RID: 637
 		internal const string SecurityHeaderElementName = "Security";
 
-		// Token: 0x0400027D RID: 637
+		// Token: 0x0400027E RID: 638
 		internal const string EncryptedDataElementName = "EncryptedData";
 
-		// Token: 0x0400027E RID: 638
+		// Token: 0x0400027F RID: 639
 		internal const string BinarySecurityTokenElementName = "BinarySecurityToken";
 
-		// Token: 0x0400027F RID: 639
+		// Token: 0x04000280 RID: 640
 		internal const string ExchangeImpersonationElementName = "ExchangeImpersonation";
 
-		// Token: 0x04000280 RID: 640
+		// Token: 0x04000281 RID: 641
 		internal const string ActionElementName = "Action";
 
-		// Token: 0x04000281 RID: 641
+		// Token: 0x04000282 RID: 642
 		internal const string BodyElementName = "Body";
 
-		// Token: 0x04000282 RID: 642
+		// Token: 0x04000283 RID: 643
 		internal const string GetFederationInformationElementName = "GetFederationInformationRequestMessage";
 
-		// Token: 0x04000283 RID: 643
+		// Token: 0x04000284 RID: 644
 		internal const string RequestElementName = "Request";
 
-		// Token: 0x04000284 RID: 644
+		// Token: 0x04000285 RID: 645
 		internal const string DomainElementName = "Domain";
 
-		// Token: 0x04000285 RID: 645
+		// Token: 0x04000286 RID: 646
 		internal const string ConnectingSIDElementName = "ConnectingSID";
 
-		// Token: 0x04000286 RID: 646
+		// Token: 0x04000287 RID: 647
 		internal const string PrincipalNameElementName = "PrincipalName";
 
-		// Token: 0x04000287 RID: 647
+		// Token: 0x04000288 RID: 648
 		internal const string PrimarySmtpAddressElementName = "PrimarySmtpAddress";
 
-		// Token: 0x04000288 RID: 648
+		// Token: 0x04000289 RID: 649
 		internal const string SmtpAddressElementName = "SmtpAddress";
 
-		// Token: 0x04000289 RID: 649
+		// Token: 0x0400028A RID: 650
 		internal const string SIDElementName = "SID";
 
-		// Token: 0x0400028A RID: 650
+		// Token: 0x0400028B RID: 651
 		internal const string SamlAttributeElementName = "Attribute";
 
-		// Token: 0x0400028B RID: 651
+		// Token: 0x0400028C RID: 652
 		internal const string AttributeNameElementName = "AttributeName";
 
-		// Token: 0x0400028C RID: 652
+		// Token: 0x0400028D RID: 653
 		internal const string AttributeValueElementName = "AttributeValue";
 
-		// Token: 0x0400028D RID: 653
+		// Token: 0x0400028E RID: 654
 		internal const string TargetTenantAttributeName = "targettenant";
 
-		// Token: 0x0400028E RID: 654
+		// Token: 0x0400028F RID: 655
 		internal const string Soap11Namespace = "http://schemas.xmlsoap.org/soap/envelope/";
 
-		// Token: 0x0400028F RID: 655
+		// Token: 0x04000290 RID: 656
 		internal const string Soap12Namespace = "http://www.w3.org/2003/05/soap-envelope";
 
-		// Token: 0x04000290 RID: 656
+		// Token: 0x04000291 RID: 657
 		internal const string WSSecurity200401SNamespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
 
-		// Token: 0x04000291 RID: 657
+		// Token: 0x04000292 RID: 658
 		internal const string XmlEncryptionNamespace = "http://www.w3.org/2001/04/xmlenc#";
 
-		// Token: 0x04000292 RID: 658
+		// Token: 0x04000293 RID: 659
 		internal const string AddressingNamespace = "http://www.w3.org/2005/08/addressing";
 
-		// Token: 0x04000293 RID: 659
+		// Token: 0x04000294 RID: 660
 		internal const string NamespaceBase = "http://schemas.microsoft.com/exchange/services/2006";
 
-		// Token: 0x04000294 RID: 660
+		// Token: 0x04000295 RID: 661
 		internal const string TypeNamespace = "http://schemas.microsoft.com/exchange/services/2006/types";
 
-		// Token: 0x04000295 RID: 661
+		// Token: 0x04000296 RID: 662
 		internal const string SamlNamespace = "urn:oasis:names:tc:SAML:1.0:assertion";
 
-		// Token: 0x04000296 RID: 662
+		// Token: 0x04000297 RID: 663
 		internal const int MaxSizeOfHeaders = 73628;
 	}
 }

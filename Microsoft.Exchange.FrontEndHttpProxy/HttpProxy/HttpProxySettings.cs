@@ -66,63 +66,66 @@ namespace Microsoft.Exchange.HttpProxy
 		public static readonly BoolAppSettingsEntry TestBackEndSupportEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("TestBackEndSupportEnabled"), false, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000165 RID: 357
-		public static readonly BoolAppSettingsEntry DFPOWAVdirProxyEnabled = new BoolAppSettingsEntry("DFPOWAProxyEnabled", false, ExTraceGlobals.VerboseTracer);
+		public static readonly IntAppSettingsEntry SerializeClientAccessContext = new IntAppSettingsEntry(HttpProxySettings.Prefix("SerializeClientAccessContext"), 0, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000166 RID: 358
-		public static readonly StringAppSettingsEntry CaptureResponsesLocation = new StringAppSettingsEntry(HttpProxySettings.Prefix("CaptureResponsesLocation"), string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly BoolAppSettingsEntry DFPOWAVdirProxyEnabled = new BoolAppSettingsEntry("DFPOWAProxyEnabled", false, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000167 RID: 359
-		public static readonly IntAppSettingsEntry ServicePointConnectionLimit = new IntAppSettingsEntry(HttpProxySettings.Prefix("ServicePointConnectionLimit"), 65000, ExTraceGlobals.VerboseTracer);
+		public static readonly StringAppSettingsEntry CaptureResponsesLocation = new StringAppSettingsEntry(HttpProxySettings.Prefix("CaptureResponsesLocation"), string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000168 RID: 360
-		public static readonly BoolAppSettingsEntry DetailedLatencyTracingEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("DetailedLatencyTracingEnabled"), false, ExTraceGlobals.VerboseTracer);
+		public static readonly IntAppSettingsEntry ServicePointConnectionLimit = new IntAppSettingsEntry(HttpProxySettings.Prefix("ServicePointConnectionLimit"), 65000, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000169 RID: 361
-		public static readonly IntAppSettingsEntry MaxRetryOnError = new IntAppSettingsEntry(HttpProxySettings.Prefix("MaxRetryOnError"), CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).RetryOnError.Enabled ? 2 : 0, ExTraceGlobals.VerboseTracer);
+		public static readonly BoolAppSettingsEntry DetailedLatencyTracingEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("DetailedLatencyTracingEnabled"), false, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x0400016A RID: 362
-		public static readonly BoolAppSettingsEntry RetryOnConnectivityErrorEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("RetryOnConnectivityErrorEnabled"), false, ExTraceGlobals.VerboseTracer);
+		public static readonly IntAppSettingsEntry MaxRetryOnError = new IntAppSettingsEntry(HttpProxySettings.Prefix("MaxRetryOnError"), CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).RetryOnError.Enabled ? 2 : 0, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x0400016B RID: 363
-		public static readonly IntAppSettingsEntry DelayOnRetryOnError = new IntAppSettingsEntry(HttpProxySettings.Prefix("DelayOnRetryOnError"), 5000, ExTraceGlobals.VerboseTracer);
+		public static readonly BoolAppSettingsEntry RetryOnConnectivityErrorEnabled = new BoolAppSettingsEntry(HttpProxySettings.Prefix("RetryOnConnectivityErrorEnabled"), false, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x0400016C RID: 364
-		public static readonly FlightableBoolAppSettingsEntry MailboxServerLocatorSharedCacheEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("MailboxServerLocatorSharedCacheEnabled"), () => HttpProxyGlobals.IsMultitenant && CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).MailboxServerSharedCache.Enabled);
+		public static readonly IntAppSettingsEntry DelayOnRetryOnError = new IntAppSettingsEntry(HttpProxySettings.Prefix("DelayOnRetryOnError"), 5000, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x0400016D RID: 365
-		public static readonly StringAppSettingsEntry EnableLiveIdBasicBEAuthVersion = new StringAppSettingsEntry("LiveIdBasicAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly FlightableBoolAppSettingsEntry MailboxServerLocatorSharedCacheEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("MailboxServerLocatorSharedCacheEnabled"), () => HttpProxyGlobals.IsMultitenant && CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).MailboxServerSharedCache.Enabled);
 
 		// Token: 0x0400016E RID: 366
-		public static readonly StringAppSettingsEntry EnableOAuthBEAuthVersion = new StringAppSettingsEntry("OAuthHttpModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly StringAppSettingsEntry EnableLiveIdBasicBEAuthVersion = new StringAppSettingsEntry("LiveIdBasicAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x0400016F RID: 367
-		public static readonly StringAppSettingsEntry EnableDefaultBEAuthVersion = new StringAppSettingsEntry("DefaultAuthBehavior.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly StringAppSettingsEntry EnableOAuthBEAuthVersion = new StringAppSettingsEntry("OAuthHttpModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000170 RID: 368
-		public static readonly FlightableBoolAppSettingsEntry AnchorMailboxSharedCacheEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("AnchorMailboxSharedCacheEnabled"), () => HttpProxyGlobals.IsMultitenant && CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).AnchorMailboxSharedCache.Enabled);
+		public static readonly StringAppSettingsEntry EnableDefaultBEAuthVersion = new StringAppSettingsEntry("DefaultAuthBehavior.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000171 RID: 369
-		public static readonly IntAppSettingsEntry GlobalSharedCacheRpcTimeout = new IntAppSettingsEntry(HttpProxySettings.Prefix("GlobalSharedCacheRpcTimeout"), 2000, ExTraceGlobals.VerboseTracer);
+		public static readonly FlightableBoolAppSettingsEntry AnchorMailboxSharedCacheEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("AnchorMailboxSharedCacheEnabled"), () => HttpProxyGlobals.IsMultitenant && CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).AnchorMailboxSharedCache.Enabled);
 
 		// Token: 0x04000172 RID: 370
-		public static readonly StringAppSettingsEntry EnableLiveIdCookieBEAuthVersion = new StringAppSettingsEntry("LiveIdCookieAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly IntAppSettingsEntry GlobalSharedCacheRpcTimeout = new IntAppSettingsEntry(HttpProxySettings.Prefix("GlobalSharedCacheRpcTimeout"), 2000, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000173 RID: 371
-		public static readonly EnumAppSettingsEntry<ProxyRequestHandler.SupportBackEndCookie> SupportBackEndCookie = new EnumAppSettingsEntry<ProxyRequestHandler.SupportBackEndCookie>(HttpProxySettings.Prefix("SupportBackEndCookie"), CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).UseResourceForest.Enabled ? ProxyRequestHandler.SupportBackEndCookie.All : ProxyRequestHandler.SupportBackEndCookie.V1, ExTraceGlobals.VerboseTracer);
+		public static readonly StringAppSettingsEntry EnableLiveIdCookieBEAuthVersion = new StringAppSettingsEntry("LiveIdCookieAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000174 RID: 372
-		public static readonly FlightableBoolAppSettingsEntry CafeV1RUMEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("CafeV1RUMEnabled"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).CafeV1RUM.Enabled);
+		public static readonly EnumAppSettingsEntry<ProxyRequestHandler.SupportBackEndCookie> SupportBackEndCookie = new EnumAppSettingsEntry<ProxyRequestHandler.SupportBackEndCookie>(HttpProxySettings.Prefix("SupportBackEndCookie"), CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).UseResourceForest.Enabled ? ProxyRequestHandler.SupportBackEndCookie.All : ProxyRequestHandler.SupportBackEndCookie.V1, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000175 RID: 373
-		public static readonly StringAppSettingsEntry EnableRpsTokenBEAuthVersion = new StringAppSettingsEntry("ConsumerEasAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
+		public static readonly FlightableBoolAppSettingsEntry CafeV1RUMEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("CafeV1RUMEnabled"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).CafeV1RUM.Enabled);
 
 		// Token: 0x04000176 RID: 374
-		public static readonly IntAppSettingsEntry CompressTokenMinimumSize = new IntAppSettingsEntry(HttpProxySettings.Prefix("CompressTokenMinimumSize"), 8192, ExTraceGlobals.VerboseTracer);
+		public static readonly StringAppSettingsEntry EnableRpsTokenBEAuthVersion = new StringAppSettingsEntry("ConsumerEasAuthModule.EnableBEAuthVersion", string.Empty, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000177 RID: 375
-		public static readonly FlightableBoolAppSettingsEntry PuidAnchorMailboxEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("PuidAnchorMailboxEnabled"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).PuidAnchorMailboxEnabled.Enabled);
+		public static readonly IntAppSettingsEntry CompressTokenMinimumSize = new IntAppSettingsEntry(HttpProxySettings.Prefix("CompressTokenMinimumSize"), 8192, ExTraceGlobals.VerboseTracer);
 
 		// Token: 0x04000178 RID: 376
+		public static readonly FlightableBoolAppSettingsEntry PuidAnchorMailboxEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("PuidAnchorMailboxEnabled"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).PuidAnchorMailboxEnabled.Enabled);
+
+		// Token: 0x04000179 RID: 377
 		public static readonly FlightableBoolAppSettingsEntry AddHostHeaderInServerRequestEnabled = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("AddHostHeaderInServerRequestEnabled"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).AddHostHeaderInServerRequest.Enabled);
 	}
 }

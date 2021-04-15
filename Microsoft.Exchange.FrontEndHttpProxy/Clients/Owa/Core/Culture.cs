@@ -588,18 +588,18 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 		// Token: 0x04000015 RID: 21
 		private static Dictionary<int, string> fontFileNameTable = Culture.LoadFontFileNameDictionary();
 
-		// Token: 0x020000CE RID: 206
+		// Token: 0x020000CD RID: 205
 		public struct SingularPluralRegularExpression
 		{
-			// Token: 0x060007A1 RID: 1953 RVA: 0x0002C31C File Offset: 0x0002A51C
+			// Token: 0x0600079C RID: 1948 RVA: 0x0002C504 File Offset: 0x0002A704
 			internal SingularPluralRegularExpression(string singularExpression, string pluralExpression)
 			{
 				this.singularExpression = singularExpression;
 				this.pluralExpression = pluralExpression;
 			}
 
-			// Token: 0x170001A9 RID: 425
-			// (get) Token: 0x060007A2 RID: 1954 RVA: 0x0002C32C File Offset: 0x0002A52C
+			// Token: 0x170001A7 RID: 423
+			// (get) Token: 0x0600079D RID: 1949 RVA: 0x0002C514 File Offset: 0x0002A714
 			internal string SingularExpression
 			{
 				get
@@ -608,8 +608,8 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				}
 			}
 
-			// Token: 0x170001AA RID: 426
-			// (get) Token: 0x060007A3 RID: 1955 RVA: 0x0002C334 File Offset: 0x0002A534
+			// Token: 0x170001A8 RID: 424
+			// (get) Token: 0x0600079E RID: 1950 RVA: 0x0002C51C File Offset: 0x0002A71C
 			internal string PluralExpression
 			{
 				get
@@ -618,10 +618,10 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 				}
 			}
 
-			// Token: 0x0400044E RID: 1102
+			// Token: 0x04000452 RID: 1106
 			private string singularExpression;
 
-			// Token: 0x0400044F RID: 1103
+			// Token: 0x04000453 RID: 1107
 			private string pluralExpression;
 		}
 	}

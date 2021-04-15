@@ -7,7 +7,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x02000067 RID: 103
 	public class RedirSuiteServiceProxy : OwaPage
 	{
-		// Token: 0x0600036D RID: 877 RVA: 0x00013630 File Offset: 0x00011830
+		// Token: 0x0600036D RID: 877 RVA: 0x0001366C File Offset: 0x0001186C
 		protected override void OnLoad(EventArgs e)
 		{
 			string value = base.Request.Headers["Host"];

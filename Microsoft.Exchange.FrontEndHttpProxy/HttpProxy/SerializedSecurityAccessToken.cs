@@ -12,8 +12,8 @@ namespace Microsoft.Exchange.HttpProxy
 	internal sealed class SerializedSecurityAccessToken : ISecurityAccessToken
 	{
 		// Token: 0x170000D7 RID: 215
-		// (get) Token: 0x06000394 RID: 916 RVA: 0x0001468F File Offset: 0x0001288F
-		// (set) Token: 0x06000395 RID: 917 RVA: 0x00014697 File Offset: 0x00012897
+		// (get) Token: 0x06000394 RID: 916 RVA: 0x000146CB File Offset: 0x000128CB
+		// (set) Token: 0x06000395 RID: 917 RVA: 0x000146D3 File Offset: 0x000128D3
 		public SidStringAndAttributes[] GroupSids
 		{
 			get
@@ -27,8 +27,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D8 RID: 216
-		// (get) Token: 0x06000396 RID: 918 RVA: 0x000146A0 File Offset: 0x000128A0
-		// (set) Token: 0x06000397 RID: 919 RVA: 0x000146A8 File Offset: 0x000128A8
+		// (get) Token: 0x06000396 RID: 918 RVA: 0x000146DC File Offset: 0x000128DC
+		// (set) Token: 0x06000397 RID: 919 RVA: 0x000146E4 File Offset: 0x000128E4
 		public SidStringAndAttributes[] RestrictedGroupSids
 		{
 			get
@@ -42,8 +42,8 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000D9 RID: 217
-		// (get) Token: 0x06000398 RID: 920 RVA: 0x000146B1 File Offset: 0x000128B1
-		// (set) Token: 0x06000399 RID: 921 RVA: 0x000146B9 File Offset: 0x000128B9
+		// (get) Token: 0x06000398 RID: 920 RVA: 0x000146ED File Offset: 0x000128ED
+		// (set) Token: 0x06000399 RID: 921 RVA: 0x000146F5 File Offset: 0x000128F5
 		public string UserSid
 		{
 			get
@@ -56,7 +56,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600039A RID: 922 RVA: 0x000146C4 File Offset: 0x000128C4
+		// Token: 0x0600039A RID: 922 RVA: 0x00014700 File Offset: 0x00012900
 		public byte[] GetBytes()
 		{
 			byte[] array = new byte[this.GetByteCountToSerializeToken()];
@@ -70,7 +70,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return array;
 		}
 
-		// Token: 0x0600039B RID: 923 RVA: 0x00014728 File Offset: 0x00012928
+		// Token: 0x0600039B RID: 923 RVA: 0x00014764 File Offset: 0x00012964
 		public byte[] GetSecurityContextBytes()
 		{
 			int num = (this.GroupSids == null) ? 0 : this.GroupSids.Length;
@@ -97,7 +97,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x0600039C RID: 924 RVA: 0x000147F4 File Offset: 0x000129F4
+		// Token: 0x0600039C RID: 924 RVA: 0x00014830 File Offset: 0x00012A30
 		private static int GetByteCountToSerializeSidArray(SidStringAndAttributes[] sidArray)
 		{
 			int num = 0;
@@ -115,7 +115,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return num;
 		}
 
-		// Token: 0x0600039D RID: 925 RVA: 0x0001483C File Offset: 0x00012A3C
+		// Token: 0x0600039D RID: 925 RVA: 0x00014878 File Offset: 0x00012A78
 		private static void SerializeStringToByteArray(string stringToSerialize, byte[] byteArray, ref int byteIndex)
 		{
 			int index = byteIndex;
@@ -125,7 +125,7 @@ namespace Microsoft.Exchange.HttpProxy
 			BitConverter.GetBytes(bytes).CopyTo(byteArray, index);
 		}
 
-		// Token: 0x0600039E RID: 926 RVA: 0x0001487C File Offset: 0x00012A7C
+		// Token: 0x0600039E RID: 926 RVA: 0x000148B8 File Offset: 0x00012AB8
 		private static void SerializeSidArrayToByteArray(SidStringAndAttributes[] sidArray, byte[] byteArray, ref int byteIndex)
 		{
 			if (sidArray == null || sidArray.Length == 0)
@@ -148,16 +148,16 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600039F RID: 927 RVA: 0x000148F7 File Offset: 0x00012AF7
+		// Token: 0x0600039F RID: 927 RVA: 0x00014933 File Offset: 0x00012B33
 		private int GetByteCountToSerializeToken()
 		{
 			return 0 + SerializedSecurityAccessToken.serializedSecurityAccessTokenCookie.Length + 1 + 4 + Encoding.UTF8.GetByteCount(this.UserSid) + SerializedSecurityAccessToken.GetByteCountToSerializeSidArray(this.GroupSids) + SerializedSecurityAccessToken.GetByteCountToSerializeSidArray(this.RestrictedGroupSids);
 		}
 
-		// Token: 0x04000255 RID: 597
+		// Token: 0x04000256 RID: 598
 		private const int SerializedSecurityAccessTokenVersion = 1;
 
-		// Token: 0x04000256 RID: 598
+		// Token: 0x04000257 RID: 599
 		private static byte[] serializedSecurityAccessTokenCookie = new byte[]
 		{
 			83,
@@ -166,13 +166,13 @@ namespace Microsoft.Exchange.HttpProxy
 			84
 		};
 
-		// Token: 0x04000257 RID: 599
+		// Token: 0x04000258 RID: 600
 		private string userSid;
 
-		// Token: 0x04000258 RID: 600
+		// Token: 0x04000259 RID: 601
 		private SidStringAndAttributes[] groupSids;
 
-		// Token: 0x04000259 RID: 601
+		// Token: 0x0400025A RID: 602
 		private SidStringAndAttributes[] restrictedGroupSids;
 	}
 }

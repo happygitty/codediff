@@ -61,6 +61,6 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x040000EB RID: 235
-		private static readonly ServerProvider ServerProvider = new ServerProvider();
+		internal static readonly ServerProvider ServerProvider = new ServerProvider();
 	}
 }

@@ -18,7 +18,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class AutodiscoverProxyRequestHandler : EwsAutodiscoverProxyRequestHandler
 	{
 		// Token: 0x17000111 RID: 273
-		// (get) Token: 0x0600049F RID: 1183 RVA: 0x0001981A File Offset: 0x00017A1A
+		// (get) Token: 0x060004A3 RID: 1187 RVA: 0x000199DA File Offset: 0x00017BDA
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -27,7 +27,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004A0 RID: 1184 RVA: 0x00019820 File Offset: 0x00017A20
+		// Token: 0x060004A4 RID: 1188 RVA: 0x000199E0 File Offset: 0x00017BE0
 		protected override void OnInitializingHandler()
 		{
 			base.OnInitializingHandler();
@@ -45,7 +45,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004A1 RID: 1185 RVA: 0x000198AC File Offset: 0x00017AAC
+		// Token: 0x060004A5 RID: 1189 RVA: 0x00019A6C File Offset: 0x00017C6C
 		protected override void DoProtocolSpecificBeginProcess()
 		{
 			if (!base.ClientRequest.IsAuthenticated)
@@ -72,7 +72,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004A2 RID: 1186 RVA: 0x00019980 File Offset: 0x00017B80
+		// Token: 0x060004A6 RID: 1190 RVA: 0x00019B40 File Offset: 0x00017D40
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			if (base.ClientRequest.IsAuthenticated && base.ProxyToDownLevel)
@@ -82,7 +82,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x060004A3 RID: 1187 RVA: 0x000199B0 File Offset: 0x00017BB0
+		// Token: 0x060004A7 RID: 1191 RVA: 0x00019B70 File Offset: 0x00017D70
 		protected override AnchorMailbox ResolveAnchorMailbox()
 		{
 			if (AutodiscoverProxyRequestHandler.LoadBalancedPartnerRouting.Value && base.ClientRequest.Url.AbsolutePath.ToLower().Contains("/wssecurity/x509cert"))
@@ -122,13 +122,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.ResolveAnchorMailbox();
 		}
 
-		// Token: 0x060004A4 RID: 1188 RVA: 0x00019A8E File Offset: 0x00017C8E
+		// Token: 0x060004A8 RID: 1192 RVA: 0x00019C4E File Offset: 0x00017E4E
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !string.Equals(headerName, "X-AutodiscoverProxySecurityContext", StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
 		}
 
-		// Token: 0x060004A5 RID: 1189 RVA: 0x00019AA7 File Offset: 0x00017CA7
+		// Token: 0x060004A9 RID: 1193 RVA: 0x00019C67 File Offset: 0x00017E67
 		protected override Uri UpdateExternalRedirectUrl(Uri originalRedirectUrl)
 		{
 			return new UriBuilder(base.ClientRequest.Url)
@@ -138,13 +138,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}.Uri;
 		}
 
-		// Token: 0x060004A6 RID: 1190 RVA: 0x00019AD6 File Offset: 0x00017CD6
+		// Token: 0x060004AA RID: 1194 RVA: 0x00019C96 File Offset: 0x00017E96
 		private bool IsSimpleSoapRequest()
 		{
 			return base.ClientRequest.Url.LocalPath.EndsWith(".svc", StringComparison.OrdinalIgnoreCase);
 		}
 
-		// Token: 0x060004A7 RID: 1191 RVA: 0x00019AF4 File Offset: 0x00017CF4
+		// Token: 0x060004AB RID: 1195 RVA: 0x00019CB4 File Offset: 0x00017EB4
 		private bool ParseRequest(Stream stream)
 		{
 			long position = stream.Position;
@@ -267,28 +267,28 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x0400032E RID: 814
+		// Token: 0x04000332 RID: 818
 		internal const string AutodiscoverProxySecurityContext = "X-AutodiscoverProxySecurityContext";
 
-		// Token: 0x0400032F RID: 815
+		// Token: 0x04000333 RID: 819
 		private const string GetFederationInformationAction = "/GetFederationInformation";
 
-		// Token: 0x04000330 RID: 816
+		// Token: 0x04000334 RID: 820
 		private const string GetOrganizationRelationshipSettingsAction = "/GetOrganizationRelationshipSettings";
 
-		// Token: 0x04000331 RID: 817
+		// Token: 0x04000335 RID: 821
 		private const string X509CertUrlSuffix = "/wssecurity/x509cert";
 
-		// Token: 0x04000332 RID: 818
+		// Token: 0x04000336 RID: 822
 		private const string SoapRequestEnd = ".svc";
 
-		// Token: 0x04000333 RID: 819
+		// Token: 0x04000337 RID: 823
 		private const int MaxSizeOfDomainBasedRequest = 81820;
 
-		// Token: 0x04000334 RID: 820
+		// Token: 0x04000338 RID: 824
 		private static readonly StringAppSettingsEntry BlackBerryTenantName = new StringAppSettingsEntry(HttpProxySettings.Prefix("BlackBerryTenantName"), "service.businesscloud.blackberry.com", ExTraceGlobals.VerboseTracer);
 
-		// Token: 0x04000335 RID: 821
+		// Token: 0x04000339 RID: 825
 		private static readonly FlightableBoolAppSettingsEntry LoadBalancedPartnerRouting = new FlightableBoolAppSettingsEntry(HttpProxySettings.Prefix("LoadBalancedPartnerRouting"), () => CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).LoadBalancedPartnerRouting.Enabled);
 	}
 }

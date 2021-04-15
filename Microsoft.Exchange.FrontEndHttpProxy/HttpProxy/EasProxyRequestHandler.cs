@@ -13,7 +13,7 @@ namespace Microsoft.Exchange.HttpProxy
 	internal class EasProxyRequestHandler : OwaEcpProxyRequestHandler<MobileSyncService>
 	{
 		// Token: 0x1700011B RID: 283
-		// (get) Token: 0x060004F4 RID: 1268 RVA: 0x0001B786 File Offset: 0x00019986
+		// (get) Token: 0x060004F8 RID: 1272 RVA: 0x0001B946 File Offset: 0x00019B46
 		protected override string ProxyLogonUri
 		{
 			get
@@ -23,7 +23,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700011C RID: 284
-		// (get) Token: 0x060004F5 RID: 1269 RVA: 0x0001B78D File Offset: 0x0001998D
+		// (get) Token: 0x060004F9 RID: 1273 RVA: 0x0001B94D File Offset: 0x00019B4D
 		protected override string ProxyLogonQueryString
 		{
 			get
@@ -33,7 +33,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x1700011D RID: 285
-		// (get) Token: 0x060004F6 RID: 1270 RVA: 0x00003165 File Offset: 0x00001365
+		// (get) Token: 0x060004FA RID: 1274 RVA: 0x00003165 File Offset: 0x00001365
 		protected override ClientAccessType ClientAccessType
 		{
 			get
@@ -42,13 +42,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060004F7 RID: 1271 RVA: 0x0001B794 File Offset: 0x00019994
+		// Token: 0x060004FB RID: 1275 RVA: 0x0001B954 File Offset: 0x00019B54
 		protected override DatacenterRedirectStrategy CreateDatacenterRedirectStrategy()
 		{
 			return new DefaultRedirectStrategy(this);
 		}
 
-		// Token: 0x060004F8 RID: 1272 RVA: 0x0001B79C File Offset: 0x0001999C
+		// Token: 0x060004FC RID: 1276 RVA: 0x0001B95C File Offset: 0x00019B5C
 		protected override Uri GetTargetBackEndServerUrl()
 		{
 			return new UriBuilder(base.GetTargetBackEndServerUrl())
@@ -57,12 +57,12 @@ namespace Microsoft.Exchange.HttpProxy
 			}.Uri;
 		}
 
-		// Token: 0x060004F9 RID: 1273 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x060004FD RID: 1277 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected override void DoProtocolSpecificBeginRequestLogging()
 		{
 		}
 
-		// Token: 0x060004FA RID: 1274 RVA: 0x0001B7D4 File Offset: 0x000199D4
+		// Token: 0x060004FE RID: 1278 RVA: 0x0001B994 File Offset: 0x00019B94
 		protected override void AddProtocolSpecificHeadersToServerRequest(WebHeaderCollection headers)
 		{
 			IIdentity identity = base.HttpContext.User.Identity;
@@ -73,19 +73,19 @@ namespace Microsoft.Exchange.HttpProxy
 			base.AddProtocolSpecificHeadersToServerRequest(headers);
 		}
 
-		// Token: 0x060004FB RID: 1275 RVA: 0x0001B830 File Offset: 0x00019A30
+		// Token: 0x060004FF RID: 1279 RVA: 0x0001B9F0 File Offset: 0x00019BF0
 		protected override bool ShouldCopyHeaderToServerRequest(string headerName)
 		{
 			return !string.Equals(headerName, "X-EAS-Proxy", StringComparison.OrdinalIgnoreCase) && base.ShouldCopyHeaderToServerRequest(headerName);
 		}
 
-		// Token: 0x060004FC RID: 1276 RVA: 0x0001B849 File Offset: 0x00019A49
+		// Token: 0x06000500 RID: 1280 RVA: 0x0001BA09 File Offset: 0x00019C09
 		protected override void SetProtocolSpecificProxyLogonRequestParameters(HttpWebRequest request)
 		{
 			request.ContentType = "text/xml";
 		}
 
-		// Token: 0x060004FD RID: 1277 RVA: 0x0001B858 File Offset: 0x00019A58
+		// Token: 0x06000501 RID: 1281 RVA: 0x0001BA18 File Offset: 0x00019C18
 		protected override bool TryHandleProtocolSpecificRequestErrors(Exception ex)
 		{
 			HttpException ex2 = ex as HttpException;
@@ -112,27 +112,27 @@ namespace Microsoft.Exchange.HttpProxy
 			return base.TryHandleProtocolSpecificRequestErrors(ex);
 		}
 
-		// Token: 0x060004FE RID: 1278 RVA: 0x00008C7B File Offset: 0x00006E7B
+		// Token: 0x06000502 RID: 1282 RVA: 0x00008C7B File Offset: 0x00006E7B
 		protected override void RedirectIfNeeded(BackEndServer mailboxServer)
 		{
 		}
 
-		// Token: 0x04000341 RID: 833
+		// Token: 0x04000345 RID: 837
 		private const string ProxyHeader = "X-EAS-Proxy";
 
-		// Token: 0x04000342 RID: 834
+		// Token: 0x04000346 RID: 838
 		private const string EASProtocolVersion = "MS-ASProtocolVersion";
 
-		// Token: 0x04000343 RID: 835
+		// Token: 0x04000347 RID: 839
 		private const string WbXmlContentType = "application/vnd.ms-sync.wbxml";
 
-		// Token: 0x04000344 RID: 836
+		// Token: 0x04000348 RID: 840
 		private const string EasProxyLogonUri = "Proxy/";
 
-		// Token: 0x04000345 RID: 837
+		// Token: 0x04000349 RID: 841
 		private const string EasProxyLogonQueryString = "cmd=ProxyLogin";
 
-		// Token: 0x04000346 RID: 838
+		// Token: 0x0400034A RID: 842
 		private static byte[] easRequestSizeTooLargeResponseBytes = new byte[]
 		{
 			3,

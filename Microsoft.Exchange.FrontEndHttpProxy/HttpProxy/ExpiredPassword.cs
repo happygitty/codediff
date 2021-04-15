@@ -13,7 +13,7 @@ namespace Microsoft.Exchange.HttpProxy
 	public class ExpiredPassword : OwaPage
 	{
 		// Token: 0x170000B5 RID: 181
-		// (get) Token: 0x0600032E RID: 814 RVA: 0x00010DA4 File Offset: 0x0000EFA4
+		// (get) Token: 0x0600032E RID: 814 RVA: 0x00010DE0 File Offset: 0x0000EFE0
 		protected ExpiredPassword.ExpiredPasswordReason Reason
 		{
 			get
@@ -23,7 +23,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B6 RID: 182
-		// (get) Token: 0x0600032F RID: 815 RVA: 0x00010DAC File Offset: 0x0000EFAC
+		// (get) Token: 0x0600032F RID: 815 RVA: 0x00010DE8 File Offset: 0x0000EFE8
 		protected string Destination
 		{
 			get
@@ -38,7 +38,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B7 RID: 183
-		// (get) Token: 0x06000330 RID: 816 RVA: 0x00010DE0 File Offset: 0x0000EFE0
+		// (get) Token: 0x06000330 RID: 816 RVA: 0x00010E1C File Offset: 0x0000F01C
 		protected string UserNameLabel
 		{
 			get
@@ -55,7 +55,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B8 RID: 184
-		// (get) Token: 0x06000331 RID: 817 RVA: 0x00010E2C File Offset: 0x0000F02C
+		// (get) Token: 0x06000331 RID: 817 RVA: 0x00010E68 File Offset: 0x0000F068
 		protected bool PasswordChanged
 		{
 			get
@@ -88,7 +88,7 @@ namespace Microsoft.Exchange.HttpProxy
 		[DllImport("netapi32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
 		public static extern uint NetUserChangePassword(string domainname, string username, IntPtr oldpassword, IntPtr newpassword);
 
-		// Token: 0x06000335 RID: 821 RVA: 0x00010E34 File Offset: 0x0000F034
+		// Token: 0x06000335 RID: 821 RVA: 0x00010E70 File Offset: 0x0000F070
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
@@ -101,7 +101,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000336 RID: 822 RVA: 0x00010E6C File Offset: 0x0000F06C
+		// Token: 0x06000336 RID: 822 RVA: 0x00010EA8 File Offset: 0x0000F0A8
 		private static ExpiredPassword.ChangePasswordResult ChangePasswordNUCP(string logonName, SecureString oldPassword, SecureString newPassword)
 		{
 			if (logonName == null || oldPassword == null || newPassword == null)
@@ -173,7 +173,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return ExpiredPassword.ChangePasswordResult.Success;
 		}
 
-		// Token: 0x06000337 RID: 823 RVA: 0x00010F9C File Offset: 0x0000F19C
+		// Token: 0x06000337 RID: 823 RVA: 0x00010FD8 File Offset: 0x0000F1D8
 		private static void GetDomainUser(string logonName, ref string domain, ref string user)
 		{
 			string[] array = logonName.Split(new char[]
@@ -187,7 +187,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000338 RID: 824 RVA: 0x00010FCC File Offset: 0x0000F1CC
+		// Token: 0x06000338 RID: 824 RVA: 0x00011008 File Offset: 0x0000F208
 		private static bool SecureStringEquals(SecureString secureStringA, SecureString secureStringB)
 		{
 			if (secureStringA == null || secureStringB == null || secureStringA.Length != secureStringB.Length)
@@ -210,7 +210,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return true;
 		}
 
-		// Token: 0x06000339 RID: 825 RVA: 0x0001105C File Offset: 0x0000F25C
+		// Token: 0x06000339 RID: 825 RVA: 0x00011098 File Offset: 0x0000F298
 		private void ChangePassword()
 		{
 			SecureHtmlFormReader secureHtmlFormReader = new SecureHtmlFormReader(base.Request);
@@ -279,69 +279,69 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x040001E6 RID: 486
+		// Token: 0x040001E7 RID: 487
 		private const string DestinationParameter = "url";
 
-		// Token: 0x040001E7 RID: 487
+		// Token: 0x040001E8 RID: 488
 		private const string DefaultDestination = "../";
 
-		// Token: 0x040001E8 RID: 488
+		// Token: 0x040001E9 RID: 489
 		private const string UsernameParameter = "username";
 
-		// Token: 0x040001E9 RID: 489
+		// Token: 0x040001EA RID: 490
 		private const string OldPasswordParameter = "oldPwd";
 
-		// Token: 0x040001EA RID: 490
+		// Token: 0x040001EB RID: 491
 		private const string NewPassword1Parameter = "newPwd1";
 
-		// Token: 0x040001EB RID: 491
+		// Token: 0x040001EC RID: 492
 		private const string NewPassword2Parameter = "newPwd2";
 
-		// Token: 0x040001EC RID: 492
+		// Token: 0x040001ED RID: 493
 		private const int NetUserChangePasswordSuccess = 0;
 
-		// Token: 0x040001ED RID: 493
+		// Token: 0x040001EE RID: 494
 		private const int NetUserChangePasswordAccessDenied = 5;
 
-		// Token: 0x040001EE RID: 494
+		// Token: 0x040001EF RID: 495
 		private const int NetUserChangePasswordInvalidOldPassword = 86;
 
-		// Token: 0x040001EF RID: 495
+		// Token: 0x040001F0 RID: 496
 		private const int NetUserChangePasswordDoesNotMeetPolicyRequirement = 2245;
 
-		// Token: 0x040001F0 RID: 496
+		// Token: 0x040001F1 RID: 497
 		private ExpiredPassword.ExpiredPasswordReason reason;
 
-		// Token: 0x040001F1 RID: 497
+		// Token: 0x040001F2 RID: 498
 		private bool passwordChanged;
 
-		// Token: 0x020000FD RID: 253
+		// Token: 0x020000FC RID: 252
 		protected enum ChangePasswordResult
 		{
-			// Token: 0x040004AF RID: 1199
-			Success,
-			// Token: 0x040004B0 RID: 1200
-			InvalidCredentials,
-			// Token: 0x040004B1 RID: 1201
-			LockedOut,
-			// Token: 0x040004B2 RID: 1202
-			BadNewPassword,
 			// Token: 0x040004B3 RID: 1203
+			Success,
+			// Token: 0x040004B4 RID: 1204
+			InvalidCredentials,
+			// Token: 0x040004B5 RID: 1205
+			LockedOut,
+			// Token: 0x040004B6 RID: 1206
+			BadNewPassword,
+			// Token: 0x040004B7 RID: 1207
 			OtherError
 		}
 
-		// Token: 0x020000FE RID: 254
+		// Token: 0x020000FD RID: 253
 		protected enum ExpiredPasswordReason
 		{
-			// Token: 0x040004B5 RID: 1205
-			None,
-			// Token: 0x040004B6 RID: 1206
-			InvalidCredentials,
-			// Token: 0x040004B7 RID: 1207
-			InvalidNewPassword,
-			// Token: 0x040004B8 RID: 1208
-			PasswordConflict,
 			// Token: 0x040004B9 RID: 1209
+			None,
+			// Token: 0x040004BA RID: 1210
+			InvalidCredentials,
+			// Token: 0x040004BB RID: 1211
+			InvalidNewPassword,
+			// Token: 0x040004BC RID: 1212
+			PasswordConflict,
+			// Token: 0x040004BD RID: 1213
 			LockedOut
 		}
 	}

@@ -10,7 +10,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200004B RID: 75
 	internal static class HttpProxyRegistry
 	{
-		// Token: 0x06000272 RID: 626 RVA: 0x0000CB54 File Offset: 0x0000AD54
+		// Token: 0x06000272 RID: 626 RVA: 0x0000CB6C File Offset: 0x0000AD6C
 		private static bool GetOWARegistryValue(string valueName, bool defaultValue)
 		{
 			bool result;
@@ -48,13 +48,13 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x04000180 RID: 384
+		// Token: 0x04000181 RID: 385
 		public static readonly LazyMember<bool> OwaAllowInternalUntrustedCerts = new LazyMember<bool>(() => HttpProxyRegistry.GetOWARegistryValue("AllowInternalUntrustedCerts", true));
 
-		// Token: 0x04000181 RID: 385
+		// Token: 0x04000182 RID: 386
 		public static readonly LazyMember<bool> AreGccStoredSecretKeysValid = new LazyMember<bool>(() => HttpProxyRegistry.AreGccStoredSecretKeysValid.Member);
 
-		// Token: 0x04000182 RID: 386
+		// Token: 0x04000183 RID: 387
 		internal const string MSExchangeOWARegistryPath = "SYSTEM\\CurrentControlSet\\Services\\MSExchange OWA";
 	}
 }

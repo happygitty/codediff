@@ -338,8 +338,8 @@ namespace Microsoft.Exchange.Clients.Owa.Core
 		// Token: 0x04000048 RID: 72
 		private UserAgent userAgent;
 
-		// Token: 0x020000CF RID: 207
-		// (Invoke) Token: 0x060007A5 RID: 1957
+		// Token: 0x020000CE RID: 206
+		// (Invoke) Token: 0x060007A0 RID: 1952
 		private delegate string ResourceCreator(string fullFileName);
 	}
 }

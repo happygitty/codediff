@@ -92,7 +92,7 @@ namespace Microsoft.Exchange.HttpProxy
 			ServiceTopology serviceTopology = null;
 			try
 			{
-				serviceTopology = ServiceTopology.GetCurrentServiceTopology(DownLevelServerPingManager.DownLevelServerPingServiceTopologyTimeout.Value, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerPingManager.cs", "InternalRefresh", 209);
+				serviceTopology = ServiceTopology.GetCurrentServiceTopology(DownLevelServerPingManager.DownLevelServerPingServiceTopologyTimeout.Value, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerPingManager.cs", "InternalRefresh", 209);
 			}
 			catch (ReadTopologyTimeoutException)
 			{
@@ -101,7 +101,7 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				foreach (DownLevelServerStatusEntry downLevelServerStatusEntry in list)
 				{
-					if (serviceTopology != null && serviceTopology.IsServerOutOfService(downLevelServerStatusEntry.BackEndServer.Fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerPingManager.cs", "InternalRefresh", 220))
+					if (serviceTopology != null && serviceTopology.IsServerOutOfService(downLevelServerStatusEntry.BackEndServer.Fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerPingManager.cs", "InternalRefresh", 220))
 					{
 						if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(2))
 						{

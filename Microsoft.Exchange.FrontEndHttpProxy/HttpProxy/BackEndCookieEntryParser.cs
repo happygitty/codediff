@@ -8,7 +8,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x0200004E RID: 78
 	internal static class BackEndCookieEntryParser
 	{
-		// Token: 0x06000280 RID: 640 RVA: 0x0000CDE8 File Offset: 0x0000AFE8
+		// Token: 0x06000280 RID: 640 RVA: 0x0000CE00 File Offset: 0x0000B000
 		public static BackEndCookieEntryBase Parse(string entryValue)
 		{
 			BackEndCookieEntryBase result = null;
@@ -19,14 +19,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000281 RID: 641 RVA: 0x0000CE08 File Offset: 0x0000B008
+		// Token: 0x06000281 RID: 641 RVA: 0x0000CE20 File Offset: 0x0000B020
 		public static bool TryParse(string entryValue, out BackEndCookieEntryBase cookieEntry)
 		{
 			string text = null;
 			return BackEndCookieEntryParser.TryParse(entryValue, out cookieEntry, out text);
 		}
 
-		// Token: 0x06000282 RID: 642 RVA: 0x0000CE20 File Offset: 0x0000B020
+		// Token: 0x06000282 RID: 642 RVA: 0x0000CE38 File Offset: 0x0000B038
 		public static bool TryParse(string entryValue, out BackEndCookieEntryBase cookieEntry, out string clearCookie)
 		{
 			cookieEntry = null;
@@ -86,8 +86,16 @@ namespace Microsoft.Exchange.HttpProxy
 					}
 					else
 					{
-						cookieEntry = new BackEndServerCookieEntry(array[1], int.Parse(array[2]), expiryTime);
-						result = true;
+						int version = int.Parse(array[2]);
+						if (UriHostNameType.Dns != Uri.CheckHostName(array[1]) || !ServerInfoAnchorMailbox.ServerProvider.TryFindServerVersion(array[1], ref version))
+						{
+							result = false;
+						}
+						else
+						{
+							cookieEntry = new BackEndServerCookieEntry(array[1], version, expiryTime);
+							result = true;
+						}
 					}
 				}
 			}
@@ -102,7 +110,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000283 RID: 643 RVA: 0x0000CF94 File Offset: 0x0000B194
+		// Token: 0x06000283 RID: 643 RVA: 0x0000CFD0 File Offset: 0x0000B1D0
 		internal static string UnObscurify(string obscureString)
 		{
 			byte[] array = Convert.FromBase64String(obscureString);
@@ -118,7 +126,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return BackEndCookieEntryBase.Encoding.GetString(array2);
 		}
 
-		// Token: 0x06000284 RID: 644 RVA: 0x0000CFE4 File Offset: 0x0000B1E4
+		// Token: 0x06000284 RID: 644 RVA: 0x0000D020 File Offset: 0x0000B220
 		private static bool TryParseDateTime(string dateTimeString, out ExDateTime dateTime)
 		{
 			if (!string.IsNullOrEmpty(dateTimeString))
@@ -150,7 +158,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x04000190 RID: 400
+		// Token: 0x04000191 RID: 401
 		private const char CookieSeparator = '~';
 	}
 }

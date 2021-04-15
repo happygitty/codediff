@@ -25,7 +25,7 @@ namespace Microsoft.Exchange.HttpProxy
 	public class ErrorFE : OwaPage
 	{
 		// Token: 0x170000A4 RID: 164
-		// (get) Token: 0x060002FE RID: 766 RVA: 0x0000ED4C File Offset: 0x0000CF4C
+		// (get) Token: 0x060002FE RID: 766 RVA: 0x0000ED88 File Offset: 0x0000CF88
 		protected bool IsAriaLoggingEnabled
 		{
 			get
@@ -40,7 +40,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000A5 RID: 165
-		// (get) Token: 0x060002FF RID: 767 RVA: 0x0000EDA5 File Offset: 0x0000CFA5
+		// (get) Token: 0x060002FF RID: 767 RVA: 0x0000EDE1 File Offset: 0x0000CFE1
 		protected string AriaTenantToken
 		{
 			get
@@ -50,7 +50,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000A6 RID: 166
-		// (get) Token: 0x06000300 RID: 768 RVA: 0x0000EDAC File Offset: 0x0000CFAC
+		// (get) Token: 0x06000300 RID: 768 RVA: 0x0000EDE8 File Offset: 0x0000CFE8
 		protected bool HasErrorDetails
 		{
 			get
@@ -60,7 +60,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000A7 RID: 167
-		// (get) Token: 0x06000301 RID: 769 RVA: 0x0000EDBC File Offset: 0x0000CFBC
+		// (get) Token: 0x06000301 RID: 769 RVA: 0x0000EDF8 File Offset: 0x0000CFF8
 		protected bool IsPreviousPageLinkEnabled
 		{
 			get
@@ -70,7 +70,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000A8 RID: 168
-		// (get) Token: 0x06000302 RID: 770 RVA: 0x0000EDD1 File Offset: 0x0000CFD1
+		// (get) Token: 0x06000302 RID: 770 RVA: 0x0000EE0D File Offset: 0x0000D00D
 		protected bool IsExternalLinkPresent
 		{
 			get
@@ -80,7 +80,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000A9 RID: 169
-		// (get) Token: 0x06000303 RID: 771 RVA: 0x0000EDE8 File Offset: 0x0000CFE8
+		// (get) Token: 0x06000303 RID: 771 RVA: 0x0000EE24 File Offset: 0x0000D024
 		protected bool IsOfflineEnabledClient
 		{
 			get
@@ -98,7 +98,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AA RID: 170
-		// (get) Token: 0x06000304 RID: 772 RVA: 0x0000EE3A File Offset: 0x0000D03A
+		// (get) Token: 0x06000304 RID: 772 RVA: 0x0000EE76 File Offset: 0x0000D076
 		protected bool RenderAddToFavoritesButton
 		{
 			get
@@ -108,7 +108,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AB RID: 171
-		// (get) Token: 0x06000305 RID: 773 RVA: 0x0000EE56 File Offset: 0x0000D056
+		// (get) Token: 0x06000305 RID: 773 RVA: 0x0000EE92 File Offset: 0x0000D092
 		protected ErrorInformation ErrorInformation
 		{
 			get
@@ -118,7 +118,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AC RID: 172
-		// (get) Token: 0x06000306 RID: 774 RVA: 0x0000EE5E File Offset: 0x0000D05E
+		// (get) Token: 0x06000306 RID: 774 RVA: 0x0000EE9A File Offset: 0x0000D09A
 		protected bool RenderDiagnosticInfo
 		{
 			get
@@ -128,7 +128,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AD RID: 173
-		// (get) Token: 0x06000307 RID: 775 RVA: 0x0000EE66 File Offset: 0x0000D066
+		// (get) Token: 0x06000307 RID: 775 RVA: 0x0000EEA2 File Offset: 0x0000D0A2
 		protected string DiagnosticInfo
 		{
 			get
@@ -138,7 +138,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AE RID: 174
-		// (get) Token: 0x06000308 RID: 776 RVA: 0x0000EE6E File Offset: 0x0000D06E
+		// (get) Token: 0x06000308 RID: 776 RVA: 0x0000EEAA File Offset: 0x0000D0AA
 		protected string ResourcePath
 		{
 			get
@@ -152,7 +152,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000AF RID: 175
-		// (get) Token: 0x06000309 RID: 777 RVA: 0x0000EE90 File Offset: 0x0000D090
+		// (get) Token: 0x06000309 RID: 777 RVA: 0x0000EECC File Offset: 0x0000D0CC
 		protected string LoadFailedMessageValue
 		{
 			get
@@ -167,7 +167,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B0 RID: 176
-		// (get) Token: 0x0600030A RID: 778 RVA: 0x0000EED8 File Offset: 0x0000D0D8
+		// (get) Token: 0x0600030A RID: 778 RVA: 0x0000EF14 File Offset: 0x0000D114
 		protected bool ShowRefreshButton
 		{
 			get
@@ -177,7 +177,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B1 RID: 177
-		// (get) Token: 0x0600030B RID: 779 RVA: 0x0000EF48 File Offset: 0x0000D148
+		// (get) Token: 0x0600030B RID: 779 RVA: 0x0000EF84 File Offset: 0x0000D184
 		protected string GetPlt1QueryString
 		{
 			get
@@ -203,7 +203,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B2 RID: 178
-		// (get) Token: 0x0600030C RID: 780 RVA: 0x0000F0F1 File Offset: 0x0000D2F1
+		// (get) Token: 0x0600030C RID: 780 RVA: 0x0000F12D File Offset: 0x0000D32D
 		protected string GetXOWAPLTInfoHeaderValue
 		{
 			get
@@ -213,7 +213,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B3 RID: 179
-		// (get) Token: 0x0600030D RID: 781 RVA: 0x0000F0F1 File Offset: 0x0000D2F1
+		// (get) Token: 0x0600030D RID: 781 RVA: 0x0000F12D File Offset: 0x0000D32D
 		protected string GetPlt1RequestBody
 		{
 			get
@@ -223,7 +223,7 @@ namespace Microsoft.Exchange.HttpProxy
 		}
 
 		// Token: 0x170000B4 RID: 180
-		// (get) Token: 0x0600030E RID: 782 RVA: 0x0000F118 File Offset: 0x0000D318
+		// (get) Token: 0x0600030E RID: 782 RVA: 0x0000F154 File Offset: 0x0000D354
 		protected bool ShouldSendOWAPlt1Request
 		{
 			get
@@ -233,7 +233,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600030F RID: 783 RVA: 0x0000F154 File Offset: 0x0000D354
+		// Token: 0x0600030F RID: 783 RVA: 0x0000F190 File Offset: 0x0000D390
 		protected override void OnLoad(EventArgs e)
 		{
 			ErrorFE.FEErrorCodes feerrorCodes = ErrorFE.FEErrorCodes.Unknown;
@@ -266,15 +266,15 @@ namespace Microsoft.Exchange.HttpProxy
 						{
 							if (!Utilities.IsPartnerHostedOnly && !GlobalConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).MultiTenancy.Enabled)
 							{
-								ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 579);
+								ServiceTopology currentServiceTopology = ServiceTopology.GetCurrentServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 579);
 								HttpService httpService;
 								if (HttpProxyGlobals.ProtocolType == 1)
 								{
-									httpService = currentServiceTopology.FindAny<EcpService>(1, (EcpService externalService) => externalService != null && externalService.IsFrontEnd && externalService.Site.DistinguishedName.Equals(targetSiteDistinguishedName), "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 586);
+									httpService = currentServiceTopology.FindAny<EcpService>(1, (EcpService externalService) => externalService != null && externalService.IsFrontEnd && externalService.Site.DistinguishedName.Equals(targetSiteDistinguishedName), "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 586);
 								}
 								else
 								{
-									httpService = currentServiceTopology.FindAny<OwaService>(1, (OwaService externalService) => externalService != null && externalService.IsFrontEnd && externalService.Site.DistinguishedName.Equals(targetSiteDistinguishedName), "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 595);
+									httpService = currentServiceTopology.FindAny<OwaService>(1, (OwaService externalService) => externalService != null && externalService.IsFrontEnd && externalService.Site.DistinguishedName.Equals(targetSiteDistinguishedName), "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\fba\\ErrorFE.aspx.cs", "OnLoad", 595);
 								}
 								if (httpService != null)
 								{
@@ -362,7 +362,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.OnInit(e);
 		}
 
-		// Token: 0x06000310 RID: 784 RVA: 0x0000F5F8 File Offset: 0x0000D7F8
+		// Token: 0x06000310 RID: 784 RVA: 0x0000F634 File Offset: 0x0000D834
 		protected void RenderTitle()
 		{
 			if (this.errorInformation.ErrorMode == 1)
@@ -378,13 +378,13 @@ namespace Microsoft.Exchange.HttpProxy
 			base.Response.Write(LocalizedStrings.GetHtmlEncoded(933672694));
 		}
 
-		// Token: 0x06000311 RID: 785 RVA: 0x0000F68E File Offset: 0x0000D88E
+		// Token: 0x06000311 RID: 785 RVA: 0x0000F6CA File Offset: 0x0000D8CA
 		protected void RenderIcon()
 		{
 			ThemeManager.RenderBaseThemeFileUrl(base.Response.Output, this.errorInformation.Icon, false);
 		}
 
-		// Token: 0x06000312 RID: 786 RVA: 0x0000F6AC File Offset: 0x0000D8AC
+		// Token: 0x06000312 RID: 786 RVA: 0x0000F6E8 File Offset: 0x0000D8E8
 		protected void AddDiagnosticsHeaders()
 		{
 			if (!string.IsNullOrWhiteSpace(HttpContext.Current.Request.QueryString["owaError"]))
@@ -421,7 +421,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000313 RID: 787 RVA: 0x0000F8DC File Offset: 0x0000DADC
+		// Token: 0x06000313 RID: 787 RVA: 0x0000F918 File Offset: 0x0000DB18
 		protected void CompileDiagnosticInfo()
 		{
 			this.renderDiagnosticInfo = false;
@@ -463,7 +463,7 @@ namespace Microsoft.Exchange.HttpProxy
 			this.diagnosticInfo = stringBuilder.ToString();
 		}
 
-		// Token: 0x06000314 RID: 788 RVA: 0x0000FAEC File Offset: 0x0000DCEC
+		// Token: 0x06000314 RID: 788 RVA: 0x0000FB28 File Offset: 0x0000DD28
 		protected void RenderErrorHeader()
 		{
 			if (!this.errorInformation.SharePointApp && !this.errorInformation.GroupMailbox && !(this.errorInformation.ErrorMode == 1))
@@ -480,7 +480,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000315 RID: 789 RVA: 0x0000FB8C File Offset: 0x0000DD8C
+		// Token: 0x06000315 RID: 789 RVA: 0x0000FBC8 File Offset: 0x0000DDC8
 		protected void RenderErrorSubHeader()
 		{
 			if (this.errorInformation.SharePointApp)
@@ -545,7 +545,7 @@ namespace Microsoft.Exchange.HttpProxy
 		{
 		}
 
-		// Token: 0x06000317 RID: 791 RVA: 0x0000FD88 File Offset: 0x0000DF88
+		// Token: 0x06000317 RID: 791 RVA: 0x0000FDC4 File Offset: 0x0000DFC4
 		protected void RenderRefreshButtonText()
 		{
 			if (this.errorInformation.ErrorMode == 1)
@@ -556,7 +556,7 @@ namespace Microsoft.Exchange.HttpProxy
 			base.Response.Write(LocalizedStrings.GetHtmlEncoded(1939504838));
 		}
 
-		// Token: 0x06000318 RID: 792 RVA: 0x0000FDE4 File Offset: 0x0000DFE4
+		// Token: 0x06000318 RID: 792 RVA: 0x0000FE20 File Offset: 0x0000E020
 		protected void RenderErrorDetails()
 		{
 			if (!this.errorInformation.GroupMailbox)
@@ -646,7 +646,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000319 RID: 793 RVA: 0x0001013C File Offset: 0x0000E33C
+		// Token: 0x06000319 RID: 793 RVA: 0x00010178 File Offset: 0x0000E378
 		protected void RenderOfflineInfo()
 		{
 			if (!this.IsOfflineEnabledClient)
@@ -655,7 +655,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600031A RID: 794 RVA: 0x0001015C File Offset: 0x0000E35C
+		// Token: 0x0600031A RID: 794 RVA: 0x00010198 File Offset: 0x0000E398
 		protected void RenderOfflineDetails()
 		{
 			if (!this.IsOfflineEnabledClient)
@@ -677,31 +677,31 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x0600031B RID: 795 RVA: 0x0001024C File Offset: 0x0000E44C
+		// Token: 0x0600031B RID: 795 RVA: 0x00010288 File Offset: 0x0000E488
 		protected void RenderExternalLink()
 		{
 			base.Response.Write(this.errorInformation.ExternalPageLink);
 		}
 
-		// Token: 0x0600031C RID: 796 RVA: 0x00010264 File Offset: 0x0000E464
+		// Token: 0x0600031C RID: 796 RVA: 0x000102A0 File Offset: 0x0000E4A0
 		protected void RenderBackLink()
 		{
 			base.Response.Write(string.Format(LocalizedStrings.GetHtmlEncoded(161749640), "<a href=\"" + this.errorInformation.PreviousPageUrl + "\">", "</a>"));
 		}
 
-		// Token: 0x0600031D RID: 797 RVA: 0x0001029F File Offset: 0x0000E49F
+		// Token: 0x0600031D RID: 797 RVA: 0x000102DB File Offset: 0x0000E4DB
 		protected void RenderBackground()
 		{
 			ThemeManager.RenderBaseThemeFileUrl(base.Response.Output, this.errorInformation.Background, false);
 		}
 
-		// Token: 0x0600031E RID: 798 RVA: 0x000102BD File Offset: 0x0000E4BD
+		// Token: 0x0600031E RID: 798 RVA: 0x000102F9 File Offset: 0x0000E4F9
 		protected bool IsNewErrorPageQuery()
 		{
 			return this.Context.Request.QueryString["et"] != null;
 		}
 
-		// Token: 0x0600031F RID: 799 RVA: 0x000102DC File Offset: 0x0000E4DC
+		// Token: 0x0600031F RID: 799 RVA: 0x00010318 File Offset: 0x0000E518
 		protected string CompileAriaDiagnosticInfoV2()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -736,7 +736,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return new JavaScriptSerializer().Serialize(dictionary);
 		}
 
-		// Token: 0x06000320 RID: 800 RVA: 0x000105F0 File Offset: 0x0000E7F0
+		// Token: 0x06000320 RID: 800 RVA: 0x0001062C File Offset: 0x0000E82C
 		protected string CompileAriaDiagnosticInfo()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -790,14 +790,14 @@ namespace Microsoft.Exchange.HttpProxy
 			return new JavaScriptSerializer().Serialize(dictionary);
 		}
 
-		// Token: 0x06000321 RID: 801 RVA: 0x0001093C File Offset: 0x0000EB3C
+		// Token: 0x06000321 RID: 801 RVA: 0x00010978 File Offset: 0x0000EB78
 		private static string GetLocalizedLiveIdSignoutLinkMessage(HttpRequest request)
 		{
 			string explicitUrl = OwaUrl.Logoff.GetExplicitUrl(request);
 			return "<BR><BR>" + string.Format(CultureInfo.InvariantCulture, Strings.LogonErrorLogoutUrlText, explicitUrl);
 		}
 
-		// Token: 0x06000322 RID: 802 RVA: 0x00010970 File Offset: 0x0000EB70
+		// Token: 0x06000322 RID: 802 RVA: 0x000109AC File Offset: 0x0000EBAC
 		private static void AddSafeLinkToMessageParametersList(Strings.IDs messageId, HttpRequest request, ref List<string> messageParameters)
 		{
 			string item = string.Empty;
@@ -821,7 +821,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000323 RID: 803 RVA: 0x000109F4 File Offset: 0x0000EBF4
+		// Token: 0x06000323 RID: 803 RVA: 0x00010A30 File Offset: 0x0000EC30
 		private static string GetExceptionFromQueryString(HttpRequest request)
 		{
 			string result = string.Empty;
@@ -848,7 +848,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000324 RID: 804 RVA: 0x00010ADC File Offset: 0x0000ECDC
+		// Token: 0x06000324 RID: 804 RVA: 0x00010B18 File Offset: 0x0000ED18
 		private static string GetProbableExceptionNameForAria(HttpRequest request, out string trace)
 		{
 			string exceptionFromQueryString = ErrorFE.GetExceptionFromQueryString(request);
@@ -887,7 +887,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return result;
 		}
 
-		// Token: 0x06000325 RID: 805 RVA: 0x00010B8E File Offset: 0x0000ED8E
+		// Token: 0x06000325 RID: 805 RVA: 0x00010BCA File Offset: 0x0000EDCA
 		private static void AddKeyValueWhenNotEmptyOrNullAndNotDup(Dictionary<string, string> dictionary, string key, string value)
 		{
 			if (!dictionary.ContainsKey(key) && !string.IsNullOrEmpty(value))
@@ -896,7 +896,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000326 RID: 806 RVA: 0x00010BAC File Offset: 0x0000EDAC
+		// Token: 0x06000326 RID: 806 RVA: 0x00010BE8 File Offset: 0x0000EDE8
 		private void SetHTTPResponseStatusCode()
 		{
 			if (this.errorInformation.HttpCode == 200 || this.errorInformation.HttpCode == 302)
@@ -907,19 +907,19 @@ namespace Microsoft.Exchange.HttpProxy
 			base.Response.StatusCode = this.errorInformation.HttpCode;
 		}
 
-		// Token: 0x06000327 RID: 807 RVA: 0x00010C04 File Offset: 0x0000EE04
+		// Token: 0x06000327 RID: 807 RVA: 0x00010C40 File Offset: 0x0000EE40
 		private bool IsErrorFEQueryParameterNull(string queryParam)
 		{
 			return this.IsErrorValueNull(HttpContext.Current.Request.QueryString[queryParam]);
 		}
 
-		// Token: 0x06000328 RID: 808 RVA: 0x00010C21 File Offset: 0x0000EE21
+		// Token: 0x06000328 RID: 808 RVA: 0x00010C5D File Offset: 0x0000EE5D
 		private bool IsErrorValueNull(string value)
 		{
 			return string.IsNullOrWhiteSpace(value) || value == "null";
 		}
 
-		// Token: 0x06000329 RID: 809 RVA: 0x00010C38 File Offset: 0x0000EE38
+		// Token: 0x06000329 RID: 809 RVA: 0x00010C74 File Offset: 0x0000EE74
 		private void SetAriaCookie(HttpResponse httpRespose, string exceptionName)
 		{
 			HttpCookie cookie = new HttpCookie("AriaEx")
@@ -931,13 +931,13 @@ namespace Microsoft.Exchange.HttpProxy
 			httpRespose.Cookies.Add(cookie);
 		}
 
-		// Token: 0x0600032A RID: 810 RVA: 0x00010C87 File Offset: 0x0000EE87
+		// Token: 0x0600032A RID: 810 RVA: 0x00010CC3 File Offset: 0x0000EEC3
 		private bool AddQueryParamToDiagInfo(StringBuilder diagnosticInfo, string queryParamName, string displayName, ValidationUtilities.ValidationType type)
 		{
 			return this.AddValueToDiagInfo(diagnosticInfo, HttpContext.Current.Request.QueryString[queryParamName], displayName, type);
 		}
 
-		// Token: 0x0600032B RID: 811 RVA: 0x00010CA8 File Offset: 0x0000EEA8
+		// Token: 0x0600032B RID: 811 RVA: 0x00010CE4 File Offset: 0x0000EEE4
 		private bool AddValueToDiagInfo(StringBuilder diagnosticInfo, string value, string displayName, ValidationUtilities.ValidationType type)
 		{
 			if (!this.IsErrorValueNull(value))
@@ -960,7 +960,7 @@ namespace Microsoft.Exchange.HttpProxy
 			return false;
 		}
 
-		// Token: 0x0600032D RID: 813 RVA: 0x00010D58 File Offset: 0x0000EF58
+		// Token: 0x0600032D RID: 813 RVA: 0x00010D94 File Offset: 0x0000EF94
 		// Note: this type is marked as 'beforefieldinit'.
 		static ErrorFE()
 		{
@@ -976,125 +976,125 @@ namespace Microsoft.Exchange.HttpProxy
 			};
 		}
 
-		// Token: 0x040001C3 RID: 451
+		// Token: 0x040001C4 RID: 452
 		internal const string RedirectUrl = "redirectUrl";
 
-		// Token: 0x040001C4 RID: 452
+		// Token: 0x040001C5 RID: 453
 		internal const string CafeErrorKey = "CafeError";
 
-		// Token: 0x040001C5 RID: 453
+		// Token: 0x040001C6 RID: 454
 		internal const string TargetSiteDistinguishedName = "targetSiteDistinguishedName";
 
-		// Token: 0x040001C6 RID: 454
+		// Token: 0x040001C7 RID: 455
 		private const string HttpCodeQueryKey = "httpCode";
 
-		// Token: 0x040001C7 RID: 455
+		// Token: 0x040001C8 RID: 456
 		private const string ErrorMessageQueryKey = "msg";
 
-		// Token: 0x040001C8 RID: 456
+		// Token: 0x040001C9 RID: 457
 		private const string ErrorMessageParameterQueryKey = "msgParam";
 
-		// Token: 0x040001C9 RID: 457
+		// Token: 0x040001CA RID: 458
 		private const string SharePointAppQueryKey = "sharepointapp";
 
-		// Token: 0x040001CA RID: 458
+		// Token: 0x040001CB RID: 459
 		private const string SiteMailboxQueryKey = "sm";
 
-		// Token: 0x040001CB RID: 459
+		// Token: 0x040001CC RID: 460
 		private const string GroupMailboxQueryKey = "gm";
 
-		// Token: 0x040001CC RID: 460
+		// Token: 0x040001CD RID: 461
 		private const string ConversationsDestination = "conv";
 
-		// Token: 0x040001CD RID: 461
+		// Token: 0x040001CE RID: 462
 		private const string CalendarDestination = "cal";
 
-		// Token: 0x040001CE RID: 462
+		// Token: 0x040001CF RID: 463
 		private const string OfflineEnabledParameterName = "offline";
 
-		// Token: 0x040001CF RID: 463
+		// Token: 0x040001D0 RID: 464
 		private const string Form15ErrorPlt1MsgValue = "FormErr";
 
-		// Token: 0x040001D0 RID: 464
+		// Token: 0x040001D1 RID: 465
 		private const string Plt1CIdParameter = "cid";
 
-		// Token: 0x040001D1 RID: 465
+		// Token: 0x040001D2 RID: 466
 		private const string Plt1ErrParameter = "Err";
 
-		// Token: 0x040001D2 RID: 466
+		// Token: 0x040001D3 RID: 467
 		private const string Plt1PerfReqQueryParameter = "PLT";
 
-		// Token: 0x040001D3 RID: 467
+		// Token: 0x040001D4 RID: 468
 		private const string Plt1PerfReqQueryParameterValue = "now,0";
 
-		// Token: 0x040001D4 RID: 468
+		// Token: 0x040001D5 RID: 469
 		private const string UserEnabledOffline = "off";
 
-		// Token: 0x040001D5 RID: 469
+		// Token: 0x040001D6 RID: 470
 		private const string QueryParameterFormat = "&{0}={1}";
 
-		// Token: 0x040001D6 RID: 470
+		// Token: 0x040001D7 RID: 471
 		private const string ScriptLoadError = "ScriptLoadError";
 
-		// Token: 0x040001D7 RID: 471
+		// Token: 0x040001D8 RID: 472
 		private const string ClientError = "ClientError";
 
-		// Token: 0x040001D8 RID: 472
+		// Token: 0x040001D9 RID: 473
 		private const string USRLoadError = "USRLoadError";
 
-		// Token: 0x040001D9 RID: 473
+		// Token: 0x040001DA RID: 474
 		private const string SessionDataError = "SessionDataError";
 
-		// Token: 0x040001DA RID: 474
+		// Token: 0x040001DB RID: 475
 		private const string UnknownError = "Unknown;";
 
-		// Token: 0x040001DB RID: 475
+		// Token: 0x040001DC RID: 476
 		private const string AriaCookieName = "AriaEx";
 
-		// Token: 0x040001DC RID: 476
+		// Token: 0x040001DD RID: 477
 		private static readonly Strings.IDs[] SafeErrorMessagesNoHtmlEncoding;
 
-		// Token: 0x040001DD RID: 477
+		// Token: 0x040001DE RID: 478
 		private static readonly Strings.IDs[] MessagesToRenderLogoutLinks;
 
-		// Token: 0x040001DE RID: 478
+		// Token: 0x040001DF RID: 479
 		private static readonly Strings.IDs[] MessagesToRenderLoginLinks;
 
-		// Token: 0x040001DF RID: 479
+		// Token: 0x040001E0 RID: 480
 		private ErrorInformation errorInformation;
 
-		// Token: 0x040001E0 RID: 480
+		// Token: 0x040001E1 RID: 481
 		private bool renderDiagnosticInfo;
 
-		// Token: 0x040001E1 RID: 481
+		// Token: 0x040001E2 RID: 482
 		private string diagnosticInfo = string.Empty;
 
-		// Token: 0x040001E2 RID: 482
+		// Token: 0x040001E3 RID: 483
 		private string resourcePath;
 
-		// Token: 0x040001E3 RID: 483
+		// Token: 0x040001E4 RID: 484
 		private bool isIE = true;
 
-		// Token: 0x040001E4 RID: 484
+		// Token: 0x040001E5 RID: 485
 		private bool isConsumerRequest;
 
-		// Token: 0x040001E5 RID: 485
+		// Token: 0x040001E6 RID: 486
 		private UnsafeValueEncodingType unsafeValueEncoding = ClientsCommonConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).ErrorPageSettings.ErrorFEUnsafeValueEncoding;
 
-		// Token: 0x020000FB RID: 251
+		// Token: 0x020000FA RID: 250
 		internal enum FEErrorCodes
 		{
-			// Token: 0x040004A7 RID: 1191
-			Unknown,
-			// Token: 0x040004A8 RID: 1192
-			SSLCertificateProblem,
-			// Token: 0x040004A9 RID: 1193
-			CAS14WithNoWIA,
-			// Token: 0x040004AA RID: 1194
-			NoFbaSSL,
 			// Token: 0x040004AB RID: 1195
-			NoLegacyCAS,
+			Unknown,
 			// Token: 0x040004AC RID: 1196
+			SSLCertificateProblem,
+			// Token: 0x040004AD RID: 1197
+			CAS14WithNoWIA,
+			// Token: 0x040004AE RID: 1198
+			NoFbaSSL,
+			// Token: 0x040004AF RID: 1199
+			NoLegacyCAS,
+			// Token: 0x040004B0 RID: 1200
 			CasRedirect
 		}
 	}

@@ -8,8 +8,8 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000B2 RID: 178
 	internal class ReportingWebServiceProxyRequestHandler : RwsPswsProxyRequestHandlerBase<EcpService>
 	{
-		// Token: 0x17000179 RID: 377
-		// (get) Token: 0x060006FE RID: 1790 RVA: 0x000293A2 File Offset: 0x000275A2
+		// Token: 0x17000178 RID: 376
+		// (get) Token: 0x06000700 RID: 1792 RVA: 0x0002962E File Offset: 0x0002782E
 		protected override string ServiceName
 		{
 			get
@@ -18,13 +18,13 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x060006FF RID: 1791 RVA: 0x000293A9 File Offset: 0x000275A9
+		// Token: 0x06000701 RID: 1793 RVA: 0x00029635 File Offset: 0x00027835
 		public static bool IsReportingWebServicePartnerRequest(HttpRequest request)
 		{
 			return !string.IsNullOrEmpty(request.Url.LocalPath) && request.Url.LocalPath.IndexOf("ReportingWebService/partner/", StringComparison.OrdinalIgnoreCase) >= 0;
 		}
 
-		// Token: 0x06000700 RID: 1792 RVA: 0x000293DC File Offset: 0x000275DC
+		// Token: 0x06000702 RID: 1794 RVA: 0x00029668 File Offset: 0x00027868
 		protected override void DoProtocolSpecificBeginProcess()
 		{
 			base.DoProtocolSpecificBeginProcess();
@@ -52,10 +52,10 @@ namespace Microsoft.Exchange.HttpProxy
 			throw new HttpException(400, "TenantDomain parameter isn't specified in the request URL.");
 		}
 
-		// Token: 0x040003E8 RID: 1000
+		// Token: 0x040003EC RID: 1004
 		private const string ReportingWebServicePartnerPathName = "ReportingWebService/partner/";
 
-		// Token: 0x040003E9 RID: 1001
+		// Token: 0x040003ED RID: 1005
 		private const string TenantParameterName = "tenantDomain";
 	}
 }

@@ -83,7 +83,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 			try
 			{
-				ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "IsServerDiscoverable", 179).GetSite(fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "IsServerDiscoverable", 180);
+				ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "IsServerDiscoverable", 179).GetSite(fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "IsServerDiscoverable", 180);
 			}
 			catch (ServerNotFoundException)
 			{
@@ -132,8 +132,8 @@ namespace Microsoft.Exchange.HttpProxy
 			{
 				throw new ArgumentException("preferredCasServerFqdn cannot be empty!");
 			}
-			ServiceTopology currentLegacyServiceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServerWithPreferredServer", 259);
-			Site site = currentLegacyServiceTopology.GetSite(preferredCasServerFqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServerWithPreferredServer", 260);
+			ServiceTopology currentLegacyServiceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServerWithPreferredServer", 259);
+			Site site = currentLegacyServiceTopology.GetSite(preferredCasServerFqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServerWithPreferredServer", 260);
 			Dictionary<string, List<DownLevelServerStatusEntry>> downLevelServerMap = this.GetDownLevelServerMap();
 			List<DownLevelServerStatusEntry> list = null;
 			if (!downLevelServerMap.TryGetValue(site.DistinguishedName, out list))
@@ -217,12 +217,12 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 				return mailboxServer;
 			}
-			ServiceTopology currentLegacyServiceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 415);
-			Site site = currentLegacyServiceTopology.GetSite(mailboxServer.Fqdn, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 416);
+			ServiceTopology currentLegacyServiceTopology = ServiceTopology.GetCurrentLegacyServiceTopology("d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 415);
+			Site site = currentLegacyServiceTopology.GetSite(mailboxServer.Fqdn, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 416);
 			ServiceType result = this.GetClientAccessServiceInSite<ServiceType>(currentLegacyServiceTopology, anchorMailbox, site, clientAccessType, (ServiceType service) => service.ServerVersionNumber >= Server.E14MinVersion && service.ServerVersionNumber < Server.E15MinVersion, logger);
 			if (calculateRedirectUrl && !Utilities.IsPartnerHostedOnly && !CafeConfiguration.GetSnapshot(MachineSettingsContext.Local, null, null).NoCrossSiteRedirect.Enabled && result != null && !string.IsNullOrEmpty(result.ServerFullyQualifiedDomainName) && !HttpProxyGlobals.LocalSite.Member.DistinguishedName.Equals(result.Site.DistinguishedName))
 			{
-				HttpService httpService = currentLegacyServiceTopology.FindAny<ServiceType>(1, (ServiceType externalService) => externalService != null && externalService.ServerFullyQualifiedDomainName.Equals(result.ServerFullyQualifiedDomainName, StringComparison.OrdinalIgnoreCase), "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 441);
+				HttpService httpService = currentLegacyServiceTopology.FindAny<ServiceType>(1, (ServiceType externalService) => externalService != null && externalService.ServerFullyQualifiedDomainName.Equals(result.ServerFullyQualifiedDomainName, StringComparison.OrdinalIgnoreCase), "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetDownLevelClientAccessServer", 441);
 				if (httpService != null)
 				{
 					redirectUrl = httpService.Url;
@@ -417,7 +417,7 @@ namespace Microsoft.Exchange.HttpProxy
 				}
 				if (currentServer.IsHealthy)
 				{
-					ServiceType serviceType = topology.FindAny<ServiceType>(clientAccessType, (ServiceType service) => service != null && service.ServerFullyQualifiedDomainName.Equals(currentServer.BackEndServer.Fqdn, StringComparison.OrdinalIgnoreCase) && !service.IsOutOfService && otherFilter(service), "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetClientAccessServiceFromList", 799);
+					ServiceType serviceType = topology.FindAny<ServiceType>(clientAccessType, (ServiceType service) => service != null && service.ServerFullyQualifiedDomainName.Equals(currentServer.BackEndServer.Fqdn, StringComparison.OrdinalIgnoreCase) && !service.IsOutOfService && otherFilter(service), "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", "GetClientAccessServiceFromList", 799);
 					if (serviceType != null)
 					{
 						if (ExTraceGlobals.VerboseTracer.IsTraceEnabled(1))
@@ -482,7 +482,7 @@ namespace Microsoft.Exchange.HttpProxy
 			Server[] array = null;
 			try
 			{
-				array = DirectoryHelper.GetConfigurationSession().FindPaged<Server>(null, 2, DownLevelServerManager.ServerVersionFilter, null, 0, "d:\\dbs\\sh\\e16df\\0212_214120_0\\cmd\\1g\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", 910, "InternalRefresh").ReadAllPages();
+				array = DirectoryHelper.GetConfigurationSession().FindPaged<Server>(null, 2, DownLevelServerManager.ServerVersionFilter, null, 0, "d:\\dbs\\sh\\e16dt\\0404_133553_0\\cmd\\j\\sources\\Dev\\Cafe\\src\\HttpProxy\\DownLevelServerManager\\DownLevelServerManager.cs", 910, "InternalRefresh").ReadAllPages();
 			}
 			catch (ADTransientException ex)
 			{
@@ -572,12 +572,12 @@ namespace Microsoft.Exchange.HttpProxy
 		// Token: 0x0400011A RID: 282
 		private Timer serverMapUpdateTimer;
 
-		// Token: 0x020000E9 RID: 233
+		// Token: 0x020000E8 RID: 232
 		internal enum DownlevelExchangeServerVersion
 		{
-			// Token: 0x04000486 RID: 1158
+			// Token: 0x0400048A RID: 1162
 			Exchange2007,
-			// Token: 0x04000487 RID: 1159
+			// Token: 0x0400048B RID: 1163
 			Exchange2010
 		}
 	}

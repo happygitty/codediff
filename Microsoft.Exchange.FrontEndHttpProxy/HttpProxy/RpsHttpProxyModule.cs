@@ -14,7 +14,7 @@ namespace Microsoft.Exchange.HttpProxy
 	// Token: 0x020000B7 RID: 183
 	internal class RpsHttpProxyModule : ProxyModule
 	{
-		// Token: 0x0600072E RID: 1838 RVA: 0x0002A260 File Offset: 0x00028460
+		// Token: 0x06000730 RID: 1840 RVA: 0x0002A4EC File Offset: 0x000286EC
 		static RpsHttpProxyModule()
 		{
 			string path;
@@ -29,7 +29,7 @@ namespace Microsoft.Exchange.HttpProxy
 			RequestMonitor.InitRequestMonitor(Path.Combine(path, HttpProxyGlobals.ProtocolType.ToString(), "RequestMonitor"), 300000);
 		}
 
-		// Token: 0x0600072F RID: 1839 RVA: 0x0002A2C0 File Offset: 0x000284C0
+		// Token: 0x06000731 RID: 1841 RVA: 0x0002A54C File Offset: 0x0002874C
 		protected override void OnBeginRequestInternal(HttpApplication httpApplication)
 		{
 			if (ExTraceGlobals.HttpModuleTracer.IsTraceEnabled(7))
@@ -66,7 +66,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000730 RID: 1840 RVA: 0x0002A3F0 File Offset: 0x000285F0
+		// Token: 0x06000732 RID: 1842 RVA: 0x0002A67C File Offset: 0x0002887C
 		protected override void OnEndRequestInternal(HttpApplication httpApplication)
 		{
 			if (ExTraceGlobals.HttpModuleTracer.IsTraceEnabled(7))
@@ -85,7 +85,7 @@ namespace Microsoft.Exchange.HttpProxy
 			}
 		}
 
-		// Token: 0x06000731 RID: 1841 RVA: 0x0002A46C File Offset: 0x0002866C
+		// Token: 0x06000733 RID: 1843 RVA: 0x0002A6F8 File Offset: 0x000288F8
 		protected override void OnPostAuthorizeInternal(HttpApplication httpApplication)
 		{
 			if (ExTraceGlobals.HttpModuleTracer.IsTraceEnabled(7))
